@@ -1,36 +1,43 @@
-## Seletor de tema/cores unificado
+## Logo + paleta + fonte baseadas na identidade Astral Gás
 
-### 1. Paletas curadas (4)
-Cada paleta define 4 tokens principais: `background`, `foreground`, `navy-deep` (superfícies escuras), `gold` (acento). Os demais tokens (card, muted, border, etc.) são derivados.
+### 1. Adicionar a logo
+- Copiar `user-uploads://logo_astral_gas.webp` → `src/assets/logo-astral.webp`
+- **Header**: substituir o ícone de chama + texto "Astral Gás" pelo logo real (`<img>` com altura ~40px, mantém link para `/`)
+- **Footer**: mesma logo, versão um pouco maior (~48px). Como a logo tem texto preto, em fundo escuro do footer vou aplicar leve fundo branco arredondado ou usar `filter: brightness/invert` parcial — solução escolhida: envelopar em pequeno "badge" branco arredondado com padding (preserva legibilidade sem editar o arquivo)
+- Atualizar `og:image` do root para apontar para a logo (presença em compartilhamentos)
+- Alt text: "Astral Gás Aquecedores"
 
-| Paleta | Background | Acento | Vibe |
-|---|---|---|---|
-| **Royal Gold** (atual) | off-white | dourado em fundo azul-noite | Premium clássico |
-| **Obsidian** | preto suave | dourado em fundo grafite | Luxo minimal |
-| **Forest Copper** | creme | cobre em fundo verde-floresta | Orgânico sofisticado |
-| **Bordeaux Cream** | creme quente | bordô em fundo vinho profundo | Boutique elegante |
+### 2. Nova paleta "Astral Original"
+Extraída da logo (laranja vibrante + preto + tons quentes). Vai virar a **5ª opção** no seletor de cores e o novo **default** do site (a marca real do cliente).
 
-Todas em `oklch` para coerência perceptiva.
+| Token | Cor | Origem |
+|---|---|---|
+| background | off-white quente | papel da logo |
+| navy-deep (superfícies escuras) | preto-grafite | letras da logo |
+| gold (acento) | laranja vibrante `oklch(0.72 0.18 50)` | esfera principal |
+| navy (azul royal vira marrom-quente) | terracota escuro | sombra da esfera |
+| accent secundário | amarelo-ouro do highlight da esfera |
 
-### 2. Implementação técnica
-- `src/lib/themes.ts` — array `THEMES` com id, label, swatches (4 cores para preview) e mapa de variáveis CSS
-- Aplicação: `document.documentElement.style.setProperty(...)` para cada token
-- Persistência em `localStorage` (`astral-theme`)
-- Mantém compatibilidade total com tokens existentes (`navy-deep`, `gold`, `background`, etc.) — nenhum componente precisa mudar
+Tudo em `oklch`, mantém os mesmos nomes de tokens (sem mexer em componentes). Adicionar em `src/lib/themes.ts` com swatches para preview.
 
-### 3. Unificar com seletor de fontes
-Renomear `FontSwitcher` → `StyleSwitcher` (mesmo botão, mesmo lugar):
-- Popover ganha **2 abas** no topo (shadcn `Tabs`): "Cores" e "Fontes"
-- Aba **Cores**: 4 cards com 4 swatches cada (preview visual da paleta) + nome + check no ativo
-- Aba **Fontes**: o conteúdo atual do `FontSwitcher`
-- Largura do popover aumenta para `w-80`
-- Estado de fonte e tema independentes, ambos persistidos
+### 3. Nova combinação de fontes "Astral"
+A logo usa um sans **black/extra-bold com cantos levemente arredondados** (lembra Mada/Mulish Black ou Sora Black). Para refletir isso:
 
-### 4. Arquivos
-- **Novo:** `src/lib/themes.ts`
-- **Novo:** `src/components/StyleSwitcher.tsx` (substitui FontSwitcher)
-- **Editar:** `src/routes/__root.tsx` (trocar import e tag)
-- **Remover:** `src/components/FontSwitcher.tsx`
-- `src/components/ui/tabs.tsx` já existe no projeto
+- **Display:** `Mulish` weight 900 (geométrico, redondo, encorpado — combina com a logo)
+- **Sans (corpo):** `Mulish` weight 400/600 (mesma família, mantém coesão visual com o logotipo)
 
-Sem mudanças em outros componentes — tudo se adapta via CSS variables.
+Vai entrar como **5ª opção** no seletor de fontes e virar o novo **default**. Importar do Google Fonts em `src/styles.css`.
+
+### 4. Defaults atualizados
+- `DEFAULT_THEME_ID = "astral-original"`
+- `DEFAULT_FONT_ID = "astral"`
+- Quem já tem outra escolha salva em localStorage mantém a sua
+
+### 5. Arquivos a alterar
+- `src/assets/logo-astral.webp` (novo, via copy)
+- `src/components/layout/Header.tsx` — usar `<img>` no lugar do ícone+texto
+- `src/components/layout/Footer.tsx` — idem com badge branco
+- `src/lib/themes.ts` — adicionar paleta "Astral Original" + mudar default
+- `src/lib/fonts.ts` — adicionar combo "Mulish" + mudar default
+- `src/styles.css` — importar Mulish do Google Fonts
+- `src/routes/__root.tsx` — `og:image` apontando para a logo
