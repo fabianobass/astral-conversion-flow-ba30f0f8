@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Check, Phone, Clock } from "lucide-react";
+import { Clock, Truck, Wrench, BadgeCheck, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { PHONE_SALES, waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import heroImg from "@/assets/hero-aquecedor.jpg";
