@@ -123,6 +123,7 @@ function RootComponent() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <FontSwitcher />
     </QueryClientProvider>
   );
 }
