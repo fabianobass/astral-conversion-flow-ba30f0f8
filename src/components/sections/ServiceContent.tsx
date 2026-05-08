@@ -35,6 +35,7 @@ export function ServiceContent({ benefits, process }: { benefits: string[]; proc
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Falar agora com a Astral Gás pelo WhatsApp"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-semibold text-white"
           >
             <WhatsAppIcon className="h-5 w-5" /> Falar agora

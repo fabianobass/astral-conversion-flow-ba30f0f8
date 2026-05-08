@@ -54,6 +54,7 @@ export function Hero() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Solicitar orçamento gratuito pelo WhatsApp"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
             >
               <WhatsAppIcon className="h-5 w-5" />

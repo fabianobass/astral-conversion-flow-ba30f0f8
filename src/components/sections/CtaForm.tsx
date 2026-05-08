@@ -33,6 +33,7 @@ export function CtaForm() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Falar com a Astral Gás pelo WhatsApp"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 font-semibold text-white"
             >
               <WhatsAppIcon className="h-5 w-5" /> WhatsApp

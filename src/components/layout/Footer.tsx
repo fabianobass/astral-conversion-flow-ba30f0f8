@@ -48,7 +48,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform">
+                <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Astral Gás pelo WhatsApp" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform">
                   <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </a>
               </li>
