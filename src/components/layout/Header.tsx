@@ -50,11 +50,11 @@ export function Header() {
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Solicitar orçamento gratuito pelo WhatsApp"
+            aria-label="Falar com especialista pelo WhatsApp"
             className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy-deep transition-transform hover:scale-105"
           >
             <WhatsAppIcon className="h-4 w-4 text-whatsapp" />
-            Orçamento Grátis
+            Falar com Especialista
           </a>
         </div>
 
@@ -82,11 +82,11 @@ export function Header() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Solicitar orçamento gratuito pelo WhatsApp"
+              aria-label="Falar com especialista pelo WhatsApp"
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-center font-semibold text-navy-deep"
             >
               <WhatsAppIcon className="h-4 w-4 text-whatsapp" />
-              Orçamento Grátis no WhatsApp
+              Falar com Especialista
             </a>
           </nav>
         </div>
