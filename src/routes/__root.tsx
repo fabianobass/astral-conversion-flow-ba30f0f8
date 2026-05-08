@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { FontSwitcher } from "@/components/FontSwitcher";
 
 function NotFoundComponent() {
   return (
@@ -122,6 +123,7 @@ function RootComponent() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <FontSwitcher />
     </QueryClientProvider>
   );
 }
