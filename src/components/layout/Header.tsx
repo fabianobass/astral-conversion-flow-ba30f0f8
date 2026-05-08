@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { PHONE_SALES_DISPLAY, PHONE_SALES, waLink } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import logoAstral from "@/assets/logo-astral.webp";
 
 export function Header() {
@@ -49,8 +50,9 @@ export function Header() {
             href={waLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy-deep transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy-deep transition-transform hover:scale-105"
           >
+            <WhatsAppIcon className="h-4 w-4" />
             Orçamento Grátis
           </a>
         </div>
@@ -79,8 +81,9 @@ export function Header() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 rounded-full bg-gold px-5 py-3 text-center font-semibold text-navy-deep"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-center font-semibold text-navy-deep"
             >
+              <WhatsAppIcon className="h-4 w-4" />
               Orçamento Grátis no WhatsApp
             </a>
           </nav>

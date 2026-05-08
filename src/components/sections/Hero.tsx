@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Check, MessageCircle, Phone, Clock } from "lucide-react";
+import { Check, Phone, Clock } from "lucide-react";
 import { PHONE_SALES, waLink } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import heroImg from "@/assets/hero-aquecedor.jpg";
 
 export function Hero() {
@@ -55,7 +56,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
             >
-              <MessageCircle className="h-5 w-5" />
+              <WhatsAppIcon className="h-5 w-5" />
               Orçamento no WhatsApp
             </a>
             <a

@@ -1,5 +1,6 @@
 import { MessageCircle, ClipboardCheck, Wrench } from "lucide-react";
 import { waLink } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 const steps = [
   { icon: MessageCircle, title: "Fale conosco", desc: "Envie uma mensagem no WhatsApp. Respondemos em minutos com orçamento estimado." },
@@ -39,7 +40,7 @@ export function Process() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
           >
-            <MessageCircle className="h-5 w-5" /> Começar pelo WhatsApp
+            <WhatsAppIcon className="h-5 w-5" /> Começar pelo WhatsApp
           </a>
         </div>
       </div>

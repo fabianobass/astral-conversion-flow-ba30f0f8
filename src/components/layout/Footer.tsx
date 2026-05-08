@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 import { PHONE_SALES_DISPLAY, PHONE_MAINTENANCE_DISPLAY, PHONE_SALES, PHONE_MAINTENANCE, waLink } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import logoAstral from "@/assets/logo-astral.webp";
 
 export function Footer() {
@@ -48,7 +49,7 @@ export function Footer() {
               </li>
               <li>
                 <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform">
-                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </a>
               </li>
             </ul>

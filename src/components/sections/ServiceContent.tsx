@@ -1,5 +1,6 @@
-import { Check, MessageCircle } from "lucide-react";
+import { Check } from "lucide-react";
 import { waLink } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export function ServiceContent({ benefits, process }: { benefits: string[]; process: string[] }) {
   return (
@@ -36,7 +37,7 @@ export function ServiceContent({ benefits, process }: { benefits: string[]; proc
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-semibold text-white"
           >
-            <MessageCircle className="h-5 w-5" /> Falar agora
+            <WhatsAppIcon className="h-5 w-5" /> Falar agora
           </a>
         </div>
       </div>
