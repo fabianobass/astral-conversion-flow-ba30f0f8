@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Flame, Menu, X } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { PHONE_SALES_DISPLAY, PHONE_SALES, waLink } from "@/lib/contact";
+import logoAstral from "@/assets/logo-astral.webp";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,13 +22,9 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 text-white">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold">
-            <Flame className="h-5 w-5 text-navy-deep" strokeWidth={2.5} />
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-xl font-bold">Astral Gás</div>
-            <div className="text-[10px] uppercase tracking-widest text-gold">Aquecedores</div>
+        <Link to="/" className="flex items-center" aria-label="Astral Gás — Início">
+          <div className="rounded-md bg-white/95 px-3 py-1.5 shadow-sm">
+            <img src={logoAstral} alt="Astral Gás Aquecedores" className="h-8 w-auto md:h-9" />
           </div>
         </Link>
 
