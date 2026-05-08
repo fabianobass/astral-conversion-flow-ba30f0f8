@@ -1,30 +1,38 @@
 ## Objetivo
 
-Alinhar o H1 da home (e meta tags relacionadas) com a palavra-chave da campanha Google Ads para subir o Índice de Qualidade — relevância 100% entre Palavra-chave > Anúncio > Landing Page.
+Reforçar conversão na dobra superior da home com 3 gatilhos de confiança e CTAs mais ativos.
 
 ## Mudanças
 
-### 1. `src/components/sections/Hero.tsx` — trocar o H1
-De:
-> Aquecedor a Gás em Curitiba com instalação no mesmo dia
+### 1. `src/components/sections/Hero.tsx` — gatilhos de confiança abaixo do H1
 
-Para:
-> **Venda e Instalação de Aquecedores a Gás em Curitiba**
+Substituir o badge atual "Atendimento em até 30 minutos" (acima do H1) e a lista de 4 itens genéricos por uma faixa enxuta de **3 selos de confiança** logo abaixo do subtítulo, com ícones do `lucide-react`:
 
-Mantendo o destaque visual em gradiente dourado na expressão "Aquecedores a Gás em Curitiba" (parte que casa com a palavra-chave) para preservar a hierarquia visual atual.
+- ✅ **Pronta Entrega** — ícone `Truck` — "Estoque local em Curitiba"
+- ✅ **Instalação Inclusa** — ícone `Wrench` — "Técnicos certificados no mesmo dia"
+- ✅ **Autorizada Rinnai e Lorenzetti** — ícone `BadgeCheck` — "Garantia de fábrica"
 
-Subtítulo (`<p>`) ajustado para reforçar termos secundários sem repetir o H1:
-> Instalação no mesmo dia, técnicos certificados e garantia de fábrica. Rinnai, Komeco, Bosch e Lorenzetti.
+Layout: faixa horizontal em 3 colunas (`grid-cols-3` no desktop, empilhado no mobile), cards translúcidos (`bg-white/5 border border-white/10 rounded-xl p-3`), ícone dourado + label em negrito + descrição curta em `text-white/60`.
 
-### 2. `src/routes/index.tsx` — alinhar `<title>` e meta description
-- `title`: "Venda e Instalação de Aquecedores a Gás em Curitiba | Astral Gás"
-- `description`: já está boa, leve refinamento para começar com "Venda e instalação de aquecedores a gás em Curitiba…" (espelha o H1 e o anúncio).
-- `og:title` / `og:description`: mesmo alinhamento.
+A lista de 4 bullets atual ("Orçamento gratuito em 5 min", etc.) sai — vira ruído depois dos 3 selos. O bloco de stats (+15 anos, +2.000 instalações, 4.9★) permanece.
+
+### 2. `src/components/sections/Hero.tsx` — CTAs mais ativos
+
+- Botão WhatsApp: "Orçamento no WhatsApp" → **"Falar com Especialista Agora"**
+- Botão telefone: mantém ícone, label muda de "Ligar agora" → **"Ver Preços e Modelos"** apontando para a página `/servicos/aquecedor-a-gas` (mais alinhado ao copy; quem quer ligar usa o número exibido no Header). 
+  - Alternativa se preferir manter como `tel:`: trocar só para **"Ligar para Especialista"**.
+
+### 3. `src/components/layout/Header.tsx` — CTA do header
+
+Botão gold do header: "Orçamento" → **"Falar com Especialista"** (desktop e mobile), mantendo ícone WhatsApp verde.
 
 ### Não tocar
-- Demais H2/H3, FAQ e estrutura — só o H1 e meta da home precisam refletir a palavra-chave principal da campanha.
-- Páginas de serviço (`/servicos/*`) já têm H1 próprios bem alinhados a cada palavra-chave secundária.
+- Demais seções, formulário do `CtaForm` (botão "Solicitar orçamento gratuito" já é ativo e específico), botão flutuante.
 
-## Resultado esperado
+## Pergunta antes de implementar
 
-Quando o robô do Google Ads rastrear a landing page da campanha, vai encontrar exatamente o termo "Venda e Instalação de Aquecedores a Gás em Curitiba" no H1 e no `<title>`, aumentando o Quality Score e reduzindo o CPC.
+No item 2, o segundo botão atual é `tel:` (ligação direta). Prefere:
+- (a) Trocar para **"Ver Preços e Modelos"** linkando para `/servicos/aquecedor-a-gas` (mais comercial, mantém o usuário no funil), ou
+- (b) Manter como ligação telefônica e só renomear para **"Ligar para Especialista"**?
+
+Vou assumir **(a)** se não houver resposta — é o que mais reforça o gatilho "ver modelos/preços" que você citou.

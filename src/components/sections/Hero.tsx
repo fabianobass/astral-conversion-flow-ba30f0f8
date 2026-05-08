@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Check, Phone, Clock } from "lucide-react";
-import { PHONE_SALES, waLink } from "@/lib/contact";
+import { Clock, Truck, Wrench, BadgeCheck, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import heroImg from "@/assets/hero-aquecedor.jpg";
 
@@ -33,40 +34,45 @@ export function Hero() {
             Instalação no mesmo dia, técnicos certificados e garantia de fábrica. Rinnai, Komeco, Bosch e Lorenzetti.
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {[
-              "Orçamento gratuito em 5 min",
-              "Técnicos certificados",
-              "Pagamento facilitado",
-              "Peças 100% originais",
+              { icon: Truck, label: "Pronta Entrega", desc: "Estoque local em Curitiba" },
+              { icon: Wrench, label: "Instalação Inclusa", desc: "Técnicos no mesmo dia" },
+              { icon: BadgeCheck, label: "Autorizada Rinnai e Lorenzetti", desc: "Garantia de fábrica" },
             ].map((item) => (
-              <li key={item} className="flex items-center gap-2 text-sm text-white/90">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-gold/20">
-                  <Check className="h-3 w-3 text-gold" strokeWidth={3} />
+              <div
+                key={item.label}
+                className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur"
+              >
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-gold/15">
+                  <item.icon className="h-4 w-4 text-gold" />
                 </span>
-                {item}
-              </li>
+                <div className="min-w-0">
+                  <div className="text-sm font-semibold text-white leading-tight">{item.label}</div>
+                  <div className="mt-0.5 text-xs text-white/60">{item.desc}</div>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Solicitar orçamento gratuito pelo WhatsApp"
+              aria-label="Falar com especialista pelo WhatsApp"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Orçamento no WhatsApp
+              Falar com Especialista Agora
             </a>
-            <a
-              href={`tel:+${PHONE_SALES}`}
+            <Link
+              to="/servicos/aquecedor-a-gas"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur transition-colors hover:bg-white/10"
             >
-              <Phone className="h-5 w-5 text-gold" />
-              Ligar agora
-            </a>
+              Ver Preços e Modelos
+              <ArrowRight className="h-5 w-5 text-gold" />
+            </Link>
           </div>
 
           <div className="mt-10 flex items-center gap-6 text-xs text-white/60">
