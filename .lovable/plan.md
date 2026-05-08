@@ -1,39 +1,36 @@
-## Troca de fontes + Seletor de fontes ao vivo
+## Seletor de tema/cores unificado
 
-### 1. Fontes principais (default)
-Trocar Playfair Display + Inter por **Fraunces** (títulos) + **DM Sans** (corpo).
+### 1. Paletas curadas (4)
+Cada paleta define 4 tokens principais: `background`, `foreground`, `navy-deep` (superfícies escuras), `gold` (acento). Os demais tokens (card, muted, border, etc.) são derivados.
 
-- Importar todas as 4 famílias do Google Fonts em `src/styles.css` (mantenho Playfair e Inter carregadas para o seletor poder alternar)
-- Definir variáveis CSS:
-  ```css
-  --font-display: 'Fraunces', serif;
-  --font-sans: 'DM Sans', sans-serif;
-  ```
-- Fraunces com optical sizing e `font-variation-settings` para um leve toque "soft" nas curvas (visual sofisticado)
+| Paleta | Background | Acento | Vibe |
+|---|---|---|---|
+| **Royal Gold** (atual) | off-white | dourado em fundo azul-noite | Premium clássico |
+| **Obsidian** | preto suave | dourado em fundo grafite | Luxo minimal |
+| **Forest Copper** | creme | cobre em fundo verde-floresta | Orgânico sofisticado |
+| **Bordeaux Cream** | creme quente | bordô em fundo vinho profundo | Boutique elegante |
 
-### 2. Seletor de fontes (FontSwitcher)
-Componente flutuante discreto no canto inferior esquerdo (não conflita com o WhatsApp à direita).
+Todas em `oklch` para coerência perceptiva.
 
-**Comportamento:**
-- Botão pequeno com ícone de tipografia (`Type` do lucide)
-- Ao clicar, abre um popover com 4 opções de combinação:
-  1. Fraunces + DM Sans (default)
-  2. Playfair Display + Inter (premium editorial)
-  3. Cormorant Garamond + Manrope (luxo fino)
-  4. Sora + Plus Jakarta Sans (tech moderno)
-- Cada opção mostra preview do nome renderizado na própria fonte
-- Seleção troca as variáveis `--font-display` e `--font-sans` no `<html>` em tempo real
-- Persistência em `localStorage` para manter a escolha entre páginas
-- Indicação visual da combinação ativa
+### 2. Implementação técnica
+- `src/lib/themes.ts` — array `THEMES` com id, label, swatches (4 cores para preview) e mapa de variáveis CSS
+- Aplicação: `document.documentElement.style.setProperty(...)` para cada token
+- Persistência em `localStorage` (`astral-theme`)
+- Mantém compatibilidade total com tokens existentes (`navy-deep`, `gold`, `background`, etc.) — nenhum componente precisa mudar
 
-**Arquivos:**
-- `src/lib/fonts.ts` — array com as 4 combinações (id, label, display, sans)
-- `src/components/FontSwitcher.tsx` — botão + popover (usa `Popover` do shadcn já disponível)
-- `src/styles.css` — `@import` das 4 famílias do Google Fonts
-- `src/routes/__root.tsx` — montar `<FontSwitcher />` junto com o `<WhatsAppFloat />`
+### 3. Unificar com seletor de fontes
+Renomear `FontSwitcher` → `StyleSwitcher` (mesmo botão, mesmo lugar):
+- Popover ganha **2 abas** no topo (shadcn `Tabs`): "Cores" e "Fontes"
+- Aba **Cores**: 4 cards com 4 swatches cada (preview visual da paleta) + nome + check no ativo
+- Aba **Fontes**: o conteúdo atual do `FontSwitcher`
+- Largura do popover aumenta para `w-80`
+- Estado de fonte e tema independentes, ambos persistidos
 
-### 3. Detalhes técnicos
-- O switcher aplica `document.documentElement.style.setProperty('--font-display', value)` para herança em todo o site
-- Como o Tailwind v4 lê `--font-display` via `@theme inline`, todos os componentes que usam `font-display` ou `font-sans` mudam automaticamente
-- Hidratação SSR-safe: leitura do localStorage só dentro de `useEffect`
-- Carregamento de fontes em paralelo (não bloqueante, `display=swap`)
+### 4. Arquivos
+- **Novo:** `src/lib/themes.ts`
+- **Novo:** `src/components/StyleSwitcher.tsx` (substitui FontSwitcher)
+- **Editar:** `src/routes/__root.tsx` (trocar import e tag)
+- **Remover:** `src/components/FontSwitcher.tsx`
+- `src/components/ui/tabs.tsx` já existe no projeto
+
+Sem mudanças em outros componentes — tudo se adapta via CSS variables.
