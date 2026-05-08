@@ -25,7 +25,7 @@ export function Header() {
         <Link to="/" className="relative flex items-center" aria-label="Astral Gás — Início">
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-0 -z-10 scale-150 rounded-full bg-[radial-gradient(ellipse_at_center,_hsl(var(--gold)/0.55),_transparent_70%)] blur-2xl"
+            className="pointer-events-none absolute inset-0 -z-10 scale-150 rounded-full bg-[radial-gradient(ellipse_at_center,_color-mix(in_oklab,_var(--gold)_55%,_transparent),_transparent_70%)] blur-2xl"
           />
           <img
             src={logoAstral}

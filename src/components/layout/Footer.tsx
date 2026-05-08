@@ -12,7 +12,7 @@ export function Footer() {
             <div className="relative mb-4 inline-block">
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10 scale-150 rounded-full bg-[radial-gradient(ellipse_at_center,_hsl(var(--gold)/0.65),_transparent_70%)] blur-2xl"
+                className="pointer-events-none absolute inset-0 -z-10 scale-150 rounded-full bg-[radial-gradient(ellipse_at_center,_color-mix(in_oklab,_var(--gold)_65%,_transparent),_transparent_70%)] blur-2xl"
               />
               <img src={logoAstral} alt="Astral Gás Aquecedores" className="relative h-12 w-auto" />
             </div>
