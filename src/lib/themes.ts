@@ -8,6 +8,34 @@ export type Theme = {
 // Each theme overrides the same set of CSS variables defined in src/styles.css
 export const THEMES: Theme[] = [
   {
+    id: "astral-original",
+    label: "Astral Original",
+    swatches: ["oklch(0.98 0.012 75)", "oklch(0.18 0.01 50)", "oklch(0.72 0.18 50)", "oklch(0.85 0.16 80)"],
+    vars: {
+      "--background": "oklch(0.98 0.012 75)",
+      "--foreground": "oklch(0.18 0.01 50)",
+      "--navy-deep": "oklch(0.18 0.01 50)",
+      "--navy": "oklch(0.35 0.08 40)",
+      "--gold": "oklch(0.72 0.18 50)",
+      "--gold-foreground": "oklch(0.15 0.01 50)",
+      "--card": "oklch(1 0 0)",
+      "--card-foreground": "oklch(0.18 0.01 50)",
+      "--popover": "oklch(1 0 0)",
+      "--popover-foreground": "oklch(0.18 0.01 50)",
+      "--primary": "oklch(0.18 0.01 50)",
+      "--primary-foreground": "oklch(0.98 0.012 75)",
+      "--secondary": "oklch(0.95 0.018 70)",
+      "--secondary-foreground": "oklch(0.18 0.01 50)",
+      "--muted": "oklch(0.95 0.018 70)",
+      "--muted-foreground": "oklch(0.5 0.02 50)",
+      "--accent": "oklch(0.72 0.18 50)",
+      "--accent-foreground": "oklch(0.15 0.01 50)",
+      "--border": "oklch(0.89 0.015 60)",
+      "--input": "oklch(0.91 0.015 60)",
+      "--ring": "oklch(0.72 0.18 50)",
+    },
+  },
+  {
     id: "royal-gold",
     label: "Royal Gold",
     swatches: ["oklch(0.99 0.005 80)", "oklch(0.18 0.05 260)", "oklch(0.78 0.13 85)", "oklch(0.18 0.04 260)"],
@@ -121,5 +149,5 @@ export const THEMES: Theme[] = [
   },
 ];
 
-export const DEFAULT_THEME_ID = "royal-gold";
+export const DEFAULT_THEME_ID = "astral-original";
 export const THEME_STORAGE_KEY = "astral-theme";
