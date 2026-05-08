@@ -1,0 +1,49 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ServiceHero } from "@/components/sections/ServiceHero";
+import { ServiceContent } from "@/components/sections/ServiceContent";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { CtaForm } from "@/components/sections/CtaForm";
+import { FAQ } from "@/components/sections/FAQ";
+
+export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
+  head: () => ({
+    meta: [
+      { title: "Aquecedor a Gás em Curitiba — Venda e Instalação | Astral Gás" },
+      { name: "description", content: "Aquecedores a gás Rinnai, Komeco e Bosch com instalação certificada em Curitiba. Orçamento grátis no WhatsApp." },
+      { property: "og:title", content: "Aquecedor a Gás em Curitiba — Astral Gás" },
+      { property: "og:description", content: "Venda e instalação de aquecedores a gás com técnicos certificados." },
+    ],
+  }),
+  component: Page,
+});
+
+function Page() {
+  return (
+    <>
+      <ServiceHero
+        eyebrow="Aquecedor a Gás"
+        title="Banho quente, instantâneo e econômico"
+        description="Venda e instalação de aquecedores a gás de passagem para casas e apartamentos. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
+      />
+      <TrustBar />
+      <ServiceContent
+        benefits={[
+          "Visita técnica gratuita para dimensionamento",
+          "Aquecedores Rinnai, Komeco, Bosch e Lorenzetti",
+          "Conexões de gás e água com selo de segurança",
+          "Sistema de ventilação adequado conforme norma",
+          "Testes completos e orientação de uso",
+          "Garantia de fábrica + garantia Astral",
+        ]}
+        process={[
+          "Você fala conosco pelo WhatsApp e recebe orçamento estimado",
+          "Agendamos visita técnica gratuita no horário que preferir",
+          "Levamos o equipamento e instalamos no mesmo dia",
+          "Testamos tudo e entregamos com nota fiscal",
+        ]}
+      />
+      <FAQ />
+      <CtaForm />
+    </>
+  );
+}

@@ -1,0 +1,82 @@
+import { Link } from "@tanstack/react-router";
+import { Flame, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
+import { PHONE_SALES_DISPLAY, PHONE_MAINTENANCE_DISPLAY, PHONE_SALES, PHONE_MAINTENANCE, waLink } from "@/lib/contact";
+
+export function Footer() {
+  return (
+    <footer className="bg-navy-deep text-white/80">
+      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div className="mb-4 flex items-center gap-2 text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold">
+                <Flame className="h-5 w-5 text-navy-deep" strokeWidth={2.5} />
+              </div>
+              <div>
+                <div className="font-display text-xl font-bold">Astral Gás</div>
+                <div className="text-[10px] uppercase tracking-widest text-gold">Aquecedores</div>
+              </div>
+            </div>
+            <p className="text-sm leading-relaxed">
+              Referência em aquecedores a gás, manutenção e sistemas de aquecimento em Curitiba e região metropolitana há mais de 15 anos.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-4 font-display text-lg text-white">Serviços</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/servicos/aquecedor-a-gas" className="hover:text-gold">Aquecedor a Gás</Link></li>
+              <li><Link to="/servicos/manutencao" className="hover:text-gold">Manutenção</Link></li>
+              <li><Link to="/servicos/pressurizador" className="hover:text-gold">Pressurizador</Link></li>
+              <li><Link to="/servicos/bomba-de-calor" className="hover:text-gold">Bomba de Calor</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-4 font-display text-lg text-white">Contato</h4>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <div className="text-xs uppercase tracking-wider text-gold">Vendas</div>
+                <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 hover:text-gold">
+                  <Phone className="h-4 w-4" /> {PHONE_SALES_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <div className="text-xs uppercase tracking-wider text-gold">Manutenção</div>
+                <a href={`tel:+${PHONE_MAINTENANCE}`} className="flex items-center gap-2 hover:text-gold">
+                  <Phone className="h-4 w-4" /> {PHONE_MAINTENANCE_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a href={waLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform">
+                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-4 font-display text-lg text-white">Atendimento</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <Clock className="h-4 w-4 mt-0.5 text-gold" />
+                <div>
+                  Seg–Sex: 08h às 18h<br />
+                  Sábado: 08h às 13h
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-0.5 text-gold" />
+                <div>Curitiba e região metropolitana</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">
+          © {new Date().getFullYear()} Astral Gás Aquecedores. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+  );
+}
