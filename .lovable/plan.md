@@ -1,34 +1,30 @@
 ## Objetivo
 
-Trocar o botão flutuante de WhatsApp atual (pílula verde com "Fale conosco") pelo **ícone padrão circular do WhatsApp** e, ao clicar, abrir um menu com duas opções de atendimento:
-
-1. **Compra e instalação de aquecedor a gás** → abre WhatsApp do comercial (`PHONE_SALES`)
-2. **Manutenção de aquecedor a gás** → abre WhatsApp da manutenção (`PHONE_MAINTENANCE`)
+Alinhar o H1 da home (e meta tags relacionadas) com a palavra-chave da campanha Google Ads para subir o Índice de Qualidade — relevância 100% entre Palavra-chave > Anúncio > Landing Page.
 
 ## Mudanças
 
-### `src/components/WhatsAppFloat.tsx` (refatoração)
-- Substituir o `<a>` único por um `<button>` que controla um estado `open`.
-- Botão principal: círculo verde (`bg-whatsapp`), ícone oficial do WhatsApp (SVG inline, não o `MessageCircle` do lucide — esse é genérico). Tamanho ~`h-14 w-14`, sombra forte, animação de pulse mantida.
-- Ao clicar, expande acima do botão um pequeno painel (card branco arredondado, `shadow-xl`, `border`) com:
-  - Cabeçalho curto: "Como podemos ajudar?"
-  - Opção 1: **Compra e instalação** — ícone `Flame`, texto curto, abre `waLink(PHONE_SALES, "Olá! Gostaria de orçamento para compra e instalação de aquecedor a gás.")`
-  - Opção 2: **Manutenção** — ícone `Wrench`, texto curto, abre `waLink(PHONE_MAINTENANCE, "Olá! Preciso de manutenção do meu aquecedor a gás.")`
-  - Botão fechar (X) no canto.
-- Animação de abertura com `framer-motion` (fade + slide up).
-- Fechar ao clicar fora (listener no `document`) ou após escolher uma opção.
-- Acessibilidade: `aria-expanded`, `aria-label`, foco visível.
+### 1. `src/components/sections/Hero.tsx` — trocar o H1
+De:
+> Aquecedor a Gás em Curitiba com instalação no mesmo dia
 
-### Arquivos não tocados
-- `src/lib/contact.ts` — já tem `PHONE_SALES`, `PHONE_MAINTENANCE` e `waLink(phone, text)` com mensagem customizável. Nada a alterar.
-- `src/routes/__root.tsx` — `WhatsAppFloat` continua montado uma vez no root, aparece em todas as páginas.
+Para:
+> **Venda e Instalação de Aquecedores a Gás em Curitiba**
 
-## Detalhes visuais
+Mantendo o destaque visual em gradiente dourado na expressão "Aquecedores a Gás em Curitiba" (parte que casa com a palavra-chave) para preservar a hierarquia visual atual.
 
-- Botão fechado: círculo verde `h-14 w-14`, ícone WhatsApp branco, pulse no canto.
-- Painel aberto: largura ~280px, ancorado `bottom-24 right-6`, fundo `bg-card`, borda sutil, opções como linhas clicáveis com hover suave (`hover:bg-secondary`).
-- Mantém z-index `z-50`.
+Subtítulo (`<p>`) ajustado para reforçar termos secundários sem repetir o H1:
+> Instalação no mesmo dia, técnicos certificados e garantia de fábrica. Rinnai, Komeco, Bosch e Lorenzetti.
 
-## Resultado
+### 2. `src/routes/index.tsx` — alinhar `<title>` e meta description
+- `title`: "Venda e Instalação de Aquecedores a Gás em Curitiba | Astral Gás"
+- `description`: já está boa, leve refinamento para começar com "Venda e instalação de aquecedores a gás em Curitiba…" (espelha o H1 e o anúncio).
+- `og:title` / `og:description`: mesmo alinhamento.
 
-Botão flutuante mais clean (padrão WhatsApp), e usuário escolhe o canal certo (vendas vs manutenção) antes de iniciar a conversa, evitando triagem manual.
+### Não tocar
+- Demais H2/H3, FAQ e estrutura — só o H1 e meta da home precisam refletir a palavra-chave principal da campanha.
+- Páginas de serviço (`/servicos/*`) já têm H1 próprios bem alinhados a cada palavra-chave secundária.
+
+## Resultado esperado
+
+Quando o robô do Google Ads rastrear a landing page da campanha, vai encontrar exatamente o termo "Venda e Instalação de Aquecedores a Gás em Curitiba" no H1 e no `<title>`, aumentando o Quality Score e reduzindo o CPC.

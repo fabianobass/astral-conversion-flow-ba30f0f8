@@ -23,14 +23,14 @@ export function Hero() {
           </div>
 
           <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
-            Aquecedor a Gás em Curitiba com{" "}
+            Venda e Instalação de{" "}
             <span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">
-              instalação no mesmo dia
+              Aquecedores a Gás em Curitiba
             </span>
           </h1>
 
           <p className="mt-6 max-w-lg text-lg text-white/75">
-            Venda, instalação e manutenção de aquecedores Rinnai, Komeco, Bosch e Lorenzetti. Técnicos certificados e garantia de fábrica.
+            Instalação no mesmo dia, técnicos certificados e garantia de fábrica. Rinnai, Komeco, Bosch e Lorenzetti.
           </p>
 
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">

@@ -11,10 +11,10 @@ import { CtaForm } from "@/components/sections/CtaForm";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Astral Gás — Aquecedor a Gás em Curitiba | Instalação no Mesmo Dia" },
-      { name: "description", content: "Venda, instalação e manutenção de aquecedores a gás em Curitiba. Técnicos certificados, peças originais e orçamento gratuito no WhatsApp." },
-      { property: "og:title", content: "Astral Gás — Aquecedor a Gás em Curitiba" },
-      { property: "og:description", content: "Venda, instalação e manutenção de aquecedores. Atendimento rápido em Curitiba e região." },
+      { title: "Venda e Instalação de Aquecedores a Gás em Curitiba | Astral Gás" },
+      { name: "description", content: "Venda e instalação de aquecedores a gás em Curitiba com técnicos certificados, peças originais e orçamento gratuito no WhatsApp." },
+      { property: "og:title", content: "Venda e Instalação de Aquecedores a Gás em Curitiba | Astral Gás" },
+      { property: "og:description", content: "Venda e instalação de aquecedores a gás em Curitiba. Atendimento no mesmo dia com garantia." },
     ],
   }),
   component: Index,
