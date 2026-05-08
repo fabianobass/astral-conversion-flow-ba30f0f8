@@ -1,38 +1,34 @@
 ## Objetivo
 
-Trocar o fundo do **Header** para um tom claro (bege/off-white da paleta `--background`), permitindo usar a logo original (texto preto + esfera laranja) com legibilidade perfeita. O resto do site permanece com o navy escuro como está hoje. O Footer continua escuro e mantém a solução do halo âmbar (ou pode receber a versão light da logo, ver abaixo).
+Trocar o botão flutuante de WhatsApp atual (pílula verde com "Fale conosco") pelo **ícone padrão circular do WhatsApp** e, ao clicar, abrir um menu com duas opções de atendimento:
+
+1. **Compra e instalação de aquecedor a gás** → abre WhatsApp do comercial (`PHONE_SALES`)
+2. **Manutenção de aquecedor a gás** → abre WhatsApp da manutenção (`PHONE_MAINTENANCE`)
 
 ## Mudanças
 
-### 1. `src/components/layout/Header.tsx`
-- Trocar as classes de fundo:
-  - Antes: `bg-navy-deep/95 backdrop-blur-md` / `bg-navy-deep/70 backdrop-blur-sm`
-  - Depois: `bg-background/95 backdrop-blur-md border-b border-border` (scrolled) e `bg-background/80 backdrop-blur-sm` (topo).
-- Remover o wrapper de halo âmbar atrás da logo (não é mais necessário em fundo claro).
-- Atualizar cores dos elementos do header para contraste em fundo claro:
-  - Links da nav: `text-foreground/80 hover:text-gold` (em vez de `text-white/80`).
-  - Telefone: `text-foreground/90 hover:text-gold`.
-  - Botão "Orçamento Grátis": mantém `bg-gold text-navy-deep` (já funciona em fundo claro).
-  - Ícone do menu mobile: `text-foreground` (em vez de `text-white`).
-- Menu mobile expandido: trocar `bg-navy-deep` por `bg-background`, links de `text-white/90` para `text-foreground/90`, borda `border-border`.
+### `src/components/WhatsAppFloat.tsx` (refatoração)
+- Substituir o `<a>` único por um `<button>` que controla um estado `open`.
+- Botão principal: círculo verde (`bg-whatsapp`), ícone oficial do WhatsApp (SVG inline, não o `MessageCircle` do lucide — esse é genérico). Tamanho ~`h-14 w-14`, sombra forte, animação de pulse mantida.
+- Ao clicar, expande acima do botão um pequeno painel (card branco arredondado, `shadow-xl`, `border`) com:
+  - Cabeçalho curto: "Como podemos ajudar?"
+  - Opção 1: **Compra e instalação** — ícone `Flame`, texto curto, abre `waLink(PHONE_SALES, "Olá! Gostaria de orçamento para compra e instalação de aquecedor a gás.")`
+  - Opção 2: **Manutenção** — ícone `Wrench`, texto curto, abre `waLink(PHONE_MAINTENANCE, "Olá! Preciso de manutenção do meu aquecedor a gás.")`
+  - Botão fechar (X) no canto.
+- Animação de abertura com `framer-motion` (fade + slide up).
+- Fechar ao clicar fora (listener no `document`) ou após escolher uma opção.
+- Acessibilidade: `aria-expanded`, `aria-label`, foco visível.
 
-### 2. `src/components/layout/Footer.tsx`
-- **Sem alteração** — footer continua escuro (`bg-navy-deep`) com a logo original + halo âmbar que já está implementado. A solução de halo funciona razoavelmente bem ali porque o footer é uma área menor e mais "decorativa".
-- (Opcional, se quiser uniformizar depois: aplicar mesmo fundo claro numa faixa atrás da logo do footer — mas não faço agora para manter o escopo cirúrgico.)
+### Arquivos não tocados
+- `src/lib/contact.ts` — já tem `PHONE_SALES`, `PHONE_MAINTENANCE` e `waLink(phone, text)` com mensagem customizável. Nada a alterar.
+- `src/routes/__root.tsx` — `WhatsAppFloat` continua montado uma vez no root, aparece em todas as páginas.
 
-### 3. Arquivos não tocados
-- `logo-astral.webp` — continua sendo a logo usada.
-- `logo-astral-light.png` — fica disponível para uso futuro (og:image, etc).
-- `themes.ts`, `styles.css`, `fonts.ts` — sem mudanças.
+## Detalhes visuais
 
-## Considerações de design
+- Botão fechado: círculo verde `h-14 w-14`, ícone WhatsApp branco, pulse no canto.
+- Painel aberto: largura ~280px, ancorado `bottom-24 right-6`, fundo `bg-card`, borda sutil, opções como linhas clicáveis com hover suave (`hover:bg-secondary`).
+- Mantém z-index `z-50`.
 
-- O Hero abaixo do header já usa fundo escuro com imagem — a transição entre header claro e hero escuro cria contraste forte e bem definido (estilo editorial / premium hospitality).
-- O header fica "flutuando" como uma barra clara translúcida sobre o conteúdo escuro abaixo, separado por uma borda sutil.
-- Em todas as 5 paletas do `themes.ts`, `--background` é claro e `--foreground` é escuro, então a mudança funciona consistentemente em todos os temas do StyleSwitcher.
+## Resultado
 
-## Resultado visual
-
-- Topo do site: faixa clara (cor da paleta) com a logo original perfeitamente legível, links escuros elegantes, CTA dourado em destaque.
-- Resto do site: inalterado.
-- Footer: inalterado (continua escuro com halo).
+Botão flutuante mais clean (padrão WhatsApp), e usuário escolhe o canal certo (vendas vs manutenção) antes de iniciar a conversa, evitando triagem manual.
