@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicosPressurizadorRouteImport } from './routes/servicos.pressurizador'
+import { Route as ServicosManutencaoRouteImport } from './routes/servicos.manutencao'
+import { Route as ServicosBombaDeCalorRouteImport } from './routes/servicos.bomba-de-calor'
+import { Route as ServicosAquecedorAGasRouteImport } from './routes/servicos.aquecedor-a-gas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicosPressurizadorRoute = ServicosPressurizadorRouteImport.update({
+  id: '/servicos/pressurizador',
+  path: '/servicos/pressurizador',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosManutencaoRoute = ServicosManutencaoRouteImport.update({
+  id: '/servicos/manutencao',
+  path: '/servicos/manutencao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosBombaDeCalorRoute = ServicosBombaDeCalorRouteImport.update({
+  id: '/servicos/bomba-de-calor',
+  path: '/servicos/bomba-de-calor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicosAquecedorAGasRoute = ServicosAquecedorAGasRouteImport.update({
+  id: '/servicos/aquecedor-a-gas',
+  path: '/servicos/aquecedor-a-gas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/servicos/aquecedor-a-gas': typeof ServicosAquecedorAGasRoute
+  '/servicos/bomba-de-calor': typeof ServicosBombaDeCalorRoute
+  '/servicos/manutencao': typeof ServicosManutencaoRoute
+  '/servicos/pressurizador': typeof ServicosPressurizadorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/servicos/aquecedor-a-gas': typeof ServicosAquecedorAGasRoute
+  '/servicos/bomba-de-calor': typeof ServicosBombaDeCalorRoute
+  '/servicos/manutencao': typeof ServicosManutencaoRoute
+  '/servicos/pressurizador': typeof ServicosPressurizadorRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/servicos/aquecedor-a-gas': typeof ServicosAquecedorAGasRoute
+  '/servicos/bomba-de-calor': typeof ServicosBombaDeCalorRoute
+  '/servicos/manutencao': typeof ServicosManutencaoRoute
+  '/servicos/pressurizador': typeof ServicosPressurizadorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/servicos/aquecedor-a-gas'
+    | '/servicos/bomba-de-calor'
+    | '/servicos/manutencao'
+    | '/servicos/pressurizador'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/servicos/aquecedor-a-gas'
+    | '/servicos/bomba-de-calor'
+    | '/servicos/manutencao'
+    | '/servicos/pressurizador'
+  id:
+    | '__root__'
+    | '/'
+    | '/servicos/aquecedor-a-gas'
+    | '/servicos/bomba-de-calor'
+    | '/servicos/manutencao'
+    | '/servicos/pressurizador'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ServicosAquecedorAGasRoute: typeof ServicosAquecedorAGasRoute
+  ServicosBombaDeCalorRoute: typeof ServicosBombaDeCalorRoute
+  ServicosManutencaoRoute: typeof ServicosManutencaoRoute
+  ServicosPressurizadorRoute: typeof ServicosPressurizadorRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,12 +104,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/servicos/pressurizador': {
+      id: '/servicos/pressurizador'
+      path: '/servicos/pressurizador'
+      fullPath: '/servicos/pressurizador'
+      preLoaderRoute: typeof ServicosPressurizadorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos/manutencao': {
+      id: '/servicos/manutencao'
+      path: '/servicos/manutencao'
+      fullPath: '/servicos/manutencao'
+      preLoaderRoute: typeof ServicosManutencaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos/bomba-de-calor': {
+      id: '/servicos/bomba-de-calor'
+      path: '/servicos/bomba-de-calor'
+      fullPath: '/servicos/bomba-de-calor'
+      preLoaderRoute: typeof ServicosBombaDeCalorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/servicos/aquecedor-a-gas': {
+      id: '/servicos/aquecedor-a-gas'
+      path: '/servicos/aquecedor-a-gas'
+      fullPath: '/servicos/aquecedor-a-gas'
+      preLoaderRoute: typeof ServicosAquecedorAGasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ServicosAquecedorAGasRoute: ServicosAquecedorAGasRoute,
+  ServicosBombaDeCalorRoute: ServicosBombaDeCalorRoute,
+  ServicosManutencaoRoute: ServicosManutencaoRoute,
+  ServicosPressurizadorRoute: ServicosPressurizadorRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
