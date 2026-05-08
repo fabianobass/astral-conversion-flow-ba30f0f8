@@ -80,10 +80,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Venda, instalação e manutenção de aquecedores a gás em Curitiba e região." },
       { name: "author", content: "Astral Gás Aquecedores" },
       { property: "og:title", content: "Astral Gás — Aquecedor a Gás em Curitiba" },
-      { property: "og:description", content: "Venda, instalação e manutenção de aquecedores a gás." },
+      { property: "og:description", content: "Venda, instalação e manutenção de aquecedores a gás em Curitiba e região." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Astral Gás — Aquecedor a Gás em Curitiba" },
+      { name: "twitter:description", content: "Venda, instalação e manutenção de aquecedores a gás em Curitiba e região." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/669d9c72-86f9-43df-9c63-0d99582df714/id-preview-3435ef4a--e96ef0e0-b4f5-4095-b5fa-189553aae4fd.lovable.app-1778279310798.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/669d9c72-86f9-43df-9c63-0d99582df714/id-preview-3435ef4a--e96ef0e0-b4f5-4095-b5fa-189553aae4fd.lovable.app-1778279310798.png" },
     ],
     links: [
       {
