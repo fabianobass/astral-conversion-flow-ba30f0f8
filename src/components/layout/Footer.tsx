@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import { PHONE_SALES_DISPLAY, PHONE_MAINTENANCE_DISPLAY, PHONE_SALES, PHONE_MAINTENANCE, waLink } from "@/lib/contact";
-import logoAstral from "@/assets/logo-astral-light.png";
+import logoAstral from "@/assets/logo-astral.webp";
 
 export function Footer() {
   return (
@@ -9,8 +9,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="mb-4">
-              <img src={logoAstral} alt="Astral Gás Aquecedores" className="h-12 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+            <div className="relative mb-4 inline-block">
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -z-10 scale-150 rounded-full bg-[radial-gradient(ellipse_at_center,_color-mix(in_oklab,_var(--gold)_65%,_transparent),_transparent_70%)] blur-2xl"
+              />
+              <img src={logoAstral} alt="Astral Gás Aquecedores" className="relative h-12 w-auto" />
             </div>
             <p className="text-sm leading-relaxed">
               Referência em aquecedores a gás, manutenção e sistemas de aquecimento em Curitiba e região metropolitana há mais de 15 anos.
