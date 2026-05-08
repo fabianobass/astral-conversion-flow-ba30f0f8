@@ -149,5 +149,5 @@ export const THEMES: Theme[] = [
   },
 ];
 
-export const DEFAULT_THEME_ID = "royal-gold";
+export const DEFAULT_THEME_ID = "astral-original";
 export const THEME_STORAGE_KEY = "astral-theme";
