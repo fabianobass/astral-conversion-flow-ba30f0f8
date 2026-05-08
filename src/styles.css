@@ -37,12 +37,14 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: 'Playfair Display', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-display: var(--font-display-active);
+  --font-sans: var(--font-sans-active);
 }
 
 :root {
   --radius: 0.625rem;
+  --font-display-active: 'Fraunces', serif;
+  --font-sans-active: 'DM Sans', sans-serif;
 
   /* Premium navy + gold palette */
   --background: oklch(0.99 0.005 80);
