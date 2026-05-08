@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { ChevronRight, MessageCircle } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { waLink } from "@/lib/contact";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export function ServiceHero({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
@@ -22,7 +23,7 @@ export function ServiceHero({ eyebrow, title, description }: { eyebrow: string; 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
           >
-            <MessageCircle className="h-5 w-5" /> Orçamento gratuito no WhatsApp
+            <WhatsAppIcon className="h-5 w-5" /> Orçamento gratuito no WhatsApp
           </a>
         </div>
       </div>
