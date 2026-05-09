@@ -106,3 +106,16 @@
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  /* Neutraliza efeitos de scale em hover/active/group-hover (CTAs, links, imagens) */
+  *:hover, *:active, .group:hover *, *:focus-visible {
+    transform: none !important;
+  }
+}
