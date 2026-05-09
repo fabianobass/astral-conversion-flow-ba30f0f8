@@ -196,13 +196,18 @@ function Page() {
               fábrica — qualidade comprovada para cada instalação da Astral Gás.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4 sm:grid-cols-6 sm:gap-6">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6">
+            {partnerBrands.map((b) => (
               <div
-                key={n}
-                className="flex h-20 items-center justify-center rounded-xl border border-border bg-card text-xs uppercase tracking-widest text-foreground/40"
+                key={b.alt}
+                className="flex h-24 items-center justify-center rounded-xl border border-border bg-card p-4 transition hover:border-gold hover:shadow-md"
               >
-                Logo {n}
+                <img
+                  src={b.src}
+                  alt={`Logo ${b.alt}`}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
