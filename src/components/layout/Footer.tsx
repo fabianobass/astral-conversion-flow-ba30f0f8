@@ -6,7 +6,7 @@ import logoAstral from "@/assets/logo-astral.webp";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-white/80">
+    <footer data-nav-surface="dark" className="bg-navy-deep text-nav-fg">
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
