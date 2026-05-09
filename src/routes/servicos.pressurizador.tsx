@@ -85,7 +85,7 @@ function Page() {
             <ChevronRight className="h-3 w-3" />
             <span className="text-white/80">Pressurizador de Água</span>
           </nav>
-          <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
+          <div className="grid items-start gap-10 lg:grid-cols-[1.4fr_1fr]">
             <div>
               <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">
                 Pressurizador de Água
