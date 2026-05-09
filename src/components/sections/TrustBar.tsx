@@ -20,15 +20,16 @@ export function TrustBar() {
         <p className="mb-6 text-center text-xs uppercase tracking-widest text-muted-foreground">
           Trabalhamos com as principais marcas do mercado
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+        <div className="grid grid-cols-3 items-center justify-items-center gap-x-6 gap-y-8 sm:grid-cols-6 sm:gap-x-10">
           {brands.map((b) => (
-            <img
-              key={b.alt}
-              src={b.src}
-              alt={`Logo ${b.alt}`}
-              className="h-10 w-auto object-contain opacity-70 transition-opacity hover:opacity-100"
-              loading="lazy"
-            />
+            <div key={b.alt} className="flex h-12 w-full items-center justify-center sm:h-14">
+              <img
+                src={b.src}
+                alt={`Logo ${b.alt}`}
+                className="max-h-full max-w-[120px] object-contain opacity-70 transition-opacity hover:opacity-100"
+                loading="lazy"
+              />
+            </div>
           ))}
         </div>
       </div>
