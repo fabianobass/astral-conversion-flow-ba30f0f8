@@ -69,17 +69,17 @@ export function Header() {
                 to={to}
                 aria-label={label}
                 aria-current={active ? "page" : undefined}
-                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled ${
                   active
-                    ? "text-navy-deep font-semibold"
-                    : "text-foreground font-medium hover:text-navy-deep hover:bg-gold/10"
+                    ? "text-nav-fg-active font-semibold bg-nav-bg-active"
+                    : "text-nav-fg font-medium hover:text-nav-fg-hover hover:bg-nav-bg-hover"
                 }`}
               >
-                <Icon aria-hidden="true" className={`h-4 w-4 transition-transform duration-300 ${active ? "text-navy-deep" : "text-foreground/80 group-hover:text-navy-deep group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
+                <Icon aria-hidden="true" className={`h-4 w-4 transition-transform duration-300 ${active ? "text-nav-fg-active" : "text-nav-fg/80 group-hover:text-nav-fg-hover group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
                 <span>{short}</span>
                 <span
                   aria-hidden="true"
-                  className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gold transition-transform duration-300 ${
+                  className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-nav-accent transition-transform duration-300 ${
                     active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   }`}
                 />
