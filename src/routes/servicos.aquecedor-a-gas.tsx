@@ -47,7 +47,7 @@ function Page() {
     <>
       <ServiceHero
         eyebrow="Aquecedor a Gás"
-        title="Banho quente, instantâneo e econômico"
+        title="Comprar aquecedor a gás com instalação no mesmo dia"
         description="Venda e instalação de aquecedores a gás de passagem para casas e apartamentos. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
         image={heroBanho}
       />
