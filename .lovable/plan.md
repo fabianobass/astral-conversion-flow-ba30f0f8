@@ -1,46 +1,34 @@
-## Objetivo
-Atualizar `/servicos/pressurizador` com:
-1. Hero igual ao da Bomba de Calor — background com imagem da bomba **INVERSORA HPI 750 1CV e 2CV**
-2. Seções de conteúdo destacando o modelo (características técnicas e vantagens)
-3. Carrossel `RealWorkGallery` com fotos de pressurizadores instalados
+## Ajustes no hero da página `/servicos/pressurizador`
 
-## Fontes
-Página oficial do produto: https://hioda.com.br/produto/pressurizador-750-hpi-1cv-2cv/
-- Imagem do produto: `https://hioda.com.br/wp-content/uploads/2024/05/13-1.png`
-- Características: Corpo/rotor/eixo Aço Inox AISI 304, pressão sucção 30 mca, temp. máx. 60°C, 220V
-- Vantagens: motor de frequência variável com ímãs permanentes, silenciosa e compacta, bomba multiestágio, pressão constante
+### 1. Reverter foto para o produto antigo (menor, à direita)
+- Voltar a usar `inversora-hpi-750.png` (produto Hioda em fundo branco) — apagar o uso de `hero-pressurizador.jpg`
+- Como o `ServiceHero` atual aplica a imagem como `object-cover` em background full-bleed, isso não funciona para uma foto de produto recortado. Solução: criar uma **variante de hero específica** para esta página em vez de alterar o `ServiceHero` compartilhado (não quebra outras páginas).
 
-## Passos
+### 2. Mover "Pressurizador de Água" para o eyebrow
+- `eyebrow` passa de "Pressurizador" → **"Pressurizador de Água"**
+- `title` passa de "Pressurizador de Água — pressão ideal em toda a casa" → **"Pressão ideal em toda a casa"**
 
-### 1. Baixar imagens
-- `src/assets/pressurizador/inversora-hpi-750.png` — produto Hioda HPI 750 (background do hero)
-- Gerar 1 imagem de fundo "ambiente técnico" (área de bombas / casa de máquinas) para uma seção secundária, se necessário
+### Implementação técnica
+Em `src/routes/servicos.pressurizador.tsx`, substituir o `<ServiceHero ... />` por um hero inline construído neste arquivo (não toca em `ServiceHero.tsx`):
 
-### 2. Carrossel — fotos
-Como ainda não há fotos reais da Astral Gás de pressurizadores instalados, gerar 4 imagens estilizadas e realistas via `imagegen` mostrando:
-- Bomba pressurizadora HPI compacta instalada em parede de área de serviço
-- Bomba pressurizadora ligada à tubulação de PVC/cobre, instalação limpa
-- Bomba pressurizadora em casa de máquinas residencial, com isolamento
-- Detalhe de conexão hidráulica polida com bomba inversora
+```text
+[ Hero navy-deep, padding superior alto                                ]
+[                                                                       ]
+[  ← coluna esquerda (texto) ──────┐   ┌── coluna direita (imagem) ──┐ ]
+[  Breadcrumb: Início > Press...   │   │                              │ ]
+[  PRESSURIZADOR DE ÁGUA (gold)    │   │   [foto produto HPI 750]    │ ]
+[  Pressão ideal em toda a casa    │   │   ~280-360px, com glow gold │ ]
+[  (h1 grande)                     │   │                              │ ]
+[  descrição (texto branco/80)     │   │                              │ ]
+[  [WhatsApp CTA verde]            │   │                              │ ]
+[  ────────────────────────────────┘   └──────────────────────────────┘ ]
+```
 
-Salvar em `src/assets/pressurizador/instalacoes/` e popular `pressurizerPhotos` em `src/lib/work-photos.ts` com captions e bairros de Curitiba (Batel, Água Verde, Bigorrilho, Cabral).
+- Layout: `grid lg:grid-cols-[1.4fr_1fr]` para a coluna do texto ser maior; em mobile a imagem aparece abaixo, menor (`max-w-xs mx-auto`)
+- Imagem: `<img src={inversoraHpi750}>` com `object-contain`, altura controlada (~`h-72 lg:h-96`), com o mesmo "glow" dourado já usado na seção "A tecnologia" (`absolute -inset-6 ... bg-gradient-to-br from-gold/30 to-transparent blur-2xl`)
+- Manter os mesmos elementos do `ServiceHero` original: breadcrumb, eyebrow, h1, descrição, botão WhatsApp, e o blob `gold/15 blur-3xl` decorativo
+- Atualizar `og:image` e `twitter:image` para voltarem a apontar para `inversoraHpi750`
+- Remover o import de `heroPressurizador` (arquivo `hero-pressurizador.jpg` permanece no disco mas sem uso — pode ser apagado depois)
 
-> Observação: assim que houver fotos reais da equipe, basta substituir os arquivos mantendo os mesmos imports.
-
-### 3. Reescrever `src/routes/servicos.pressurizador.tsx`
-Estrutura igual à da página de Bomba de Calor:
-- `ServiceHero` com `image={inversoraHpi750}` — background da bomba com overlay
-- Seção "A tecnologia INVERSORA HPI 750" com cards: Inox AISI 304, Inversor de frequência, Ímãs permanentes, Multiestágio, Silenciosa, 220V
-- Seção "Modelos disponíveis" — dois cards lado a lado: **HPI 750 — 1CV** e **HPI 750 — 2CV** com a imagem do produto
-- `ServiceContent` (benefícios + processo) — manter o conteúdo atual ajustado ao modelo
-- `RealWorkGallery` com `pressurizerPhotos` populado
-- `FAQ` + `CtaForm`
-
-### 4. Metadados SEO
-Atualizar title/description para incluir "INVERSORA HPI 750 1CV e 2CV" e "Curitiba".
-
-## Arquivos afetados
-- `src/assets/pressurizador/inversora-hpi-750.png` (novo)
-- `src/assets/pressurizador/instalacoes/*.jpg` (novos, 4 arquivos)
-- `src/lib/work-photos.ts` (popular `pressurizerPhotos`)
-- `src/routes/servicos.pressurizador.tsx` (reescrita)
+### Arquivos afetados
+- `src/routes/servicos.pressurizador.tsx` (único arquivo editado)
