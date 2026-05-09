@@ -1,18 +1,18 @@
-import rinnaiDigital from "@/assets/trabalhos/instalacao-rinnai-digital-agua-verde.jpg";
-import rinnaiAnalogico from "@/assets/trabalhos/instalacao-rinnai-analogico-batel.jpg";
-import komecoDigital from "@/assets/trabalhos/instalacao-komeco-digital-bigorrilho.jpg";
-import bosch from "@/assets/trabalhos/instalacao-bosch-cabral.jpg";
-import komeco15fi from "@/assets/trabalhos/instalacao-komeco-15fi-juveve.jpg";
+import rinnaiDigital from "@/assets/trabalhos/instalacao-rinnai-digital-agua-verde.webp";
+import rinnaiAnalogico from "@/assets/trabalhos/instalacao-rinnai-analogico-batel.webp";
+import komecoDigital from "@/assets/trabalhos/instalacao-komeco-digital-bigorrilho.webp";
+import bosch from "@/assets/trabalhos/instalacao-bosch-cabral.webp";
+import komeco15fi from "@/assets/trabalhos/instalacao-komeco-15fi-juveve.webp";
 
-import mTrocador from "@/assets/trabalhos/manutencao/manutencao-trocador-calor-portao.jpg";
-import mValvula from "@/assets/trabalhos/manutencao/manutencao-valvula-gas-merces.jpg";
-import mRinnai304 from "@/assets/trabalhos/manutencao/manutencao-rinnai-reu304-ventilador-cabral.jpg";
-import mControle from "@/assets/trabalhos/manutencao/manutencao-controle-digital-juveve.jpg";
-import mQueimador from "@/assets/trabalhos/manutencao/manutencao-queimador-bigorrilho.jpg";
-import mAberto from "@/assets/trabalhos/manutencao/manutencao-aquecedor-aberto-batel.jpg";
-import mCobre from "@/assets/trabalhos/manutencao/manutencao-trocador-cobre-cristo-rei.jpg";
-import mRevisao from "@/assets/trabalhos/manutencao/manutencao-revisao-completa-santa-felicidade.jpg";
-import mRinnai1500 from "@/assets/trabalhos/manutencao/manutencao-rinnai-reu1500-agua-verde.jpg";
+import mTrocador from "@/assets/trabalhos/manutencao/manutencao-trocador-calor-portao.webp";
+import mValvula from "@/assets/trabalhos/manutencao/manutencao-valvula-gas-merces.webp";
+import mRinnai304 from "@/assets/trabalhos/manutencao/manutencao-rinnai-reu304-ventilador-cabral.webp";
+import mControle from "@/assets/trabalhos/manutencao/manutencao-controle-digital-juveve.webp";
+import mQueimador from "@/assets/trabalhos/manutencao/manutencao-queimador-bigorrilho.webp";
+import mAberto from "@/assets/trabalhos/manutencao/manutencao-aquecedor-aberto-batel.webp";
+import mCobre from "@/assets/trabalhos/manutencao/manutencao-trocador-cobre-cristo-rei.webp";
+import mRevisao from "@/assets/trabalhos/manutencao/manutencao-revisao-completa-santa-felicidade.webp";
+import mRinnai1500 from "@/assets/trabalhos/manutencao/manutencao-rinnai-reu1500-agua-verde.webp";
 import type { WorkPhoto } from "@/components/sections/RealWorkGallery";
 
 export const installPhotos: WorkPhoto[] = [
@@ -105,10 +105,10 @@ export const maintenancePhotos: WorkPhoto[] = [
   },
 ];
 
-import pBatel from "@/assets/pressurizador/instalacoes/pressurizador-instalado-batel.jpg";
-import pAguaVerde from "@/assets/pressurizador/instalacoes/pressurizador-conexao-cobre-agua-verde.jpg";
-import pBigorrilho from "@/assets/pressurizador/instalacoes/pressurizador-casa-maquinas-bigorrilho.jpg";
-import pCabral from "@/assets/pressurizador/instalacoes/pressurizador-apartamento-cabral.jpg";
+import pBatel from "@/assets/pressurizador/instalacoes/pressurizador-instalado-batel.webp";
+import pAguaVerde from "@/assets/pressurizador/instalacoes/pressurizador-conexao-cobre-agua-verde.webp";
+import pBigorrilho from "@/assets/pressurizador/instalacoes/pressurizador-casa-maquinas-bigorrilho.webp";
+import pCabral from "@/assets/pressurizador/instalacoes/pressurizador-apartamento-cabral.webp";
 
 // Aguardando fotos reais da Astral Gás.
 export const heatPumpPhotos: WorkPhoto[] = [];

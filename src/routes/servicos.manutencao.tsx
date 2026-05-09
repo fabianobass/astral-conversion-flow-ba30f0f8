@@ -5,7 +5,7 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
-import heroManutencao from "@/assets/hero-manutencao.jpg";
+import heroManutencao from "@/assets/hero-manutencao.webp";
 
 export const Route = createFileRoute("/servicos/manutencao")({
   head: () => ({

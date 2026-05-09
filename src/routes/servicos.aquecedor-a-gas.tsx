@@ -6,7 +6,7 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
-import heroBanho from "@/assets/hero-banho.jpg";
+import heroBanho from "@/assets/hero-banho.webp";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => ({

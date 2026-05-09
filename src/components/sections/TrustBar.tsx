@@ -1,9 +1,9 @@
-import logoRinnai from "@/assets/logo-rinnai.png";
-import logoKomeco from "@/assets/logo-komeco.png";
-import logoBosch from "@/assets/logo-bosch.png";
-import logoLorenzetti from "@/assets/logo-lorenzetti.png";
-import logoRheem from "@/assets/logo-rheem.png";
-import logoOrbis from "@/assets/logo-orbis.png";
+import logoRinnai from "@/assets/logo-rinnai.webp";
+import logoKomeco from "@/assets/logo-komeco.webp";
+import logoBosch from "@/assets/logo-bosch.webp";
+import logoLorenzetti from "@/assets/logo-lorenzetti.webp";
+import logoRheem from "@/assets/logo-rheem.webp";
+import logoOrbis from "@/assets/logo-orbis.webp";
 
 export function TrustBar() {
   const brands = [

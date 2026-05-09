@@ -4,11 +4,11 @@ import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
-import heroImg from "@/assets/hero-aquecedor.jpg";
-import logoRinnai from "@/assets/logo-rinnai.png";
-import logoLorenzetti from "@/assets/logo-lorenzetti.png";
-import logoRheem from "@/assets/logo-rheem.png";
-import logoKomeco from "@/assets/logo-komeco.png";
+import heroImg from "@/assets/hero-aquecedor.webp";
+import logoRinnai from "@/assets/logo-rinnai.webp";
+import logoLorenzetti from "@/assets/logo-lorenzetti.webp";
+import logoRheem from "@/assets/logo-rheem.webp";
+import logoKomeco from "@/assets/logo-komeco.webp";
 
 export function Hero() {
   return (

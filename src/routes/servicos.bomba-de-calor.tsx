@@ -6,10 +6,10 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import heroPiscina from "@/assets/bomba-de-calor/hero-piscina.png";
-import bombaProduto from "@/assets/bomba-de-calor/bomba-produto.png";
-import piscinaVapor from "@/assets/bomba-de-calor/piscina-vapor.jpg";
-import piscinaAerea from "@/assets/bomba-de-calor/piscina-aerea.png";
+import heroPiscina from "@/assets/bomba-de-calor/hero-piscina.webp";
+import bombaProduto from "@/assets/bomba-de-calor/bomba-produto.webp";
+import piscinaVapor from "@/assets/bomba-de-calor/piscina-vapor.webp";
+import piscinaAerea from "@/assets/bomba-de-calor/piscina-aerea.webp";
 
 export const Route = createFileRoute("/servicos/bomba-de-calor")({
   head: () => ({
