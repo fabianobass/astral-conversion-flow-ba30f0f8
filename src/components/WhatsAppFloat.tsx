@@ -67,7 +67,7 @@ export function WhatsAppFloat() {
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Fechar"
-                className="rounded-full p-1 transition hover:bg-white/15"
+                className="rounded-full p-1 transition outline-none hover:bg-white/15 active:bg-white/25 focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -80,14 +80,14 @@ export function WhatsAppFloat() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="flex items-center gap-3 rounded-xl p-3 transition hover:bg-secondary"
+                  className="flex items-center gap-3 rounded-xl p-3 text-nav-fg transition-colors outline-none hover:bg-nav-bg-hover hover:text-nav-fg-hover active:bg-nav-bg-active focus-visible:ring-2 focus-visible:ring-nav-accent"
                 >
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-whatsapp/10 text-whatsapp">
                     <o.icon className="h-5 w-5" />
                   </span>
                   <span className="flex-1">
-                    <span className="block text-sm font-semibold text-foreground">{o.title}</span>
-                    <span className="block text-xs text-muted-foreground">{o.desc}</span>
+                    <span className="block text-sm font-semibold">{o.title}</span>
+                    <span className="block text-xs opacity-75">{o.desc}</span>
                   </span>
                 </a>
               ))}
