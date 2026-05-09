@@ -47,7 +47,7 @@ export function Testimonials() {
               <p className="text-white/85 leading-relaxed">"{r.text}"</p>
               <div className="mt-6 border-t border-white/10 pt-4">
                 <div className="font-display text-lg font-semibold">{r.name}</div>
-                <div className="text-xs text-white/50">{r.area}</div>
+                <div className="text-xs text-white/65">{r.area}</div>
               </div>
             </motion.div>
           ))}

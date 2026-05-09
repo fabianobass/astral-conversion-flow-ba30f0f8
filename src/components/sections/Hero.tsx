@@ -73,7 +73,7 @@ export function Hero() {
           </div>
 
           <div className="mt-8">
-            <div className="mb-3 text-[11px] uppercase tracking-widest text-white/40">Marcas autorizadas</div>
+            <div className="mb-3 text-[11px] uppercase tracking-widest text-white/65">Marcas autorizadas</div>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
               {[
                 { src: logoRinnai, alt: "Rinnai", h: "h-10 sm:h-12 lg:h-14" },

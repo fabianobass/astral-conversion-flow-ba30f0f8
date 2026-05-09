@@ -70,7 +70,7 @@ export function CtaForm() {
   };
 
   const fieldClass = (hasError: boolean) =>
-    `w-full rounded-xl border bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none ${
+    `w-full rounded-xl border bg-white/5 px-4 py-3 text-white placeholder:text-white/55 focus:outline-none ${
       hasError
         ? "border-red-400 focus:border-red-300 focus:ring-2 focus:ring-red-400/40"
         : "border-white/15 focus:border-gold"
@@ -175,7 +175,7 @@ export function CtaForm() {
                   {errors.phone}
                 </p>
               ) : (
-                <p id="cta-phone-hint" className="mt-1.5 text-xs text-white/40">
+                <p id="cta-phone-hint" className="mt-1.5 text-xs text-white/65">
                   Inclua DDD. Ex.: (41) 99999-9999.
                 </p>
               )}
@@ -212,7 +212,7 @@ export function CtaForm() {
             >
               Falar com Especialista no WhatsApp
             </button>
-            <p className="text-center text-xs text-white/40">
+            <p className="text-center text-xs text-white/65">
               Ao enviar você será redirecionado para o WhatsApp.
             </p>
           </div>
