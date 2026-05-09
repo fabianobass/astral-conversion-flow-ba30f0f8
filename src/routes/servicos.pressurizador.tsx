@@ -100,13 +100,13 @@ function Page() {
               </p>
               <div className="mt-8">
                 <a
-                  href={waLink()}
+                  href={waLink(undefined, "Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Solicitar orçamento gratuito pelo WhatsApp"
+                  aria-label="Pressurizador de água — pedir orçamento no WhatsApp"
                   className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
                 >
-                  <WhatsAppIcon className="h-5 w-5" /> Orçamento gratuito no WhatsApp
+                  <WhatsAppIcon className="h-5 w-5" /> Pressurizador de água — orçamento no WhatsApp
                 </a>
               </div>
             </div>
@@ -304,12 +304,13 @@ function Page() {
             para a sua casa, com instalação completa pela nossa equipe.
           </p>
           <a
-            href={waLink()}
+            href={waLink(undefined, "Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?")}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Pressurizador de água — pedir orçamento no WhatsApp"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
           >
-            <WhatsAppIcon className="h-5 w-5" /> Quero meu orçamento
+            <WhatsAppIcon className="h-5 w-5" /> Pressurizador de água — orçamento agora
           </a>
         </div>
       </section>

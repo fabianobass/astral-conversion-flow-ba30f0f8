@@ -8,11 +8,15 @@ export function ServiceHero({
   title,
   description,
   image,
+  ctaLabel = "Pedir orçamento no WhatsApp",
+  ctaMessage,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   image?: string;
+  ctaLabel?: string;
+  ctaMessage?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-navy-deep pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
@@ -44,13 +48,13 @@ export function ServiceHero({
         <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
         <div className="mt-8">
           <a
-            href={waLink()}
+            href={waLink(undefined, ctaMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Solicitar orçamento gratuito pelo WhatsApp"
+            aria-label={ctaLabel}
             className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
           >
-            <WhatsAppIcon className="h-5 w-5" /> Orçamento gratuito no WhatsApp
+            <WhatsAppIcon className="h-5 w-5" /> {ctaLabel}
           </a>
         </div>
       </div>

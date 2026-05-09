@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
-export function ServiceContent({ benefits, process }: { benefits: string[]; process: string[] }) {
+export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no WhatsApp", ctaMessage }: { benefits: string[]; process: string[]; ctaLabel?: string; ctaMessage?: string }) {
   return (
     <section className="py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:px-8">
@@ -32,13 +32,13 @@ export function ServiceContent({ benefits, process }: { benefits: string[]; proc
             ))}
           </ol>
           <a
-            href={waLink()}
+            href={waLink(undefined, ctaMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Falar agora com a Astral Gás pelo WhatsApp"
+            aria-label={ctaLabel}
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-semibold text-white"
           >
-            <WhatsAppIcon className="h-5 w-5" /> Falar agora
+            <WhatsAppIcon className="h-5 w-5" /> {ctaLabel}
           </a>
         </div>
       </div>
