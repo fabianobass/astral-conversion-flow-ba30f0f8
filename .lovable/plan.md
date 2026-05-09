@@ -1,44 +1,34 @@
 ## Objetivo
-Adicionar um carrossel de fotos reais dos trabalhos da Astral Gás na home (abaixo das marcas) e em todas as páginas de serviço, para gerar prova social e reduzir objeção de segurança no tráfego do Google Ads.
+Substituir as imagens placeholder do carrossel de Trabalhos Reais por **5 fotos reais** de instalações que você enviou, todas em **1:1 quadrado** com **filtro quente e profissional** harmonizando o conjunto.
 
-## Componente novo: `src/components/sections/RealWorkGallery.tsx`
-Carrossel responsivo com Embla (já instalado em `src/components/ui/carousel.tsx`):
-- **Auto-play suave** a cada 4s usando `embla-carousel-autoplay`, pausa no hover/touch.
-- Setas de navegação (estilo gold/navy alinhado ao site) e dots indicadores embaixo.
-- Cards com cantos arredondados, sombra elegante, e overlay gradiente na parte inferior com a **legenda** (bairro + equipamento).
-- Mobile: 1 foto por slide. Tablet: 2. Desktop: 3.
-- Cada foto com:
-  - `loading="lazy"` e `decoding="async"` para performance.
-  - `alt` descritivo e SEO-otimizado (ex: "Instalação de aquecedor Rinnai 20L em Curitiba — Água Verde").
-- Header da seção: eyebrow "Trabalhos Reais", título "Instalações feitas pela equipe Astral Gás" e subtítulo curto reforçando segurança/localidade.
-- Aceita props:
-  - `title`, `eyebrow`, `subtitle` (para variar o texto por página)
-  - `photos: { src; alt; caption; neighborhood }[]`
+## Passos
 
-## Onde será inserido
-1. `src/routes/index.tsx` — logo após `<TrustBar />`.
-2. `src/routes/servicos.aquecedor-a-gas.tsx` — após `<TrustBar />`.
-3. `src/routes/servicos.manutencao.tsx` — após o `<ServiceHero />` (página não tem TrustBar).
-4. `src/routes/servicos.pressurizador.tsx` — abaixo do hero/conteúdo principal.
-5. `src/routes/servicos.bomba-de-calor.tsx` — abaixo do hero/conteúdo principal.
+### 1. Importar as fotos para o projeto
+Copiar as 5 fotos enviadas para `src/assets/trabalhos/` com nomes SEO:
+- `instalacao-rinnai-digital-agua-verde.jpg` (Rinnai branco com display digital)
+- `instalacao-rinnai-analogico-batel.jpg` (Rinnai com botões manuais)
+- `instalacao-komeco-digital-bigorrilho.jpg` (Komeco prata com display azul)
+- `instalacao-bosch-cabral.jpg` (Bosch com controle remoto)
+- `instalacao-komeco-15fi-juveve.jpg` (Komeco 15FI prata)
 
-Cada página recebe um conjunto de fotos relevante (instalação para venda, conserto para manutenção, etc.).
+### 2. Padronizar proporção e aplicar filtro quente
+Para cada foto, gerar uma versão tratada usando edição de imagem por IA, com prompt único aplicado consistentemente:
+- **Crop 1:1** (centralizado no aquecedor)
+- **Filtro quente e profissional**: leve aumento de calidez (tom levemente âmbar), contraste suave, saturação controlada, vinheta sutil nas bordas — visual de catálogo premium, sem ficar artificial
+- Saída em `src/assets/trabalhos/processed/` mantendo o mesmo nome
 
-## Fotos
-Você vai enviar as fotos no chat. Para a implementação:
-- Salvo em `src/assets/trabalhos/` com nomes SEO (ex: `instalacao-rinnai-agua-verde.jpg`, `manutencao-bosch-batel.jpg`).
-- Importadas como ES modules para o Vite otimizar/comprimir automaticamente.
-- Cada foto vem acompanhada da legenda no formato: **"[Tipo de serviço] [marca/modelo] — [bairro]"**.
+Isso garante que as 5 fotos pareçam de uma mesma sessão fotográfica profissional, mesmo tendo iluminações diferentes.
 
-Enquanto as fotos não chegam, uso 6 placeholders neutros (do `src/assets` existente, ex: `hero-banho.jpg`, `hero-manutencao.jpg`) para você ver o layout funcionando, e troco assim que enviar.
+### 3. Atualizar `src/lib/work-photos.ts`
+Trocar os 6 placeholders pelos 5 imports reais com:
+- `alt` SEO completo: ex. *"Instalação de aquecedor a gás Rinnai 20L digital em Curitiba — bairro Água Verde, feita pela Astral Gás"*
+- `caption`: modelo + capacidade
+- `neighborhood`: bairro de Curitiba (gerados de forma plausível: Água Verde, Batel, Bigorrilho, Cabral, Juvevê)
 
-## Dependência nova
-- `embla-carousel-autoplay` (peso ~2KB) — necessário para o auto-play suave com pausa no hover.
+Como temos apenas instalações de aquecedor a gás, vou usar as **mesmas 5 fotos** tanto em `installPhotos` quanto em `maintenancePhotos` (variando apenas as legendas para o contexto de manutenção: "Manutenção Rinnai 20L", "Revisão Komeco 15FI", etc.). Quando você tiver fotos específicas de manutenção, eu separo.
 
-## SEO / Performance
-- Alt-text único por foto, com palavra-chave + bairro de Curitiba.
-- Lazy loading nativo nas imagens fora da primeira tela.
-- Vite já comprime imagens importadas; recomendo enviar as fotos em até 1600px de largura para manter o site leve no 4G.
+### 4. Ajustar o componente `RealWorkGallery.tsx`
+Trocar `aspect-[4/3]` por `aspect-square` para refletir o recorte 1:1.
 
 ## Resultado
-Um carrossel elegante, com prova social real, posicionado nos pontos de maior conversão do funil — alinhado à estratégia de Google Ads que você descreveu.
+Carrossel com 5 fotos reais, todas quadradas, com tratamento visual unificado (tom quente premium), legendas SEO com bairros de Curitiba e modelos reais visíveis nas fotos. Pronto para reforçar confiança no tráfego do Google Ads.
