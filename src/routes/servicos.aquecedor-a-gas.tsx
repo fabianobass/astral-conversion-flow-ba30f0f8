@@ -49,7 +49,7 @@ function Page() {
         eyebrow="Aquecedor a Gás"
         title={<><span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Comprar aquecedor a gás</span> com instalação no mesmo dia</>}
         description="Venda e instalação de aquecedores a gás de passagem Rinnai, Lorenzetti, Bosch e Komeco para casas e apartamentos em Curitiba. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
-        image={heroBanho}
+        image={heroAquecedor}
         ctaLabel="Comprar aquecedor a gás no WhatsApp"
         ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
       />
