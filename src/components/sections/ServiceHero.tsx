@@ -45,7 +45,7 @@ export function ServiceHero({
           <span className="text-white/80">{eyebrow}</span>
         </nav>
         <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">{eyebrow}</div>
-        <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl max-w-3xl drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">{title}</h1>
+        <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl max-w-3xl text-balance drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">{title}</h1>
         <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
         <div className="mt-8">
           <a
