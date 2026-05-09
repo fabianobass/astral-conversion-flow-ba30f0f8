@@ -46,6 +46,10 @@ export const localBusinessJsonLd = {
   url: SITE_URL,
   telephone: PHONE_SALES_DISPLAY,
   priceRange: "$$",
+  sameAs: [
+    "https://www.instagram.com/gasastral/",
+    "https://www.facebook.com/people/Astral-G%C3%A1s/pfbid078UjkMYXPN2HoKkA3CP1AHXJ1Ekq8RFDTUCqDLnyGezWcz75dF88742F2db1ecJ3l/",
+  ],
   areaServed: [
     { "@type": "City", name: "Curitiba" },
     { "@type": "AdministrativeArea", name: "Região Metropolitana de Curitiba" },
