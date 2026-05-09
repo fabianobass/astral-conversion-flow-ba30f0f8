@@ -6,17 +6,39 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import heroBanho from "@/assets/hero-banho.webp";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
-  head: () => ({
-    meta: [
-      { title: "Aquecedor a Gás em Curitiba — Venda e Instalação | Astral Gás" },
-      { name: "description", content: "Aquecedores a gás Rinnai, Komeco e Bosch com instalação certificada em Curitiba. Orçamento grátis no WhatsApp." },
-      { property: "og:title", content: "Aquecedor a Gás em Curitiba — Astral Gás" },
-      { property: "og:description", content: "Venda e instalação de aquecedores a gás com técnicos certificados." },
-    ],
-  }),
+  head: () => {
+    const seo = buildRouteMeta({
+      path: "/servicos/aquecedor-a-gas",
+      title: "Aquecedor a Gás em Curitiba — Instalação Rinnai, Bosch, Komeco | Astral",
+      description:
+        "Instalação de aquecedor a gás em Curitiba e bairros (Batel, Água Verde, Bigorrilho, Cabral). Rinnai, Bosch, Komeco e Lorenzetti. Orçamento grátis hoje.",
+      image: heroBanho,
+    });
+    return {
+      ...seo,
+      scripts: [
+        jsonLdScript(
+          serviceJsonLd({
+            name: "Instalação de Aquecedor a Gás em Curitiba",
+            description:
+              "Venda e instalação de aquecedores a gás Rinnai, Bosch, Komeco e Lorenzetti em Curitiba e região metropolitana.",
+            url: "/servicos/aquecedor-a-gas",
+            image: heroBanho,
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbJsonLd([
+            { name: "Início", path: "/" },
+            { name: "Aquecedor a Gás", path: "/servicos/aquecedor-a-gas" },
+          ]),
+        ),
+      ],
+    };
+  },
   component: Page,
 });
 
