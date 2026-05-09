@@ -105,11 +105,13 @@ export function WhatsAppFloat() {
       </AnimatePresence>
 
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label="Abrir opções de WhatsApp"
         aria-expanded={open}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-[0_10px_40px_-10px_rgba(34,197,94,0.7)] transition-transform hover:scale-105"
+        aria-haspopup="dialog"
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-[0_10px_40px_-10px_rgba(34,197,94,0.7)] transition-transform hover:scale-105 outline-none focus-ring-nav"
       >
         <WhatsAppIcon className="h-7 w-7" />
         {!open && (
