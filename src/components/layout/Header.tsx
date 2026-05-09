@@ -24,6 +24,9 @@ const NAV = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  // Drop the GPU-layer hint after the header entrance ends — it only needs
+  // to live for a single transition on first paint, especially on mobile.
+  const [entranceDone, setEntranceDone] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const headerRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
