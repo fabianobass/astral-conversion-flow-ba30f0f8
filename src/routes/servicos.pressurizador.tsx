@@ -75,7 +75,7 @@ function Page() {
               <img
                 src={inversoraHpi750}
                 alt="Pressurizador de água INVERSORA HPI 750 1CV e 2CV"
-                className="relative h-80 w-full object-contain opacity-60 sm:h-96 lg:h-[32rem] lg:scale-105"
+                className="relative h-80 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"
                 style={{
                   WebkitMaskImage:
                     "radial-gradient(ellipse at center, black 25%, transparent 85%)",
