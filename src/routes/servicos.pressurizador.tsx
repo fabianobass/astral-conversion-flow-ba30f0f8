@@ -1,5 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronRight, Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
