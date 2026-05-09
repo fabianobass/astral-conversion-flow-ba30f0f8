@@ -77,3 +77,7 @@ export const maintenancePhotos: WorkPhoto[] = [
     neighborhood: "Santa Felicidade, Curitiba",
   },
 ];
+
+// Aguardando fotos reais específicas de cada serviço.
+export const heatPumpPhotos: WorkPhoto[] = [];
+export const pressurizerPhotos: WorkPhoto[] = [];
