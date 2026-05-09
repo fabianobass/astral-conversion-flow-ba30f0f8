@@ -1,20 +1,18 @@
-## Regerar imagem com fundo casado ao navy do hero
+## Aumentar a foto do pressurizador e integrá-la mais ao fundo
 
-### Cor de referência
+### Mudanças no `<img>` do hero em `src/routes/servicos.pressurizador.tsx`
 
-`--navy-deep: oklch(0.18 0.01 50)` ≈ aproximadamente **#1F1814** (navy quase preto com leve toque quente). Vou pedir ao gerador um fundo com essa cor exata, totalmente uniforme, sem gradiente próprio nas bordas.
+1. **Aumentar tamanho da imagem**
+   - Container: `max-w-xs lg:max-w-sm` → `max-w-sm lg:max-w-lg`
+   - Altura: `h-72 lg:h-96` → `h-96 lg:h-[32rem]`
+   - Em telas grandes pode estourar levemente para fora da coluna usando `lg:scale-110` para reforçar presença
 
-### Passos
+2. **Mais "para o fundo" (mais transparente / mais integrada)**
+   - Opacidade: `opacity-90` → `opacity-60`
+   - Máscara radial com fade mais agressivo: `radial-gradient(ellipse at center, black 35%, transparent 90%)` (antes começava a fade em 55%)
+   - Glow dourado atrás reforçado: `from-gold/40` → `from-gold/50`, blur ainda maior
 
-1. **Regerar a imagem** com `imagegen--edit_image` a partir da imagem base atual (`src/assets/pressurizador/inversora-hpi-750.png`):
-   - Fundo sólido uniforme na cor `#1F1814` (oklch 0.18 0.01 50), idêntico ao `--navy-deep`
-   - Bordas TOTALMENTE planas na mesma cor (sem vinheta, sem gradiente próprio, sem linha de horizonte)
-   - Manter a iluminação dramática dourada vinda da direita e o brilho no inox
-   - Aspect ratio 1:1
-   - Sobrescreve `src/assets/pressurizador/inversora-hpi-750-hero.jpg`
-
-2. **Não alterar** o JSX — o `<img>` já aponta para esse caminho. O fundo da imagem vai casar com o navy do hero naturalmente.
+3. **Manter** `mix-blend-mode: lighten` (já ajuda a "queimar" no navy)
 
 ### Arquivos afetados
-
-- `src/assets/pressurizador/inversora-hpi-750-hero.jpg` (sobrescrito)
+- `src/routes/servicos.pressurizador.tsx` (apenas o bloco da imagem do hero)

@@ -8,7 +8,6 @@ import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750.png";
-import inversoraHpi750Hero from "@/assets/pressurizador/inversora-hpi-750-hero.jpg";
 
 export const Route = createFileRoute("/servicos/pressurizador")({
   head: () => ({
@@ -72,11 +71,18 @@ function Page() {
               </div>
             </div>
             <div className="relative mx-auto w-full max-w-sm lg:max-w-lg">
-              <div className="absolute -inset-16 rounded-full bg-gradient-to-br from-gold/20 via-gold/5 to-transparent blur-3xl" />
+              <div className="absolute -inset-16 rounded-full bg-gradient-to-br from-gold/50 via-gold/15 to-transparent blur-3xl" />
               <img
-                src={inversoraHpi750Hero}
+                src={inversoraHpi750}
                 alt="Pressurizador de água INVERSORA HPI 750 1CV e 2CV"
-                className="relative h-80 w-full rounded-2xl object-cover sm:h-96 lg:h-[32rem] lg:scale-105"
+                className="relative h-80 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse at center, black 25%, transparent 85%)",
+                  maskImage:
+                    "radial-gradient(ellipse at center, black 25%, transparent 85%)",
+                  mixBlendMode: "lighten",
+                }}
               />
             </div>
           </div>
