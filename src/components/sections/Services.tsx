@@ -51,7 +51,8 @@ export function Services() {
             >
               <Link
                 to={s.to}
-                className="group relative block h-full overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold hover:shadow-[var(--shadow-premium)]"
+                aria-label={`${s.title} — Saiba mais`}
+                className="group relative block h-full overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 outline-none hover:-translate-y-1 hover:border-nav-accent hover:shadow-[var(--shadow-premium)] focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <div className="absolute right-0 top-0 h-32 w-32 -translate-y-12 translate-x-12 rounded-full bg-gold/10 blur-2xl transition-all group-hover:bg-gold/20" />
                 <div className="relative">
@@ -60,7 +61,7 @@ export function Services() {
                   </div>
                   <h3 className="font-display text-xl font-bold text-navy-deep">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy group-hover:text-gold">
+                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-nav-fg transition-colors group-hover:text-nav-fg-hover">
                     Saiba mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
