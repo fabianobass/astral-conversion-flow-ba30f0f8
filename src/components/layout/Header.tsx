@@ -61,9 +61,11 @@ export function Header() {
   return (
     <motion.header
       ref={headerRef}
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+      initial={fadeDownInitial}
+      animate={fadeDownAnimate}
+      transition={heroTransition}
+      onAnimationComplete={() => setEntranceDone(true)}
+      style={entranceDone ? willChangeReset : willChangeStyle}
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
         scrolled
           ? "bg-background/95 backdrop-blur-md shadow-md border-b border-border"
