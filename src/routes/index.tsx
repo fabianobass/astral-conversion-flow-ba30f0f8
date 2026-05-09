@@ -23,6 +23,10 @@ export const Route = createFileRoute("/")({
     });
     return {
       ...seo,
+      links: [
+        ...(seo.links ?? []),
+        { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+      ],
       scripts: [
         jsonLdScript(
           serviceJsonLd({
