@@ -42,22 +42,25 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
-          {NAV.map(({ to, short, icon: Icon }) => {
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegação principal">
+          {NAV.map(({ to, label, short, icon: Icon }) => {
             const active = pathname === to;
             return (
               <Link
                 key={to}
                 to={to}
-                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm transition-all duration-300 ${
+                aria-label={label}
+                aria-current={active ? "page" : undefined}
+                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   active
                     ? "text-gold"
-                    : "text-foreground/80 hover:text-gold hover:bg-gold/5"
+                    : "text-foreground hover:text-gold hover:bg-gold/5"
                 }`}
               >
-                <Icon className={`h-4 w-4 transition-transform duration-300 ${active ? "" : "group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
+                <Icon aria-hidden="true" className={`h-4 w-4 transition-transform duration-300 ${active ? "" : "group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
                 <span>{short}</span>
                 <span
+                  aria-hidden="true"
                   className={`absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-gold transition-transform duration-300 ${
                     active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                   }`}
@@ -72,11 +75,14 @@ export function Header() {
         </div>
 
         <button
+          type="button"
           onClick={() => setOpen(!open)}
-          className="lg:hidden text-foreground transition-transform active:scale-90"
-          aria-label="Menu"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          className="lg:hidden rounded-md p-1 text-foreground transition-transform active:scale-90 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X aria-hidden="true" className="h-6 w-6" /> : <Menu aria-hidden="true" className="h-6 w-6" />}
         </button>
       </div>
 
@@ -84,13 +90,14 @@ export function Header() {
         {open && (
           <motion.div
             key="mobile-menu"
+            id="mobile-menu"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden border-t border-border bg-background lg:hidden"
           >
-            <nav className="flex flex-col gap-1 px-4 py-4">
+            <nav className="flex flex-col gap-1 px-4 py-4" aria-label="Navegação mobile">
               {NAV.map(({ to, label, icon: Icon }, i) => {
                 const active = pathname === to;
                 return (
@@ -103,15 +110,17 @@ export function Header() {
                   >
                     <Link
                       to={to}
+                      aria-label={label}
+                      aria-current={active ? "page" : undefined}
                       onClick={() => setTimeout(() => setOpen(false), 180)}
-                      className={`group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-200 ${
+                      className={`group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                         active
                           ? "bg-gold/10 text-gold"
-                          : "text-foreground/90 hover:bg-secondary hover:translate-x-1"
+                          : "text-foreground hover:bg-secondary hover:translate-x-1"
                       }`}
                     >
-                      <span className={`flex h-9 w-9 items-center justify-center rounded-full ${active ? "bg-gold/20" : "bg-secondary group-hover:bg-gold/15"} transition-colors`}>
-                        <Icon className={`h-4 w-4 ${active ? "text-gold" : "text-foreground/70 group-hover:text-gold"} transition-colors`} />
+                      <span aria-hidden="true" className={`flex h-9 w-9 items-center justify-center rounded-full ${active ? "bg-gold/20" : "bg-secondary group-hover:bg-gold/15"} transition-colors`}>
+                        <Icon className={`h-4 w-4 ${active ? "text-gold" : "text-foreground/80 group-hover:text-gold"} transition-colors`} />
                       </span>
                       <span className="font-medium">{label}</span>
                     </Link>
