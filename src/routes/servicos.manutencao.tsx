@@ -6,7 +6,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
-import heroManutencao from "@/assets/hero-manutencao-v3.png";
+import heroManutencao from "@/assets/hero-manutencao-v4.png";
 
 export const Route = createFileRoute("/servicos/manutencao")({
   head: () => {
