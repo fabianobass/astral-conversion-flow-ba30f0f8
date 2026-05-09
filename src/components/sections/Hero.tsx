@@ -60,16 +60,8 @@ export function Hero() {
           </div>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Falar com especialista pelo WhatsApp"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              Falar com Especialista Agora
-            </a>
+            <SpecialistDropdown variant="whatsapp" label="Falar com Especialista Agora" />
+
             <Link
               to="/servicos/aquecedor-a-gas"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur transition-colors hover:bg-white/10"
