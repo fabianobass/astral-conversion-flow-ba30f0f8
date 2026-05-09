@@ -37,6 +37,16 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* Nav palette tokens — single source of truth for menu contrast */
+  --color-nav-fg: var(--nav-fg);
+  --color-nav-fg-hover: var(--nav-fg-hover);
+  --color-nav-fg-active: var(--nav-fg-active);
+  --color-nav-fg-disabled: var(--nav-fg-disabled);
+  --color-nav-bg-hover: var(--nav-bg-hover);
+  --color-nav-bg-active: var(--nav-bg-active);
+  --color-nav-accent: var(--nav-accent);
+  --color-nav-icon-active-bg: var(--nav-icon-active-bg);
+  --color-nav-icon-active-fg: var(--nav-icon-active-fg);
   --font-display: var(--font-display-active);
   --font-sans: var(--font-sans-active);
 }
@@ -78,6 +88,17 @@
   --input: oklch(0.91 0.015 60);
   --ring: oklch(0.72 0.18 50);
 
+  /* Nav palette — WCAG AA compliant on light background */
+  --nav-fg: oklch(0.18 0.01 50);              /* rest: foreground (~14:1) */
+  --nav-fg-hover: oklch(0.18 0.01 50);        /* hover: same dark + bg tint */
+  --nav-fg-active: oklch(0.18 0.01 50);       /* active: navy-deep + semibold */
+  --nav-fg-disabled: oklch(0.65 0.01 50);     /* disabled: muted, ~3:1 (non-text rule) */
+  --nav-bg-hover: oklch(0.72 0.18 50 / 0.10); /* gold tint 10% */
+  --nav-bg-active: oklch(0.72 0.18 50 / 0.15);/* gold tint 15% */
+  --nav-accent: oklch(0.72 0.18 50);          /* gold for underline/focus */
+  --nav-icon-active-bg: oklch(0.18 0.01 50);  /* navy-deep pill */
+  --nav-icon-active-fg: oklch(0.72 0.18 50);  /* gold icon (~7:1 on navy) */
+
   --gradient-hero: linear-gradient(135deg, oklch(0.18 0.05 260) 0%, oklch(0.25 0.08 265) 100%);
   --gradient-gold: linear-gradient(135deg, oklch(0.82 0.13 88), oklch(0.7 0.14 75));
   --shadow-premium: 0 20px 60px -20px oklch(0.18 0.05 260 / 0.4);
@@ -93,6 +114,17 @@
   --primary-foreground: oklch(0.18 0.05 260);
   --border: oklch(1 0 0 / 0.1);
   --input: oklch(1 0 0 / 0.15);
+
+  /* Nav palette — dark mode */
+  --nav-fg: oklch(0.98 0.005 80);
+  --nav-fg-hover: oklch(1 0 0);
+  --nav-fg-active: oklch(0.82 0.13 88);
+  --nav-fg-disabled: oklch(0.55 0.01 80);
+  --nav-bg-hover: oklch(1 0 0 / 0.08);
+  --nav-bg-active: oklch(0.82 0.13 88 / 0.15);
+  --nav-accent: oklch(0.82 0.13 88);
+  --nav-icon-active-bg: oklch(0.82 0.13 88);
+  --nav-icon-active-fg: oklch(0.18 0.05 260);
 }
 
 @layer base {
