@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
@@ -55,7 +56,12 @@ export function ServiceHero({
           </>
         )}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
-        <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="relative mx-auto max-w-5xl px-4 lg:px-8"
+        >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
             <Link to="/" className="rounded transition-colors hover:text-nav-fg-hover focus-ring-nav">Início</Link>
             <ChevronRight className="h-3 w-3" />
@@ -65,7 +71,7 @@ export function ServiceHero({
           <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl max-w-3xl text-balance drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">{title}</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
           <div className="mt-8">{ctaButton}</div>
-        </div>
+        </motion.div>
       </section>
     );
   }
@@ -76,7 +82,11 @@ export function ServiceHero({
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-navy/40 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
             <Link to="/" className="rounded transition-colors hover:text-nav-fg-hover focus-ring-nav">Início</Link>
             <ChevronRight className="h-3 w-3" />
@@ -86,10 +96,15 @@ export function ServiceHero({
           <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl text-balance">{title}</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
           <div className="mt-8">{ctaButton}</div>
-        </div>
+        </motion.div>
 
         {image && (
-          <div className="relative mx-auto w-full max-w-md">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative mx-auto w-full max-w-md"
+          >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />
             <img
               src={image}
@@ -100,7 +115,7 @@ export function ServiceHero({
               decoding="async"
               className="relative rounded-3xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
             />
-          </div>
+          </motion.div>
         )}
       </div>
     </section>
