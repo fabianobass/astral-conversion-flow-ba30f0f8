@@ -75,6 +75,20 @@ export function Hero() {
             </Link>
           </div>
 
+          <div className="mt-8">
+            <div className="mb-3 text-[11px] uppercase tracking-widest text-white/40">Marcas autorizadas</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3">
+              {["RINNAI", "LORENZETTI", "RHEEM"].map((b) => (
+                <div
+                  key={b}
+                  className="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 px-2 py-3 font-display text-xs sm:text-sm font-bold tracking-[0.2em] text-white/70"
+                >
+                  {b}
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-10 flex items-center gap-6 text-xs text-white/60">
             <div>
               <div className="font-display text-2xl font-bold text-gold">+15</div>
