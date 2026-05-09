@@ -3,6 +3,7 @@ import { Menu, X, Home, Flame, Wrench, Droplets, Thermometer } from "lucide-reac
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 import logoAstral from "@/assets/logo-astral.webp";
 
 const NAV = [
@@ -18,6 +19,11 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const headerRef = useRef<HTMLElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+
+  // Trap focus inside the mobile menu while open; restore to the toggle on close.
+  useFocusTrap(open, mobileMenuRef, toggleRef);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
