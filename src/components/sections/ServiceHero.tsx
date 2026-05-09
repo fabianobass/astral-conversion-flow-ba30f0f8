@@ -71,9 +71,11 @@ export function ServiceHero({
         )}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeUpInitial}
+          animate={fadeUpAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setTextDone(true)}
+          style={textDone ? willChangeReset : willChangeStyle}
           className="relative mx-auto max-w-5xl px-4 lg:px-8"
         >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
