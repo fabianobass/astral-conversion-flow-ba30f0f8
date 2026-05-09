@@ -3,9 +3,7 @@ import rinnaiAnalogico from "@/assets/trabalhos/instalacao-rinnai-analogico-bate
 import komecoDigital from "@/assets/trabalhos/instalacao-komeco-digital-bigorrilho.jpg";
 import bosch from "@/assets/trabalhos/instalacao-bosch-cabral.jpg";
 import komeco15fi from "@/assets/trabalhos/instalacao-komeco-15fi-juveve.jpg";
-import ariston from "@/assets/trabalhos/instalacao-ariston-digital-portao.jpg";
 import rinnaiMerces from "@/assets/trabalhos/instalacao-rinnai-digital-merces.jpg";
-import harman from "@/assets/trabalhos/instalacao-harman-digital-ecoville.jpg";
 import type { WorkPhoto } from "@/components/sections/RealWorkGallery";
 
 export const installPhotos: WorkPhoto[] = [
@@ -16,22 +14,10 @@ export const installPhotos: WorkPhoto[] = [
     neighborhood: "Água Verde, Curitiba",
   },
   {
-    src: ariston,
-    alt: "Instalação de aquecedor a gás Ariston digital em Curitiba — bairro Portão, feita pela Astral Gás",
-    caption: "Ariston Digital — display touch",
-    neighborhood: "Portão, Curitiba",
-  },
-  {
     src: bosch,
     alt: "Instalação de aquecedor a gás Bosch com controle remoto em Curitiba — bairro Cabral, feita pela Astral Gás",
     caption: "Bosch com controle remoto digital",
     neighborhood: "Cabral, Curitiba",
-  },
-  {
-    src: harman,
-    alt: "Instalação de aquecedor a gás Harman digital em Curitiba — bairro Ecoville, feita pela Astral Gás",
-    caption: "Harman Digital — controle externo",
-    neighborhood: "Ecoville, Curitiba",
   },
   {
     src: komecoDigital,
@@ -67,22 +53,10 @@ export const maintenancePhotos: WorkPhoto[] = [
     neighborhood: "Centro, Curitiba",
   },
   {
-    src: harman,
-    alt: "Manutenção de aquecedor a gás Harman em Curitiba — bairro Ecoville, feita pela Astral Gás",
-    caption: "Revisão Harman Digital",
-    neighborhood: "Ecoville, Curitiba",
-  },
-  {
     src: rinnaiDigital,
     alt: "Manutenção de aquecedor a gás Rinnai digital em Curitiba — bairro Mercês, feita pela Astral Gás",
     caption: "Revisão Rinnai Digital",
     neighborhood: "Mercês, Curitiba",
-  },
-  {
-    src: ariston,
-    alt: "Manutenção de aquecedor a gás Ariston em Curitiba — bairro Portão, feita pela Astral Gás",
-    caption: "Preventiva Ariston Digital",
-    neighborhood: "Portão, Curitiba",
   },
   {
     src: komeco15fi,
