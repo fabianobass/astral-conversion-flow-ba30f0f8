@@ -154,6 +154,30 @@
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
 }
 
+/* ============================================================
+   Focus-visible utility — single source of truth.
+   Apply `.focus-ring-nav` to ANY clickable element (links, buttons,
+   accordion triggers, table cells, list items) inside cards/sections.
+   Automatically adapts ring-offset color to the surrounding surface
+   via `data-nav-surface` so contrast stays ≥ 3:1 (WCAG 2.4.7 / 1.4.11).
+   ============================================================ */
+.focus-ring-nav {
+  outline: none;
+}
+.focus-ring-nav:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 2px var(--background),       /* offset spacer = surface color */
+    0 0 0 4px var(--nav-accent);       /* the ring itself */
+  border-radius: inherit;
+}
+[data-nav-surface="dark"] .focus-ring-nav:focus-visible {
+  box-shadow:
+    0 0 0 2px var(--navy-deep),
+    0 0 0 4px var(--nav-accent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
