@@ -13,7 +13,7 @@ export function ServiceHero({
   ctaMessage,
 }: {
   eyebrow: string;
-  title: React.ReactNode;
+  title: ReactNode;
   description: string;
   image?: string;
   ctaLabel?: string;
