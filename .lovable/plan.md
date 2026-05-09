@@ -1,27 +1,20 @@
-## Nova imagem cinematográfica do pressurizador para o hero
+## Regerar imagem com fundo casado ao navy do hero
 
-### O que vou fazer
+### Cor de referência
 
-1. **Gerar nova imagem** usando o pressurizador HPI 750 atual (`src/assets/pressurizador/inversora-hpi-750.png`) como base, com edição AI para criar uma composição cinematográfica:
-   - Fundo navy escuro (igual `--navy-deep` do hero) já mesclado na imagem
-   - Iluminação dramática dourada vindo da lateral
-   - Reflexos e brilho sutil no inox do equipamento
-   - Partículas/névoa dourada suave ao redor
-   - Aspect ratio 1:1 para caber bem no card lateral
-   - Salva em `src/assets/pressurizador/inversora-hpi-750-hero.jpg`
+`--navy-deep: oklch(0.18 0.01 50)` ≈ aproximadamente **#1F1814** (navy quase preto com leve toque quente). Vou pedir ao gerador um fundo com essa cor exata, totalmente uniforme, sem gradiente próprio nas bordas.
 
-2. **Substituir o bloco da imagem no hero** em `src/routes/servicos.pressurizador.tsx`:
-   - Trocar o `import inversoraHpi750` usado no hero por um novo import `inversoraHpi750Hero`
-   - Remover a máscara radial, `mix-blend-mode` e o glow gold extra (já estarão "queimados" na própria imagem)
-   - Manter a imagem original `inversoraHpi750` na seção "A tecnologia" (sem fundo) e nas meta tags (og:image)
+### Passos
 
-### Detalhes técnicos
+1. **Regerar a imagem** com `imagegen--edit_image` a partir da imagem base atual (`src/assets/pressurizador/inversora-hpi-750.png`):
+   - Fundo sólido uniforme na cor `#1F1814` (oklch 0.18 0.01 50), idêntico ao `--navy-deep`
+   - Bordas TOTALMENTE planas na mesma cor (sem vinheta, sem gradiente próprio, sem linha de horizonte)
+   - Manter a iluminação dramática dourada vinda da direita e o brilho no inox
+   - Aspect ratio 1:1
+   - Sobrescreve `src/assets/pressurizador/inversora-hpi-750-hero.jpg`
 
-- O `<img>` no hero passará a ser limpo: `className="relative h-80 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"` sem `style` de máscara/blend.
-- O wrapper externo mantém o glow dourado leve para reforçar transição com o fundo do hero, mas reduzido (`from-gold/20`) já que a imagem traz luz própria.
-- Nenhuma alteração em outras seções, conteúdo, SEO ou rotas.
+2. **Não alterar** o JSX — o `<img>` já aponta para esse caminho. O fundo da imagem vai casar com o navy do hero naturalmente.
 
 ### Arquivos afetados
 
-- `src/assets/pressurizador/inversora-hpi-750-hero.jpg` (novo)
-- `src/routes/servicos.pressurizador.tsx` (apenas bloco da imagem do hero)
+- `src/assets/pressurizador/inversora-hpi-750-hero.jpg` (sobrescrito)
