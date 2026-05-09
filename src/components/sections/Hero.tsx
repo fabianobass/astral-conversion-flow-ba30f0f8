@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
-import heroImg from "@/assets/hero-aquecedor-home.png";
+import heroImg from "@/assets/hero-aquecedor-home.webp";
 import logoRinnai from "@/assets/logo-rinnai.webp";
 import logoLorenzetti from "@/assets/logo-lorenzetti.webp";
 import logoRheem from "@/assets/logo-rheem.webp";
@@ -119,8 +119,9 @@ export function Hero() {
           <img
             src={heroImg}
             alt="Aquecedor a gás premium instalado pela Astral Gás"
-            width={1024}
-            height={1024}
+            width={767}
+            height={756}
+            sizes="(min-width: 1024px) 448px, (min-width: 640px) 60vw, 90vw"
             fetchPriority="high"
             loading="eager"
             decoding="async"

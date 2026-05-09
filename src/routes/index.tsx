@@ -10,7 +10,7 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd } from "@/lib/seo";
-import heroImg from "@/assets/hero-aquecedor-home.png";
+import heroImg from "@/assets/hero-aquecedor-home.webp";
 
 export const Route = createFileRoute("/")({
   head: () => {
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
       ...seo,
       links: [
         ...(seo.links ?? []),
-        { rel: "preload", as: "image", href: heroImg, fetchpriority: "high" },
+        { rel: "preload", as: "image", href: heroImg, type: "image/webp", fetchpriority: "high" },
       ],
       scripts: [
         jsonLdScript(
