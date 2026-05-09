@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { PHONE_SALES_DISPLAY, PHONE_SALES } from "@/lib/contact";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
 import logoAstral from "@/assets/logo-astral.webp";
 
