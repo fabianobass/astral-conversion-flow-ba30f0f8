@@ -28,7 +28,7 @@ export function SpecialistDropdown({
   const base =
     "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-transform hover:scale-105";
   const variants: Record<Variant, string> = {
-    gold: "bg-gold px-5 py-2.5 text-sm text-white",
+    gold: "bg-gold px-5 py-2.5 text-sm text-navy-deep",
     whatsapp:
       "bg-whatsapp px-7 py-4 text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)]",
   };
