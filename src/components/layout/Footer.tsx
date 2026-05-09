@@ -73,8 +73,13 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-          © {new Date().getFullYear()} Astral Gás Aquecedores. Todos os direitos reservados.
+        <div className="mt-12 border-t border-white/10 pt-6 text-center">
+          <p className="font-display text-base text-gold sm:text-lg">
+            Atendimento especializado em Curitiba e Região
+          </p>
+          <p className="mt-3 text-xs text-white/50">
+            © {new Date().getFullYear()} Astral Gás Aquecedores. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
