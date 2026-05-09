@@ -32,7 +32,7 @@ export function ServiceHero({
             decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-navy-deep/60 sm:bg-navy-deep/40 md:bg-transparent" />
+          <div className="absolute inset-0 bg-navy-deep/75 sm:bg-navy-deep/55 md:bg-navy-deep/30" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/50" />
           <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/40 to-navy-deep/20" />
         </>
