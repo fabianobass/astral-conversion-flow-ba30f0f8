@@ -1,32 +1,22 @@
 ## Problema
 
-A troca de páginas está demorando ~700ms perceptíveis. Identifiquei duas causas no código:
+A imagem nova foi trocada, mas o `ServiceHero` aplica **três camadas escuras** que escondem quase toda a foto, e a imagem está com `object-cover` centralizado, então o aquecedor aparece atrás do texto.
 
-### 1. Animação de transição muito longa (principal causa)
-Em `src/routes/__root.tsx` (linhas 115–127), o `AnimatedOutlet` usa `AnimatePresence mode="wait"` com:
-- exit: 0.35s
-- enter: 0.35s
+Camadas atuais sobre a imagem:
+1. `bg-navy-deep/75` (mobile) → `/55` (sm) → `/30` (md)
+2. Gradiente horizontal `from-navy-deep via-navy-deep/90 to-navy-deep/50`
+3. Gradiente vertical `from-navy-deep/95 via-navy-deep/40 to-navy-deep/20`
 
-Como `mode="wait"` espera o exit terminar antes de iniciar o enter, **toda navegação leva ~700ms só de animação**, mesmo que a próxima página já esteja pronta. É exatamente a sensação de "demora ao abrir".
+## Plano
 
-### 2. Sem preload nos links
-Em `src/router.tsx`, falta `defaultPreload: "intent"`. Hoje a próxima página só começa a carregar quando o usuário clica — com `intent`, ela começa no hover/touchstart, ficando pronta antes do clique.
+Ajustar somente o `ServiceHero` (`src/components/sections/ServiceHero.tsx`):
 
-## Solução proposta
+1. **Posicionar a imagem à direita** com `object-cover object-right` (no mobile mantém `object-center` para não cortar).
+2. **Reduzir o overlay base** para `bg-navy-deep/70` mobile → `/40` sm → `/20` md, deixando a foto respirar.
+3. **Substituir os dois gradientes por um único gradiente lateral** mais forte à esquerda e transparente à direita: `from-navy-deep via-navy-deep/80 to-transparent`. Isso garante legibilidade do título/CTA à esquerda e revela o aquecedor cinematográfico no lado direito.
+4. **Remover o gradiente vertical** que achatava tudo.
+5. Manter o glow dourado decorativo.
 
-**A) Reduzir a animação de transição** em `src/routes/__root.tsx`:
-- Trocar para apenas fade (sem deslocamento `y`) para parecer mais instantâneo
-- Reduzir duração: exit 0.12s, enter 0.18s (~300ms total em vez de 700ms)
-- Manter `mode="wait"` para evitar sobreposição
+## Escopo
 
-**B) Habilitar preload por intenção** em `src/router.tsx`:
-- Adicionar `defaultPreload: "intent"` e `defaultPreloadDelay: 50`
-- Isso faz o TanStack Router pré-carregar o chunk da rota assim que o mouse passa por cima do link (Header/Footer/CTAs)
-
-Combinando os dois, a troca de página deve ficar quase imediata.
-
-## Arquivos alterados
-- `src/routes/__root.tsx` — ajustar `AnimatedOutlet`
-- `src/router.tsx` — adicionar opções de preload
-
-Sem mudanças de conteúdo ou layout das páginas.
+A mudança afeta `ServiceHero`, usado também em pressurizador, bomba de calor e manutenção. Como o efeito (foto cinematográfica à direita + texto à esquerda) é desejável em todas, aplico globalmente. Se preferir só na página de aquecedor, me avise.
