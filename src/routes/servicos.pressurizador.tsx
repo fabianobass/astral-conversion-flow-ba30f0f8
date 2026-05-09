@@ -183,8 +183,34 @@ function Page() {
         </div>
       </section>
 
-      {/* Marcas parceiras */}
+      {/* Engenharia / features */}
       <section className="bg-background py-20">
+        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Engenharia</div>
+            <h2 className="font-display text-3xl font-bold text-navy-deep sm:text-4xl">
+              Por que escolher a INVERSORA HPI 750
+            </h2>
+            <p className="mt-4 text-foreground/70">
+              Tecnologia, materiais e instalação especializada que garantem performance real no dia a dia.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map(({ icon: Icon, title, text }) => (
+              <div key={title} className="group rounded-2xl border border-border bg-card p-6 transition hover:border-gold hover:shadow-lg">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15 text-navy-deep transition group-hover:bg-gold">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 font-display text-xl font-bold text-navy-deep">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/70">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Marcas parceiras */}
+      <section className="bg-muted/30 py-20">
         <div className="mx-auto max-w-6xl px-4 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Marcas parceiras</div>
@@ -208,32 +234,6 @@ function Page() {
                   className="max-h-full max-w-full object-contain"
                   loading="lazy"
                 />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Engenharia / features */}
-      <section className="bg-background py-20">
-        <div className="mx-auto max-w-6xl px-4 lg:px-8">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Engenharia</div>
-            <h2 className="font-display text-3xl font-bold text-navy-deep sm:text-4xl">
-              Por que escolher a INVERSORA HPI 750
-            </h2>
-            <p className="mt-4 text-foreground/70">
-              Tecnologia, materiais e instalação especializada que garantem performance real no dia a dia.
-            </p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="group rounded-2xl border border-border bg-card p-6 transition hover:border-gold hover:shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15 text-navy-deep transition group-hover:bg-gold">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <h3 className="mt-5 font-display text-xl font-bold text-navy-deep">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground/70">{text}</p>
               </div>
             ))}
           </div>
