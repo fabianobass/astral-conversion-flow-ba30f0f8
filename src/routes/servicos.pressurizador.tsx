@@ -79,7 +79,7 @@ function Page() {
       <section className="relative overflow-hidden bg-navy-deep pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
         <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-        <div className="relative mx-auto max-w-6xl px-4 lg:px-8">
+        <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
           <nav className="mb-8 flex items-center gap-1 text-xs text-white/60">
             <Link to="/" className="hover:text-gold">Início</Link>
             <ChevronRight className="h-3 w-3" />
