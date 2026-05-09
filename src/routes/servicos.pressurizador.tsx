@@ -81,7 +81,7 @@ function Page() {
         eyebrow="Pressurizador de Água"
         title={<><span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Pressurizador de água</span> para pressão constante em casa</>}
         description="Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos potentes, funcionamento perfeito do aquecedor a gás e pressão constante em todos os pontos."
-        image={heroManutencao}
+        image={heroPressurizador}
         ctaLabel="Pressurizador de água — orçamento no WhatsApp"
         ctaMessage="Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?"
       />
