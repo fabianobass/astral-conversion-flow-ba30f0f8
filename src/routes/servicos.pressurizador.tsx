@@ -8,6 +8,25 @@ import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750.png";
+import logoDruck from "@/assets/marcas/druck.png";
+import logoFluxonn from "@/assets/marcas/fluxonn.png";
+import logoSyllent from "@/assets/marcas/syllent.png";
+import logoTexius from "@/assets/marcas/texius.png";
+import logoLepono from "@/assets/marcas/lepono.png";
+import logoInova from "@/assets/marcas/inova.png";
+import logoKomeco from "@/assets/marcas/komeco.png";
+import logoRowa from "@/assets/marcas/rowa.png";
+
+const partnerBrands = [
+  { src: logoRowa, alt: "Rowa" },
+  { src: logoKomeco, alt: "Komeco" },
+  { src: logoSyllent, alt: "Syllent" },
+  { src: logoLepono, alt: "Lepono" },
+  { src: logoTexius, alt: "Texius" },
+  { src: logoFluxonn, alt: "Fluxonn" },
+  { src: logoInova, alt: "Inova" },
+  { src: logoDruck, alt: "Druck" },
+];
 
 export const Route = createFileRoute("/servicos/pressurizador")({
   head: () => ({
