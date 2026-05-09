@@ -105,6 +105,37 @@ export const maintenancePhotos: WorkPhoto[] = [
   },
 ];
 
-// Aguardando fotos reais específicas de cada serviço.
+import pBatel from "@/assets/pressurizador/instalacoes/pressurizador-instalado-batel.jpg";
+import pAguaVerde from "@/assets/pressurizador/instalacoes/pressurizador-conexao-cobre-agua-verde.jpg";
+import pBigorrilho from "@/assets/pressurizador/instalacoes/pressurizador-casa-maquinas-bigorrilho.jpg";
+import pCabral from "@/assets/pressurizador/instalacoes/pressurizador-apartamento-cabral.jpg";
+
+// Aguardando fotos reais da Astral Gás.
 export const heatPumpPhotos: WorkPhoto[] = [];
-export const pressurizerPhotos: WorkPhoto[] = [];
+
+export const pressurizerPhotos: WorkPhoto[] = [
+  {
+    src: pBatel,
+    alt: "Instalação de pressurizador inversor HPI 750 em Curitiba — bairro Batel, feita pela Astral Gás",
+    caption: "Pressurizador HPI 750 — instalação completa",
+    neighborhood: "Batel, Curitiba",
+  },
+  {
+    src: pAguaVerde,
+    alt: "Pressurizador inversor com conexões em cobre em Curitiba — bairro Água Verde, feita pela Astral Gás",
+    caption: "Conexões em cobre com manômetro",
+    neighborhood: "Água Verde, Curitiba",
+  },
+  {
+    src: pBigorrilho,
+    alt: "Pressurizador instalado em casa de máquinas residencial em Curitiba — bairro Bigorrilho, feita pela Astral Gás",
+    caption: "Casa de máquinas — pressurizador + aquecedor",
+    neighborhood: "Bigorrilho, Curitiba",
+  },
+  {
+    src: pCabral,
+    alt: "Pressurizador inversor compacto instalado em apartamento em Curitiba — bairro Cabral, feita pela Astral Gás",
+    caption: "Pressurizador compacto em apartamento",
+    neighborhood: "Cabral, Curitiba",
+  },
+];
