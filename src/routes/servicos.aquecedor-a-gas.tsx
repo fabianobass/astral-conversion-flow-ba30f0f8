@@ -74,6 +74,8 @@ function Page() {
           "Levamos o equipamento e instalamos no mesmo dia",
           "Testamos tudo e entregamos com nota fiscal",
         ]}
+        ctaLabel="Comprar aquecedor a gás agora"
+        ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
       />
       <FAQ />
       <CtaForm />
