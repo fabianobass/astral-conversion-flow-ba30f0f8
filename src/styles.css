@@ -127,6 +127,21 @@
   --nav-icon-active-fg: oklch(0.18 0.05 260);
 }
 
+/* Nav palette — dark surface override.
+   Apply via `data-nav-surface="dark"` on any container that sits on a dark
+   background (footer, hero, navy CTA sections). Same token names, contrast-tuned. */
+[data-nav-surface="dark"] {
+  --nav-fg: oklch(1 0 0 / 0.85);              /* ~12:1 on navy-deep */
+  --nav-fg-hover: oklch(0.82 0.16 75);        /* warm gold, ~5.2:1 */
+  --nav-fg-active: oklch(0.82 0.16 75);       /* + font-semibold */
+  --nav-fg-disabled: oklch(1 0 0 / 0.4);
+  --nav-bg-hover: oklch(1 0 0 / 0.06);
+  --nav-bg-active: oklch(0.72 0.18 50 / 0.18);
+  --nav-accent: oklch(0.78 0.16 75);
+  --nav-icon-active-bg: oklch(0.78 0.16 75);
+  --nav-icon-active-fg: oklch(0.18 0.01 50);
+}
+
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
