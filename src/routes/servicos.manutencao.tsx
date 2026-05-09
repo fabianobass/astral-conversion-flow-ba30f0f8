@@ -23,6 +23,7 @@ function Page() {
         eyebrow="Manutenção"
         title="Volte a ter banho quente hoje mesmo"
         description="Manutenção corretiva e preventiva para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia."
+        image={heroManutencao}
       />
       <ServiceContent
         benefits={[
