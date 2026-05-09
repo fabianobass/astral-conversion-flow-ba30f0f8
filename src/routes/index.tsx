@@ -9,16 +9,33 @@ import { FAQ } from "@/components/sections/FAQ";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
+import { buildRouteMeta, jsonLdScript, serviceJsonLd } from "@/lib/seo";
+import heroImg from "@/assets/hero-aquecedor.webp";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Venda e Instalação de Aquecedores a Gás em Curitiba | Astral Gás" },
-      { name: "description", content: "Venda e instalação de aquecedores a gás em Curitiba com técnicos certificados, peças originais e orçamento gratuito no WhatsApp." },
-      { property: "og:title", content: "Venda e Instalação de Aquecedores a Gás em Curitiba | Astral Gás" },
-      { property: "og:description", content: "Venda e instalação de aquecedores a gás em Curitiba. Atendimento no mesmo dia com garantia." },
-    ],
-  }),
+  head: () => {
+    const seo = buildRouteMeta({
+      path: "/",
+      title: "Aquecedor a Gás em Curitiba | Instalação no Mesmo Dia — Astral Gás",
+      description:
+        "Venda e instalação de aquecedor a gás em Curitiba — Batel, Água Verde, Bigorrilho e região. Rinnai, Bosch, Komeco. Orçamento grátis no WhatsApp.",
+      image: heroImg,
+    });
+    return {
+      ...seo,
+      scripts: [
+        jsonLdScript(
+          serviceJsonLd({
+            name: "Instalação de Aquecedor a Gás em Curitiba",
+            description:
+              "Venda e instalação de aquecedores a gás de passagem em Curitiba e região. Marcas Rinnai, Bosch, Komeco e Lorenzetti.",
+            url: "/",
+            image: heroImg,
+          }),
+        ),
+      ],
+    };
+  },
   component: Index,
 });
 
