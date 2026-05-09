@@ -30,10 +30,10 @@ export function ServiceHero({
             fetchPriority="high"
             loading="eager"
             decoding="async"
-            className="absolute inset-0 h-full w-full object-cover object-center md:object-right"
+            className="absolute inset-0 h-full w-full object-cover object-center md:object-[78%_center]"
           />
-          <div className="absolute inset-0 bg-navy-deep/70 sm:bg-navy-deep/40 md:bg-navy-deep/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/80 to-transparent" />
+          <div className="absolute inset-0 bg-navy-deep/70 sm:bg-navy-deep/40 md:bg-navy-deep/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep from-0% via-navy-deep/70 via-30% to-transparent to-60%" />
         </>
       )}
       <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
