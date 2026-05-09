@@ -44,6 +44,13 @@ function Page() {
       />
       <FAQ />
       <CtaForm />
+      <section className="bg-secondary py-10">
+        <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
+          <p className="text-base leading-relaxed text-foreground/80">
+            A Astral Gás é referência em Aquecedores a Gás em Curitiba, oferecendo as melhores marcas e assistência técnica qualificada para toda a região.
+          </p>
+        </div>
+      </section>
     </>
   );
 }
