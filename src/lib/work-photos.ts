@@ -3,7 +3,7 @@ import rinnaiAnalogico from "@/assets/trabalhos/instalacao-rinnai-analogico-bate
 import komecoDigital from "@/assets/trabalhos/instalacao-komeco-digital-bigorrilho.jpg";
 import bosch from "@/assets/trabalhos/instalacao-bosch-cabral.jpg";
 import komeco15fi from "@/assets/trabalhos/instalacao-komeco-15fi-juveve.jpg";
-import rinnaiMerces from "@/assets/trabalhos/instalacao-rinnai-digital-merces.jpg";
+
 import mTrocador from "@/assets/trabalhos/manutencao/manutencao-trocador-calor-portao.jpg";
 import mValvula from "@/assets/trabalhos/manutencao/manutencao-valvula-gas-merces.jpg";
 import mRinnai304 from "@/assets/trabalhos/manutencao/manutencao-rinnai-reu304-ventilador-cabral.jpg";
@@ -47,8 +47,6 @@ export const installPhotos: WorkPhoto[] = [
     neighborhood: "Juvevê, Curitiba",
   },
 ];
-// rinnaiMerces reservado para uso futuro
-void rinnaiMerces;
 
 export const maintenancePhotos: WorkPhoto[] = [
   {
