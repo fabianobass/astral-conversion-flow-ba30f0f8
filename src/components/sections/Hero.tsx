@@ -34,9 +34,11 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeUpInitial}
+          animate={fadeUpAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setTextDone(true)}
+          style={textDone ? willChangeReset : willChangeStyle}
           className="text-white"
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-gold">
