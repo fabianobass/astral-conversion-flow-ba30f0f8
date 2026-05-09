@@ -83,16 +83,16 @@ export function Hero() {
             <div className="mb-3 text-[11px] uppercase tracking-widest text-white/40">Marcas autorizadas</div>
             <div className="grid grid-cols-4 gap-2 sm:gap-3">
               {[
-                { src: logoRinnai, alt: "Rinnai" },
-                { src: logoLorenzetti, alt: "Lorenzetti" },
-                { src: logoRheem, alt: "Rheem" },
-                { src: logoKomeco, alt: "Komeco" },
+                { src: logoRinnai, alt: "Rinnai", h: "h-8 sm:h-10" },
+                { src: logoLorenzetti, alt: "Lorenzetti", h: "h-7 sm:h-8" },
+                { src: logoRheem, alt: "Rheem", h: "h-12 sm:h-14" },
+                { src: logoKomeco, alt: "Komeco", h: "h-7 sm:h-9" },
               ].map((b) => (
                 <div
                   key={b.alt}
-                  className="flex items-center justify-center rounded-md border border-white/10 bg-white/40 backdrop-blur px-1 py-0.5"
+                  className="flex items-center justify-center rounded-md border border-white/10 bg-white/40 backdrop-blur px-2 py-1.5"
                 >
-                  <img src={b.src} alt={`Logo ${b.alt}`} className="h-11 sm:h-14 w-auto object-contain" loading="lazy" />
+                  <img src={b.src} alt={`Logo ${b.alt}`} className={`${b.h} w-auto object-contain`} loading="lazy" />
                 </div>
               ))}
             </div>
