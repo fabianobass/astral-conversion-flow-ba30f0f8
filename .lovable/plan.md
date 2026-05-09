@@ -1,18 +1,27 @@
-## Aumentar a foto do pressurizador e integrá-la mais ao fundo
+## Nova imagem cinematográfica do pressurizador para o hero
 
-### Mudanças no `<img>` do hero em `src/routes/servicos.pressurizador.tsx`
+### O que vou fazer
 
-1. **Aumentar tamanho da imagem**
-   - Container: `max-w-xs lg:max-w-sm` → `max-w-sm lg:max-w-lg`
-   - Altura: `h-72 lg:h-96` → `h-96 lg:h-[32rem]`
-   - Em telas grandes pode estourar levemente para fora da coluna usando `lg:scale-110` para reforçar presença
+1. **Gerar nova imagem** usando o pressurizador HPI 750 atual (`src/assets/pressurizador/inversora-hpi-750.png`) como base, com edição AI para criar uma composição cinematográfica:
+   - Fundo navy escuro (igual `--navy-deep` do hero) já mesclado na imagem
+   - Iluminação dramática dourada vindo da lateral
+   - Reflexos e brilho sutil no inox do equipamento
+   - Partículas/névoa dourada suave ao redor
+   - Aspect ratio 1:1 para caber bem no card lateral
+   - Salva em `src/assets/pressurizador/inversora-hpi-750-hero.jpg`
 
-2. **Mais "para o fundo" (mais transparente / mais integrada)**
-   - Opacidade: `opacity-90` → `opacity-60`
-   - Máscara radial com fade mais agressivo: `radial-gradient(ellipse at center, black 35%, transparent 90%)` (antes começava a fade em 55%)
-   - Glow dourado atrás reforçado: `from-gold/40` → `from-gold/50`, blur ainda maior
+2. **Substituir o bloco da imagem no hero** em `src/routes/servicos.pressurizador.tsx`:
+   - Trocar o `import inversoraHpi750` usado no hero por um novo import `inversoraHpi750Hero`
+   - Remover a máscara radial, `mix-blend-mode` e o glow gold extra (já estarão "queimados" na própria imagem)
+   - Manter a imagem original `inversoraHpi750` na seção "A tecnologia" (sem fundo) e nas meta tags (og:image)
 
-3. **Manter** `mix-blend-mode: lighten` (já ajuda a "queimar" no navy)
+### Detalhes técnicos
+
+- O `<img>` no hero passará a ser limpo: `className="relative h-80 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"` sem `style` de máscara/blend.
+- O wrapper externo mantém o glow dourado leve para reforçar transição com o fundo do hero, mas reduzido (`from-gold/20`) já que a imagem traz luz própria.
+- Nenhuma alteração em outras seções, conteúdo, SEO ou rotas.
 
 ### Arquivos afetados
-- `src/routes/servicos.pressurizador.tsx` (apenas o bloco da imagem do hero)
+
+- `src/assets/pressurizador/inversora-hpi-750-hero.jpg` (novo)
+- `src/routes/servicos.pressurizador.tsx` (apenas bloco da imagem do hero)
