@@ -61,7 +61,7 @@ export function Services() {
                   </div>
                   <h3 className="font-display text-xl font-bold text-navy-deep">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy group-hover:text-gold">
+                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-nav-fg transition-colors group-hover:text-nav-fg-hover">
                     Saiba mais <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
