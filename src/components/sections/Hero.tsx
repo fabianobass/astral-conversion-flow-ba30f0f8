@@ -3,6 +3,7 @@ import { Clock, Truck, Wrench, BadgeCheck, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { SpecialistDropdown } from "@/components/SpecialistDropdown";
 import heroImg from "@/assets/hero-aquecedor.jpg";
 import logoRinnai from "@/assets/logo-rinnai.png";
 import logoLorenzetti from "@/assets/logo-lorenzetti.png";
