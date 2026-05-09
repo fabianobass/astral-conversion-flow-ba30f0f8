@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Phone } from "lucide-react";
-import { PHONE_SALES, PHONE_SALES_DISPLAY, waLink } from "@/lib/contact";
+import { PHONE_SALES, PHONE_SALES_DISPLAY, PHONE_MAINTENANCE, waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
 export function CtaForm() {
@@ -11,7 +11,8 @@ export function CtaForm() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Olá! Meu nome é ${name}. Telefone: ${phone}. Tenho interesse em: ${service}. Vim pelo Google.`;
-    window.open(waLink(PHONE_SALES, text), "_blank", "noopener,noreferrer");
+    const target = service === "Manutenção" ? PHONE_MAINTENANCE : PHONE_SALES;
+    window.open(waLink(target, text), "_blank", "noopener,noreferrer");
   };
 
   return (

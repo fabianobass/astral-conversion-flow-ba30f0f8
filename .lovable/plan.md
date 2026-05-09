@@ -1,19 +1,28 @@
 ## Objetivo
-Transformar a imagem do chuveiro (atualmente ao lado direito do hero da página `/servicos/aquecedor-a-gas`) em **fundo do header**, ocupando toda a largura, com o texto sobreposto.
+Quando o usuário clicar em **"Falar com Especialista"**, em vez de abrir o WhatsApp direto, exibir um menu com duas opções:
+- **Compra / Orçamento** → WhatsApp `(41) 99636-6543`
+- **Manutenção** → WhatsApp `(41) 99194-5563`
+
+Os dois números já existem em `src/lib/contact.ts` (`PHONE_SALES` e `PHONE_MAINTENANCE`).
 
 ## Mudanças
 
-1. **`src/components/sections/ServiceHero.tsx`**
-   - Quando a prop `image` for fornecida, renderizar a imagem como `background` absoluto cobrindo toda a section (`object-cover`, `inset-0`).
-   - Adicionar overlay com degradê escuro navy (`bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/40`) por cima da imagem para garantir legibilidade do texto à esquerda.
-   - Manter o glow dourado decorativo.
-   - Aumentar o padding vertical (`pt-40 pb-28`) para dar mais presença visual ao banner.
-   - Remover o layout em 2 colunas — texto volta a ocupar `max-w-3xl` alinhado à esquerda, sobre a imagem.
+### 1. Novo componente `src/components/SpecialistDropdown.tsx`
+Botão verde do WhatsApp com mesmo visual atual, mas envolvido por um `DropdownMenu` (shadcn) que abre ao clicar:
+- Item 1: ícone WhatsApp + "Compra / Orçamento" + "(41) 99636-6543" → abre `waLink(PHONE_SALES, "Olá, gostaria de um orçamento.")`
+- Item 2: ícone WhatsApp + "Manutenção" + "(41) 99194-5563" → abre `waLink(PHONE_MAINTENANCE, "Olá, preciso de manutenção no meu aquecedor.")`
 
-2. **`src/routes/servicos.aquecedor-a-gas.tsx`**
-   - Sem alterações: continua passando `image={heroBanho}`.
+Aceita props `label` e `className` para permitir variações de tamanho/texto nos diferentes locais.
 
-## Resultado visual
-- Foto do chuveiro dourado com vapor preenche todo o header.
-- Degradê navy escuro à esquerda → transparente à direita revela a imagem.
-- Texto, breadcrumb e botão WhatsApp ficam sobre o lado escuro com ótimo contraste.
+### 2. Substituir os CTAs "Falar com Especialista"
+Trocar o `<a>` direto pelo novo componente nestes pontos:
+- `src/components/layout/Header.tsx` (desktop linha 53 e mobile linha 85)
+- `src/components/sections/Hero.tsx` (linha 67)
+- `src/components/sections/CtaForm.tsx` (linha 92)
+
+### 3. Não alterar
+- Botão flutuante `WhatsAppFloat` e botões "Orçamento gratuito no WhatsApp" das páginas de serviço continuam como link direto para vendas (já estão em contexto de orçamento de venda).
+- Footer e botões "Falar agora" da seção de processo continuam diretos.
+
+## Resultado
+Em qualquer "Falar com Especialista" do site, o usuário vê um pequeno menu elegante com as duas opções e escolhe o número certo, evitando atendimentos no setor errado.

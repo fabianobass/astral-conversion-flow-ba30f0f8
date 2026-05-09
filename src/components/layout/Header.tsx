@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { PHONE_SALES_DISPLAY, PHONE_SALES, waLink } from "@/lib/contact";
-import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { PHONE_SALES_DISPLAY, PHONE_SALES } from "@/lib/contact";
+import { SpecialistDropdown } from "@/components/SpecialistDropdown";
 import logoAstral from "@/assets/logo-astral.webp";
 
 export function Header() {
@@ -46,16 +46,8 @@ export function Header() {
             <Phone className="h-4 w-4 text-gold" />
             {PHONE_SALES_DISPLAY}
           </a>
-          <a
-            href={waLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Falar com especialista pelo WhatsApp"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy-deep transition-transform hover:scale-105"
-          >
-            <WhatsAppIcon className="h-4 w-4 text-whatsapp" />
-            Falar com Especialista
-          </a>
+          <SpecialistDropdown />
+
         </div>
 
         <button
@@ -78,16 +70,8 @@ export function Header() {
             <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 text-foreground py-2">
               <Phone className="h-4 w-4 text-gold" /> {PHONE_SALES_DISPLAY}
             </a>
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Falar com especialista pelo WhatsApp"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-5 py-3 text-center font-semibold text-navy-deep"
-            >
-              <WhatsAppIcon className="h-4 w-4 text-whatsapp" />
-              Falar com Especialista
-            </a>
+            <SpecialistDropdown className="mt-2 w-full px-5 py-3" />
+
           </nav>
         </div>
       )}
