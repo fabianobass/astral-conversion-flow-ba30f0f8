@@ -61,7 +61,7 @@ export function RealWorkGallery({
                   className="min-w-0 shrink-0 grow-0 basis-full pl-4 sm:basis-1/2 lg:basis-1/3"
                 >
                   <figure className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
-                    <div className="aspect-[4/3] overflow-hidden">
+                    <div className="aspect-square overflow-hidden">
                       <img
                         src={p.src}
                         alt={p.alt}

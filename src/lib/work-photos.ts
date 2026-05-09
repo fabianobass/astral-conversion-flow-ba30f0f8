@@ -1,85 +1,72 @@
-import heroBanho from "@/assets/hero-banho.jpg";
-import heroAquecedor from "@/assets/hero-aquecedor.jpg";
-import heroManutencao from "@/assets/hero-manutencao.jpg";
+import rinnaiDigital from "@/assets/trabalhos/instalacao-rinnai-digital-agua-verde.jpg";
+import rinnaiAnalogico from "@/assets/trabalhos/instalacao-rinnai-analogico-batel.jpg";
+import komecoDigital from "@/assets/trabalhos/instalacao-komeco-digital-bigorrilho.jpg";
+import bosch from "@/assets/trabalhos/instalacao-bosch-cabral.jpg";
+import komeco15fi from "@/assets/trabalhos/instalacao-komeco-15fi-juveve.jpg";
 import type { WorkPhoto } from "@/components/sections/RealWorkGallery";
-
-// PLACEHOLDERS — substituir pelas fotos reais quando enviadas.
-// Manter alt-text descritivo: "[Serviço] [marca/modelo] em Curitiba — [bairro]"
 
 export const installPhotos: WorkPhoto[] = [
   {
-    src: heroBanho,
-    alt: "Instalação de aquecedor a gás Rinnai em Curitiba — Água Verde",
-    caption: "Instalação Rinnai 20L Digital",
+    src: rinnaiDigital,
+    alt: "Instalação de aquecedor a gás Rinnai digital em Curitiba — bairro Água Verde, feita pela Astral Gás",
+    caption: "Aquecedor Rinnai Digital instalado",
     neighborhood: "Água Verde, Curitiba",
   },
   {
-    src: heroAquecedor,
-    alt: "Aquecedor a gás Komeco instalado em apartamento em Curitiba — Batel",
-    caption: "Aquecedor Komeco 15L",
-    neighborhood: "Batel, Curitiba",
-  },
-  {
-    src: heroManutencao,
-    alt: "Instalação de aquecedor Bosch com tubulação nova em Curitiba — Bigorrilho",
-    caption: "Instalação Bosch + tubulação nova",
-    neighborhood: "Bigorrilho, Curitiba",
-  },
-  {
-    src: heroBanho,
-    alt: "Aquecedor a gás Lorenzetti instalado em Curitiba — Cabral",
-    caption: "Lorenzetti 18L instalado",
+    src: bosch,
+    alt: "Instalação de aquecedor a gás Bosch com controle remoto em Curitiba — bairro Cabral, feita pela Astral Gás",
+    caption: "Bosch com controle remoto digital",
     neighborhood: "Cabral, Curitiba",
   },
   {
-    src: heroAquecedor,
-    alt: "Instalação certificada de aquecedor a gás em Curitiba — Champagnat",
-    caption: "Instalação certificada e segura",
-    neighborhood: "Champagnat, Curitiba",
+    src: komecoDigital,
+    alt: "Instalação de aquecedor a gás Komeco com display digital em Curitiba — bairro Bigorrilho, feita pela Astral Gás",
+    caption: "Komeco Digital — acabamento espelhado",
+    neighborhood: "Bigorrilho, Curitiba",
   },
   {
-    src: heroManutencao,
-    alt: "Equipe Astral Gás finalizando instalação em Curitiba — Juvevê",
-    caption: "Acabamento limpo e organizado",
+    src: rinnaiAnalogico,
+    alt: "Instalação de aquecedor a gás Rinnai em Curitiba — bairro Batel, feita pela Astral Gás",
+    caption: "Rinnai instalado em apartamento",
+    neighborhood: "Batel, Curitiba",
+  },
+  {
+    src: komeco15fi,
+    alt: "Instalação de aquecedor a gás Komeco 15FI em Curitiba — bairro Juvevê, feita pela Astral Gás",
+    caption: "Komeco 15FI — instalação completa",
     neighborhood: "Juvevê, Curitiba",
   },
 ];
 
 export const maintenancePhotos: WorkPhoto[] = [
   {
-    src: heroManutencao,
-    alt: "Manutenção de aquecedor a gás Rinnai em Curitiba — Centro",
-    caption: "Manutenção corretiva Rinnai",
+    src: bosch,
+    alt: "Manutenção de aquecedor a gás Bosch em Curitiba — bairro Centro, feita pela Astral Gás",
+    caption: "Manutenção Bosch — peças originais",
     neighborhood: "Centro, Curitiba",
   },
   {
-    src: heroAquecedor,
-    alt: "Conserto de aquecedor Bosch com peças originais em Curitiba — Batel",
-    caption: "Conserto Bosch com peça original",
-    neighborhood: "Batel, Curitiba",
-  },
-  {
-    src: heroBanho,
-    alt: "Limpeza interna de aquecedor a gás em Curitiba — Mercês",
-    caption: "Limpeza interna completa",
+    src: rinnaiDigital,
+    alt: "Manutenção de aquecedor a gás Rinnai digital em Curitiba — bairro Mercês, feita pela Astral Gás",
+    caption: "Revisão Rinnai Digital",
     neighborhood: "Mercês, Curitiba",
   },
   {
-    src: heroManutencao,
-    alt: "Troca de placa eletrônica de aquecedor em Curitiba — Portão",
-    caption: "Troca de placa eletrônica",
+    src: komeco15fi,
+    alt: "Manutenção preventiva de aquecedor Komeco 15FI em Curitiba — bairro Portão, feita pela Astral Gás",
+    caption: "Preventiva Komeco 15FI",
     neighborhood: "Portão, Curitiba",
   },
   {
-    src: heroAquecedor,
-    alt: "Manutenção preventiva de aquecedor Komeco em Curitiba — Santa Felicidade",
-    caption: "Preventiva Komeco",
-    neighborhood: "Santa Felicidade, Curitiba",
+    src: rinnaiAnalogico,
+    alt: "Conserto de aquecedor a gás Rinnai em Curitiba — bairro Cristo Rei, feita pela Astral Gás",
+    caption: "Conserto Rinnai com garantia",
+    neighborhood: "Cristo Rei, Curitiba",
   },
   {
-    src: heroBanho,
-    alt: "Diagnóstico técnico de aquecedor a gás em Curitiba — Cristo Rei",
-    caption: "Diagnóstico técnico completo",
-    neighborhood: "Cristo Rei, Curitiba",
+    src: komecoDigital,
+    alt: "Manutenção de aquecedor a gás Komeco digital em Curitiba — bairro Santa Felicidade, feita pela Astral Gás",
+    caption: "Diagnóstico Komeco Digital",
+    neighborhood: "Santa Felicidade, Curitiba",
   },
 ];
