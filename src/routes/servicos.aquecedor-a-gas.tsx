@@ -7,7 +7,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
-import heroAquecedor from "@/assets/hero-aquecedor-v2.webp";
+import heroAquecedor from "@/assets/hero-aquecedor-v3.webp";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => {
