@@ -70,17 +70,17 @@ function Page() {
                 </a>
               </div>
             </div>
-            <div className="relative mx-auto w-full max-w-xs lg:max-w-sm">
-              <div className="absolute -inset-10 rounded-full bg-gradient-to-br from-gold/40 via-gold/10 to-transparent blur-3xl" />
+            <div className="relative mx-auto w-full max-w-sm lg:max-w-lg">
+              <div className="absolute -inset-16 rounded-full bg-gradient-to-br from-gold/50 via-gold/15 to-transparent blur-3xl" />
               <img
                 src={inversoraHpi750}
                 alt="Pressurizador de água INVERSORA HPI 750 1CV e 2CV"
-                className="relative h-72 w-full object-contain opacity-90 lg:h-96"
+                className="relative h-96 w-full object-contain opacity-60 lg:h-[32rem] lg:scale-110"
                 style={{
                   WebkitMaskImage:
-                    "radial-gradient(ellipse at center, black 55%, transparent 95%)",
+                    "radial-gradient(ellipse at center, black 35%, transparent 90%)",
                   maskImage:
-                    "radial-gradient(ellipse at center, black 55%, transparent 95%)",
+                    "radial-gradient(ellipse at center, black 35%, transparent 90%)",
                   mixBlendMode: "lighten",
                 }}
               />
