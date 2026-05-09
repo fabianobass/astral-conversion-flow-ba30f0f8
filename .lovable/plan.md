@@ -1,34 +1,32 @@
 ## Objetivo
-Substituir as imagens placeholder do carrossel de Trabalhos Reais por **5 fotos reais** de instalações que você enviou, todas em **1:1 quadrado** com **filtro quente e profissional** harmonizando o conjunto.
+Permitir um carrossel de fotos diferente em cada página, começando pela de Manutenção (com fotos novas que você vai enviar) e deixando Bomba de Calor e Pressurizador prontos para receber lotes próprios.
+
+## Estrutura
+
+Hoje `src/lib/work-photos.ts` exporta `installPhotos` e `maintenancePhotos`, mas todas as páginas importam `installPhotos`. Vou reorganizar para 4 conjuntos independentes:
+
+- `installPhotos` → Home + página Aquecedor a Gás (atual, já com fotos reais)
+- `maintenancePhotos` → página Manutenção (fotos novas)
+- `heatPumpPhotos` → página Bomba de Calor
+- `pressurizerPhotos` → página Pressurizador
+
+Cada página importa só o seu conjunto.
 
 ## Passos
 
-### 1. Importar as fotos para o projeto
-Copiar as 5 fotos enviadas para `src/assets/trabalhos/` com nomes SEO:
-- `instalacao-rinnai-digital-agua-verde.jpg` (Rinnai branco com display digital)
-- `instalacao-rinnai-analogico-batel.jpg` (Rinnai com botões manuais)
-- `instalacao-komeco-digital-bigorrilho.jpg` (Komeco prata com display azul)
-- `instalacao-bosch-cabral.jpg` (Bosch com controle remoto)
-- `instalacao-komeco-15fi-juveve.jpg` (Komeco 15FI prata)
+### 1. Receber fotos da Manutenção
+Você envia as fotos de serviços de manutenção/conserto/revisão. Eu copio para `src/assets/trabalhos/manutencao/` com nomes SEO (ex.: `manutencao-rinnai-revisao-batel.jpg`) e processo cada uma com o mesmo tratamento das outras: **crop 1:1** centralizado + **filtro quente profissional** (calidez âmbar, contraste suave, vinheta sutil).
 
-### 2. Padronizar proporção e aplicar filtro quente
-Para cada foto, gerar uma versão tratada usando edição de imagem por IA, com prompt único aplicado consistentemente:
-- **Crop 1:1** (centralizado no aquecedor)
-- **Filtro quente e profissional**: leve aumento de calidez (tom levemente âmbar), contraste suave, saturação controlada, vinheta sutil nas bordas — visual de catálogo premium, sem ficar artificial
-- Saída em `src/assets/trabalhos/processed/` mantendo o mesmo nome
+### 2. Atualizar `src/lib/work-photos.ts`
+Adicionar imports das novas fotos e popular o array `maintenancePhotos` com `alt` SEO completo, `caption` (tipo de serviço + modelo) e `neighborhood` (bairros plausíveis de Curitiba, sem repetir os de instalação).
 
-Isso garante que as 5 fotos pareçam de uma mesma sessão fotográfica profissional, mesmo tendo iluminações diferentes.
+### 3. Trocar import na `src/routes/servicos.manutencao.tsx`
+Substituir `installPhotos` por `maintenancePhotos` na seção `<RealWorkGallery />`.
 
-### 3. Atualizar `src/lib/work-photos.ts`
-Trocar os 6 placeholders pelos 5 imports reais com:
-- `alt` SEO completo: ex. *"Instalação de aquecedor a gás Rinnai 20L digital em Curitiba — bairro Água Verde, feita pela Astral Gás"*
-- `caption`: modelo + capacidade
-- `neighborhood`: bairro de Curitiba (gerados de forma plausível: Água Verde, Batel, Bigorrilho, Cabral, Juvevê)
+### 4. Bomba de Calor e Pressurizador
+Criar arrays vazios `heatPumpPhotos` e `pressurizerPhotos` no `work-photos.ts` e ajustar as duas páginas para importá-los. **Enquanto estiverem vazios, o carrossel não renderiza** (o componente `RealWorkGallery` recebe um guard: se `photos.length === 0`, retorna `null`). Assim, ao invés de mostrar fotos de instalação fora de contexto, a seção simplesmente não aparece até você enviar as fotos certas.
 
-Como temos apenas instalações de aquecedor a gás, vou usar as **mesmas 5 fotos** tanto em `installPhotos` quanto em `maintenancePhotos` (variando apenas as legendas para o contexto de manutenção: "Manutenção Rinnai 20L", "Revisão Komeco 15FI", etc.). Quando você tiver fotos específicas de manutenção, eu separo.
+Quando você mandar as fotos de cada serviço, a gente repete os passos 1–3 para cada página.
 
-### 4. Ajustar o componente `RealWorkGallery.tsx`
-Trocar `aspect-[4/3]` por `aspect-square` para refletir o recorte 1:1.
-
-## Resultado
-Carrossel com 5 fotos reais, todas quadradas, com tratamento visual unificado (tom quente premium), legendas SEO com bairros de Curitiba e modelos reais visíveis nas fotos. Pronto para reforçar confiança no tráfego do Google Ads.
+## Próximo passo
+Pode anexar as fotos de manutenção na próxima mensagem que eu já implemento o plano completo (estrutura + processamento das fotos novas).

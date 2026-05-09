@@ -4,7 +4,7 @@ import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
-import { installPhotos } from "@/lib/work-photos";
+import { heatPumpPhotos } from "@/lib/work-photos";
 
 export const Route = createFileRoute("/servicos/bomba-de-calor")({
   head: () => ({
@@ -45,7 +45,7 @@ function Page() {
       <RealWorkGallery
         title="Trabalhos recentes da Astral Gás"
         subtitle="Instalações reais feitas pela nossa equipe em Curitiba."
-        photos={installPhotos}
+        photos={heatPumpPhotos}
       />
       <FAQ />
       <CtaForm />

@@ -39,6 +39,8 @@ export function RealWorkGallery({
     onSelect();
   }, [emblaApi]);
 
+  if (!photos || photos.length === 0) return null;
+
   return (
     <section className="bg-background py-20">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
