@@ -83,25 +83,25 @@ export function Hero() {
               ].map((b) => (
                 <div
                   key={b.alt}
-                  className="flex items-center justify-center rounded-md border border-white/10 bg-white/40 backdrop-blur px-1.5 py-0"
+                  className="flex items-center justify-center rounded-md border border-white/10 bg-white/40 backdrop-blur px-1.5 py-1 sm:py-0"
                 >
-                  <img src={b.src} alt={`Logo ${b.alt}`} className={`${b.h} w-auto object-contain -my-2 sm:-my-3`} loading="lazy" />
+                  <img src={b.src} alt={`Logo ${b.alt}`} width="120" height="48" className={`${b.h} w-auto object-contain sm:-my-3`} loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mt-10 flex items-center gap-6 text-xs text-white/60">
+          <div className="mt-10 grid grid-cols-3 gap-3 text-center text-xs text-white/60 sm:flex sm:items-center sm:gap-6 sm:text-left">
             <div>
               <div className="font-display text-2xl font-bold text-gold">+15</div>
               anos no mercado
             </div>
-            <div className="h-10 w-px bg-white/15" />
+            <div className="hidden h-10 w-px bg-white/15 sm:block" />
             <div>
               <div className="font-display text-2xl font-bold text-gold">+2.000</div>
               instalações
             </div>
-            <div className="h-10 w-px bg-white/15" />
+            <div className="hidden h-10 w-px bg-white/15 sm:block" />
             <div>
               <div className="font-display text-2xl font-bold text-gold">4.9★</div>
               avaliação Google
