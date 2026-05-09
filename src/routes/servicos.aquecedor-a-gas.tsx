@@ -4,6 +4,7 @@ import { ServiceContent } from "@/components/sections/ServiceContent";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
+import heroBanho from "@/assets/hero-banho.jpg";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => ({
