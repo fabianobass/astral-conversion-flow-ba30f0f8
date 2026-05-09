@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X, Home, Flame, Wrench, Droplets, Thermometer } from "lucide-react";
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
 import logoAstral from "@/assets/logo-astral.webp";
 
@@ -79,35 +80,57 @@ export function Header() {
         </button>
       </div>
 
-      {open && (
-        <div className="border-t border-border bg-background px-4 py-4 lg:hidden animate-fade-in">
-          <nav className="flex flex-col gap-1">
-            {NAV.map(({ to, label, icon: Icon }) => {
-              const active = pathname === to;
-              return (
-                <Link
-                  key={to}
-                  to={to}
-                  onClick={() => setOpen(false)}
-                  className={`group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-200 ${
-                    active
-                      ? "bg-gold/10 text-gold"
-                      : "text-foreground/90 hover:bg-secondary hover:translate-x-1"
-                  }`}
-                >
-                  <span className={`flex h-9 w-9 items-center justify-center rounded-full ${active ? "bg-gold/20" : "bg-secondary group-hover:bg-gold/15"} transition-colors`}>
-                    <Icon className={`h-4 w-4 ${active ? "text-gold" : "text-foreground/70 group-hover:text-gold"} transition-colors`} />
-                  </span>
-                  <span className="font-medium">{label}</span>
-                </Link>
-              );
-            })}
-            <div className="mt-3">
-              <SpecialistDropdown className="w-full px-5 py-3" />
-            </div>
-          </nav>
-        </div>
-      )}
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-border bg-background lg:hidden"
+          >
+            <nav className="flex flex-col gap-1 px-4 py-4">
+              {NAV.map(({ to, label, icon: Icon }, i) => {
+                const active = pathname === to;
+                return (
+                  <motion.div
+                    key={to}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -8 }}
+                    transition={{ duration: 0.25, delay: 0.05 + i * 0.04, ease: "easeOut" }}
+                  >
+                    <Link
+                      to={to}
+                      onClick={() => setTimeout(() => setOpen(false), 180)}
+                      className={`group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-200 ${
+                        active
+                          ? "bg-gold/10 text-gold"
+                          : "text-foreground/90 hover:bg-secondary hover:translate-x-1"
+                      }`}
+                    >
+                      <span className={`flex h-9 w-9 items-center justify-center rounded-full ${active ? "bg-gold/20" : "bg-secondary group-hover:bg-gold/15"} transition-colors`}>
+                        <Icon className={`h-4 w-4 ${active ? "text-gold" : "text-foreground/70 group-hover:text-gold"} transition-colors`} />
+                      </span>
+                      <span className="font-medium">{label}</span>
+                    </Link>
+                  </motion.div>
+                );
+              })}
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 4 }}
+                transition={{ duration: 0.25, delay: 0.05 + NAV.length * 0.04, ease: "easeOut" }}
+                className="mt-3"
+              >
+                <SpecialistDropdown className="w-full px-5 py-3" />
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
