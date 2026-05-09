@@ -23,7 +23,6 @@ export function RealWorkGallery({
   subtitle = "Fotos reais dos nossos serviços em Curitiba e região. Equipe uniformizada, ferramentas certas e acabamento de qualidade.",
   photos,
 }: Props) {
-  if (!photos || photos.length === 0) return null;
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start" },
     [Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })],
@@ -39,6 +38,8 @@ export function RealWorkGallery({
     emblaApi.on("reInit", onSelect);
     onSelect();
   }, [emblaApi]);
+
+  if (!photos || photos.length === 0) return null;
 
   return (
     <section className="bg-background py-20">
