@@ -1,31 +1,40 @@
 ## Objetivo
 
-Reduzir aproximadamente 20% o tamanho visual do `<h1>` (hero) em todas as páginas. O `<title>` da aba é controlado pelo navegador e não tem tamanho de fonte ajustável via CSS — entendo "title" aqui como o título visual do hero (mesmo elemento H1). Confirmo isso na execução.
+Otimizar a página `/servicos/aquecedor-a-gas` para conversão (clique pago de R$ 30) e SEO/Índice de Qualidade do Google Ads, com foco nas marcas Rinnai e Lorenzetti.
 
-## Tamanhos atuais → novos (-20%)
+## Mudanças
 
-Aplico nas duas variações de H1 hero existentes:
+### 1. Reordenar seções (`src/routes/servicos.aquecedor-a-gas.tsx`)
 
-**`src/components/sections/Hero.tsx` (home)**
-- Atual: `text-4xl sm:text-5xl lg:text-6xl` (36 / 48 / 60 px)
-- Novo:  `text-3xl sm:text-4xl lg:text-5xl` (30 / 36 / 48 px) → ~17–20% menor
+Hoje a ordem é: Hero → TrustBar → **RealWorkGallery** → ServiceContent (lista de aparelhos/benefícios) → FAQ → CtaForm.
 
-**`src/components/sections/ServiceHero.tsx` (aquecedor, manutenção, bomba de calor)**
-- Atual: `text-4xl sm:text-5xl lg:text-6xl`
-- Novo:  `text-3xl sm:text-4xl lg:text-5xl`
+Nova ordem: Hero → TrustBar → **ServiceContent** (lista de aparelhos) → **RealWorkGallery** (logo abaixo, como prova social visual) → FAQ → CtaForm.
 
-**`src/routes/servicos.pressurizador.tsx` (hero customizado)**
-- Atual: `text-4xl sm:text-5xl lg:text-6xl`
-- Novo:  `text-3xl sm:text-4xl lg:text-5xl`
+Justificativa: o usuário lê primeiro o que está incluído + processo, e logo abaixo vê fotos reais das instalações — sequência clássica de prova social que aumenta conversão antes do FAQ.
+
+### 2. Reforçar menções a Rinnai e Lorenzetti (mesma rota)
+
+Hoje "Rinnai" e "Lorenzetti" aparecem 1× cada (no `description` do Hero e no item de benefícios). Vou levar cada marca a no mínimo 2–3 ocorrências naturais, sem keyword stuffing:
+
+- **Hero `description`**: reescrever para citar "Rinnai e Lorenzetti" explicitamente como linhas principais.
+- **`benefits` (lista "O que está incluído")**: separar em dois itens — um destacando "Aquecedores Rinnai (linhas E, REU, Infinity)" e outro "Aquecedores Lorenzetti, Komeco e Bosch", em vez do item genérico atual.
+- **Bloco final cinza** (parágrafo SEO no fim da página): reescrever para mencionar "Rinnai" e "Lorenzetti" novamente, junto com "Curitiba" e bairros-chave (Batel, Água Verde, Bigorrilho).
+- **`title` do Hero**: manter como está (já tem boa densidade), mas garantir que o `<title>` da aba (`buildRouteMeta`) e a `description` continuem com "Rinnai" — já estão.
+
+Resultado: 3× "Rinnai" e 2–3× "Lorenzetti" no HTML renderizado, distribuídos em hero, conteúdo e rodapé semântico.
+
+### 3. Não mexer
+
+- Estrutura de componentes (`ServiceHero`, `ServiceContent`, `RealWorkGallery`) — só reordenar e ajustar props/strings.
+- CTAs, estilos, design system, formulário, FAQ, JSON-LD.
+- Outras páginas de serviço.
+
+## Arquivos a editar
+
+1. `src/routes/servicos.aquecedor-a-gas.tsx` — reordenar JSX + reescrever `description` do Hero, `benefits[]` e parágrafo SEO final.
 
 ## Fora de escopo
 
-- Não altero o `<title>` HTML da aba (não é redimensionável).
-- Não mexo em H2 de seções nem em descrições.
-- Não altero conteúdo textual, apenas classes de tamanho.
-
-## Arquivos editados
-
-1. `src/components/sections/Hero.tsx`
-2. `src/components/sections/ServiceHero.tsx`
-3. `src/routes/servicos.pressurizador.tsx`
+- Alterar `serviceJsonLd` / metadados (já citam Rinnai).
+- Reescrever FAQ ou CtaForm.
+- Mudar páginas de bomba de calor, manutenção, pressurizador.
