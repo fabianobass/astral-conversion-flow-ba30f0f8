@@ -75,7 +75,7 @@ export function Header() {
                     : "text-foreground font-medium hover:text-navy-deep hover:bg-gold/10"
                 }`}
               >
-                <Icon aria-hidden="true" className={`h-4 w-4 transition-transform duration-300 ${active ? "" : "group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
+                <Icon aria-hidden="true" className={`h-4 w-4 transition-transform duration-300 ${active ? "text-navy-deep" : "text-foreground/80 group-hover:text-navy-deep group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
                 <span>{short}</span>
                 <span
                   aria-hidden="true"
