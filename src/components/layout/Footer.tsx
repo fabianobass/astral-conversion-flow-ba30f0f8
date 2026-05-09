@@ -25,10 +25,10 @@ export function Footer() {
           <div>
             <h4 className="mb-4 font-display text-lg text-white">Serviços</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/servicos/aquecedor-a-gas" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Aquecedor a Gás</Link></li>
-              <li><Link to="/servicos/manutencao" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Manutenção</Link></li>
-              <li><Link to="/servicos/pressurizador" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Pressurizador</Link></li>
-              <li><Link to="/servicos/bomba-de-calor" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Bomba de Calor</Link></li>
+              <li><Link to="/servicos/aquecedor-a-gas" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-ring-nav rounded">Aquecedor a Gás</Link></li>
+              <li><Link to="/servicos/manutencao" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-ring-nav rounded">Manutenção</Link></li>
+              <li><Link to="/servicos/pressurizador" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-ring-nav rounded">Pressurizador</Link></li>
+              <li><Link to="/servicos/bomba-de-calor" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-ring-nav rounded">Bomba de Calor</Link></li>
             </ul>
           </div>
 

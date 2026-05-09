@@ -69,7 +69,7 @@ export function Header() {
                 to={to}
                 aria-label={label}
                 aria-current={active ? "page" : undefined}
-                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled ${
+                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm transition-all duration-300 outline-none focus-ring-nav aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled ${
                   active
                     ? "text-nav-fg-active font-semibold bg-nav-bg-active"
                     : "text-nav-fg font-medium hover:text-nav-fg-hover hover:bg-nav-bg-hover"
@@ -98,7 +98,7 @@ export function Header() {
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          className="lg:hidden rounded-md p-1 text-foreground transition-transform active:scale-90 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="lg:hidden rounded-md p-1 text-foreground transition-transform active:scale-90 outline-none focus-ring-nav"
         >
           {open ? <X aria-hidden="true" className="h-6 w-6" /> : <Menu aria-hidden="true" className="h-6 w-6" />}
         </button>
@@ -131,7 +131,7 @@ export function Header() {
                       aria-label={label}
                       aria-current={active ? "page" : undefined}
                       onClick={() => setTimeout(() => setOpen(false), 180)}
-                      className={`group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled ${
+                      className={`group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-200 outline-none focus-ring-nav aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled ${
                         active
                           ? "bg-nav-bg-active text-nav-fg-active font-semibold"
                           : "text-nav-fg hover:bg-nav-bg-hover hover:text-nav-fg-hover hover:translate-x-1"

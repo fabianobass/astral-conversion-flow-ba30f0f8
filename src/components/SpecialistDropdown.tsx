@@ -31,7 +31,7 @@ export function SpecialistDropdown({
   // truth as the header so contrast stays consistent on desktop and mobile.
   const base =
     "inline-flex items-center justify-center gap-2 rounded-full font-semibold outline-none transition-all duration-200 " +
-    "focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background " +
+    "focus-ring-nav " +
     "hover:scale-[1.03] active:scale-[0.97] " +
     "disabled:cursor-not-allowed disabled:opacity-60 disabled:scale-100 disabled:bg-nav-fg-disabled disabled:text-background disabled:shadow-none " +
     "motion-reduce:hover:scale-100 motion-reduce:active:scale-100 motion-reduce:transition-none";
@@ -73,7 +73,7 @@ export function SpecialistDropdown({
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-start gap-3 rounded-lg p-3 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-nav-accent"
+            className="flex w-full items-start gap-3 rounded-lg p-3 cursor-pointer outline-none focus-ring-nav"
           >
             <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-whatsapp/10 text-whatsapp">
               <Flame className="h-4 w-4" />
@@ -97,7 +97,7 @@ export function SpecialistDropdown({
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex w-full items-start gap-3 rounded-lg p-3 cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-nav-accent"
+            className="flex w-full items-start gap-3 rounded-lg p-3 cursor-pointer outline-none focus-ring-nav"
           >
             <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-whatsapp/10 text-whatsapp">
               <Wrench className="h-4 w-4" />
