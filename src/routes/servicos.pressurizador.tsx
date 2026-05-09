@@ -91,7 +91,7 @@ function Page() {
                 Pressurizador de Água
               </div>
               <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
-                Pressurizador de água para pressão constante em casa
+                <span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Pressurizador de água</span> para pressão constante em casa
               </h1>
               <p className="mt-5 max-w-2xl text-lg text-white/80">
                 Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos
