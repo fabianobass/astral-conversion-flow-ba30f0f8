@@ -4,6 +4,7 @@ import { ServiceContent } from "@/components/sections/ServiceContent";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
+import heroBanho from "@/assets/hero-banho.jpg";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => ({
@@ -24,6 +25,7 @@ function Page() {
         eyebrow="Aquecedor a Gás"
         title="Banho quente, instantâneo e econômico"
         description="Venda e instalação de aquecedores a gás de passagem para casas e apartamentos. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
+        image={heroBanho}
       />
       <TrustBar />
       <ServiceContent
