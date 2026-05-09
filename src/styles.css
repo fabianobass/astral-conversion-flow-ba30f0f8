@@ -114,8 +114,15 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  /* Neutraliza efeitos de scale em hover/active/group-hover (CTAs, links, imagens) */
-  *:hover, *:active, .group:hover *, *:focus-visible {
-    transform: none !important;
+  /* Neutraliza apenas o SCALE em CTAs interativos (botões, links e imagens em group-hover),
+     preservando rotate / translate / skew usados em ícones, menus e animações de layout. */
+  a:hover, a:active, a:focus-visible,
+  button:hover, button:active, button:focus-visible,
+  [role="button"]:hover, [role="button"]:active,
+  .group:hover a, .group:hover button,
+  .group:hover img, .group:hover [data-scale] {
+    --tw-scale-x: 1 !important;
+    --tw-scale-y: 1 !important;
+    scale: 1 !important;
   }
 }
