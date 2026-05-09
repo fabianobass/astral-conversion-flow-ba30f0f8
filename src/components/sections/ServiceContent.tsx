@@ -32,13 +32,13 @@ export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no W
             ))}
           </ol>
           <a
-            href={waLink()}
+            href={waLink(undefined, ctaMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Falar agora com a Astral Gás pelo WhatsApp"
+            aria-label={ctaLabel}
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-whatsapp px-6 py-3 font-semibold text-white"
           >
-            <WhatsAppIcon className="h-5 w-5" /> Falar agora
+            <WhatsAppIcon className="h-5 w-5" /> {ctaLabel}
           </a>
         </div>
       </div>
