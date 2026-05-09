@@ -110,8 +110,44 @@ import pAguaVerde from "@/assets/pressurizador/instalacoes/pressurizador-conexao
 import pBigorrilho from "@/assets/pressurizador/instalacoes/pressurizador-casa-maquinas-bigorrilho.webp";
 import pCabral from "@/assets/pressurizador/instalacoes/pressurizador-apartamento-cabral.webp";
 
-// Aguardando fotos reais da Astral Gás.
-export const heatPumpPhotos: WorkPhoto[] = [];
+import hpInverter from "@/assets/bomba-de-calor/instalacoes/bomba-druck-inverter-curitiba.webp";
+import hpJardim from "@/assets/bomba-de-calor/instalacoes/bomba-druck-dri-jardim.webp";
+import hpLaje from "@/assets/bomba-de-calor/instalacoes/bomba-druck-dri35-laje.webp";
+import hpArea from "@/assets/bomba-de-calor/instalacoes/bomba-druck-dri45-area-externa.webp";
+import hpCasaMaquinas from "@/assets/bomba-de-calor/instalacoes/bomba-druck-dri45-casa-maquinas.webp";
+
+export const heatPumpPhotos: WorkPhoto[] = [
+  {
+    src: hpInverter,
+    alt: "Instalação de bomba de calor Druck Full Inverter para piscina em Curitiba, feita pela Astral Gás",
+    caption: "Druck Full Inverter — instalação aérea",
+    neighborhood: "Curitiba e região",
+  },
+  {
+    src: hpJardim,
+    alt: "Bomba de calor Druck DRI instalada em jardim residencial em Curitiba, feita pela Astral Gás",
+    caption: "Druck DRI — instalação em jardim",
+    neighborhood: "Curitiba e região",
+  },
+  {
+    src: hpLaje,
+    alt: "Bomba de calor Druck DRI35 instalada em laje em Curitiba, feita pela Astral Gás",
+    caption: "Druck DRI35 — instalação em laje",
+    neighborhood: "Curitiba e região",
+  },
+  {
+    src: hpArea,
+    alt: "Bomba de calor Druck DRI45 Full Inverter em área externa em Curitiba, feita pela Astral Gás",
+    caption: "Druck DRI45 Full Inverter — área externa",
+    neighborhood: "Curitiba e região",
+  },
+  {
+    src: hpCasaMaquinas,
+    alt: "Bomba de calor Druck DRI45 integrada à casa de máquinas em Curitiba, feita pela Astral Gás",
+    caption: "Druck DRI45 — casa de máquinas integrada",
+    neighborhood: "Curitiba e região",
+  },
+];
 
 export const pressurizerPhotos: WorkPhoto[] = [
   {

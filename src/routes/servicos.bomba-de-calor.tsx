@@ -4,6 +4,8 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
+import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
+import { heatPumpPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import heroPiscina from "@/assets/bomba-de-calor/hero-piscina.webp";
@@ -150,6 +152,12 @@ function Page() {
           </div>
         </div>
       </section>
+
+      <RealWorkGallery
+        title="Bombas de calor instaladas pela Astral Gás"
+        subtitle="Fotos reais de instalações Full Inverter em piscinas de Curitiba e região metropolitana."
+        photos={heatPumpPhotos}
+      />
 
       <ServiceContent
         benefits={[
