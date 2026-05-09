@@ -29,10 +29,10 @@ export function Hero() {
           </div>
 
           <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
-            Venda e Instalação de{" "}
             <span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">
-              Aquecedores a Gás em Curitiba
-            </span>
+              Aquecedor a gás em Curitiba
+            </span>{" "}
+            com instalação no mesmo dia
           </h1>
 
           <p className="mt-6 max-w-lg text-lg text-white/75">

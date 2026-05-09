@@ -12,9 +12,9 @@ export const Route = createFileRoute("/servicos/manutencao")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/manutencao",
-      title: "Manutenção de Aquecedor a Gás em Curitiba — Atendimento Hoje | Astral",
+      title: "Manutenção de aquecedor a gás em Curitiba — Atendimento hoje | Astral",
       description:
-        "Manutenção e conserto de aquecedor a gás em Curitiba — Batel, Cabral, Juvevê, Mercês, Portão. Peças originais, garantia e atendimento no mesmo dia.",
+        "Manutenção de aquecedor a gás em Curitiba — Batel, Cabral, Juvevê, Mercês, Portão. Peças originais, garantia e atendimento no mesmo dia.",
       image: heroManutencao,
     });
     return {
@@ -46,7 +46,7 @@ function Page() {
     <>
       <ServiceHero
         eyebrow="Manutenção"
-        title="Volte a ter banho quente hoje mesmo"
+        title="Manutenção de aquecedor a gás com atendimento ainda hoje"
         description="Manutenção corretiva e preventiva para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia."
         image={heroManutencao}
       />

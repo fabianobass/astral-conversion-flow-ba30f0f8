@@ -13,9 +13,9 @@ export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/aquecedor-a-gas",
-      title: "Aquecedor a Gás em Curitiba — Instalação Rinnai, Bosch, Komeco | Astral",
+      title: "Comprar aquecedor a gás em Curitiba — Rinnai, Bosch, Komeco | Astral",
       description:
-        "Instalação de aquecedor a gás em Curitiba e bairros (Batel, Água Verde, Bigorrilho, Cabral). Rinnai, Bosch, Komeco e Lorenzetti. Orçamento grátis hoje.",
+        "Comprar aquecedor a gás em Curitiba com instalação no mesmo dia — Batel, Água Verde, Bigorrilho, Cabral. Rinnai, Bosch, Komeco e Lorenzetti. Orçamento grátis.",
       image: heroBanho,
     });
     return {
@@ -47,7 +47,7 @@ function Page() {
     <>
       <ServiceHero
         eyebrow="Aquecedor a Gás"
-        title="Banho quente, instantâneo e econômico"
+        title="Comprar aquecedor a gás com instalação no mesmo dia"
         description="Venda e instalação de aquecedores a gás de passagem para casas e apartamentos. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
         image={heroBanho}
       />
