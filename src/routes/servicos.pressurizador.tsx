@@ -135,7 +135,7 @@ function Page() {
 
       {/* A tecnologia */}
       <section className="bg-background py-20">
-        <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:items-center lg:px-8">
+        <div className="mx-auto grid max-w-5xl gap-12 px-4 lg:grid-cols-2 lg:items-center lg:px-8">
           <div>
             <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">A tecnologia</div>
             <h2 className="font-display text-3xl font-bold leading-tight text-navy-deep sm:text-4xl">
@@ -210,7 +210,7 @@ function Page() {
 
       {/* Engenharia / features */}
       <section className="bg-background py-20">
-        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Engenharia</div>
             <h2 className="font-display text-3xl font-bold text-navy-deep sm:text-4xl">
@@ -236,7 +236,7 @@ function Page() {
 
       {/* Marcas parceiras */}
       <section className="bg-muted/30 py-20">
-        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+        <div className="mx-auto max-w-5xl px-4 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Marcas parceiras</div>
             <h2 className="font-display text-3xl font-bold leading-tight text-navy-deep sm:text-4xl">
