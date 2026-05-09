@@ -10,7 +10,7 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd } from "@/lib/seo";
-import heroImg from "@/assets/hero-aquecedor.webp";
+import heroImg from "@/assets/hero-aquecedor-home.png";
 
 export const Route = createFileRoute("/")({
   head: () => {

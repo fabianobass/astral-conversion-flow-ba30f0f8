@@ -4,7 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
-import heroImg from "@/assets/hero-aquecedor.webp";
+import heroImg from "@/assets/hero-aquecedor-home.png";
 import logoRinnai from "@/assets/logo-rinnai.webp";
 import logoLorenzetti from "@/assets/logo-lorenzetti.webp";
 import logoRheem from "@/assets/logo-rheem.webp";
