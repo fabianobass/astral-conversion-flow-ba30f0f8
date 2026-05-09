@@ -1,28 +1,44 @@
 ## Objetivo
-Quando o usuário clicar em **"Falar com Especialista"**, em vez de abrir o WhatsApp direto, exibir um menu com duas opções:
-- **Compra / Orçamento** → WhatsApp `(41) 99636-6543`
-- **Manutenção** → WhatsApp `(41) 99194-5563`
+Adicionar um carrossel de fotos reais dos trabalhos da Astral Gás na home (abaixo das marcas) e em todas as páginas de serviço, para gerar prova social e reduzir objeção de segurança no tráfego do Google Ads.
 
-Os dois números já existem em `src/lib/contact.ts` (`PHONE_SALES` e `PHONE_MAINTENANCE`).
+## Componente novo: `src/components/sections/RealWorkGallery.tsx`
+Carrossel responsivo com Embla (já instalado em `src/components/ui/carousel.tsx`):
+- **Auto-play suave** a cada 4s usando `embla-carousel-autoplay`, pausa no hover/touch.
+- Setas de navegação (estilo gold/navy alinhado ao site) e dots indicadores embaixo.
+- Cards com cantos arredondados, sombra elegante, e overlay gradiente na parte inferior com a **legenda** (bairro + equipamento).
+- Mobile: 1 foto por slide. Tablet: 2. Desktop: 3.
+- Cada foto com:
+  - `loading="lazy"` e `decoding="async"` para performance.
+  - `alt` descritivo e SEO-otimizado (ex: "Instalação de aquecedor Rinnai 20L em Curitiba — Água Verde").
+- Header da seção: eyebrow "Trabalhos Reais", título "Instalações feitas pela equipe Astral Gás" e subtítulo curto reforçando segurança/localidade.
+- Aceita props:
+  - `title`, `eyebrow`, `subtitle` (para variar o texto por página)
+  - `photos: { src; alt; caption; neighborhood }[]`
 
-## Mudanças
+## Onde será inserido
+1. `src/routes/index.tsx` — logo após `<TrustBar />`.
+2. `src/routes/servicos.aquecedor-a-gas.tsx` — após `<TrustBar />`.
+3. `src/routes/servicos.manutencao.tsx` — após o `<ServiceHero />` (página não tem TrustBar).
+4. `src/routes/servicos.pressurizador.tsx` — abaixo do hero/conteúdo principal.
+5. `src/routes/servicos.bomba-de-calor.tsx` — abaixo do hero/conteúdo principal.
 
-### 1. Novo componente `src/components/SpecialistDropdown.tsx`
-Botão verde do WhatsApp com mesmo visual atual, mas envolvido por um `DropdownMenu` (shadcn) que abre ao clicar:
-- Item 1: ícone WhatsApp + "Compra / Orçamento" + "(41) 99636-6543" → abre `waLink(PHONE_SALES, "Olá, gostaria de um orçamento.")`
-- Item 2: ícone WhatsApp + "Manutenção" + "(41) 99194-5563" → abre `waLink(PHONE_MAINTENANCE, "Olá, preciso de manutenção no meu aquecedor.")`
+Cada página recebe um conjunto de fotos relevante (instalação para venda, conserto para manutenção, etc.).
 
-Aceita props `label` e `className` para permitir variações de tamanho/texto nos diferentes locais.
+## Fotos
+Você vai enviar as fotos no chat. Para a implementação:
+- Salvo em `src/assets/trabalhos/` com nomes SEO (ex: `instalacao-rinnai-agua-verde.jpg`, `manutencao-bosch-batel.jpg`).
+- Importadas como ES modules para o Vite otimizar/comprimir automaticamente.
+- Cada foto vem acompanhada da legenda no formato: **"[Tipo de serviço] [marca/modelo] — [bairro]"**.
 
-### 2. Substituir os CTAs "Falar com Especialista"
-Trocar o `<a>` direto pelo novo componente nestes pontos:
-- `src/components/layout/Header.tsx` (desktop linha 53 e mobile linha 85)
-- `src/components/sections/Hero.tsx` (linha 67)
-- `src/components/sections/CtaForm.tsx` (linha 92)
+Enquanto as fotos não chegam, uso 6 placeholders neutros (do `src/assets` existente, ex: `hero-banho.jpg`, `hero-manutencao.jpg`) para você ver o layout funcionando, e troco assim que enviar.
 
-### 3. Não alterar
-- Botão flutuante `WhatsAppFloat` e botões "Orçamento gratuito no WhatsApp" das páginas de serviço continuam como link direto para vendas (já estão em contexto de orçamento de venda).
-- Footer e botões "Falar agora" da seção de processo continuam diretos.
+## Dependência nova
+- `embla-carousel-autoplay` (peso ~2KB) — necessário para o auto-play suave com pausa no hover.
+
+## SEO / Performance
+- Alt-text único por foto, com palavra-chave + bairro de Curitiba.
+- Lazy loading nativo nas imagens fora da primeira tela.
+- Vite já comprime imagens importadas; recomendo enviar as fotos em até 1600px de largura para manter o site leve no 4G.
 
 ## Resultado
-Em qualquer "Falar com Especialista" do site, o usuário vê um pequeno menu elegante com as duas opções e escolhe o número certo, evitando atendimentos no setor errado.
+Um carrossel elegante, com prova social real, posicionado nos pontos de maior conversão do funil — alinhado à estratégia de Google Ads que você descreveu.
