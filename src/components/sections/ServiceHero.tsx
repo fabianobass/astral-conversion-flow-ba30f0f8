@@ -99,9 +99,11 @@ export function ServiceHero({
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeUpInitial}
+          animate={fadeUpAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setTextDone(true)}
+          style={textDone ? willChangeReset : willChangeStyle}
         >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
             <Link to="/" className="rounded transition-colors hover:text-nav-fg-hover focus-ring-nav">Início</Link>
