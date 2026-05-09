@@ -12,7 +12,7 @@ import logoKomeco from "@/assets/logo-komeco.webp";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section data-nav-surface="dark" className="relative overflow-hidden bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28">
       {/* Decorative glows */}
       <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-navy/40 blur-3xl" />
