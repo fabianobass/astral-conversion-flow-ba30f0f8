@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronRight, Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
+import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
@@ -8,6 +9,7 @@ import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750-v2.png";
+import heroManutencao from "@/assets/hero-manutencao-v2.png";
 import logoDruck from "@/assets/marcas/druck.webp";
 import logoFluxonn from "@/assets/marcas/fluxonn.webp";
 import logoSyllent from "@/assets/marcas/syllent.webp";
