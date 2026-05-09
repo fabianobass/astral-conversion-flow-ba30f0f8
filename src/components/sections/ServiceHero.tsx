@@ -77,10 +77,10 @@ export function ServiceHero({
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <div>
-          <nav className="mb-8 flex items-center gap-1 text-xs text-white/60">
-            <Link to="/" className="hover:text-gold">Início</Link>
+          <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
+            <Link to="/" className="rounded transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent">Início</Link>
             <ChevronRight className="h-3 w-3" />
-            <span className="text-white/80">{eyebrow}</span>
+            <span className="text-nav-fg-active font-semibold">{eyebrow}</span>
           </nav>
           <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">{eyebrow}</div>
           <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl text-balance">{title}</h1>
