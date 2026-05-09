@@ -1,38 +1,35 @@
 ## Objetivo
 
-Reforçar conversão na dobra superior da home com 3 gatilhos de confiança e CTAs mais ativos.
+Aplicar 3 ajustes finais de conversão no Hero e CtaForm.
 
 ## Mudanças
 
-### 1. `src/components/sections/Hero.tsx` — gatilhos de confiança abaixo do H1
+### 1. `src/components/sections/Hero.tsx` — faixa de logos das marcas (placeholders)
 
-Substituir o badge atual "Atendimento em até 30 minutos" (acima do H1) e a lista de 4 itens genéricos por uma faixa enxuta de **3 selos de confiança** logo abaixo do subtítulo, com ícones do `lucide-react`:
+Adicionar logo abaixo dos botões CTA (e antes do bloco de stats `+15 anos / +2.000 / 4.9★`) uma linha discreta com o título "Marcas autorizadas" e 3 placeholders horizontais para Rinnai, Lorenzetti e Rheem.
 
-- ✅ **Pronta Entrega** — ícone `Truck` — "Estoque local em Curitiba"
-- ✅ **Instalação Inclusa** — ícone `Wrench` — "Técnicos certificados no mesmo dia"
-- ✅ **Autorizada Rinnai e Lorenzetti** — ícone `BadgeCheck` — "Garantia de fábrica"
+Como você ainda vai enviar os arquivos oficiais, faço um componente `<BrandLogos />` interno usando placeholders em texto estilizado (font-display, tracking largo, opacidade reduzida) dentro de cards `bg-white/5 border border-white/10 rounded-lg`. Assim que você anexar os PNG/SVG, troco os textos por `<img>` em uma única edição.
 
-Layout: faixa horizontal em 3 colunas (`grid-cols-3` no desktop, empilhado no mobile), cards translúcidos (`bg-white/5 border border-white/10 rounded-xl p-3`), ícone dourado + label em negrito + descrição curta em `text-white/60`.
+```text
+[ RINNAI ]   [ LORENZETTI ]   [ RHEEM ]
+```
 
-A lista de 4 bullets atual ("Orçamento gratuito em 5 min", etc.) sai — vira ruído depois dos 3 selos. O bloco de stats (+15 anos, +2.000 instalações, 4.9★) permanece.
+Layout: `grid-cols-3` no desktop, `grid-cols-3` também no mobile (logos ficam pequenos mas alinhados — é o padrão de "selo de marca").
 
-### 2. `src/components/sections/Hero.tsx` — CTAs mais ativos
+### 2. Botão flutuante de WhatsApp — **já existe**
 
-- Botão WhatsApp: "Orçamento no WhatsApp" → **"Falar com Especialista Agora"**
-- Botão telefone: mantém ícone, label muda de "Ligar agora" → **"Ver Preços e Modelos"** apontando para a página `/servicos/aquecedor-a-gas` (mais alinhado ao copy; quem quer ligar usa o número exibido no Header). 
-  - Alternativa se preferir manter como `tel:`: trocar só para **"Ligar para Especialista"**.
+O `WhatsAppFloat` (em `src/components/WhatsAppFloat.tsx`) já está montado em `__root.tsx` e abre um popover com 2 opções (Compra/Instalação e Manutenção), cada uma indo direto para WhatsApp sem passar pelo formulário. Item 2 já está atendido.
 
-### 3. `src/components/layout/Header.tsx` — CTA do header
+Se você prefere **um único clique → WhatsApp de vendas direto** (sem o popover de escolha), me avise — é uma simplificação de 5 linhas. Por padrão, mantenho como está.
 
-Botão gold do header: "Orçamento" → **"Falar com Especialista"** (desktop e mobile), mantendo ícone WhatsApp verde.
+### 3. `src/components/sections/CtaForm.tsx` — texto do CTA do formulário
+
+- Botão de submit: "Solicitar orçamento gratuito" → **"Falar com Especialista no WhatsApp"**
+- Microcopy abaixo do botão: mantém ("Ao enviar você será redirecionado para o WhatsApp.") — já reforça a promessa do botão.
 
 ### Não tocar
-- Demais seções, formulário do `CtaForm` (botão "Solicitar orçamento gratuito" já é ativo e específico), botão flutuante.
+- Demais seções, copy do Hero, botões existentes do Header/Footer, fluxo do formulário (continua abrindo WhatsApp com nome+telefone+serviço).
 
-## Pergunta antes de implementar
+## Próximo passo (você)
 
-No item 2, o segundo botão atual é `tel:` (ligação direta). Prefere:
-- (a) Trocar para **"Ver Preços e Modelos"** linkando para `/servicos/aquecedor-a-gas` (mais comercial, mantém o usuário no funil), ou
-- (b) Manter como ligação telefônica e só renomear para **"Ligar para Especialista"**?
-
-Vou assumir **(a)** se não houver resposta — é o que mais reforça o gatilho "ver modelos/preços" que você citou.
+Anexar os logos oficiais (.png ou .svg, fundo transparente, ~200×80px). Quando enviar, faço uma edição rápida no `BrandLogos` trocando os textos pelas `<img>`.

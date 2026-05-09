@@ -89,7 +89,7 @@ export function CtaForm() {
               type="submit"
               className="mt-2 w-full rounded-full bg-gradient-to-r from-gold to-amber-500 py-4 font-semibold text-navy-deep transition-transform hover:scale-[1.02]"
             >
-              Solicitar orçamento gratuito
+              Falar com Especialista no WhatsApp
             </button>
             <p className="text-center text-xs text-white/40">
               Ao enviar você será redirecionado para o WhatsApp.
