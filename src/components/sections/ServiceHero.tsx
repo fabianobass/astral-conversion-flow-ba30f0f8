@@ -53,9 +53,9 @@ export function ServiceHero({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={ctaLabel}
-            className="inline-flex min-h-11 sm:min-h-12 md:min-h-[52px] items-center justify-center gap-2 rounded-full bg-whatsapp max-w-full px-3.5 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5 text-center text-balance text-[12px] sm:text-[13px] md:text-sm font-semibold leading-tight sm:leading-none tracking-[-0.005em] text-white shadow-[0_8px_24px_-8px_rgba(34,197,94,0.55)] hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition"
+            className="inline-flex min-h-11 sm:min-h-12 md:min-h-[52px] items-center justify-center gap-2 rounded-full bg-whatsapp max-w-full px-3.5 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5 text-center text-balance text-[13px] sm:text-sm md:text-[15px] font-semibold leading-[1.2] sm:leading-[1.15] md:leading-[1.1] tracking-[-0.005em] text-white shadow-[0_8px_24px_-8px_rgba(34,197,94,0.55)] hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition"
           >
-            <WhatsAppIcon className="h-4 w-4 sm:h-[18px] sm:w-[18px] md:h-5 md:w-5 shrink-0 self-center [vertical-align:middle]" aria-hidden /> {ctaLabel}
+            <WhatsAppIcon className="h-[1.15em] w-[1.15em] shrink-0 self-center" aria-hidden /> {ctaLabel}
           </a>
         </div>
       </div>
