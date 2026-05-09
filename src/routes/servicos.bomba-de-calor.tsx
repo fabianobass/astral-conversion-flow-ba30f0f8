@@ -67,6 +67,7 @@ function Page() {
         image={heroPiscina}
         ctaLabel="Bomba de calor para piscina — orçamento no WhatsApp"
         ctaMessage="Olá! Quero instalar uma bomba de calor para piscina em Curitiba. Pode me passar um orçamento?"
+        variant="background"
       />
 
       {/* Sobre a tecnologia */}
