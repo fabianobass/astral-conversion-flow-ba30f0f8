@@ -7,15 +7,15 @@ import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750.png";
-import logoDruck from "@/assets/marcas/druck.png";
-import logoFluxonn from "@/assets/marcas/fluxonn.png";
-import logoSyllent from "@/assets/marcas/syllent.png";
-import logoTexius from "@/assets/marcas/texius.png";
-import logoLepono from "@/assets/marcas/lepono.png";
-import logoInova from "@/assets/marcas/inova.png";
-import logoKomeco from "@/assets/marcas/komeco.png";
-import logoRowa from "@/assets/marcas/rowa.png";
+import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750.webp";
+import logoDruck from "@/assets/marcas/druck.webp";
+import logoFluxonn from "@/assets/marcas/fluxonn.webp";
+import logoSyllent from "@/assets/marcas/syllent.webp";
+import logoTexius from "@/assets/marcas/texius.webp";
+import logoLepono from "@/assets/marcas/lepono.webp";
+import logoInova from "@/assets/marcas/inova.webp";
+import logoKomeco from "@/assets/marcas/komeco.webp";
+import logoRowa from "@/assets/marcas/rowa.webp";
 
 const partnerBrands = [
   { src: logoRowa, alt: "Rowa" },
@@ -28,17 +28,38 @@ const partnerBrands = [
   { src: logoDruck, alt: "Druck" },
 ];
 
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+
 export const Route = createFileRoute("/servicos/pressurizador")({
-  head: () => ({
-    meta: [
-      { title: "Pressurizador de Água INVERSORA HPI 750 1CV e 2CV em Curitiba | Astral Gás" },
-      { name: "description", content: "Instalação de pressurizador de água inversor HPI 750 (1CV e 2CV) em Curitiba. Pressão constante, baixo ruído e total compatibilidade com aquecedores a gás." },
-      { property: "og:title", content: "Pressurizador de Água — Astral Gás" },
-      { property: "og:description", content: "Pressão ideal em todos os pontos da casa com tecnologia inversora." },
-      { property: "og:image", content: inversoraHpi750 },
-      { name: "twitter:image", content: inversoraHpi750 },
-    ],
-  }),
+  head: () => {
+    const seo = buildRouteMeta({
+      path: "/servicos/pressurizador",
+      title: "Pressurizador de Água em Curitiba — INVERSORA HPI 750 | Astral Gás",
+      description:
+        "Instalação de pressurizador inversor HPI 750 (1CV e 2CV) em Curitiba e bairros. Pressão constante, baixo ruído e total compatibilidade com aquecedores a gás.",
+      image: inversoraHpi750,
+    });
+    return {
+      ...seo,
+      scripts: [
+        jsonLdScript(
+          serviceJsonLd({
+            name: "Instalação de Pressurizador de Água em Curitiba",
+            description:
+              "Instalação de pressurizadores inversores HPI 750 1CV e 2CV em residências e apartamentos de Curitiba e região.",
+            url: "/servicos/pressurizador",
+            image: inversoraHpi750,
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbJsonLd([
+            { name: "Início", path: "/" },
+            { name: "Pressurizador", path: "/servicos/pressurizador" },
+          ]),
+        ),
+      ],
+    };
+  },
   component: Page,
 });
 
@@ -94,13 +115,17 @@ function Page() {
               <img
                 src={inversoraHpi750}
                 alt="Pressurizador de água INVERSORA HPI 750 1CV e 2CV"
-                className="relative h-80 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"
+                width={900}
+                height={900}
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
+                className="relative h-72 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"
                 style={{
                   WebkitMaskImage:
                     "radial-gradient(ellipse at center, black 25%, transparent 85%)",
                   maskImage:
                     "radial-gradient(ellipse at center, black 25%, transparent 85%)",
-                  mixBlendMode: "lighten",
                 }}
               />
             </div>
@@ -231,8 +256,11 @@ function Page() {
                 <img
                   src={b.src}
                   alt={`Logo ${b.alt}`}
-                  className="max-h-full max-w-full object-contain"
+                  width="160"
+                  height="56"
+                  className="h-12 w-auto max-w-full object-contain sm:h-14"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}

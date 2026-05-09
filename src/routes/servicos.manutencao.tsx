@@ -5,17 +5,39 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
-import heroManutencao from "@/assets/hero-manutencao.jpg";
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import heroManutencao from "@/assets/hero-manutencao.webp";
 
 export const Route = createFileRoute("/servicos/manutencao")({
-  head: () => ({
-    meta: [
-      { title: "Manutenção de Aquecedor a Gás em Curitiba | Astral Gás" },
-      { name: "description", content: "Manutenção corretiva e preventiva de aquecedores a gás em Curitiba. Atendimento no mesmo dia, peças originais e garantia." },
-      { property: "og:title", content: "Manutenção de Aquecedor a Gás — Astral Gás" },
-      { property: "og:description", content: "Conserto e manutenção rápida do seu aquecedor com peças originais." },
-    ],
-  }),
+  head: () => {
+    const seo = buildRouteMeta({
+      path: "/servicos/manutencao",
+      title: "Manutenção de Aquecedor a Gás em Curitiba — Atendimento Hoje | Astral",
+      description:
+        "Manutenção e conserto de aquecedor a gás em Curitiba — Batel, Cabral, Juvevê, Mercês, Portão. Peças originais, garantia e atendimento no mesmo dia.",
+      image: heroManutencao,
+    });
+    return {
+      ...seo,
+      scripts: [
+        jsonLdScript(
+          serviceJsonLd({
+            name: "Manutenção de Aquecedor a Gás em Curitiba",
+            description:
+              "Manutenção corretiva e preventiva de aquecedores a gás de todas as marcas, com peças originais e garantia.",
+            url: "/servicos/manutencao",
+            image: heroManutencao,
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbJsonLd([
+            { name: "Início", path: "/" },
+            { name: "Manutenção", path: "/servicos/manutencao" },
+          ]),
+        ),
+      ],
+    };
+  },
   component: Page,
 });
 

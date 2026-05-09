@@ -4,11 +4,11 @@ import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
-import heroImg from "@/assets/hero-aquecedor.jpg";
-import logoRinnai from "@/assets/logo-rinnai.png";
-import logoLorenzetti from "@/assets/logo-lorenzetti.png";
-import logoRheem from "@/assets/logo-rheem.png";
-import logoKomeco from "@/assets/logo-komeco.png";
+import heroImg from "@/assets/hero-aquecedor.webp";
+import logoRinnai from "@/assets/logo-rinnai.webp";
+import logoLorenzetti from "@/assets/logo-lorenzetti.webp";
+import logoRheem from "@/assets/logo-rheem.webp";
+import logoKomeco from "@/assets/logo-komeco.webp";
 
 export function Hero() {
   return (
@@ -83,25 +83,25 @@ export function Hero() {
               ].map((b) => (
                 <div
                   key={b.alt}
-                  className="flex items-center justify-center rounded-md border border-white/10 bg-white/40 backdrop-blur px-1.5 py-0"
+                  className="flex items-center justify-center rounded-md border border-white/10 bg-white/40 backdrop-blur px-1.5 py-1 sm:py-0"
                 >
-                  <img src={b.src} alt={`Logo ${b.alt}`} className={`${b.h} w-auto object-contain -my-2 sm:-my-3`} loading="lazy" />
+                  <img src={b.src} alt={`Logo ${b.alt}`} width="120" height="48" className={`${b.h} w-auto object-contain sm:-my-3`} loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mt-10 flex items-center gap-6 text-xs text-white/60">
+          <div className="mt-10 grid grid-cols-3 gap-3 text-center text-xs text-white/60 sm:flex sm:items-center sm:gap-6 sm:text-left">
             <div>
               <div className="font-display text-2xl font-bold text-gold">+15</div>
               anos no mercado
             </div>
-            <div className="h-10 w-px bg-white/15" />
+            <div className="hidden h-10 w-px bg-white/15 sm:block" />
             <div>
               <div className="font-display text-2xl font-bold text-gold">+2.000</div>
               instalações
             </div>
-            <div className="h-10 w-px bg-white/15" />
+            <div className="hidden h-10 w-px bg-white/15 sm:block" />
             <div>
               <div className="font-display text-2xl font-bold text-gold">4.9★</div>
               avaliação Google
@@ -121,6 +121,9 @@ export function Hero() {
             alt="Aquecedor a gás premium instalado pela Astral Gás"
             width={1024}
             height={1024}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="relative rounded-3xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
           />
         </motion.div>

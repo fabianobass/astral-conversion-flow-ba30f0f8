@@ -6,22 +6,43 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import heroPiscina from "@/assets/bomba-de-calor/hero-piscina.png";
-import bombaProduto from "@/assets/bomba-de-calor/bomba-produto.png";
-import piscinaVapor from "@/assets/bomba-de-calor/piscina-vapor.jpg";
-import piscinaAerea from "@/assets/bomba-de-calor/piscina-aerea.png";
+import heroPiscina from "@/assets/bomba-de-calor/hero-piscina.webp";
+import bombaProduto from "@/assets/bomba-de-calor/bomba-produto.webp";
+import piscinaVapor from "@/assets/bomba-de-calor/piscina-vapor.webp";
+import piscinaAerea from "@/assets/bomba-de-calor/piscina-aerea.webp";
+
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/servicos/bomba-de-calor")({
-  head: () => ({
-    meta: [
-      { title: "Bomba de Calor para Piscina em Curitiba | Astral Gás" },
-      { name: "description", content: "Instalação de bomba de calor Full Inverter para piscinas em Curitiba. Aquece no inverno, refresca no verão, economia de até 80% e controle via Wi-Fi." },
-      { property: "og:title", content: "Bomba de Calor para Piscina — Astral Gás" },
-      { property: "og:description", content: "Conforto térmico o ano inteiro: tecnologia Full Inverter, condensador em titânio e Wi-Fi integrado." },
-      { property: "og:image", content: heroPiscina },
-      { name: "twitter:image", content: heroPiscina },
-    ],
-  }),
+  head: () => {
+    const seo = buildRouteMeta({
+      path: "/servicos/bomba-de-calor",
+      title: "Bomba de Calor para Piscina em Curitiba — Full Inverter | Astral Gás",
+      description:
+        "Instalação de bomba de calor Full Inverter para piscinas em Curitiba e região. Aquece no inverno, refresca no verão e economiza até 80% de energia.",
+      image: heroPiscina,
+    });
+    return {
+      ...seo,
+      scripts: [
+        jsonLdScript(
+          serviceJsonLd({
+            name: "Bomba de Calor para Piscina em Curitiba",
+            description:
+              "Instalação especializada de bomba de calor Full Inverter para piscinas residenciais em Curitiba e região metropolitana.",
+            url: "/servicos/bomba-de-calor",
+            image: heroPiscina,
+          }),
+        ),
+        jsonLdScript(
+          breadcrumbJsonLd([
+            { name: "Início", path: "/" },
+            { name: "Bomba de Calor", path: "/servicos/bomba-de-calor" },
+          ]),
+        ),
+      ],
+    };
+  },
   component: Page,
 });
 

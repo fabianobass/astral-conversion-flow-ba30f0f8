@@ -15,13 +15,16 @@ export function ServiceHero({
   image?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-navy-deep pt-40 pb-28 text-white">
+    <section className="relative overflow-hidden bg-navy-deep pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
       {image && (
         <>
           <img
             src={image}
             alt=""
             aria-hidden
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-navy-deep/60 sm:bg-navy-deep/40 md:bg-transparent" />
