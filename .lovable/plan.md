@@ -1,49 +1,31 @@
 ## Objetivo
 
-Garantir que cada página comece (H1 visível e `<title>` SEO) com a palavra-chave exata definida pelo cliente, otimizando para campanhas de Google Ads.
+Reduzir aproximadamente 20% o tamanho visual do `<h1>` (hero) em todas as páginas. O `<title>` da aba é controlado pelo navegador e não tem tamanho de fonte ajustável via CSS — entendo "title" aqui como o título visual do hero (mesmo elemento H1). Confirmo isso na execução.
 
-## Mapeamento de palavras-chave
+## Tamanhos atuais → novos (-20%)
 
-| Página | Rota | Palavra-chave inicial |
-|---|---|---|
-| Home | `/` | **Aquecedor a gás em Curitiba** |
-| Aquecedor | `/servicos/aquecedor-a-gas` | **Comprar aquecedor a gás** |
-| Manutenção | `/servicos/manutencao` | **Manutenção de aquecedor a gás** |
-| Pressurizador | `/servicos/pressurizador` | **Pressurizador de água** |
-| Bomba de calor | `/servicos/bomba-de-calor` | **Bomba de calor para piscina** |
+Aplico nas duas variações de H1 hero existentes:
 
-## Mudanças por página
+**`src/components/sections/Hero.tsx` (home)**
+- Atual: `text-4xl sm:text-5xl lg:text-6xl` (36 / 48 / 60 px)
+- Novo:  `text-3xl sm:text-4xl lg:text-5xl` (30 / 36 / 48 px) → ~17–20% menor
 
-Para cada rota vou ajustar **dois pontos**:
+**`src/components/sections/ServiceHero.tsx` (aquecedor, manutenção, bomba de calor)**
+- Atual: `text-4xl sm:text-5xl lg:text-6xl`
+- Novo:  `text-3xl sm:text-4xl lg:text-5xl`
 
-1. **`<title>` SEO** (em `head()` via `buildRouteMeta`) — começar com a keyword exata, seguida de complemento curto + marca.
-2. **H1 visível** no Hero/ServiceHero — reescrever para começar com a keyword exata, mantendo subtítulo persuasivo.
+**`src/routes/servicos.pressurizador.tsx` (hero customizado)**
+- Atual: `text-4xl sm:text-5xl lg:text-6xl`
+- Novo:  `text-3xl sm:text-4xl lg:text-5xl`
 
-### Home (`src/routes/index.tsx` + `src/components/sections/Hero.tsx`)
-- Title: `Aquecedor a gás em Curitiba | Instalação no mesmo dia — Astral Gás`
-- H1: `Aquecedor a gás em Curitiba com instalação no mesmo dia`
+## Fora de escopo
 
-### Aquecedor (`src/routes/servicos.aquecedor-a-gas.tsx`)
-- Title: `Comprar aquecedor a gás em Curitiba — Rinnai, Bosch, Komeco | Astral`
-- H1 (eyebrow + title): eyebrow "Aquecedor a Gás" / title `Comprar aquecedor a gás com instalação no mesmo dia`
-- Description ajustada para reforçar "comprar".
+- Não altero o `<title>` HTML da aba (não é redimensionável).
+- Não mexo em H2 de seções nem em descrições.
+- Não altero conteúdo textual, apenas classes de tamanho.
 
-### Manutenção (`src/routes/servicos.manutencao.tsx`)
-- Title: `Manutenção de aquecedor a gás em Curitiba — Atendimento hoje | Astral`
-- H1: `Manutenção de aquecedor a gás com atendimento ainda hoje`
+## Arquivos editados
 
-### Pressurizador (`src/routes/servicos.pressurizador.tsx`)
-- Title: `Pressurizador de água em Curitiba — Instalação e venda | Astral Gás`
-- H1: `Pressurizador de água para pressão constante em casa`
-- Ajusto também o `head()` SEO da rota.
-
-### Bomba de calor (`src/routes/servicos.bomba-de-calor.tsx`)
-- Title: `Bomba de calor para piscina em Curitiba — Full Inverter | Astral Gás`
-- H1: `Bomba de calor para piscina com tecnologia Full Inverter`
-
-## Detalhes técnicos
-
-- Apenas alteração de strings em `head()` e em props `title`/`eyebrow` passadas para `Hero` e `ServiceHero`.
-- Mantenho descrições, schema JSON-LD, canonical e og:image já implementados.
-- Nenhuma mudança de layout, lógica ou assets.
-- Verificação visual após edição: confirmar que H1 nos heros começa com a keyword e que `<title>` aparece corretamente nas abas (preview).
+1. `src/components/sections/Hero.tsx`
+2. `src/components/sections/ServiceHero.tsx`
+3. `src/routes/servicos.pressurizador.tsx`

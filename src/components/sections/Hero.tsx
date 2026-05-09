@@ -28,7 +28,7 @@ export function Hero() {
             <Clock className="h-3.5 w-3.5" /> Atendimento em até 30 minutos
           </div>
 
-          <h1 className="font-display text-4xl font-bold leading-[1.05] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-3xl font-bold leading-[1.05] sm:text-4xl lg:text-5xl">
             <span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">
               Aquecedor a gás em Curitiba
             </span>{" "}
