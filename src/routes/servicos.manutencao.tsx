@@ -3,6 +3,7 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
+import heroManutencao from "@/assets/hero-manutencao.jpg";
 
 export const Route = createFileRoute("/servicos/manutencao")({
   head: () => ({
@@ -23,6 +24,7 @@ function Page() {
         eyebrow="Manutenção"
         title="Volte a ter banho quente hoje mesmo"
         description="Manutenção corretiva e preventiva para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia."
+        image={heroManutencao}
       />
       <ServiceContent
         benefits={[
