@@ -1,40 +1,42 @@
 ## Objetivo
 
-Otimizar a página `/servicos/aquecedor-a-gas` para conversão (clique pago de R$ 30) e SEO/Índice de Qualidade do Google Ads, com foco nas marcas Rinnai e Lorenzetti.
+Adicionar a galeria `RealWorkGallery` (carrossel com setas e paginação) na rota `/servicos/bomba-de-calor` usando as 5 fotos enviadas, replicando o padrão visual já presente em Aquecedor a Gás e Pressurizador.
 
-## Mudanças
+## Etapas
 
-### 1. Reordenar seções (`src/routes/servicos.aquecedor-a-gas.tsx`)
+### 1. Copiar e otimizar as imagens
 
-Hoje a ordem é: Hero → TrustBar → **RealWorkGallery** → ServiceContent (lista de aparelhos/benefícios) → FAQ → CtaForm.
+Copiar de `user-uploads://` para `src/assets/bomba-de-calor/instalacoes/` e converter para WebP (qualidade 82) via ImageMagick — fotos de WhatsApp viram ~80–150 KB cada.
 
-Nova ordem: Hero → TrustBar → **ServiceContent** (lista de aparelhos) → **RealWorkGallery** (logo abaixo, como prova social visual) → FAQ → CtaForm.
+Arquivos finais:
+- `bomba-druck-inverter-curitiba.webp`
+- `bomba-druck-dri-jardim.webp`
+- `bomba-druck-dri35-laje.webp`
+- `bomba-druck-dri45-area-externa.webp`
+- `bomba-druck-dri45-casa-maquinas.webp`
 
-Justificativa: o usuário lê primeiro o que está incluído + processo, e logo abaixo vê fotos reais das instalações — sequência clássica de prova social que aumenta conversão antes do FAQ.
+### 2. Popular `heatPumpPhotos`
 
-### 2. Reforçar menções a Rinnai e Lorenzetti (mesma rota)
+Em `src/lib/work-photos.ts`, importar as 5 imagens novas e preencher o array `heatPumpPhotos` (que hoje está vazio) com `src`, `alt`, `caption` e `neighborhood`.
 
-Hoje "Rinnai" e "Lorenzetti" aparecem 1× cada (no `description` do Hero e no item de benefícios). Vou levar cada marca a no mínimo 2–3 ocorrências naturais, sem keyword stuffing:
+`alt` segue o padrão: "Instalação de bomba de calor … em Curitiba, feita pela Astral Gás" (com a especificidade da foto).
+`neighborhood`: "Curitiba e região" como genérico, já que não temos os bairros confirmados — fácil de trocar depois.
 
-- **Hero `description`**: reescrever para citar "Rinnai e Lorenzetti" explicitamente como linhas principais.
-- **`benefits` (lista "O que está incluído")**: separar em dois itens — um destacando "Aquecedores Rinnai (linhas E, REU, Infinity)" e outro "Aquecedores Lorenzetti, Komeco e Bosch", em vez do item genérico atual.
-- **Bloco final cinza** (parágrafo SEO no fim da página): reescrever para mencionar "Rinnai" e "Lorenzetti" novamente, junto com "Curitiba" e bairros-chave (Batel, Água Verde, Bigorrilho).
-- **`title` do Hero**: manter como está (já tem boa densidade), mas garantir que o `<title>` da aba (`buildRouteMeta`) e a `description` continuem com "Rinnai" — já estão.
+### 3. Inserir o carrossel na página
 
-Resultado: 3× "Rinnai" e 2–3× "Lorenzetti" no HTML renderizado, distribuídos em hero, conteúdo e rodapé semântico.
+Em `src/routes/servicos.bomba-de-calor.tsx`:
+- Importar `RealWorkGallery` e `heatPumpPhotos`.
+- Adicionar `<RealWorkGallery photos={heatPumpPhotos} title="Bombas de calor instaladas pela Astral Gás" subtitle="Fotos reais de instalações Full Inverter em piscinas de Curitiba e região metropolitana." />` logo após a seção "Engenharia / features" e antes do `<ServiceContent>`.
 
-### 3. Não mexer
-
-- Estrutura de componentes (`ServiceHero`, `ServiceContent`, `RealWorkGallery`) — só reordenar e ajustar props/strings.
-- CTAs, estilos, design system, formulário, FAQ, JSON-LD.
-- Outras páginas de serviço.
-
-## Arquivos a editar
-
-1. `src/routes/servicos.aquecedor-a-gas.tsx` — reordenar JSX + reescrever `description` do Hero, `benefits[]` e parágrafo SEO final.
+O componente `RealWorkGallery` já tem setas (← →), paginação por bullets e autoplay com `embla-carousel-autoplay` — não precisa alterar nada nele.
 
 ## Fora de escopo
 
-- Alterar `serviceJsonLd` / metadados (já citam Rinnai).
-- Reescrever FAQ ou CtaForm.
-- Mudar páginas de bomba de calor, manutenção, pressurizador.
+- Não altero hero, FAQ, CtaForm nem JSON-LD da página.
+- Não mexo em outras rotas nem no componente do carrossel.
+
+## Arquivos editados
+
+1. `src/assets/bomba-de-calor/instalacoes/*.webp` — 5 imagens novas otimizadas.
+2. `src/lib/work-photos.ts` — popular `heatPumpPhotos`.
+3. `src/routes/servicos.bomba-de-calor.tsx` — adicionar a seção do carrossel.
