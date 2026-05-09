@@ -52,6 +52,23 @@ export function Footer() {
                   <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </a>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="mb-4 font-display text-lg text-white">Atendimento</h4>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-2">
+                <Clock className="h-4 w-4 mt-0.5 text-gold" />
+                <div>
+                  Seg–Sex: 08h às 18h<br />
+                  Sábado: 08h às 13h
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 mt-0.5 text-gold" />
+                <div>Curitiba e região metropolitana</div>
+              </li>
               <li>
                 <div className="mb-2 text-xs uppercase tracking-wider text-gold">Redes sociais</div>
                 <div className="flex items-center gap-3">
@@ -74,23 +91,6 @@ export function Footer() {
                     <Facebook className="h-5 w-5" />
                   </a>
                 </div>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4 font-display text-lg text-white">Atendimento</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <Clock className="h-4 w-4 mt-0.5 text-gold" />
-                <div>
-                  Seg–Sex: 08h às 18h<br />
-                  Sábado: 08h às 13h
-                </div>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 text-gold" />
-                <div>Curitiba e região metropolitana</div>
               </li>
             </ul>
           </div>
