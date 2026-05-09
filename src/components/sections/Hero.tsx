@@ -21,6 +21,11 @@ import logoRheem from "@/assets/logo-rheem.webp";
 import logoKomeco from "@/assets/logo-komeco.webp";
 
 export function Hero() {
+  // Local flags so we can drop the GPU-layer hint as soon as each animation
+  // finishes — keeps mobile memory low without losing the smooth entrance.
+  const [textDone, setTextDone] = useState(false);
+  const [imageDone, setImageDone] = useState(false);
+
   return (
     <section data-nav-surface="dark" className="relative overflow-hidden bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28">
       {/* Decorative glows */}
