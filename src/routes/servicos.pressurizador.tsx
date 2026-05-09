@@ -104,9 +104,9 @@ function Page() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Pressurizador de água — pedir orçamento no WhatsApp"
-                  className="inline-flex w-full sm:w-auto min-h-[56px] items-center justify-center gap-2.5 rounded-full bg-whatsapp px-8 py-4 sm:py-5 text-base sm:text-lg font-bold text-white ring-2 ring-emerald-300/50 shadow-[0_14px_40px_-8px_rgba(34,197,94,0.7)] hover:bg-emerald-500 hover:scale-[1.03] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300/80 transition"
+                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-[0_8px_24px_-8px_rgba(34,197,94,0.55)] hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition"
                 >
-                  <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" /> Pressurizador de água — orçamento no WhatsApp
+                  <WhatsAppIcon className="h-5 w-5" /> Pressurizador de água — orçamento no WhatsApp
                 </a>
               </div>
             </div>
