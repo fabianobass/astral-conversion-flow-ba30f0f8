@@ -1,18 +1,18 @@
-## Integrar a foto do pressurizador ao fundo do hero
+## Aumentar a foto do pressurizador e integrá-la mais ao fundo
 
-A foto do produto (`inversora-hpi-750.png`) está com fundo transparente, mas visualmente ainda aparece como um "recorte" sobre o navy escuro. Vou aplicar efeitos de blending para ela parecer integrada ao header.
+### Mudanças no `<img>` do hero em `src/routes/servicos.pressurizador.tsx`
 
-### Mudanças em `src/routes/servicos.pressurizador.tsx` (apenas no `<img>` do hero)
+1. **Aumentar tamanho da imagem**
+   - Container: `max-w-xs lg:max-w-sm` → `max-w-sm lg:max-w-lg`
+   - Altura: `h-72 lg:h-96` → `h-96 lg:h-[32rem]`
+   - Em telas grandes pode estourar levemente para fora da coluna usando `lg:scale-110` para reforçar presença
 
-1. **Reduzir opacidade da imagem** para ~80–85% (`opacity-85`) para suavizar o contraste com o fundo navy
-2. **Aplicar máscara radial de fade** nas bordas usando `mask-image` (CSS), fazendo as extremidades da foto se dissolverem no fundo navy-deep
-3. **Reforçar o glow dourado** atrás da imagem (já existe) aumentando levemente o blur, para dar a sensação de luz emanando do produto
-4. **Adicionar `mix-blend-mode: lighten`** opcional — testar; em fundos escuros ajuda o produto branco/cinza a parecer luminoso ao invés de "colado"
+2. **Mais "para o fundo" (mais transparente / mais integrada)**
+   - Opacidade: `opacity-90` → `opacity-60`
+   - Máscara radial com fade mais agressivo: `radial-gradient(ellipse at center, black 35%, transparent 90%)` (antes começava a fade em 55%)
+   - Glow dourado atrás reforçado: `from-gold/40` → `from-gold/50`, blur ainda maior
 
-### Resultado esperado
-
-Foto do HPI 750 parece flutuar no header navy, com bordas suaves dissolvendo no fundo e um halo dourado por trás — mesma linguagem visual do resto da página, sem o aspecto de "sticker" recortado.
+3. **Manter** `mix-blend-mode: lighten` (já ajuda a "queimar" no navy)
 
 ### Arquivos afetados
-
-- `src/routes/servicos.pressurizador.tsx` (apenas as classes do `<img>` e do container do glow no hero)
+- `src/routes/servicos.pressurizador.tsx` (apenas o bloco da imagem do hero)
