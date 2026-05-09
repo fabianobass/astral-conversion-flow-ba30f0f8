@@ -90,9 +90,9 @@ export function Hero() {
               ].map((b) => (
                 <div
                   key={b.alt}
-                  className="flex items-center justify-center rounded-lg border border-white/10 bg-white/85 backdrop-blur px-2 py-1.5"
+                  className="flex items-center justify-center rounded-md border border-white/10 bg-white/85 backdrop-blur px-1 py-0.5"
                 >
-                  <img src={b.src} alt={`Logo ${b.alt}`} className="h-9 sm:h-11 w-auto object-contain" loading="lazy" />
+                  <img src={b.src} alt={`Logo ${b.alt}`} className="h-11 sm:h-14 w-auto object-contain" loading="lazy" />
                 </div>
               ))}
             </div>
