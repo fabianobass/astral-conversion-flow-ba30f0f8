@@ -3,6 +3,8 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
+import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
+import { installPhotos } from "@/lib/work-photos";
 
 export const Route = createFileRoute("/servicos/pressurizador")({
   head: () => ({
@@ -39,6 +41,11 @@ function Page() {
           "Recomendação do equipamento ideal",
           "Instalação no mesmo dia",
         ]}
+      />
+      <RealWorkGallery
+        title="Trabalhos recentes da Astral Gás"
+        subtitle="Instalações reais feitas pela nossa equipe em Curitiba."
+        photos={installPhotos}
       />
       <FAQ />
       <CtaForm />

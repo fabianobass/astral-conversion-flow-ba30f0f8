@@ -4,6 +4,8 @@ import { ServiceContent } from "@/components/sections/ServiceContent";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
+import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
+import { installPhotos } from "@/lib/work-photos";
 import heroBanho from "@/assets/hero-banho.jpg";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
@@ -28,6 +30,11 @@ function Page() {
         image={heroBanho}
       />
       <TrustBar />
+      <RealWorkGallery
+        title="Instalações reais feitas pela Astral Gás"
+        subtitle="Veja exemplos recentes de aquecedores instalados em casas e apartamentos de Curitiba."
+        photos={installPhotos}
+      />
       <ServiceContent
         benefits={[
           "Visita técnica gratuita para dimensionamento",

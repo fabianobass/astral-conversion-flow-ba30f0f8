@@ -7,6 +7,8 @@ import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { CtaForm } from "@/components/sections/CtaForm";
+import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
+import { installPhotos } from "@/lib/work-photos";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +27,7 @@ function Index() {
     <>
       <Hero />
       <TrustBar />
+      <RealWorkGallery photos={installPhotos} />
       <Services />
       <WhyUs />
       <Process />

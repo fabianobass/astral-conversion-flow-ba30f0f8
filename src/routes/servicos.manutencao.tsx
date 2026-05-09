@@ -3,6 +3,8 @@ import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
+import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
+import { maintenancePhotos } from "@/lib/work-photos";
 import heroManutencao from "@/assets/hero-manutencao.jpg";
 
 export const Route = createFileRoute("/servicos/manutencao")({
@@ -25,6 +27,12 @@ function Page() {
         title="Volte a ter banho quente hoje mesmo"
         description="Manutenção corretiva e preventiva para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia."
         image={heroManutencao}
+      />
+      <RealWorkGallery
+        eyebrow="Conserto Urgente"
+        title="Manutenções recentes da equipe Astral Gás"
+        subtitle="Atendimentos reais em Curitiba: diagnóstico, troca de peças e testes finais com peças originais."
+        photos={maintenancePhotos}
       />
       <ServiceContent
         benefits={[
