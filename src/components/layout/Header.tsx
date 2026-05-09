@@ -42,12 +42,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 text-sm text-foreground/90 hover:text-gold">
-            <Phone className="h-4 w-4 text-gold" />
-            {PHONE_SALES_DISPLAY}
-          </a>
           <SpecialistDropdown />
-
         </div>
 
         <button
@@ -67,9 +62,6 @@ export function Header() {
             <Link to="/servicos/manutencao" onClick={() => setOpen(false)} className="text-foreground/90 py-2">Manutenção</Link>
             <Link to="/servicos/pressurizador" onClick={() => setOpen(false)} className="text-foreground/90 py-2">Pressurizador</Link>
             <Link to="/servicos/bomba-de-calor" onClick={() => setOpen(false)} className="text-foreground/90 py-2">Bomba de Calor</Link>
-            <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 text-foreground py-2">
-              <Phone className="h-4 w-4 text-gold" /> {PHONE_SALES_DISPLAY}
-            </a>
             <SpecialistDropdown className="mt-2 w-full px-5 py-3" />
 
           </nav>
