@@ -17,9 +17,9 @@ export const Route = createFileRoute("/servicos/bomba-de-calor")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/bomba-de-calor",
-      title: "Bomba de Calor para Piscina em Curitiba — Full Inverter | Astral Gás",
+      title: "Bomba de calor para piscina em Curitiba — Full Inverter | Astral Gás",
       description:
-        "Instalação de bomba de calor Full Inverter para piscinas em Curitiba e região. Aquece no inverno, refresca no verão e economiza até 80% de energia.",
+        "Bomba de calor para piscina em Curitiba e região — Full Inverter. Aquece no inverno, refresca no verão e economiza até 80% de energia.",
       image: heroPiscina,
     });
     return {
