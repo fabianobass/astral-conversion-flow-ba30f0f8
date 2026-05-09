@@ -70,10 +70,10 @@ export function CtaForm() {
   };
 
   const fieldClass = (hasError: boolean) =>
-    `w-full rounded-xl border bg-white/5 px-4 py-3 text-white placeholder:text-white/55 focus:outline-none ${
+    `w-full rounded-xl border bg-nav-fg/5 px-4 py-3 text-nav-fg placeholder:text-nav-fg/55 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-nav-accent ${
       hasError
         ? "border-red-400 focus:border-red-300 focus:ring-2 focus:ring-red-400/40"
-        : "border-white/15 focus:border-gold"
+        : "border-nav-fg/15 focus:border-nav-accent"
     }`;
 
   return (
