@@ -33,6 +33,11 @@ export function ServiceHero({
   ctaMessage?: string;
   variant?: Variant;
 }) {
+  // Drop the GPU-layer hint after the entrance ends so mobile doesn't keep
+  // an extra compositor layer alive once the hero is static.
+  const [textDone, setTextDone] = useState(false);
+  const [imageDone, setImageDone] = useState(false);
+
   const ctaButton = (
     <a
       href={waLink(undefined, ctaMessage)}
