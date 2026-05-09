@@ -115,13 +115,17 @@ function Page() {
               <img
                 src={inversoraHpi750}
                 alt="Pressurizador de água INVERSORA HPI 750 1CV e 2CV"
-                className="relative h-80 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"
+                width={900}
+                height={900}
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
+                className="relative h-72 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"
                 style={{
                   WebkitMaskImage:
                     "radial-gradient(ellipse at center, black 25%, transparent 85%)",
                   maskImage:
                     "radial-gradient(ellipse at center, black 25%, transparent 85%)",
-                  mixBlendMode: "lighten",
                 }}
               />
             </div>
@@ -252,8 +256,11 @@ function Page() {
                 <img
                   src={b.src}
                   alt={`Logo ${b.alt}`}
-                  className="max-h-full max-w-full object-contain"
+                  width="160"
+                  height="56"
+                  className="h-12 w-auto max-w-full object-contain sm:h-14"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
