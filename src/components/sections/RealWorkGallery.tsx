@@ -91,7 +91,7 @@ export function RealWorkGallery({
             type="button"
             onClick={() => emblaApi?.scrollPrev()}
             aria-label="Foto anterior"
-            className="absolute -left-2 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-navy-deep shadow-lg ring-1 ring-border transition hover:bg-gold hover:text-navy-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 sm:flex lg:-left-5"
+            className="absolute -left-2 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-navy-deep shadow-lg ring-1 ring-border transition hover:bg-gold hover:text-navy-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 sm:flex lg:-left-5"
           >
             <ArrowLeft className="h-5 w-5" />
           </button>
@@ -99,7 +99,7 @@ export function RealWorkGallery({
             type="button"
             onClick={() => emblaApi?.scrollNext()}
             aria-label="Próxima foto"
-            className="absolute -right-2 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-navy-deep shadow-lg ring-1 ring-border transition hover:bg-gold hover:text-navy-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 sm:flex lg:-right-5"
+            className="absolute -right-2 top-1/2 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-navy-deep shadow-lg ring-1 ring-border transition hover:bg-gold hover:text-navy-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 sm:flex lg:-right-5"
           >
             <ArrowRight className="h-5 w-5" />
           </button>
