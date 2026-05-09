@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 import { waLink } from "@/lib/contact";
@@ -12,7 +13,7 @@ export function ServiceHero({
   ctaMessage,
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   description: string;
   image?: string;
   ctaLabel?: string;

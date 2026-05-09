@@ -60,7 +60,7 @@ function Page() {
     <>
       <ServiceHero
         eyebrow="Bomba de Calor"
-        title="Bomba de calor para piscina com tecnologia Full Inverter"
+        title={<><span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Bomba de calor para piscina</span> com tecnologia Full Inverter</>}
         description="Aquecimento e refrigeração para piscinas com tecnologia Full Inverter, máxima eficiência, economia de até 80% e controle inteligente via Wi-Fi."
         image={heroPiscina}
         ctaLabel="Bomba de calor para piscina — orçamento no WhatsApp"
