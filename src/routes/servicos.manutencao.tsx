@@ -73,6 +73,8 @@ function Page() {
           "Diagnóstico e orçamento sem compromisso",
           "Conserto realizado com nota fiscal",
         ]}
+        ctaLabel="Manutenção de aquecedor a gás — chamar agora"
+        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
       />
       <FAQ />
       <CtaForm />
