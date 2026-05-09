@@ -83,10 +83,10 @@ export function Hero() {
             <div className="mb-3 text-[11px] uppercase tracking-widest text-white/40">Marcas autorizadas</div>
             <div className="grid grid-cols-4 gap-2 sm:gap-3">
               {[
-                { src: logoRinnai, alt: "Rinnai", h: "h-8 sm:h-10" },
-                { src: logoLorenzetti, alt: "Lorenzetti", h: "h-7 sm:h-8" },
-                { src: logoRheem, alt: "Rheem", h: "h-12 sm:h-14" },
-                { src: logoKomeco, alt: "Komeco", h: "h-7 sm:h-9" },
+                { src: logoRinnai, alt: "Rinnai", h: "h-11 sm:h-14" },
+                { src: logoLorenzetti, alt: "Lorenzetti", h: "h-9 sm:h-11" },
+                { src: logoRheem, alt: "Rheem", h: "h-14 sm:h-[4.5rem]" },
+                { src: logoKomeco, alt: "Komeco", h: "h-10 sm:h-12" },
               ].map((b) => (
                 <div
                   key={b.alt}
