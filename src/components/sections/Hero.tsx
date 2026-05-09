@@ -121,6 +121,9 @@ export function Hero() {
             alt="Aquecedor a gás premium instalado pela Astral Gás"
             width={1024}
             height={1024}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
             className="relative rounded-3xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
           />
         </motion.div>
