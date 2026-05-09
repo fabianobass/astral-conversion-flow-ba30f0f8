@@ -1,6 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
-import { ServiceHero } from "@/components/sections/ServiceHero";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ChevronRight, Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
@@ -9,17 +8,16 @@ import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750.png";
-import heroPressurizador from "@/assets/pressurizador/hero-pressurizador.jpg";
 
 export const Route = createFileRoute("/servicos/pressurizador")({
   head: () => ({
     meta: [
-      { title: "Pressurizador INVERSORA HPI 750 1CV e 2CV em Curitiba | Astral Gás" },
-      { name: "description", content: "Instalação de pressurizador inversor HPI 750 (1CV e 2CV) em Curitiba. Pressão constante, baixo ruído e total compatibilidade com aquecedores a gás." },
-      { property: "og:title", content: "Pressurizador INVERSORA HPI 750 — Astral Gás" },
+      { title: "Pressurizador de Água INVERSORA HPI 750 1CV e 2CV em Curitiba | Astral Gás" },
+      { name: "description", content: "Instalação de pressurizador de água inversor HPI 750 (1CV e 2CV) em Curitiba. Pressão constante, baixo ruído e total compatibilidade com aquecedores a gás." },
+      { property: "og:title", content: "Pressurizador de Água — Astral Gás" },
       { property: "og:description", content: "Pressão ideal em todos os pontos da casa com tecnologia inversora." },
-      { property: "og:image", content: heroPressurizador },
-      { name: "twitter:image", content: heroPressurizador },
+      { property: "og:image", content: inversoraHpi750 },
+      { name: "twitter:image", content: inversoraHpi750 },
     ],
   }),
   component: Page,
@@ -37,12 +35,52 @@ const features = [
 function Page() {
   return (
     <>
-      <ServiceHero
-        eyebrow="Pressurizador"
-        title="Pressurizador de Água — pressão ideal em toda a casa"
-        description="Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos potentes, funcionamento perfeito do aquecedor a gás e pressão constante em todos os pontos."
-        image={heroPressurizador}
-      />
+      {/* Hero customizado com produto à direita */}
+      <section className="relative overflow-hidden bg-navy-deep pt-40 pb-28 text-white">
+        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
+        <div className="relative mx-auto max-w-6xl px-4 lg:px-8">
+          <nav className="mb-8 flex items-center gap-1 text-xs text-white/60">
+            <Link to="/" className="hover:text-gold">Início</Link>
+            <ChevronRight className="h-3 w-3" />
+            <span className="text-white/80">Pressurizador de Água</span>
+          </nav>
+          <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">
+                Pressurizador de Água
+              </div>
+              <h1 className="font-display text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
+                Pressão ideal em toda a casa
+              </h1>
+              <p className="mt-5 max-w-2xl text-lg text-white/80">
+                Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos
+                potentes, funcionamento perfeito do aquecedor a gás e pressão constante em
+                todos os pontos.
+              </p>
+              <div className="mt-8">
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Solicitar orçamento gratuito pelo WhatsApp"
+                  className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
+                >
+                  <WhatsAppIcon className="h-5 w-5" /> Orçamento gratuito no WhatsApp
+                </a>
+              </div>
+            </div>
+            <div className="relative mx-auto w-full max-w-xs lg:max-w-sm">
+              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />
+              <img
+                src={inversoraHpi750}
+                alt="Pressurizador de água INVERSORA HPI 750 1CV e 2CV"
+                className="relative h-72 w-full object-contain lg:h-96"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* A tecnologia */}
       <section className="bg-background py-20">
