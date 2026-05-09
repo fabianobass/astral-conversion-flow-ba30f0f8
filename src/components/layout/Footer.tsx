@@ -37,7 +37,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <div className="text-xs uppercase tracking-wider text-gold">Vendas</div>
-                <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 hover:text-gold">
+                <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 hover:text-nav-fg-hover">
                   <Phone className="h-4 w-4" /> {PHONE_SALES_DISPLAY}
                 </a>
                 <a
@@ -52,7 +52,7 @@ export function Footer() {
               </li>
               <li>
                 <div className="text-xs uppercase tracking-wider text-gold">Manutenção</div>
-                <a href={`tel:+${PHONE_MAINTENANCE}`} className="flex items-center gap-2 hover:text-gold">
+                <a href={`tel:+${PHONE_MAINTENANCE}`} className="flex items-center gap-2 hover:text-nav-fg-hover">
                   <Phone className="h-4 w-4" /> {PHONE_MAINTENANCE_DISPLAY}
                 </a>
                 <a
@@ -90,7 +90,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Astral Gás no Instagram"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-gold"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-nav-fg-hover"
                   >
                     <Instagram className="h-5 w-5" />
                   </a>
@@ -99,7 +99,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Astral Gás no Facebook"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-gold"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-nav-fg-hover"
                   >
                     <Facebook className="h-5 w-5" />
                   </a>
