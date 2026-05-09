@@ -54,8 +54,11 @@ export function CtaForm() {
         >
           <div className="space-y-4">
             <div>
-              <label className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">Nome</label>
+              <label htmlFor="cta-name" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">Nome</label>
               <input
+                id="cta-name"
+                name="name"
+                autoComplete="name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -64,8 +67,13 @@ export function CtaForm() {
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">WhatsApp</label>
+              <label htmlFor="cta-phone" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">WhatsApp</label>
               <input
+                id="cta-phone"
+                name="phone"
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel"
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -74,8 +82,10 @@ export function CtaForm() {
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">Serviço</label>
+              <label htmlFor="cta-service" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">Serviço</label>
               <select
+                id="cta-service"
+                name="service"
                 value={service}
                 onChange={(e) => setService(e.target.value)}
                 className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white focus:border-gold focus:outline-none"

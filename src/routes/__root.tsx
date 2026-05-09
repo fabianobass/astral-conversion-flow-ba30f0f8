@@ -132,8 +132,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-navy-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-gold focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold"
+      >
+        Pular para o conteúdo
+      </a>
       <Header />
-      <main className="min-h-screen">
+      <main id="main-content" tabIndex={-1} className="min-h-screen focus:outline-none">
         <AnimatedOutlet />
       </main>
       <Footer />
