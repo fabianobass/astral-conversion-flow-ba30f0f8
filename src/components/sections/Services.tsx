@@ -52,7 +52,7 @@ export function Services() {
               <Link
                 to={s.to}
                 aria-label={`${s.title} — Saiba mais`}
-                className="group relative block h-full overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 outline-none hover:-translate-y-1 hover:border-nav-accent hover:shadow-[var(--shadow-premium)] focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group relative block h-full overflow-hidden rounded-2xl border border-border bg-card p-7 transition-all duration-300 outline-none hover:-translate-y-1 hover:border-nav-accent hover:shadow-[var(--shadow-premium)] focus-ring-nav"
               >
                 <div className="absolute right-0 top-0 h-32 w-32 -translate-y-12 translate-x-12 rounded-full bg-gold/10 blur-2xl transition-all group-hover:bg-gold/20" />
                 <div className="relative">

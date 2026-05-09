@@ -70,7 +70,7 @@ export function CtaForm() {
   };
 
   const fieldClass = (hasError: boolean) =>
-    `w-full rounded-xl border bg-nav-fg/5 px-4 py-3 text-nav-fg placeholder:text-nav-fg/55 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-nav-accent ${
+    `w-full rounded-xl border bg-nav-fg/5 px-4 py-3 text-nav-fg placeholder:text-nav-fg/55 outline-none transition-colors focus-ring-nav ${
       hasError
         ? "border-red-400 focus:border-red-300 focus:ring-2 focus:ring-red-400/40"
         : "border-nav-fg/15 focus:border-nav-accent"
@@ -102,7 +102,7 @@ export function CtaForm() {
             </a>
             <a
               href={`tel:+${PHONE_SALES}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-6 py-3.5 font-semibold text-nav-fg outline-none transition-all hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep active:scale-[0.98] motion-reduce:active:scale-100"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-6 py-3.5 font-semibold text-nav-fg outline-none transition-all hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-ring-nav active:scale-[0.98] motion-reduce:active:scale-100"
             >
               <Phone className="h-5 w-5 text-nav-accent" /> {PHONE_SALES_DISPLAY}
             </a>
@@ -208,7 +208,7 @@ export function CtaForm() {
 
             <button
               type="submit"
-              className="mt-2 w-full rounded-full bg-gradient-to-r from-gold to-amber-500 py-4 font-semibold text-navy-deep transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+              className="mt-2 w-full rounded-full bg-gradient-to-r from-gold to-amber-500 py-4 font-semibold text-navy-deep transition-transform hover:scale-[1.02] focus-ring-nav"
             >
               Falar com Especialista no WhatsApp
             </button>

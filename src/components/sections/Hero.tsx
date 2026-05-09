@@ -65,7 +65,7 @@ export function Hero() {
 
             <Link
               to="/servicos/aquecedor-a-gas"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-7 py-4 font-semibold text-nav-fg backdrop-blur outline-none transition-all duration-200 hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep active:scale-[0.98] aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled aria-disabled:border-nav-fg-disabled motion-reduce:transition-none motion-reduce:active:scale-100"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-7 py-4 font-semibold text-nav-fg backdrop-blur outline-none transition-all duration-200 hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-ring-nav active:scale-[0.98] aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled aria-disabled:border-nav-fg-disabled motion-reduce:transition-none motion-reduce:active:scale-100"
             >
               Comprar aquecedor a gás
               <ArrowRight className="h-5 w-5 text-nav-accent transition-transform group-hover:translate-x-1" />

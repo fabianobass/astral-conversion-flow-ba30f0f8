@@ -80,7 +80,7 @@ export function WhatsAppFloat() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="flex items-center gap-3 rounded-xl p-3 text-nav-fg transition-colors outline-none hover:bg-nav-bg-hover hover:text-nav-fg-hover active:bg-nav-bg-active focus-visible:ring-2 focus-visible:ring-nav-accent"
+                  className="flex items-center gap-3 rounded-xl p-3 text-nav-fg transition-colors outline-none hover:bg-nav-bg-hover hover:text-nav-fg-hover active:bg-nav-bg-active focus-ring-nav"
                 >
                   <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-whatsapp/10 text-whatsapp">
                     <o.icon className="h-5 w-5" />
