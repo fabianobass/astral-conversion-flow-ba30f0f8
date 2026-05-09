@@ -9,6 +9,7 @@ import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750.png";
+import heroPressurizador from "@/assets/pressurizador/hero-pressurizador.jpg";
 
 export const Route = createFileRoute("/servicos/pressurizador")({
   head: () => ({
@@ -17,8 +18,8 @@ export const Route = createFileRoute("/servicos/pressurizador")({
       { name: "description", content: "Instalação de pressurizador inversor HPI 750 (1CV e 2CV) em Curitiba. Pressão constante, baixo ruído e total compatibilidade com aquecedores a gás." },
       { property: "og:title", content: "Pressurizador INVERSORA HPI 750 — Astral Gás" },
       { property: "og:description", content: "Pressão ideal em todos os pontos da casa com tecnologia inversora." },
-      { property: "og:image", content: inversoraHpi750 },
-      { name: "twitter:image", content: inversoraHpi750 },
+      { property: "og:image", content: heroPressurizador },
+      { name: "twitter:image", content: heroPressurizador },
     ],
   }),
   component: Page,
@@ -38,9 +39,9 @@ function Page() {
     <>
       <ServiceHero
         eyebrow="Pressurizador"
-        title="INVERSORA HPI 750 — pressão ideal em toda a casa"
+        title="Pressurizador de Água — pressão ideal em toda a casa"
         description="Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos potentes, funcionamento perfeito do aquecedor a gás e pressão constante em todos os pontos."
-        image={inversoraHpi750}
+        image={heroPressurizador}
       />
 
       {/* A tecnologia */}
