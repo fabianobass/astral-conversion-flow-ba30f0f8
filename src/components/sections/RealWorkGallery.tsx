@@ -60,7 +60,7 @@ export function RealWorkGallery({
               {photos.map((p, i) => (
                 <div
                   key={i}
-                  className="min-w-0 shrink-0 grow-0 basis-full pl-4 sm:basis-1/2 lg:basis-1/3"
+                  className="min-w-0 shrink-0 grow-0 basis-full pl-4 sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
                   <figure className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
                     <div className="aspect-square overflow-hidden">
