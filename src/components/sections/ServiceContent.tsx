@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
-export function ServiceContent({ benefits, process }: { benefits: string[]; process: string[] }) {
+export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no WhatsApp", ctaMessage }: { benefits: string[]; process: string[]; ctaLabel?: string; ctaMessage?: string }) {
   return (
     <section className="py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:px-8">
