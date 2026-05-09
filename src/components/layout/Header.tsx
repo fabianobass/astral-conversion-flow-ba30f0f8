@@ -99,6 +99,7 @@ export function Header() {
         </div>
 
         <button
+          ref={toggleRef}
           type="button"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -113,8 +114,12 @@ export function Header() {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            ref={mobileMenuRef}
             key="mobile-menu"
             id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navegação"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
