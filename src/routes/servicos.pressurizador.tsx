@@ -76,7 +76,7 @@ function Page() {
   return (
     <>
       {/* Hero customizado com produto à direita */}
-      <section className="relative overflow-hidden bg-navy-deep pt-40 pb-28 text-white">
+      <section className="relative overflow-hidden bg-navy-deep pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
         <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
         <div className="relative mx-auto max-w-6xl px-4 lg:px-8">
