@@ -4,6 +4,10 @@ import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import heroImg from "@/assets/hero-aquecedor.jpg";
+import logoRinnai from "@/assets/logo-rinnai.png";
+import logoLorenzetti from "@/assets/logo-lorenzetti.png";
+import logoRheem from "@/assets/logo-rheem.png";
+import logoKomeco from "@/assets/logo-komeco.png";
 
 export function Hero() {
   return (
@@ -77,13 +81,18 @@ export function Hero() {
 
           <div className="mt-8">
             <div className="mb-3 text-[11px] uppercase tracking-widest text-white/40">Marcas autorizadas</div>
-            <div className="grid grid-cols-3 gap-2 sm:gap-3">
-              {["RINNAI", "LORENZETTI", "RHEEM"].map((b) => (
+            <div className="grid grid-cols-4 gap-2 sm:gap-3">
+              {[
+                { src: logoRinnai, alt: "Rinnai" },
+                { src: logoLorenzetti, alt: "Lorenzetti" },
+                { src: logoRheem, alt: "Rheem" },
+                { src: logoKomeco, alt: "Komeco" },
+              ].map((b) => (
                 <div
-                  key={b}
-                  className="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 px-2 py-3 font-display text-xs sm:text-sm font-bold tracking-[0.2em] text-white/70"
+                  key={b.alt}
+                  className="flex items-center justify-center rounded-lg border border-white/10 bg-white px-2 py-3"
                 >
-                  {b}
+                  <img src={b.src} alt={`Logo ${b.alt}`} className="h-6 sm:h-8 w-auto object-contain" loading="lazy" />
                 </div>
               ))}
             </div>
