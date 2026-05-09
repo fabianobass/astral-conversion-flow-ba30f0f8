@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock, Instagram, Facebook } from "lucide-react";
 import { PHONE_SALES_DISPLAY, PHONE_MAINTENANCE_DISPLAY, PHONE_SALES, PHONE_MAINTENANCE, waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import logoAstral from "@/assets/logo-astral.webp";
@@ -51,6 +51,29 @@ export function Footer() {
                 <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Astral Gás pelo WhatsApp" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform">
                   <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </a>
+              </li>
+              <li>
+                <div className="mb-2 text-xs uppercase tracking-wider text-gold">Redes sociais</div>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/gasastral/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Astral Gás no Instagram"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-gold"
+                  >
+                    <Instagram className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/people/Astral-G%C3%A1s/pfbid078UjkMYXPN2HoKkA3CP1AHXJ1Ekq8RFDTUCqDLnyGezWcz75dF88742F2db1ecJ3l/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Astral Gás no Facebook"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-gold"
+                  >
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

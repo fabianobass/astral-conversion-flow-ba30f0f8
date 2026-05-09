@@ -1,42 +1,32 @@
 ## Objetivo
 
-Adicionar a galeria `RealWorkGallery` (carrossel com setas e paginação) na rota `/servicos/bomba-de-calor` usando as 5 fotos enviadas, replicando o padrão visual já presente em Aquecedor a Gás e Pressurizador.
+Adicionar links de Instagram e Facebook no rodapé do site.
 
-## Etapas
+## Mudanças
 
-### 1. Copiar e otimizar as imagens
+### 1. `src/components/layout/Footer.tsx`
 
-Copiar de `user-uploads://` para `src/assets/bomba-de-calor/instalacoes/` e converter para WebP (qualidade 82) via ImageMagick — fotos de WhatsApp viram ~80–150 KB cada.
+Dentro da coluna **"Contato"**, logo abaixo do botão verde do WhatsApp, adicionar uma linha "Redes sociais" com dois ícones circulares clicáveis:
 
-Arquivos finais:
-- `bomba-druck-inverter-curitiba.webp`
-- `bomba-druck-dri-jardim.webp`
-- `bomba-druck-dri35-laje.webp`
-- `bomba-druck-dri45-area-externa.webp`
-- `bomba-druck-dri45-casa-maquinas.webp`
+- **Instagram** → `https://www.instagram.com/gasastral/` (ícone `Instagram` de `lucide-react`)
+- **Facebook** → URL completa do perfil enviada pelo usuário (ícone `Facebook` de `lucide-react`)
 
-### 2. Popular `heatPumpPhotos`
+Cada link com:
+- Botão circular ~40 px (`h-10 w-10 rounded-full border border-white/15 bg-white/5`)
+- `hover:text-gold hover:border-gold transition-colors`
+- `target="_blank" rel="noopener noreferrer"`
+- `aria-label="Astral Gás no Instagram"` / `aria-label="Astral Gás no Facebook"`
 
-Em `src/lib/work-photos.ts`, importar as 5 imagens novas e preencher o array `heatPumpPhotos` (que hoje está vazio) com `src`, `alt`, `caption` e `neighborhood`.
+### 2. `src/lib/seo.ts`
 
-`alt` segue o padrão: "Instalação de bomba de calor … em Curitiba, feita pela Astral Gás" (com a especificidade da foto).
-`neighborhood`: "Curitiba e região" como genérico, já que não temos os bairros confirmados — fácil de trocar depois.
-
-### 3. Inserir o carrossel na página
-
-Em `src/routes/servicos.bomba-de-calor.tsx`:
-- Importar `RealWorkGallery` e `heatPumpPhotos`.
-- Adicionar `<RealWorkGallery photos={heatPumpPhotos} title="Bombas de calor instaladas pela Astral Gás" subtitle="Fotos reais de instalações Full Inverter em piscinas de Curitiba e região metropolitana." />` logo após a seção "Engenharia / features" e antes do `<ServiceContent>`.
-
-O componente `RealWorkGallery` já tem setas (← →), paginação por bullets e autoplay com `embla-carousel-autoplay` — não precisa alterar nada nele.
+Adicionar `sameAs: ["https://www.instagram.com/gasastral/", "https://www.facebook.com/..."]` no objeto `localBusinessJsonLd`. Isso ajuda o Google a vincular o site aos perfis sociais (Knowledge Panel, Maps).
 
 ## Fora de escopo
 
-- Não altero hero, FAQ, CtaForm nem JSON-LD da página.
-- Não mexo em outras rotas nem no componente do carrossel.
+- Não reorganizar o rodapé nem criar coluna nova.
+- Não adicionar outras redes (LinkedIn, YouTube etc.).
 
 ## Arquivos editados
 
-1. `src/assets/bomba-de-calor/instalacoes/*.webp` — 5 imagens novas otimizadas.
-2. `src/lib/work-photos.ts` — popular `heatPumpPhotos`.
-3. `src/routes/servicos.bomba-de-calor.tsx` — adicionar a seção do carrossel.
+1. `src/components/layout/Footer.tsx`
+2. `src/lib/seo.ts`
