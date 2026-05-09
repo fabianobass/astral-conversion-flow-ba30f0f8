@@ -7,7 +7,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
-import heroBanho from "@/assets/hero-banho.webp";
+import heroAquecedor from "@/assets/hero-aquecedor-v2.png";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => {
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
       title: "Comprar aquecedor a gás em Curitiba — Rinnai, Bosch, Komeco | Astral",
       description:
         "Comprar aquecedor a gás em Curitiba com instalação no mesmo dia — Batel, Água Verde, Bigorrilho, Cabral. Rinnai, Bosch, Komeco e Lorenzetti. Orçamento grátis.",
-      image: heroBanho,
+      image: heroAquecedor,
     });
     return {
       ...seo,
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
             description:
               "Venda e instalação de aquecedores a gás Rinnai, Bosch, Komeco e Lorenzetti em Curitiba e região metropolitana.",
             url: "/servicos/aquecedor-a-gas",
-            image: heroBanho,
+            image: heroAquecedor,
           }),
         ),
         jsonLdScript(
@@ -49,7 +49,7 @@ function Page() {
         eyebrow="Aquecedor a Gás"
         title={<><span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Comprar aquecedor a gás</span> com instalação no mesmo dia</>}
         description="Venda e instalação de aquecedores a gás de passagem Rinnai, Lorenzetti, Bosch e Komeco para casas e apartamentos em Curitiba. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
-        image={heroBanho}
+        image={heroAquecedor}
         ctaLabel="Comprar aquecedor a gás no WhatsApp"
         ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
       />
