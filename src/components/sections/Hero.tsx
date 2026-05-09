@@ -12,7 +12,7 @@ import logoKomeco from "@/assets/logo-komeco.webp";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section data-nav-surface="dark" className="relative overflow-hidden bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28">
       {/* Decorative glows */}
       <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-navy/40 blur-3xl" />
@@ -65,10 +65,10 @@ export function Hero() {
 
             <Link
               to="/servicos/aquecedor-a-gas"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur transition-colors hover:bg-white/10"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-7 py-4 font-semibold text-nav-fg backdrop-blur outline-none transition-all duration-200 hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep active:scale-[0.98] aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled aria-disabled:border-nav-fg-disabled motion-reduce:transition-none motion-reduce:active:scale-100"
             >
               Comprar aquecedor a gás
-              <ArrowRight className="h-5 w-5 text-gold" />
+              <ArrowRight className="h-5 w-5 text-nav-accent transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 

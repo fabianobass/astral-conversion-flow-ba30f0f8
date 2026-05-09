@@ -70,24 +70,24 @@ export function CtaForm() {
   };
 
   const fieldClass = (hasError: boolean) =>
-    `w-full rounded-xl border bg-white/5 px-4 py-3 text-white placeholder:text-white/55 focus:outline-none ${
+    `w-full rounded-xl border bg-nav-fg/5 px-4 py-3 text-nav-fg placeholder:text-nav-fg/55 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-nav-accent ${
       hasError
         ? "border-red-400 focus:border-red-300 focus:ring-2 focus:ring-red-400/40"
-        : "border-white/15 focus:border-gold"
+        : "border-nav-fg/15 focus:border-nav-accent"
     }`;
 
   return (
-    <section className="relative overflow-hidden bg-navy-deep py-24 text-white">
+    <section data-nav-surface="dark" className="relative overflow-hidden bg-navy-deep py-24 text-white">
       <div className="absolute -left-40 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-gold/15 blur-3xl" />
       <div className="absolute -right-40 top-0 h-96 w-96 rounded-full bg-navy/40 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <div>
-          <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Solicite agora</div>
+          <div className="mb-3 text-xs uppercase tracking-widest text-nav-accent font-semibold">Solicite agora</div>
           <h2 className="font-display text-4xl font-bold leading-tight sm:text-5xl">
-            Receba seu <span className="italic text-gold">orçamento gratuito</span> em minutos
+            Receba seu <span className="italic text-nav-accent">orçamento gratuito</span> em minutos
           </h2>
-          <p className="mt-5 text-white/70">
+          <p className="mt-5 text-nav-fg/80">
             Preencha seus dados ou fale direto pelo WhatsApp. Atendemos das 8h às 18h em Curitiba e região.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -96,15 +96,15 @@ export function CtaForm() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Falar com a Astral Gás pelo WhatsApp"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 font-semibold text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-3.5 font-semibold text-white outline-none transition-all hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-emerald-300/80 motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
             >
               <WhatsAppIcon className="h-5 w-5" /> WhatsApp
             </a>
             <a
               href={`tel:+${PHONE_SALES}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-semibold"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-6 py-3.5 font-semibold text-nav-fg outline-none transition-all hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-visible:ring-2 focus-visible:ring-nav-accent focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep active:scale-[0.98] motion-reduce:active:scale-100"
             >
-              <Phone className="h-5 w-5 text-gold" /> {PHONE_SALES_DISPLAY}
+              <Phone className="h-5 w-5 text-nav-accent" /> {PHONE_SALES_DISPLAY}
             </a>
           </div>
         </div>
