@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Flame, Wrench, X } from "lucide-react";
 import { PHONE_MAINTENANCE, PHONE_SALES, waLink } from "@/lib/contact";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -14,6 +15,11 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  // Trap Tab inside the popover and return focus to the trigger on close.
+  useFocusTrap(open, popoverRef, triggerRef);
 
   useEffect(() => {
     if (!open) return;
@@ -51,12 +57,14 @@ export function WhatsAppFloat() {
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={popoverRef}
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.18 }}
             className="w-[280px] overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
             role="dialog"
+            aria-modal="true"
             aria-label="Escolha o atendimento"
           >
             <div className="flex items-center justify-between bg-whatsapp px-4 py-3 text-whatsapp-foreground">
@@ -97,11 +105,13 @@ export function WhatsAppFloat() {
       </AnimatePresence>
 
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label="Abrir opções de WhatsApp"
         aria-expanded={open}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-[0_10px_40px_-10px_rgba(34,197,94,0.7)] transition-transform hover:scale-105"
+        aria-haspopup="dialog"
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-[0_10px_40px_-10px_rgba(34,197,94,0.7)] transition-transform hover:scale-105 outline-none focus-ring-nav"
       >
         <WhatsAppIcon className="h-7 w-7" />
         {!open && (
