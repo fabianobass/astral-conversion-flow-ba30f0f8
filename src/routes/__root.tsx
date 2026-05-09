@@ -4,9 +4,11 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { AnimatePresence, motion } from "framer-motion";
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
@@ -116,6 +118,23 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+function AnimatedOutlet() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={pathname}
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -8 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <Outlet />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
@@ -123,7 +142,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <Header />
       <main className="min-h-screen">
-        <Outlet />
+        <AnimatedOutlet />
       </main>
       <Footer />
       <WhatsAppFloat />
