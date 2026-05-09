@@ -1,9 +1,19 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Clock, Truck, Wrench, BadgeCheck, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
+import {
+  heroTransition,
+  fadeUpInitial,
+  fadeUpAnimate,
+  fadeScaleInitial,
+  fadeScaleAnimate,
+  willChangeStyle,
+  willChangeReset,
+} from "@/lib/motion-presets";
 import heroImg from "@/assets/hero-aquecedor-home.webp";
 import logoRinnai from "@/assets/logo-rinnai.webp";
 import logoLorenzetti from "@/assets/logo-lorenzetti.webp";
@@ -11,6 +21,11 @@ import logoRheem from "@/assets/logo-rheem.webp";
 import logoKomeco from "@/assets/logo-komeco.webp";
 
 export function Hero() {
+  // Local flags so we can drop the GPU-layer hint as soon as each animation
+  // finishes — keeps mobile memory low without losing the smooth entrance.
+  const [textDone, setTextDone] = useState(false);
+  const [imageDone, setImageDone] = useState(false);
+
   return (
     <section data-nav-surface="dark" className="relative overflow-hidden bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28">
       {/* Decorative glows */}
@@ -19,9 +34,11 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeUpInitial}
+          animate={fadeUpAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setTextDone(true)}
+          style={textDone ? willChangeReset : willChangeStyle}
           className="text-white"
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-gold">
@@ -110,9 +127,11 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeScaleInitial}
+          animate={fadeScaleAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setImageDone(true)}
+          style={imageDone ? willChangeReset : willChangeStyle}
           className="relative mx-auto w-full max-w-md"
         >
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />

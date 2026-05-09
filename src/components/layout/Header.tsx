@@ -4,6 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
+import {
+  heroTransition,
+  fadeDownInitial,
+  fadeDownAnimate,
+  willChangeStyle,
+  willChangeReset,
+} from "@/lib/motion-presets";
 import logoAstral from "@/assets/logo-astral.webp";
 
 const NAV = [
@@ -17,6 +24,9 @@ const NAV = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  // Drop the GPU-layer hint after the header entrance ends — it only needs
+  // to live for a single transition on first paint, especially on mobile.
+  const [entranceDone, setEntranceDone] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const headerRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -51,9 +61,11 @@ export function Header() {
   return (
     <motion.header
       ref={headerRef}
-      initial={{ opacity: 0, y: -16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+      initial={fadeDownInitial}
+      animate={fadeDownAnimate}
+      transition={heroTransition}
+      onAnimationComplete={() => setEntranceDone(true)}
+      style={entranceDone ? willChangeReset : willChangeStyle}
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
         scrolled
           ? "bg-background/95 backdrop-blur-md shadow-md border-b border-border"

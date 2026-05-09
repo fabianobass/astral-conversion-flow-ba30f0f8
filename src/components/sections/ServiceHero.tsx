@@ -1,9 +1,18 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import {
+  heroTransition,
+  fadeUpInitial,
+  fadeUpAnimate,
+  fadeScaleInitial,
+  fadeScaleAnimate,
+  willChangeStyle,
+  willChangeReset,
+} from "@/lib/motion-presets";
 
 type Variant = "card" | "background";
 
@@ -24,6 +33,11 @@ export function ServiceHero({
   ctaMessage?: string;
   variant?: Variant;
 }) {
+  // Drop the GPU-layer hint after the entrance ends so mobile doesn't keep
+  // an extra compositor layer alive once the hero is static.
+  const [textDone, setTextDone] = useState(false);
+  const [imageDone, setImageDone] = useState(false);
+
   const ctaButton = (
     <a
       href={waLink(undefined, ctaMessage)}
@@ -57,9 +71,11 @@ export function ServiceHero({
         )}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeUpInitial}
+          animate={fadeUpAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setTextDone(true)}
+          style={textDone ? willChangeReset : willChangeStyle}
           className="relative mx-auto max-w-5xl px-4 lg:px-8"
         >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
@@ -83,9 +99,11 @@ export function ServiceHero({
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeUpInitial}
+          animate={fadeUpAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setTextDone(true)}
+          style={textDone ? willChangeReset : willChangeStyle}
         >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
             <Link to="/" className="rounded transition-colors hover:text-nav-fg-hover focus-ring-nav">Início</Link>
@@ -100,9 +118,11 @@ export function ServiceHero({
 
         {image && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            initial={fadeScaleInitial}
+            animate={fadeScaleAnimate}
+            transition={heroTransition}
+            onAnimationComplete={() => setImageDone(true)}
+            style={imageDone ? willChangeReset : willChangeStyle}
             className="relative mx-auto w-full max-w-md"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />
