@@ -1,18 +1,26 @@
-## Aumentar a foto do pressurizador e integrá-la mais ao fundo
+## Nova seção "Marcas parceiras" na página do Pressurizador
 
-### Mudanças no `<img>` do hero em `src/routes/servicos.pressurizador.tsx`
+### O que será criado
 
-1. **Aumentar tamanho da imagem**
-   - Container: `max-w-xs lg:max-w-sm` → `max-w-sm lg:max-w-lg`
-   - Altura: `h-72 lg:h-96` → `h-96 lg:h-[32rem]`
-   - Em telas grandes pode estourar levemente para fora da coluna usando `lg:scale-110` para reforçar presença
+Uma nova seção destacada em `src/routes/servicos.pressurizador.tsx`, posicionada logo **após a seção "Modelos disponíveis"** e **antes de "Engenharia / Por que escolher"**, com:
 
-2. **Mais "para o fundo" (mais transparente / mais integrada)**
-   - Opacidade: `opacity-90` → `opacity-60`
-   - Máscara radial com fade mais agressivo: `radial-gradient(ellipse at center, black 35%, transparent 90%)` (antes começava a fade em 55%)
-   - Glow dourado atrás reforçado: `from-gold/40` → `from-gold/50`, blur ainda maior
+- **Eyebrow**: "Marcas parceiras" (dourado, uppercase, no padrão do site)
+- **Título grande (h2)**: "Trabalhamos com as melhores marcas do mercado"
+- **Subtítulo**: texto curto reforçando que a Astral Gás opera apenas com fabricantes reconhecidos, com peças originais e garantia de fábrica
+- **Grid de 6 placeholders de logo** (3 col mobile, 6 col desktop), em cards brancos com borda sutil, prontos para você subir as imagens depois
 
-3. **Manter** `mix-blend-mode: lighten` (já ajuda a "queimar" no navy)
+### Placeholders dos logos
 
-### Arquivos afetados
-- `src/routes/servicos.pressurizador.tsx` (apenas o bloco da imagem do hero)
+Cada slot será um card no padrão visual da `TrustBar` existente, mas maior e mais destacado, mostrando temporariamente o nome da marca em texto cinza ("Logo 1", "Logo 2"...). Quando você enviar os arquivos, basta trocar o conteúdo de cada slot por um `<img>`.
+
+### Detalhes técnicos
+
+- Fundo: `bg-background` (claro), para contrastar com as seções navy e dar destaque
+- Espaçamento: `py-20` (mesmo ritmo das outras seções)
+- Grid: `grid-cols-3 sm:grid-cols-6 gap-6`
+- Cards: `rounded-xl border border-border bg-card h-20` com placeholder centralizado
+- Sem mexer em nenhuma outra página nem na `TrustBar` da home
+
+### Arquivo afetado
+
+- `src/routes/servicos.pressurizador.tsx` (apenas inserção da nova seção)

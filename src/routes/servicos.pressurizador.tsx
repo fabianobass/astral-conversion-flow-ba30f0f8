@@ -164,6 +164,32 @@ function Page() {
         </div>
       </section>
 
+      {/* Marcas parceiras */}
+      <section className="bg-background py-20">
+        <div className="mx-auto max-w-6xl px-4 lg:px-8">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Marcas parceiras</div>
+            <h2 className="font-display text-3xl font-bold leading-tight text-navy-deep sm:text-4xl">
+              Trabalhamos com as melhores marcas do mercado
+            </h2>
+            <p className="mt-4 text-foreground/70">
+              Operamos apenas com fabricantes reconhecidos, peças originais e garantia de
+              fábrica — qualidade comprovada para cada instalação da Astral Gás.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 gap-4 sm:grid-cols-6 sm:gap-6">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <div
+                key={n}
+                className="flex h-20 items-center justify-center rounded-xl border border-border bg-card text-xs uppercase tracking-widest text-foreground/40"
+              >
+                Logo {n}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Engenharia / features */}
       <section className="bg-background py-20">
         <div className="mx-auto max-w-6xl px-4 lg:px-8">
