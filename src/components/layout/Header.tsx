@@ -4,6 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
+import {
+  heroTransition,
+  fadeDownInitial,
+  fadeDownAnimate,
+  willChangeStyle,
+  willChangeReset,
+} from "@/lib/motion-presets";
 import logoAstral from "@/assets/logo-astral.webp";
 
 const NAV = [
