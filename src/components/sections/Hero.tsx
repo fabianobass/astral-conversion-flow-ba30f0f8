@@ -1,9 +1,19 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Clock, Truck, Wrench, BadgeCheck, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
+import {
+  heroTransition,
+  fadeUpInitial,
+  fadeUpAnimate,
+  fadeScaleInitial,
+  fadeScaleAnimate,
+  willChangeStyle,
+  willChangeReset,
+} from "@/lib/motion-presets";
 import heroImg from "@/assets/hero-aquecedor-home.webp";
 import logoRinnai from "@/assets/logo-rinnai.webp";
 import logoLorenzetti from "@/assets/logo-lorenzetti.webp";
