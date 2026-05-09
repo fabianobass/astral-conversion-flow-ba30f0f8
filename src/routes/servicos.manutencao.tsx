@@ -49,6 +49,8 @@ function Page() {
         title="Manutenção de aquecedor a gás com atendimento ainda hoje"
         description="Manutenção corretiva e preventiva para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia."
         image={heroManutencao}
+        ctaLabel="Manutenção de aquecedor a gás — chamar agora"
+        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
       />
       <RealWorkGallery
         eyebrow="Conserto Urgente"
