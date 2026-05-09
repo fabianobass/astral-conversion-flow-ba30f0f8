@@ -73,12 +73,17 @@ function Page() {
         ctaLabel="Comprar aquecedor a gás agora"
         ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
       />
+      <RealWorkGallery
+        title="Instalações reais feitas pela Astral Gás"
+        subtitle="Fotos recentes de aquecedores Rinnai e Lorenzetti instalados em casas e apartamentos de Curitiba."
+        photos={installPhotos}
+      />
       <FAQ />
       <CtaForm />
       <section className="bg-secondary py-10">
         <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
           <p className="text-base leading-relaxed text-foreground/80">
-            A Astral Gás é referência em Aquecedores a Gás em Curitiba, oferecendo as melhores marcas e assistência técnica qualificada para toda a região.
+            A Astral Gás é referência na venda e instalação de aquecedores a gás Rinnai e Lorenzetti em Curitiba — atendendo Batel, Água Verde, Bigorrilho, Cabral e região metropolitana. Trabalhamos também com Bosch e Komeco, sempre com assistência técnica autorizada Rinnai e Lorenzetti para garantir qualidade do início ao fim.
           </p>
         </div>
       </section>
