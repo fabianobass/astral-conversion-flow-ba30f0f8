@@ -1,16 +1,32 @@
 ## Problema
 
-No hero da página `/servicos/pressurizador`, há um espaço vazio entre o breadcrumb ("Início › Pressurizador de Água") e o eyebrow ("PRESSURIZADOR DE ÁGUA") — área marcada em azul nas imagens.
+A troca de páginas está demorando ~700ms perceptíveis. Identifiquei duas causas no código:
 
-Isso acontece porque o grid de duas colunas usa `items-center`. Como a imagem do pressurizador (coluna direita) é mais alta que o bloco de texto, o texto fica centralizado verticalmente e "desce", deixando o vão acima do eyebrow.
+### 1. Animação de transição muito longa (principal causa)
+Em `src/routes/__root.tsx` (linhas 115–127), o `AnimatedOutlet` usa `AnimatePresence mode="wait"` com:
+- exit: 0.35s
+- enter: 0.35s
 
-## Correção
+Como `mode="wait"` espera o exit terminar antes de iniciar o enter, **toda navegação leva ~700ms só de animação**, mesmo que a próxima página já esteja pronta. É exatamente a sensação de "demora ao abrir".
 
-Em `src/routes/servicos.pressurizador.tsx` (linha 88), trocar o alinhamento vertical do grid do hero:
+### 2. Sem preload nos links
+Em `src/router.tsx`, falta `defaultPreload: "intent"`. Hoje a próxima página só começa a carregar quando o usuário clica — com `intent`, ela começa no hover/touchstart, ficando pronta antes do clique.
 
-- De: `grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]`
-- Para: `grid items-start gap-10 lg:grid-cols-[1.4fr_1fr]`
+## Solução proposta
 
-Com isso, o texto começa no topo (logo abaixo do breadcrumb), eliminando o espaço vazio circulado e ficando alinhado ao mesmo padrão das outras páginas de serviço.
+**A) Reduzir a animação de transição** em `src/routes/__root.tsx`:
+- Trocar para apenas fade (sem deslocamento `y`) para parecer mais instantâneo
+- Reduzir duração: exit 0.12s, enter 0.18s (~300ms total em vez de 700ms)
+- Manter `mode="wait"` para evitar sobreposição
 
-Nenhuma outra alteração é necessária — espaçamentos `pt/pb` do hero, `max-w-5xl` e `py-20` das demais seções já estão padronizados.
+**B) Habilitar preload por intenção** em `src/router.tsx`:
+- Adicionar `defaultPreload: "intent"` e `defaultPreloadDelay: 50`
+- Isso faz o TanStack Router pré-carregar o chunk da rota assim que o mouse passa por cima do link (Header/Footer/CTAs)
+
+Combinando os dois, a troca de página deve ficar quase imediata.
+
+## Arquivos alterados
+- `src/routes/__root.tsx` — ajustar `AnimatedOutlet`
+- `src/router.tsx` — adicionar opções de preload
+
+Sem mudanças de conteúdo ou layout das páginas.
