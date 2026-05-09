@@ -1,9 +1,18 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import {
+  heroTransition,
+  fadeUpInitial,
+  fadeUpAnimate,
+  fadeScaleInitial,
+  fadeScaleAnimate,
+  willChangeStyle,
+  willChangeReset,
+} from "@/lib/motion-presets";
 
 type Variant = "card" | "background";
 
