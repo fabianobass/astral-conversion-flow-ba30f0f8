@@ -69,13 +69,13 @@ export function Header() {
                 to={to}
                 aria-label={label}
                 aria-current={active ? "page" : undefined}
-                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                className={`group relative flex items-center gap-1.5 rounded-full px-3 py-2 text-sm transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   active
-                    ? "text-gold"
-                    : "text-foreground hover:text-gold hover:bg-gold/5"
+                    ? "text-navy-deep font-semibold"
+                    : "text-foreground font-medium hover:text-navy-deep hover:bg-gold/10"
                 }`}
               >
-                <Icon aria-hidden="true" className={`h-4 w-4 transition-transform duration-300 ${active ? "" : "group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
+                <Icon aria-hidden="true" className={`h-4 w-4 transition-transform duration-300 ${active ? "text-navy-deep" : "text-foreground/80 group-hover:text-navy-deep group-hover:scale-110 group-hover:rotate-[-6deg]"}`} />
                 <span>{short}</span>
                 <span
                   aria-hidden="true"
@@ -133,12 +133,12 @@ export function Header() {
                       onClick={() => setTimeout(() => setOpen(false), 180)}
                       className={`group flex items-center gap-3 rounded-xl px-3 py-3 transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                         active
-                          ? "bg-gold/10 text-gold"
+                          ? "bg-gold/15 text-navy-deep font-semibold"
                           : "text-foreground hover:bg-secondary hover:translate-x-1"
                       }`}
                     >
-                      <span aria-hidden="true" className={`flex h-9 w-9 items-center justify-center rounded-full ${active ? "bg-gold/20" : "bg-secondary group-hover:bg-gold/15"} transition-colors`}>
-                        <Icon className={`h-4 w-4 ${active ? "text-gold" : "text-foreground/80 group-hover:text-gold"} transition-colors`} />
+                      <span aria-hidden="true" className={`flex h-9 w-9 items-center justify-center rounded-full ${active ? "bg-navy-deep" : "bg-secondary group-hover:bg-gold/15"} transition-colors`}>
+                        <Icon className={`h-4 w-4 ${active ? "text-gold" : "text-foreground/80 group-hover:text-navy-deep"} transition-colors`} />
                       </span>
                       <span className="font-medium">{label}</span>
                     </Link>
