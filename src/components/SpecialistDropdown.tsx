@@ -65,7 +65,7 @@ export function SpecialistDropdown({
               <span className="font-semibold text-navy-deep">
                 Compra e Instalação
               </span>
-              <span className="text-xs text-foreground/60">
+              <span className="text-xs text-foreground/75">
                 {PHONE_SALES_DISPLAY}
               </span>
             </span>
@@ -86,7 +86,7 @@ export function SpecialistDropdown({
             </span>
             <span className="flex flex-col">
               <span className="font-semibold text-navy-deep">Manutenção</span>
-              <span className="text-xs text-foreground/60">
+              <span className="text-xs text-foreground/75">
                 {PHONE_MAINTENANCE_DISPLAY}
               </span>
             </span>

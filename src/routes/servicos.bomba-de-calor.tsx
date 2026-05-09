@@ -84,15 +84,15 @@ function Page() {
             <div className="mt-8 grid grid-cols-3 gap-4">
               <div className="rounded-xl border border-border bg-card p-4 text-center">
                 <div className="font-display text-2xl font-bold text-navy-deep">2 anos</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/60">Garantia</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/75">Garantia</div>
               </div>
               <div className="rounded-xl border border-border bg-card p-4 text-center">
                 <div className="font-display text-2xl font-bold text-navy-deep">até 80%</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/60">Economia</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/75">Economia</div>
               </div>
               <div className="rounded-xl border border-border bg-card p-4 text-center">
                 <div className="font-display text-2xl font-bold text-navy-deep">Wi-Fi</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/60">Integrado</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/75">Integrado</div>
               </div>
             </div>
           </div>

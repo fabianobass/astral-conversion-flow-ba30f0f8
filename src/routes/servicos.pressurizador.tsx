@@ -150,15 +150,15 @@ function Page() {
             <div className="mt-8 grid grid-cols-3 gap-4">
               <div className="rounded-xl border border-border bg-card p-4 text-center">
                 <div className="font-display text-2xl font-bold text-navy-deep">1CV / 2CV</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/60">Modelos</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/75">Modelos</div>
               </div>
               <div className="rounded-xl border border-border bg-card p-4 text-center">
                 <div className="font-display text-2xl font-bold text-navy-deep">30 mca</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/60">Sucção</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/75">Sucção</div>
               </div>
               <div className="rounded-xl border border-border bg-card p-4 text-center">
                 <div className="font-display text-2xl font-bold text-navy-deep">Inox 304</div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/60">Material</div>
+                <div className="mt-1 text-xs uppercase tracking-wider text-foreground/75">Material</div>
               </div>
             </div>
           </div>
