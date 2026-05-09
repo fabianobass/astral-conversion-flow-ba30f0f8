@@ -15,6 +15,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { StyleSwitcher } from "@/components/StyleSwitcher";
+import { localBusinessJsonLd, jsonLdScript } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -77,26 +78,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Astral Gás — Aquecedor a Gás em Curitiba" },
-      { name: "description", content: "Venda, instalação e manutenção de aquecedores a gás em Curitiba e região." },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#0a1628" },
+      { name: "format-detection", content: "telephone=no" },
       { name: "author", content: "Astral Gás Aquecedores" },
-      { property: "og:title", content: "Astral Gás — Aquecedor a Gás em Curitiba" },
-      { property: "og:description", content: "Venda, instalação e manutenção de aquecedores a gás em Curitiba e região." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Astral Gás — Aquecedor a Gás em Curitiba" },
-      { name: "twitter:description", content: "Venda, instalação e manutenção de aquecedores a gás em Curitiba e região." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/669d9c72-86f9-43df-9c63-0d99582df714/id-preview-3435ef4a--e96ef0e0-b4f5-4095-b5fa-189553aae4fd.lovable.app-1778279310798.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/669d9c72-86f9-43df-9c63-0d99582df714/id-preview-3435ef4a--e96ef0e0-b4f5-4095-b5fa-189553aae4fd.lovable.app-1778279310798.png" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
     ],
+    scripts: [jsonLdScript(localBusinessJsonLd)],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -106,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
