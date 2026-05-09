@@ -127,9 +127,11 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          initial={fadeScaleInitial}
+          animate={fadeScaleAnimate}
+          transition={heroTransition}
+          onAnimationComplete={() => setImageDone(true)}
+          style={imageDone ? willChangeReset : willChangeStyle}
           className="relative mx-auto w-full max-w-md"
         >
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />
