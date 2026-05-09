@@ -3,17 +3,78 @@ import { Phone } from "lucide-react";
 import { PHONE_SALES, PHONE_SALES_DISPLAY, PHONE_MAINTENANCE, waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
+type FieldErrors = { name?: string; phone?: string; service?: string };
+
+const PHONE_DIGITS_RE = /\d/g;
+
+function validate({ name, phone, service }: { name: string; phone: string; service: string }): FieldErrors {
+  const errors: FieldErrors = {};
+  if (!name.trim()) errors.name = "Informe seu nome.";
+  else if (name.trim().length < 2) errors.name = "Nome muito curto.";
+
+  const digits = phone.match(PHONE_DIGITS_RE)?.join("") ?? "";
+  if (!phone.trim()) errors.phone = "Informe seu WhatsApp com DDD.";
+  else if (digits.length < 10 || digits.length > 13) errors.phone = "Telefone inválido — inclua DDD e número (ex.: 41 99999-9999).";
+
+  if (!service) errors.service = "Selecione um serviço.";
+  return errors;
+}
+
 export function CtaForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("Aquecedor a Gás");
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
+
+  const validateAndUpdate = (next: { name: string; phone: string; service: string }) => {
+    const result = validate(next);
+    setErrors(result);
+    return result;
+  };
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitAttempted(true);
+    const result = validateAndUpdate({ name, phone, service });
+    const errorList = Object.values(result);
+
+    if (errorList.length > 0) {
+      const summary = `Não foi possível enviar. ${errorList.length === 1 ? "Há 1 erro no formulário" : `Há ${errorList.length} erros no formulário`}: ${errorList.join(" ")}`;
+      setStatusMessage(summary);
+      // Move o foco para o primeiro campo com erro para leitores de tela
+      const firstErrorId = result.name ? "cta-name" : result.phone ? "cta-phone" : "cta-service";
+      document.getElementById(firstErrorId)?.focus();
+      return;
+    }
+
+    setStatusMessage("Formulário válido. Abrindo WhatsApp em uma nova aba…");
     const text = `Olá! Meu nome é ${name}. Telefone: ${phone}. Tenho interesse em: ${service}. Vim pelo Google.`;
     const target = service === "Manutenção" ? PHONE_MAINTENANCE : PHONE_SALES;
     window.open(waLink(target, text), "_blank", "noopener,noreferrer");
   };
+
+  // Re-valida em tempo real apenas após a primeira tentativa de envio
+  const onChangeName = (v: string) => {
+    setName(v);
+    if (submitAttempted) validateAndUpdate({ name: v, phone, service });
+  };
+  const onChangePhone = (v: string) => {
+    setPhone(v);
+    if (submitAttempted) validateAndUpdate({ name, phone: v, service });
+  };
+  const onChangeService = (v: string) => {
+    setService(v);
+    if (submitAttempted) validateAndUpdate({ name, phone, service: v });
+  };
+
+  const fieldClass = (hasError: boolean) =>
+    `w-full rounded-xl border bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:outline-none ${
+      hasError
+        ? "border-red-400 focus:border-red-300 focus:ring-2 focus:ring-red-400/40"
+        : "border-white/15 focus:border-gold"
+    }`;
 
   return (
     <section className="relative overflow-hidden bg-navy-deep py-24 text-white">
@@ -50,24 +111,50 @@ export function CtaForm() {
 
         <form
           onSubmit={submit}
+          noValidate
+          aria-describedby="cta-form-status"
           className="rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur"
         >
+          {/* Região live para anunciar status/erros aos leitores de tela */}
+          <div
+            id="cta-form-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+            className="sr-only"
+          >
+            {statusMessage}
+          </div>
+
           <div className="space-y-4">
             <div>
-              <label htmlFor="cta-name" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">Nome</label>
+              <label htmlFor="cta-name" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">
+                Nome
+              </label>
               <input
                 id="cta-name"
                 name="name"
                 autoComplete="name"
                 required
+                aria-required="true"
+                aria-invalid={!!errors.name}
+                aria-describedby={errors.name ? "cta-name-error" : undefined}
                 value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-gold focus:outline-none"
+                onChange={(e) => onChangeName(e.target.value)}
+                className={fieldClass(!!errors.name)}
                 placeholder="Seu nome"
               />
+              {errors.name && (
+                <p id="cta-name-error" className="mt-1.5 text-xs font-medium text-red-300">
+                  {errors.name}
+                </p>
+              )}
             </div>
+
             <div>
-              <label htmlFor="cta-phone" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">WhatsApp</label>
+              <label htmlFor="cta-phone" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">
+                WhatsApp
+              </label>
               <input
                 id="cta-phone"
                 name="phone"
@@ -75,30 +162,53 @@ export function CtaForm() {
                 inputMode="tel"
                 autoComplete="tel"
                 required
+                aria-required="true"
+                aria-invalid={!!errors.phone}
+                aria-describedby={errors.phone ? "cta-phone-error" : "cta-phone-hint"}
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 focus:border-gold focus:outline-none"
+                onChange={(e) => onChangePhone(e.target.value)}
+                className={fieldClass(!!errors.phone)}
                 placeholder="(41) 9 9999-9999"
               />
+              {errors.phone ? (
+                <p id="cta-phone-error" className="mt-1.5 text-xs font-medium text-red-300">
+                  {errors.phone}
+                </p>
+              ) : (
+                <p id="cta-phone-hint" className="mt-1.5 text-xs text-white/40">
+                  Inclua DDD. Ex.: (41) 99999-9999.
+                </p>
+              )}
             </div>
+
             <div>
-              <label htmlFor="cta-service" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">Serviço</label>
+              <label htmlFor="cta-service" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">
+                Serviço
+              </label>
               <select
                 id="cta-service"
                 name="service"
+                aria-invalid={!!errors.service}
+                aria-describedby={errors.service ? "cta-service-error" : undefined}
                 value={service}
-                onChange={(e) => setService(e.target.value)}
-                className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-white focus:border-gold focus:outline-none"
+                onChange={(e) => onChangeService(e.target.value)}
+                className={fieldClass(!!errors.service)}
               >
                 <option className="bg-navy-deep">Aquecedor a Gás</option>
                 <option className="bg-navy-deep">Manutenção</option>
                 <option className="bg-navy-deep">Pressurizador</option>
                 <option className="bg-navy-deep">Bomba de Calor</option>
               </select>
+              {errors.service && (
+                <p id="cta-service-error" className="mt-1.5 text-xs font-medium text-red-300">
+                  {errors.service}
+                </p>
+              )}
             </div>
+
             <button
               type="submit"
-              className="mt-2 w-full rounded-full bg-gradient-to-r from-gold to-amber-500 py-4 font-semibold text-navy-deep transition-transform hover:scale-[1.02]"
+              className="mt-2 w-full rounded-full bg-gradient-to-r from-gold to-amber-500 py-4 font-semibold text-navy-deep transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
             >
               Falar com Especialista no WhatsApp
             </button>
