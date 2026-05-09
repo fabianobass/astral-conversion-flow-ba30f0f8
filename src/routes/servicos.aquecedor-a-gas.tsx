@@ -25,6 +25,7 @@ function Page() {
         eyebrow="Aquecedor a Gás"
         title="Banho quente, instantâneo e econômico"
         description="Venda e instalação de aquecedores a gás de passagem para casas e apartamentos. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
+        image={heroBanho}
       />
       <TrustBar />
       <ServiceContent
