@@ -40,15 +40,28 @@ export function Footer() {
                 <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 hover:text-gold">
                   <Phone className="h-4 w-4" /> {PHONE_SALES_DISPLAY}
                 </a>
+                <a
+                  href={waLink(PHONE_SALES)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Falar com Vendas pelo WhatsApp"
+                  className="mt-2 inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform"
+                >
+                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+                </a>
               </li>
               <li>
                 <div className="text-xs uppercase tracking-wider text-gold">Manutenção</div>
                 <a href={`tel:+${PHONE_MAINTENANCE}`} className="flex items-center gap-2 hover:text-gold">
                   <Phone className="h-4 w-4" /> {PHONE_MAINTENANCE_DISPLAY}
                 </a>
-              </li>
-              <li>
-                <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="Falar com a Astral Gás pelo WhatsApp" className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform">
+                <a
+                  href={waLink(PHONE_MAINTENANCE)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Falar com Manutenção pelo WhatsApp"
+                  className="mt-2 inline-flex items-center gap-2 rounded-full bg-whatsapp px-4 py-2 font-semibold text-white hover:scale-105 transition-transform"
+                >
                   <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </a>
               </li>
