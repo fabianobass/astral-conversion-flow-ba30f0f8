@@ -1,4 +1,4 @@
-import { ChevronDown, Wrench, ShoppingBag } from "lucide-react";
+import { ChevronDown, Wrench, Flame } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -58,8 +58,8 @@ export function SpecialistDropdown({
             rel="noopener noreferrer"
             className="flex items-start gap-3 rounded-lg p-3 cursor-pointer"
           >
-            <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gold/20">
-              <ShoppingBag className="h-4 w-4 text-navy-deep" />
+            <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-whatsapp/10 text-whatsapp">
+              <Flame className="h-4 w-4" />
             </span>
             <span className="flex flex-col">
               <span className="font-semibold text-navy-deep">
@@ -81,8 +81,8 @@ export function SpecialistDropdown({
             rel="noopener noreferrer"
             className="flex items-start gap-3 rounded-lg p-3 cursor-pointer"
           >
-            <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-whatsapp/20">
-              <Wrench className="h-4 w-4 text-whatsapp" />
+            <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-whatsapp/10 text-whatsapp">
+              <Wrench className="h-4 w-4" />
             </span>
             <span className="flex flex-col">
               <span className="font-semibold text-navy-deep">Manutenção</span>
