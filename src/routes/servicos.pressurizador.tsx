@@ -90,7 +90,7 @@ function Page() {
               <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">
                 Pressurizador de Água
               </div>
-              <h1 className="font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
+              <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl text-balance drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
                 <span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Pressurizador de água</span> para pressão constante em casa
               </h1>
               <p className="mt-5 max-w-2xl text-lg text-white/80">
