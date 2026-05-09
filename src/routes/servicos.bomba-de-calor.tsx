@@ -186,7 +186,7 @@ function Page() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Bomba de calor para piscina — pedir orçamento no WhatsApp"
-            className="mt-8 inline-flex min-h-[48px] items-center justify-center gap-2.5 rounded-full bg-whatsapp px-5 sm:px-6 py-3 text-[13px] sm:text-sm md:text-[15px] font-semibold leading-snug tracking-[-0.005em] text-white shadow-[0_8px_24px_-8px_rgba(34,197,94,0.55)] hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition"
+            className="mt-8 inline-flex min-h-[48px] items-center justify-center gap-2 whitespace-nowrap rounded-full bg-whatsapp px-5 sm:px-6 py-3 text-[12px] sm:text-[13px] md:text-sm font-semibold leading-none tracking-[-0.005em] text-white shadow-[0_8px_24px_-8px_rgba(34,197,94,0.55)] hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition"
           >
             <WhatsAppIcon className="h-4 w-4 sm:h-[18px] sm:w-[18px] md:h-5 md:w-5 shrink-0 self-center [vertical-align:middle]" aria-hidden /> Bomba de calor para piscina — orçamento agora
           </a>
