@@ -9,7 +9,7 @@ import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750-v2.png";
-import heroManutencao from "@/assets/hero-manutencao-v4.png";
+import heroPressurizador from "@/assets/hero-pressurizador.png";
 import logoDruck from "@/assets/marcas/druck.webp";
 import logoFluxonn from "@/assets/marcas/fluxonn.webp";
 import logoSyllent from "@/assets/marcas/syllent.webp";
