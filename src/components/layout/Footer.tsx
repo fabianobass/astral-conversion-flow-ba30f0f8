@@ -6,7 +6,7 @@ import logoAstral from "@/assets/logo-astral.webp";
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-white/80">
+    <footer data-nav-surface="dark" className="bg-navy-deep text-nav-fg">
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -25,10 +25,10 @@ export function Footer() {
           <div>
             <h4 className="mb-4 font-display text-lg text-white">Serviços</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/servicos/aquecedor-a-gas" className="hover:text-gold">Aquecedor a Gás</Link></li>
-              <li><Link to="/servicos/manutencao" className="hover:text-gold">Manutenção</Link></li>
-              <li><Link to="/servicos/pressurizador" className="hover:text-gold">Pressurizador</Link></li>
-              <li><Link to="/servicos/bomba-de-calor" className="hover:text-gold">Bomba de Calor</Link></li>
+              <li><Link to="/servicos/aquecedor-a-gas" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Aquecedor a Gás</Link></li>
+              <li><Link to="/servicos/manutencao" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Manutenção</Link></li>
+              <li><Link to="/servicos/pressurizador" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Pressurizador</Link></li>
+              <li><Link to="/servicos/bomba-de-calor" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nav-accent rounded">Bomba de Calor</Link></li>
             </ul>
           </div>
 
@@ -37,7 +37,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <div className="text-xs uppercase tracking-wider text-gold">Vendas</div>
-                <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 hover:text-gold">
+                <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 hover:text-nav-fg-hover">
                   <Phone className="h-4 w-4" /> {PHONE_SALES_DISPLAY}
                 </a>
                 <a
@@ -52,7 +52,7 @@ export function Footer() {
               </li>
               <li>
                 <div className="text-xs uppercase tracking-wider text-gold">Manutenção</div>
-                <a href={`tel:+${PHONE_MAINTENANCE}`} className="flex items-center gap-2 hover:text-gold">
+                <a href={`tel:+${PHONE_MAINTENANCE}`} className="flex items-center gap-2 hover:text-nav-fg-hover">
                   <Phone className="h-4 w-4" /> {PHONE_MAINTENANCE_DISPLAY}
                 </a>
                 <a
@@ -90,7 +90,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Astral Gás no Instagram"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-gold"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-nav-fg-hover"
                   >
                     <Instagram className="h-5 w-5" />
                   </a>
@@ -99,7 +99,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Astral Gás no Facebook"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-gold"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-nav-fg-hover"
                   >
                     <Facebook className="h-5 w-5" />
                   </a>
