@@ -47,22 +47,18 @@ function Page() {
     <>
       <ServiceHero
         eyebrow="Aquecedor a Gás"
-        title={<><span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Comprar aquecedor a gás</span> com instalação no mesmo dia</>}
-        description="Venda e instalação de aquecedores a gás de passagem para casas e apartamentos. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
+        title={<><span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Comprar aquecedor a gás Rinnai e Lorenzetti</span> com instalação no mesmo dia</>}
+        description="Venda e instalação de aquecedores a gás de passagem Rinnai, Lorenzetti, Bosch e Komeco para casas e apartamentos em Curitiba. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia."
         image={heroBanho}
         ctaLabel="Comprar aquecedor a gás no WhatsApp"
         ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
       />
       <TrustBar />
-      <RealWorkGallery
-        title="Instalações reais feitas pela Astral Gás"
-        subtitle="Veja exemplos recentes de aquecedores instalados em casas e apartamentos de Curitiba."
-        photos={installPhotos}
-      />
       <ServiceContent
         benefits={[
           "Visita técnica gratuita para dimensionamento",
-          "Aquecedores Rinnai, Komeco, Bosch e Lorenzetti",
+          "Aquecedores Rinnai (linhas E, REU e Infinity) com estoque pronta-entrega",
+          "Aquecedores Lorenzetti, Bosch e Komeco para todos os perfis de consumo",
           "Conexões de gás e água com selo de segurança",
           "Sistema de ventilação adequado conforme norma",
           "Testes completos e orientação de uso",
@@ -77,12 +73,17 @@ function Page() {
         ctaLabel="Comprar aquecedor a gás agora"
         ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
       />
+      <RealWorkGallery
+        title="Instalações reais feitas pela Astral Gás"
+        subtitle="Fotos recentes de aquecedores Rinnai e Lorenzetti instalados em casas e apartamentos de Curitiba."
+        photos={installPhotos}
+      />
       <FAQ />
       <CtaForm />
       <section className="bg-secondary py-10">
         <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
           <p className="text-base leading-relaxed text-foreground/80">
-            A Astral Gás é referência em Aquecedores a Gás em Curitiba, oferecendo as melhores marcas e assistência técnica qualificada para toda a região.
+            A Astral Gás é referência na venda e instalação de aquecedores a gás Rinnai e Lorenzetti em Curitiba — atendendo Batel, Água Verde, Bigorrilho, Cabral e região metropolitana. Trabalhamos também com Bosch e Komeco, sempre com assistência técnica autorizada Rinnai e Lorenzetti para garantir qualidade do início ao fim.
           </p>
         </div>
       </section>
