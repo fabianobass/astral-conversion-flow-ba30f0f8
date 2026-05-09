@@ -59,7 +59,7 @@ export function ServiceHero({
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto max-w-5xl px-4 lg:px-8"
         >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
@@ -85,7 +85,7 @@ export function ServiceHero({
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
           <nav data-nav-surface="dark" className="mb-8 flex items-center gap-1 text-xs text-nav-fg/85" aria-label="Breadcrumb">
             <Link to="/" className="rounded transition-colors hover:text-nav-fg-hover focus-ring-nav">Início</Link>
@@ -102,7 +102,7 @@ export function ServiceHero({
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             className="relative mx-auto w-full max-w-md"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />
