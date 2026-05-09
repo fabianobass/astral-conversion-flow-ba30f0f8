@@ -37,6 +37,16 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* Nav palette tokens — single source of truth for menu contrast */
+  --color-nav-fg: var(--nav-fg);
+  --color-nav-fg-hover: var(--nav-fg-hover);
+  --color-nav-fg-active: var(--nav-fg-active);
+  --color-nav-fg-disabled: var(--nav-fg-disabled);
+  --color-nav-bg-hover: var(--nav-bg-hover);
+  --color-nav-bg-active: var(--nav-bg-active);
+  --color-nav-accent: var(--nav-accent);
+  --color-nav-icon-active-bg: var(--nav-icon-active-bg);
+  --color-nav-icon-active-fg: var(--nav-icon-active-fg);
   --font-display: var(--font-display-active);
   --font-sans: var(--font-sans-active);
 }
