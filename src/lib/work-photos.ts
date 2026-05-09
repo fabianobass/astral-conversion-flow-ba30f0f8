@@ -26,12 +26,6 @@ export const installPhotos: WorkPhoto[] = [
     neighborhood: "Bigorrilho, Curitiba",
   },
   {
-    src: rinnaiMerces,
-    alt: "Instalação de aquecedor a gás Rinnai em Curitiba — bairro Mercês, feita pela Astral Gás",
-    caption: "Rinnai com painel de controle",
-    neighborhood: "Mercês, Curitiba",
-  },
-  {
     src: rinnaiAnalogico,
     alt: "Instalação de aquecedor a gás Rinnai em Curitiba — bairro Batel, feita pela Astral Gás",
     caption: "Rinnai instalado em apartamento",
