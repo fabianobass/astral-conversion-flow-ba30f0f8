@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Flame, Wrench, X } from "lucide-react";
 import { PHONE_MAINTENANCE, PHONE_SALES, waLink } from "@/lib/contact";
+import { useFocusTrap } from "@/hooks/use-focus-trap";
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -14,6 +15,11 @@ function WhatsAppIcon({ className }: { className?: string }) {
 export function WhatsAppFloat() {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  // Trap Tab inside the popover and return focus to the trigger on close.
+  useFocusTrap(open, popoverRef, triggerRef);
 
   useEffect(() => {
     if (!open) return;
