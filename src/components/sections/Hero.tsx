@@ -84,9 +84,9 @@ export function Hero() {
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
               {[
                 { src: logoRinnai, alt: "Rinnai", h: "h-10 sm:h-12 lg:h-14" },
-                { src: logoLorenzetti, alt: "Lorenzetti", h: "h-8 sm:h-9 lg:h-11" },
+                { src: logoLorenzetti, alt: "Lorenzetti", h: "h-10 sm:h-12 lg:h-14" },
                 { src: logoRheem, alt: "Rheem", h: "h-12 sm:h-14 lg:h-[4.5rem]" },
-                { src: logoKomeco, alt: "Komeco", h: "h-9 sm:h-10 lg:h-12" },
+                { src: logoKomeco, alt: "Komeco", h: "h-10 sm:h-12 lg:h-14" },
               ].map((b) => (
                 <div
                   key={b.alt}
