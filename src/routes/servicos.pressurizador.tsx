@@ -1,5 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronRight, Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
+import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
@@ -8,6 +9,7 @@ import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750-v2.png";
+import heroManutencao from "@/assets/hero-manutencao-v2.png";
 import logoDruck from "@/assets/marcas/druck.webp";
 import logoFluxonn from "@/assets/marcas/fluxonn.webp";
 import logoSyllent from "@/assets/marcas/syllent.webp";
@@ -75,63 +77,14 @@ const features = [
 function Page() {
   return (
     <>
-      {/* Hero customizado com produto à direita */}
-      <section className="relative overflow-hidden bg-navy-deep pt-28 pb-16 text-white sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28">
-        <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
-        <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
-        <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
-          <nav className="mb-8 flex items-center gap-1 text-xs text-white/60">
-            <Link to="/" className="hover:text-gold">Início</Link>
-            <ChevronRight className="h-3 w-3" />
-            <span className="text-white/80">Pressurizador de Água</span>
-          </nav>
-          <div className="grid items-start gap-10 lg:grid-cols-[1.4fr_1fr]">
-            <div>
-              <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">
-                Pressurizador de Água
-              </div>
-              <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl text-balance drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
-                <span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Pressurizador de água</span> para pressão constante em casa
-              </h1>
-              <p className="mt-5 max-w-2xl text-lg text-white/80">
-                Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos
-                potentes, funcionamento perfeito do aquecedor a gás e pressão constante em
-                todos os pontos.
-              </p>
-              <div className="mt-8">
-                <a
-                  href={waLink(undefined, "Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Pressurizador de água — pedir orçamento no WhatsApp"
-                  className="inline-flex min-h-11 sm:min-h-12 md:min-h-[52px] items-center justify-center gap-2 rounded-full bg-whatsapp max-w-full px-3.5 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5 text-center text-balance text-[13px] sm:text-sm md:text-[15px] font-semibold leading-[1.2] sm:leading-[1.15] md:leading-[1.1] tracking-[-0.005em] text-white shadow-[0_8px_24px_-8px_rgba(34,197,94,0.55)] hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
-                >
-                  <WhatsAppIcon className="h-[1.15em] w-[1.15em] shrink-0 self-center" aria-hidden /> Pressurizador de água — orçamento no WhatsApp
-                </a>
-              </div>
-            </div>
-            <div className="relative mx-auto w-full max-w-sm lg:max-w-lg">
-              <div className="absolute -inset-16 rounded-full bg-gradient-to-br from-gold/50 via-gold/15 to-transparent blur-3xl" />
-              <img
-                src={inversoraHpi750}
-                alt="Pressurizador de água INVERSORA HPI 750 1CV e 2CV"
-                width={900}
-                height={900}
-                fetchPriority="high"
-                loading="eager"
-                decoding="async"
-                className="relative h-72 w-full object-contain sm:h-96 lg:h-[32rem] lg:scale-105"
-                style={{
-                  WebkitMaskImage:
-                    "radial-gradient(ellipse at center, black 25%, transparent 85%)",
-                  maskImage:
-                    "radial-gradient(ellipse at center, black 25%, transparent 85%)",
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        eyebrow="Pressurizador de Água"
+        title={<><span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">Pressurizador de água</span> para pressão constante em casa</>}
+        description="Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos potentes, funcionamento perfeito do aquecedor a gás e pressão constante em todos os pontos."
+        image={heroManutencao}
+        ctaLabel="Pressurizador de água — orçamento no WhatsApp"
+        ctaMessage="Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?"
+      />
 
       {/* A tecnologia */}
       <section className="bg-background py-20">
