@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
@@ -70,7 +70,7 @@ export function ServiceHero({
           </>
         )}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
-        <motion.div
+        <m.div
           initial={false}
           animate={fadeUpAnimate}
           transition={heroTransition}
@@ -87,7 +87,7 @@ export function ServiceHero({
           <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl max-w-3xl text-balance drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">{title}</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
           <div className="mt-8">{ctaButton}</div>
-        </motion.div>
+        </m.div>
       </section>
     );
   }
@@ -98,7 +98,7 @@ export function ServiceHero({
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-navy/40 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
-        <motion.div
+        <m.div
           initial={false}
           animate={fadeUpAnimate}
           transition={heroTransition}
@@ -114,10 +114,10 @@ export function ServiceHero({
           <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl text-balance">{title}</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
           <div className="mt-8">{ctaButton}</div>
-        </motion.div>
+        </m.div>
 
         {image && (
-          <motion.div
+          <m.div
             initial={fadeScaleInitial}
             animate={fadeScaleAnimate}
             transition={heroTransition}
@@ -135,7 +135,7 @@ export function ServiceHero({
               decoding="async"
               className="relative rounded-3xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
             />
-          </motion.div>
+          </m.div>
         )}
       </div>
     </section>

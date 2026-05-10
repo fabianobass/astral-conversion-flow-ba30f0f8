@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { Flame, Wrench, X } from "lucide-react";
 import { PHONE_MAINTENANCE, PHONE_SALES, waLink } from "@/lib/contact";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
@@ -56,7 +56,7 @@ export function WhatsAppFloat() {
     <div ref={containerRef} className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             ref={popoverRef}
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -100,7 +100,7 @@ export function WhatsAppFloat() {
                 </a>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 

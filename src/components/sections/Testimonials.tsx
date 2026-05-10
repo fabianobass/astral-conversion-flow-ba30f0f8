@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const reviews = [
   {
@@ -31,7 +31,7 @@ export function Testimonials() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {reviews.map((r, i) => (
-            <motion.div
+            <m.div
               key={r.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export function Testimonials() {
                 <div className="font-display text-lg font-semibold text-nav-fg-active">{r.name}</div>
                 <div className="text-xs text-nav-fg/70">{r.area}</div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

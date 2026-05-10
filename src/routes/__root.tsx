@@ -8,7 +8,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
@@ -114,14 +114,14 @@ function AnimatedOutlet() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <AnimatePresence mode="wait">
-      <motion.div
+      <m.div
         key={pathname}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.18, ease: "easeOut" } }}
         exit={{ opacity: 0, transition: { duration: 0.12, ease: "easeIn" } }}
       >
         <Outlet />
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   );
 }
