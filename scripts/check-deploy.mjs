@@ -16,11 +16,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const args = process.argv.slice(2);
-const watch = args.includes("--watch");
+const watch = args.includes("--watch") || args.includes("--wait");
 const urlIdx = args.indexOf("--url");
 const SITE = urlIdx >= 0 ? args[urlIdx + 1] : "https://astralgas.com.br/";
+const timeoutIdx = args.indexOf("--timeout");
+const TIMEOUT_MS = (timeoutIdx >= 0 ? Number(args[timeoutIdx + 1]) : 300) * 1000;
 const STATE_FILE = path.resolve(".lovable/last-deploy.json");
-const POLL_MS = 15_000;
+const POLL_MS = 10_000;
 
 async function readState() {
   try { return JSON.parse(await fs.readFile(STATE_FILE, "utf8")); }
