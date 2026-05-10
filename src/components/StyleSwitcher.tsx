@@ -17,6 +17,9 @@ const applyTheme = (theme: Theme) => {
 };
 
 export function StyleSwitcher() {
+  // Só aparece no editor Lovable (Vite dev). No site publicado fica oculto.
+  if (!import.meta.env.DEV) return null;
+
   const [fontId, setFontId] = useState<string>(DEFAULT_FONT_ID);
   const [themeId, setThemeId] = useState<string>(DEFAULT_THEME_ID);
 
