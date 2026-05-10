@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X, Home, Flame, Wrench, Droplets, Thermometer } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 import {
@@ -59,7 +59,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <motion.header
+    <m.header
       ref={headerRef}
       initial={fadeDownInitial}
       animate={fadeDownAnimate}
@@ -77,6 +77,10 @@ export function Header() {
           <img
             src={logoAstral}
             alt="Astral Gás Aquecedores"
+            width={180}
+            height={71}
+            fetchPriority="high"
+            decoding="async"
             className="h-10 w-auto md:h-11"
           />
         </Link>
@@ -128,7 +132,7 @@ export function Header() {
 
       <AnimatePresence initial={false}>
         {open && (
-          <motion.div
+          <m.div
             ref={mobileMenuRef}
             key="mobile-menu"
             id="mobile-menu"
@@ -145,7 +149,7 @@ export function Header() {
               {NAV.map(({ to, label, icon: Icon }, i) => {
                 const active = pathname === to;
                 return (
-                  <motion.div
+                  <m.div
                     key={to}
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -168,10 +172,10 @@ export function Header() {
                       </span>
                       <span className="font-medium">{label}</span>
                     </Link>
-                  </motion.div>
+                  </m.div>
                 );
               })}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 4 }}
@@ -179,11 +183,11 @@ export function Header() {
                 className="mt-3"
               >
                 <SpecialistDropdown className="w-full px-5 py-3" />
-              </motion.div>
+              </m.div>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </m.header>
   );
 }

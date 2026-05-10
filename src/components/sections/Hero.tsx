@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Clock, Truck, Wrench, BadgeCheck, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
@@ -33,8 +33,8 @@ export function Hero() {
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-navy/40 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
-        <motion.div
-          initial={fadeUpInitial}
+        <m.div
+          initial={false}
           animate={fadeUpAnimate}
           transition={heroTransition}
           onAnimationComplete={() => setTextDone(true)}
@@ -124,9 +124,9 @@ export function Hero() {
               avaliação Google
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={fadeScaleInitial}
           animate={fadeScaleAnimate}
           transition={heroTransition}
@@ -146,7 +146,7 @@ export function Hero() {
             decoding="async"
             className="relative rounded-3xl shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]"
           />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

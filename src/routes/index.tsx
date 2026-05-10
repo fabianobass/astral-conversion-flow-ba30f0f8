@@ -9,7 +9,8 @@ import { FAQ } from "@/components/sections/FAQ";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
-import { buildRouteMeta, jsonLdScript, serviceJsonLd } from "@/lib/seo";
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
+import { faqs } from "@/components/sections/FAQ";
 import heroImg from "@/assets/hero-aquecedor-home.webp";
 
 export const Route = createFileRoute("/")({
@@ -37,6 +38,7 @@ export const Route = createFileRoute("/")({
             image: heroImg,
           }),
         ),
+        jsonLdScript(faqJsonLd(faqs)),
       ],
     };
   },

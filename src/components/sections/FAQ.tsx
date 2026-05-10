@@ -1,6 +1,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const faqs = [
+export const faqs = [
   { q: "Vocês atendem em toda Curitiba e região metropolitana?", a: "Sim. Atendemos Curitiba, São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo e demais cidades da RMC." },
   { q: "Quanto custa instalar um aquecedor a gás?", a: "O valor varia conforme a vazão (litros/min), tipo de gás e complexidade da instalação. O orçamento é gratuito e sem compromisso pelo WhatsApp." },
   { q: "Em quanto tempo conseguem fazer a instalação?", a: "Para casos comuns, conseguimos fazer a visita técnica e instalação no mesmo dia, dependendo da disponibilidade do equipamento." },

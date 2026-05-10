@@ -1,5 +1,5 @@
 import { Award, ShieldCheck, Users, CreditCard } from "lucide-react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const items = [
   { icon: ShieldCheck, title: "Garantia total", desc: "Produtos e instalação com garantia de fábrica e nossa cobertura adicional." },
@@ -20,7 +20,7 @@ export function WhyUs() {
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((it, i) => (
-            <motion.div
+            <m.div
               key={it.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ export function WhyUs() {
               </div>
               <h3 className="font-display text-lg font-bold text-navy-deep">{it.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{it.desc}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

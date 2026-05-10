@@ -8,7 +8,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
@@ -85,8 +85,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://wa.me" },
+      { rel: "dns-prefetch", href: "https://api.whatsapp.com" },
     ],
     scripts: [jsonLdScript(localBusinessJsonLd)],
   }),
@@ -114,14 +114,14 @@ function AnimatedOutlet() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
     <AnimatePresence mode="wait">
-      <motion.div
+      <m.div
         key={pathname}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.18, ease: "easeOut" } }}
         exit={{ opacity: 0, transition: { duration: 0.12, ease: "easeIn" } }}
       >
         <Outlet />
-      </motion.div>
+      </m.div>
     </AnimatePresence>
   );
 }
@@ -131,20 +131,22 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <a
-        href="#main-content"
-        data-nav-surface="dark"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-navy-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-nav-fg-active focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-nav-accent"
-      >
-        Pular para o conteúdo
-      </a>
-      <Header />
-      <main id="main-content" tabIndex={-1} className="min-h-screen focus:outline-none">
-        <AnimatedOutlet />
-      </main>
-      <Footer />
-      <WhatsAppFloat />
-      <StyleSwitcher />
+      <LazyMotion features={domAnimation} strict>
+        <a
+          href="#main-content"
+          data-nav-surface="dark"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-navy-deep focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-nav-fg-active focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-nav-accent"
+        >
+          Pular para o conteúdo
+        </a>
+        <Header />
+        <main id="main-content" tabIndex={-1} className="min-h-screen focus:outline-none">
+          <AnimatedOutlet />
+        </main>
+        <Footer />
+        <WhatsAppFloat />
+        <StyleSwitcher />
+      </LazyMotion>
     </QueryClientProvider>
   );
 }
