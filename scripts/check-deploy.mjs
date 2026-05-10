@@ -75,13 +75,22 @@ async function runOnce() {
 }
 
 if (watch) {
-  console.log(`👀 polling ${SITE} a cada ${POLL_MS / 1000}s (Ctrl+C para sair)`);
-  // eslint-disable-next-line no-constant-condition
-  while (true) {
-    try { const r = await runOnce(); if (r.changed) break; }
+  const started = Date.now();
+  console.log(`👀 aguardando novo deploy em ${SITE} (poll ${POLL_MS / 1000}s, timeout ${TIMEOUT_MS / 1000}s)`);
+  let changed = false, last;
+  while (Date.now() - started < TIMEOUT_MS) {
+    try { const r = await runOnce(); last = r.cur; if (r.changed) { changed = true; break; } }
     catch (e) { console.error("erro:", e.message); }
     await new Promise(r => setTimeout(r, POLL_MS));
   }
+  if (!changed) {
+    console.error(`⛔ timeout: hash não mudou em ${TIMEOUT_MS / 1000}s — produção ainda em ${last?.entry}`);
+    process.exit(1);
+  }
+  // Validação extra: confirma 200 OK no novo asset e re-checa deployment-id
+  const verify = await probe();
+  console.log("🔎 validação pós-deploy:", fmt(verify));
+  console.log("✅ novo build ativo em produção");
 } else {
   await runOnce();
 }
