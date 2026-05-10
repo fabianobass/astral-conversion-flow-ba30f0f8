@@ -67,8 +67,11 @@ export function RealWorkGallery({
                       <img
                         src={p.src}
                         alt={p.alt}
+                        width={760}
+                        height={760}
                         loading="lazy"
                         decoding="async"
+                        sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 92vw"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>

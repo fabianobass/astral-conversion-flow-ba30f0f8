@@ -77,6 +77,10 @@ export function Header() {
           <img
             src={logoAstral}
             alt="Astral Gás Aquecedores"
+            width={180}
+            height={71}
+            fetchPriority="high"
+            decoding="async"
             className="h-10 w-auto md:h-11"
           />
         </Link>
