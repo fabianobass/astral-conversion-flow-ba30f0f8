@@ -1,0 +1,44 @@
+{
+  "$schema": "Configuração da marca para a skill aquecedor-gas-site",
+  "brand": {
+    "name": "Astral Gás",
+    "logoText": "AG",
+    "tagline": "Aquecimento a gás com instalação certificada",
+    "since": 2008
+  },
+  "location": {
+    "city": "São Paulo",
+    "state": "SP",
+    "areaServed": "Grande São Paulo",
+    "neighborhoods": ["Pinheiros", "Vila Madalena", "Moema", "Itaim Bibi", "Jardins"],
+    "address": {
+      "street": "Rua Exemplo, 123",
+      "zip": "01234-567"
+    }
+  },
+  "contact": {
+    "phoneE164": "5511999990000",
+    "phoneDisplay": "(11) 99999-0000",
+    "whatsappMsg": "Olá! Vim pelo site e gostaria de um orçamento.",
+    "email": "contato@exemplo.com.br"
+  },
+  "theme": "astral-original",
+  "fonts": "astral",
+  "brandsServiced": ["Rinnai", "Bosch", "Komeco"],
+  "services": [
+    "aquecedor-a-gas",
+    "bomba-de-calor",
+    "manutencao",
+    "pressurizador"
+  ],
+  "seo": {
+    "siteUrl": "https://exemplo.com.br",
+    "ogImage": "/og-image.jpg",
+    "googleSiteVerification": ""
+  },
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "youtube": ""
+  }
+}
