@@ -87,8 +87,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "dns-prefetch", href: "https://wa.me" },
       { rel: "dns-prefetch", href: "https://api.whatsapp.com" },
+      { rel: "dns-prefetch", href: "https://www.googletagmanager.com" },
     ],
-    scripts: [jsonLdScript(localBusinessJsonLd)],
+    scripts: [
+      jsonLdScript(localBusinessJsonLd),
+      {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-R7WVSM499B",
+      },
+      {
+        children:
+          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R7WVSM499B');",
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
