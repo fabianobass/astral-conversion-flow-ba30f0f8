@@ -10,7 +10,12 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
-import { isWhatsAppUrl, trackWhatsAppClick } from "@/lib/analytics";
+import {
+  isMaintenanceWhatsAppUrl,
+  isWhatsAppUrl,
+  trackWhatsAppClick,
+  trackWhatsAppMaintenance,
+} from "@/lib/analytics";
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
@@ -149,7 +154,11 @@ function RootComponent() {
       const target = e.target as HTMLElement | null;
       const anchor = target?.closest?.("a") as HTMLAnchorElement | null;
       if (!anchor) return;
-      if (isWhatsAppUrl(anchor.getAttribute("href"))) {
+      const href = anchor.getAttribute("href");
+      if (!isWhatsAppUrl(href)) return;
+      if (isMaintenanceWhatsAppUrl(href)) {
+        trackWhatsAppMaintenance();
+      } else {
         trackWhatsAppClick();
       }
     };
