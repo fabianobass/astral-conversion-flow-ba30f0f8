@@ -10,7 +10,12 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
-import { isWhatsAppUrl, trackWhatsAppClick } from "@/lib/analytics";
+import {
+  isMaintenanceWhatsAppUrl,
+  isWhatsAppUrl,
+  trackWhatsAppClick,
+  trackWhatsAppMaintenance,
+} from "@/lib/analytics";
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
