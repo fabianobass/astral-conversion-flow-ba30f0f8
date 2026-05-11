@@ -77,6 +77,7 @@ function Page() {
         title="Instalações reais feitas pela Astral Gás"
         subtitle="Fotos recentes de aquecedores Rinnai e Lorenzetti instalados em casas e apartamentos de Curitiba."
         photos={installPhotos}
+        aspectRatio="portrait"
       />
       <FAQ />
       <CtaForm />
