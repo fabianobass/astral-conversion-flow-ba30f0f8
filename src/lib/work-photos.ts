@@ -1,8 +1,12 @@
-import rinnaiDigital from "@/assets/trabalhos/instalacao-rinnai-digital-agua-verde.webp";
-import rinnaiAnalogico from "@/assets/trabalhos/instalacao-rinnai-analogico-batel.webp";
-import komecoDigital from "@/assets/trabalhos/instalacao-komeco-digital-bigorrilho.webp";
-import bosch from "@/assets/trabalhos/instalacao-bosch-cabral.webp";
-import komeco15fi from "@/assets/trabalhos/instalacao-komeco-15fi-juveve.webp";
+import rheem20l from "@/assets/trabalhos/instalacao-rheem-20l-curitiba.webp";
+import komecoKo15di from "@/assets/trabalhos/instalacao-komeco-prime-ko15di-curitiba.webp";
+import komecoCorner from "@/assets/trabalhos/instalacao-komeco-prime-corner-curitiba.webp";
+import komecoKo26di from "@/assets/trabalhos/instalacao-komeco-prime-ko26di-curitiba.webp";
+import rinnaiTeto from "@/assets/trabalhos/instalacao-rinnai-teto-curitiba.webp";
+import rinnaiDigital42 from "@/assets/trabalhos/instalacao-rinnai-digital-42c-curitiba.webp";
+import komecoBlackBrick from "@/assets/trabalhos/instalacao-komeco-black-brick-curitiba.webp";
+import komecoBlackArea from "@/assets/trabalhos/instalacao-komeco-black-area-servico-curitiba.webp";
+import komecoKo26diBanheiro from "@/assets/trabalhos/instalacao-komeco-prime-ko26di-banheiro-curitiba.webp";
 
 import mTrocador from "@/assets/trabalhos/manutencao/manutencao-trocador-calor-portao.webp";
 import mValvula from "@/assets/trabalhos/manutencao/manutencao-valvula-gas-merces.webp";
@@ -17,34 +21,58 @@ import type { WorkPhoto } from "@/components/sections/RealWorkGallery";
 
 export const installPhotos: WorkPhoto[] = [
   {
-    src: rinnaiDigital,
-    alt: "Instalação de aquecedor a gás Rinnai digital em Curitiba — bairro Água Verde, feita pela Astral Gás",
-    caption: "Aquecedor Rinnai Digital instalado",
-    neighborhood: "Água Verde, Curitiba",
+    src: rheem20l,
+    alt: "Instalação de aquecedor a gás Rheem 20 litros em Curitiba, feita pela Astral Gás",
+    caption: "Rheem 20L — instalação completa",
+    neighborhood: "Curitiba",
   },
   {
-    src: bosch,
-    alt: "Instalação de aquecedor a gás Bosch com controle remoto em Curitiba — bairro Cabral, feita pela Astral Gás",
-    caption: "Bosch com controle remoto digital",
-    neighborhood: "Cabral, Curitiba",
+    src: komecoKo15di,
+    alt: "Instalação de aquecedor a gás Komeco Prime KO 15Di inox em Curitiba, feita pela Astral Gás",
+    caption: "Komeco Prime KO 15Di — inox digital",
+    neighborhood: "Curitiba",
   },
   {
-    src: komecoDigital,
-    alt: "Instalação de aquecedor a gás Komeco com display digital em Curitiba — bairro Bigorrilho, feita pela Astral Gás",
-    caption: "Komeco Digital — acabamento espelhado",
-    neighborhood: "Bigorrilho, Curitiba",
+    src: komecoCorner,
+    alt: "Instalação de aquecedor a gás Komeco Prime inox em apartamento de canto em Curitiba, feita pela Astral Gás",
+    caption: "Komeco Prime inox — área externa",
+    neighborhood: "Curitiba",
   },
   {
-    src: rinnaiAnalogico,
-    alt: "Instalação de aquecedor a gás Rinnai em Curitiba — bairro Batel, feita pela Astral Gás",
-    caption: "Rinnai instalado em apartamento",
-    neighborhood: "Batel, Curitiba",
+    src: komecoKo26di,
+    alt: "Instalação de aquecedor a gás Komeco Prime KO 26Di inox em Curitiba, feita pela Astral Gás",
+    caption: "Komeco Prime KO 26Di — alta vazão",
+    neighborhood: "Curitiba",
   },
   {
-    src: komeco15fi,
-    alt: "Instalação de aquecedor a gás Komeco 15FI em Curitiba — bairro Juvevê, feita pela Astral Gás",
-    caption: "Komeco 15FI — instalação completa",
-    neighborhood: "Juvevê, Curitiba",
+    src: rinnaiTeto,
+    alt: "Instalação de aquecedor a gás Rinnai com exaustão pelo teto em Curitiba, feita pela Astral Gás",
+    caption: "Rinnai — exaustão pelo teto",
+    neighborhood: "Curitiba",
+  },
+  {
+    src: rinnaiDigital42,
+    alt: "Instalação de aquecedor a gás Rinnai digital com display em Curitiba, feita pela Astral Gás",
+    caption: "Rinnai digital — acabamento impecável",
+    neighborhood: "Curitiba",
+  },
+  {
+    src: komecoBlackBrick,
+    alt: "Instalação de aquecedor a gás Komeco preto com detalhe em tijolinho em Curitiba, feita pela Astral Gás",
+    caption: "Komeco Black — design diferenciado",
+    neighborhood: "Curitiba",
+  },
+  {
+    src: komecoBlackArea,
+    alt: "Instalação de aquecedor a gás Komeco preto em área de serviço em Curitiba, feita pela Astral Gás",
+    caption: "Komeco Black — área de serviço",
+    neighborhood: "Curitiba",
+  },
+  {
+    src: komecoKo26diBanheiro,
+    alt: "Instalação de aquecedor a gás Komeco Prime KO 26Di inox em banheiro em Curitiba, feita pela Astral Gás",
+    caption: "Komeco Prime KO 26Di — instalação interna",
+    neighborhood: "Curitiba",
   },
 ];
 
