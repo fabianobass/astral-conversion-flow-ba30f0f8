@@ -142,6 +142,21 @@ function AnimatedOutlet() {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  // Listener global: dispara conversão do Google Ads em qualquer clique
+  // de link do WhatsApp (wa.me / api.whatsapp.com), em qualquer parte do site.
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      const anchor = target?.closest?.("a") as HTMLAnchorElement | null;
+      if (!anchor) return;
+      if (isWhatsAppUrl(anchor.getAttribute("href"))) {
+        trackWhatsAppClick();
+      }
+    };
+    document.addEventListener("click", onClick, { capture: true });
+    return () => document.removeEventListener("click", onClick, { capture: true });
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <LazyMotion features={domAnimation} strict>
