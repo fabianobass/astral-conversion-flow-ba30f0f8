@@ -100,11 +100,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       jsonLdScript(localBusinessJsonLd),
       {
         async: true,
-        src: "https://www.googletagmanager.com/gtag/js?id=G-R7WVSM499B",
+        src: "https://www.googletagmanager.com/gtag/js?id=GT-T5J9FRS6",
       },
       {
         children:
-          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-R7WVSM499B');gtag('config','AW-11394967004');",
+          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','GT-T5J9FRS6');gtag('config','G-R7WVSM499B');",
       },
     ],
   }),
