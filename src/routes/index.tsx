@@ -50,7 +50,7 @@ function Index() {
     <>
       <Hero />
       <TrustBar />
-      <RealWorkGallery photos={installPhotos} />
+      <RealWorkGallery photos={installPhotos} aspectRatio="portrait" />
       <Services />
       <WhyUs />
       <Process />

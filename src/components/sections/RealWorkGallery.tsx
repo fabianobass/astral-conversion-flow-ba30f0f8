@@ -15,6 +15,7 @@ type Props = {
   title?: string;
   subtitle?: string;
   photos: WorkPhoto[];
+  aspectRatio?: "square" | "portrait";
 };
 
 export function RealWorkGallery({
@@ -22,6 +23,7 @@ export function RealWorkGallery({
   title = "Instalações feitas pela equipe Astral Gás",
   subtitle = "Fotos reais dos nossos serviços em Curitiba e região. Equipe uniformizada, ferramentas certas e acabamento de qualidade.",
   photos,
+  aspectRatio = "square",
 }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start" },
@@ -63,12 +65,12 @@ export function RealWorkGallery({
                   className="min-w-0 shrink-0 grow-0 basis-full pl-4 sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
                   <figure className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
-                    <div className="aspect-square overflow-hidden">
+                    <div className={`${aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-square"} overflow-hidden`}>
                       <img
                         src={p.src}
                         alt={p.alt}
                         width={760}
-                        height={760}
+                        height={aspectRatio === "portrait" ? 1013 : 760}
                         loading="lazy"
                         decoding="async"
                         sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 92vw"
