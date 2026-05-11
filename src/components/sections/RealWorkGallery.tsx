@@ -15,6 +15,7 @@ type Props = {
   title?: string;
   subtitle?: string;
   photos: WorkPhoto[];
+  aspectRatio?: "square" | "portrait";
 };
 
 export function RealWorkGallery({
@@ -22,6 +23,7 @@ export function RealWorkGallery({
   title = "Instalações feitas pela equipe Astral Gás",
   subtitle = "Fotos reais dos nossos serviços em Curitiba e região. Equipe uniformizada, ferramentas certas e acabamento de qualidade.",
   photos,
+  aspectRatio = "square",
 }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "start" },
