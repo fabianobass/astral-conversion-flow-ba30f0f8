@@ -154,7 +154,11 @@ function RootComponent() {
       const target = e.target as HTMLElement | null;
       const anchor = target?.closest?.("a") as HTMLAnchorElement | null;
       if (!anchor) return;
-      if (isWhatsAppUrl(anchor.getAttribute("href"))) {
+      const href = anchor.getAttribute("href");
+      if (!isWhatsAppUrl(href)) return;
+      if (isMaintenanceWhatsAppUrl(href)) {
+        trackWhatsAppMaintenance();
+      } else {
         trackWhatsAppClick();
       }
     };
