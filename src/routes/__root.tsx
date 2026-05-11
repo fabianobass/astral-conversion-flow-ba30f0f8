@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -9,6 +10,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { AnimatePresence, LazyMotion, domAnimation, m } from "framer-motion";
+import { isWhatsAppUrl, trackWhatsAppClick } from "@/lib/analytics";
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
