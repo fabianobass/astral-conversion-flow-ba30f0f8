@@ -1,0 +1,13 @@
+# Astral Gás
+
+> Venda, instalação e manutenção de aquecedores a gás, bombas de calor e pressurizadores em Curitiba e Região Metropolitana. Técnicos certificados Rinnai, Bosch, Komeco e Lorenzetti, com atendimento no mesmo dia.
+
+A Astral Gás atende casas, apartamentos e condomínios em Curitiba (Batel, Água Verde, Bigorrilho, Cabral, Juvevê, Mercês, Portão) e cidades da RMC como São José dos Pinhais, Pinhais, Colombo, Araucária e Campo Largo. Trabalhamos com peças originais, garantia de fábrica e orçamento gratuito pelo WhatsApp.
+
+## Pages
+
+- [Home](/): Visão geral dos serviços, marcas atendidas e instalações reais em Curitiba.
+- [Aquecedor a Gás](/servicos/aquecedor-a-gas): Venda e instalação de aquecedores a gás de passagem Rinnai, Bosch, Komeco e Lorenzetti.
+- [Bomba de Calor](/servicos/bomba-de-calor): Bombas de calor Full Inverter para aquecimento de piscinas, com economia de até 80%.
+- [Manutenção](/servicos/manutencao): Manutenção preventiva e corretiva de aquecedores a gás de todas as marcas.
+- [Pressurizador](/servicos/pressurizador): Instalação de pressurizadores de água (inversor HPI 750 1CV e 2CV) para pressão constante.
