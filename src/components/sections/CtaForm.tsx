@@ -128,7 +128,7 @@ export function CtaForm() {
 
           <div className="space-y-4">
             <div>
-              <label htmlFor="cta-name" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">
+              <label htmlFor="cta-name" className="mb-1.5 block text-xs uppercase tracking-wider text-white/75">
                 Nome
               </label>
               <input
@@ -152,7 +152,7 @@ export function CtaForm() {
             </div>
 
             <div>
-              <label htmlFor="cta-phone" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">
+              <label htmlFor="cta-phone" className="mb-1.5 block text-xs uppercase tracking-wider text-white/75">
                 WhatsApp
               </label>
               <input
@@ -175,14 +175,14 @@ export function CtaForm() {
                   {errors.phone}
                 </p>
               ) : (
-                <p id="cta-phone-hint" className="mt-1.5 text-xs text-white/65">
+                <p id="cta-phone-hint" className="mt-1.5 text-xs text-white/80">
                   Inclua DDD. Ex.: (41) 99999-9999.
                 </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="cta-service" className="mb-1.5 block text-xs uppercase tracking-wider text-white/60">
+              <label htmlFor="cta-service" className="mb-1.5 block text-xs uppercase tracking-wider text-white/75">
                 Serviço
               </label>
               <select
@@ -212,7 +212,7 @@ export function CtaForm() {
             >
               Falar com Especialista no WhatsApp
             </button>
-            <p className="text-center text-xs text-white/65">
+            <p className="text-center text-xs text-white/80">
               Ao enviar você será redirecionado para o WhatsApp.
             </p>
           </div>

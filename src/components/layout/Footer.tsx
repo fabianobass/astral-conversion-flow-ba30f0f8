@@ -113,7 +113,7 @@ export function Footer() {
           <p className="font-display text-base text-gold sm:text-lg">
             Atendimento especializado em Curitiba e Região
           </p>
-          <p className="mt-3 text-xs text-white/65">
+          <p className="mt-3 text-xs text-white/80">
             © {new Date().getFullYear()} Astral Gás Aquecedores. Todos os direitos reservados.
           </p>
         </div>
