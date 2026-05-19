@@ -71,7 +71,7 @@ export function Hero() {
                 </span>
                 <div className="min-w-0">
                   <div className="text-sm font-semibold text-white leading-tight">{item.label}</div>
-                  <div className="mt-0.5 text-xs text-white/60">{item.desc}</div>
+                  <div className="mt-0.5 text-xs text-white/75">{item.desc}</div>
                 </div>
               </div>
             ))}
@@ -90,7 +90,7 @@ export function Hero() {
           </div>
 
           <div className="mt-8">
-            <div className="mb-3 text-[11px] uppercase tracking-widest text-white/65">Marcas autorizadas</div>
+            <div className="mb-3 text-[11px] uppercase tracking-widest text-white/80">Marcas autorizadas</div>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
               {[
                 { src: logoRinnai, alt: "Rinnai", h: "h-10 sm:h-12 lg:h-14" },
@@ -108,7 +108,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-3 text-center text-xs text-white/60 sm:flex sm:items-center sm:gap-6 sm:text-left">
+          <div className="mt-10 grid grid-cols-3 gap-3 text-center text-xs text-white/75 sm:flex sm:items-center sm:gap-6 sm:text-left">
             <div>
               <div className="font-display text-2xl font-bold text-gold">+15</div>
               anos no mercado
