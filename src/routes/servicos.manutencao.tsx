@@ -5,14 +5,15 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
-import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { faqs } from "@/components/sections/FAQ";
 import heroManutencao from "@/assets/hero-manutencao-v4.png";
 
 export const Route = createFileRoute("/servicos/manutencao")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/manutencao",
-      title: "Manutenção de aquecedor a gás em Curitiba — Atendimento hoje | Astral",
+      title: "Manutenção de Aquecedor a Gás em Curitiba | Astral",
       description:
         "Manutenção de aquecedor a gás em Curitiba — Batel, Cabral, Juvevê, Mercês, Portão. Peças originais, garantia e atendimento no mesmo dia.",
       image: heroManutencao,
@@ -35,6 +36,7 @@ export const Route = createFileRoute("/servicos/manutencao")({
             { name: "Manutenção", path: "/servicos/manutencao" },
           ]),
         ),
+        jsonLdScript(faqJsonLd(faqs)),
       ],
     };
   },

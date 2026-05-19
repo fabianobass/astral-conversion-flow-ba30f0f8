@@ -6,14 +6,15 @@ import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
-import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { faqs } from "@/components/sections/FAQ";
 import heroAquecedor from "@/assets/hero-aquecedor-v5.png";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/aquecedor-a-gas",
-      title: "Comprar aquecedor a gás em Curitiba — Rinnai, Bosch, Komeco | Astral",
+      title: "Aquecedor a Gás em Curitiba — Rinnai e Bosch | Astral",
       description:
         "Comprar aquecedor a gás em Curitiba com instalação no mesmo dia — Batel, Água Verde, Bigorrilho, Cabral. Rinnai, Bosch, Komeco e Lorenzetti. Orçamento grátis.",
       image: heroAquecedor,
@@ -36,6 +37,7 @@ export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
             { name: "Aquecedor a Gás", path: "/servicos/aquecedor-a-gas" },
           ]),
         ),
+        jsonLdScript(faqJsonLd(faqs)),
       ],
     };
   },

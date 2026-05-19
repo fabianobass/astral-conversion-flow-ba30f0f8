@@ -13,13 +13,14 @@ import bombaProduto from "@/assets/bomba-de-calor/bomba-produto.webp";
 import piscinaVapor from "@/assets/bomba-de-calor/piscina-vapor.webp";
 import piscinaAerea from "@/assets/bomba-de-calor/piscina-aerea.webp";
 
-import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { faqs } from "@/components/sections/FAQ";
 
 export const Route = createFileRoute("/servicos/bomba-de-calor")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/bomba-de-calor",
-      title: "Bomba de calor para piscina em Curitiba — Full Inverter | Astral Gás",
+      title: "Bomba de Calor para Piscina em Curitiba | Astral",
       description:
         "Bomba de calor para piscina em Curitiba e região — Full Inverter. Aquece no inverno, refresca no verão e economiza até 80% de energia.",
       image: heroPiscina,
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/servicos/bomba-de-calor")({
             { name: "Bomba de Calor", path: "/servicos/bomba-de-calor" },
           ]),
         ),
+        jsonLdScript(faqJsonLd(faqs)),
       ],
     };
   },

@@ -1,6 +1,6 @@
 import { PHONE_SALES_DISPLAY, PHONE_MAINTENANCE_DISPLAY } from "./contact";
 
-export const SITE_URL = "https://astral-conversion-flow.lovable.app";
+export const SITE_URL = "https://astralgas.com.br";
 export const SITE_NAME = "Astral Gás Aquecedores";
 
 type RouteSeoInput = {
