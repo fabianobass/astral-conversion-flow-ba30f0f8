@@ -56,25 +56,27 @@ function Page() {
         ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
       />
       <TrustBar />
-      <ServiceContent
-        benefits={[
-          "Visita técnica gratuita para dimensionamento",
-          "Aquecedores Rinnai (linhas E, REU e Infinity) com estoque pronta-entrega",
-          "Aquecedores Lorenzetti, Bosch e Komeco para todos os perfis de consumo",
-          "Conexões de gás e água com selo de segurança",
-          "Sistema de ventilação adequado conforme norma",
-          "Testes completos e orientação de uso",
-          "Garantia de fábrica + garantia Astral",
-        ]}
-        process={[
-          "Você fala conosco pelo WhatsApp e recebe orçamento estimado",
-          "Agendamos visita técnica gratuita no horário que preferir",
-          "Levamos o equipamento e instalamos no mesmo dia",
-          "Testamos tudo e entregamos com nota fiscal",
-        ]}
-        ctaLabel="Comprar aquecedor a gás agora"
-        ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
-      />
+      <div id="servico" className="scroll-mt-24">
+        <ServiceContent
+          benefits={[
+            "Visita técnica gratuita para dimensionamento",
+            "Aquecedores Rinnai (linhas E, REU e Infinity) com estoque pronta-entrega",
+            "Aquecedores Lorenzetti, Bosch e Komeco para todos os perfis de consumo",
+            "Conexões de gás e água com selo de segurança",
+            "Sistema de ventilação adequado conforme norma",
+            "Testes completos e orientação de uso",
+            "Garantia de fábrica + garantia Astral",
+          ]}
+          process={[
+            "Você fala conosco pelo WhatsApp e recebe orçamento estimado",
+            "Agendamos visita técnica gratuita no horário que preferir",
+            "Levamos o equipamento e instalamos no mesmo dia",
+            "Testamos tudo e entregamos com nota fiscal",
+          ]}
+          ctaLabel="Comprar aquecedor a gás agora"
+          ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
+        />
+      </div>
       <RealWorkGallery
         title="Instalações reais feitas pela Astral Gás"
         subtitle="Fotos recentes de aquecedores Rinnai e Lorenzetti instalados em casas e apartamentos de Curitiba."
