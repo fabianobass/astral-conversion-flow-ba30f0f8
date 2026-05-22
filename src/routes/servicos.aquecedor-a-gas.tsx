@@ -77,14 +77,20 @@ function Page() {
           ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
         />
       </div>
-      <RealWorkGallery
-        title="Instalações reais feitas pela Astral Gás"
-        subtitle="Fotos recentes de aquecedores Rinnai e Lorenzetti instalados em casas e apartamentos de Curitiba."
-        photos={installPhotos}
-        aspectRatio="portrait"
-      />
-      <FAQ />
-      <CtaForm />
+      <div id="instalacoes" className="scroll-mt-24">
+        <RealWorkGallery
+          title="Instalações reais feitas pela Astral Gás"
+          subtitle="Fotos recentes de aquecedores Rinnai e Lorenzetti instalados em casas e apartamentos de Curitiba."
+          photos={installPhotos}
+          aspectRatio="portrait"
+        />
+      </div>
+      <div id="duvidas" className="scroll-mt-24">
+        <FAQ />
+      </div>
+      <div id="orcamento" className="scroll-mt-24">
+        <CtaForm />
+      </div>
       <section className="bg-secondary py-10">
         <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
           <p className="text-base leading-relaxed text-foreground/80">
