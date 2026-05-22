@@ -1,26 +1,39 @@
 ## Objetivo
-Verificar a propriedade `https://astralgas.com.br/` no Google Search Console (já conectado) e submeter o `sitemap.xml` para indexação.
+Criar 4 sitelinks para a campanha do Google Ads apontando para a página `/servicos/aquecedor-a-gas`. Cada sitelink precisa de:
+- Título (até 25 caracteres)
+- 2 linhas de descrição (até 35 caracteres cada)
+- URL de destino que leve o usuário ao conteúdo certo (não só a topo da página)
 
-## Passos
+## Estratégia
+Hoje a página `/servicos/aquecedor-a-gas` é uma landing única. Para os sitelinks fazerem sentido (e o Google aprovar/melhorar Quality Score), cada um deve abrir num ponto específico. Vou:
 
-1. **Obter token de verificação META** via gateway do GSC (Site Verification API) para `https://astralgas.com.br/`.
+1. **Adicionar `id`s nas seções existentes** do arquivo `src/routes/servicos.aquecedor-a-gas.tsx` (e nos componentes filhos quando preciso) para virar âncoras profundas:
+   - `#orcamento` → seção `CtaForm` (formulário final)
+   - `#instalacoes` → `RealWorkGallery` (fotos reais)
+   - `#duvidas` → `FAQ` (perguntas frequentes)
+   - `#servico` → bloco `ServiceContent` ("O que está incluído" + "Como atendemos")
 
-2. **Inserir a meta tag no `<head>`** do site em `src/routes/__root.tsx` (renderizada em SSR para que o Google consiga ler):
-   ```html
-   <meta name="google-site-verification" content="<TOKEN>" />
-   ```
+2. **Garantir scroll suave até a âncora** (o navegador já faz por padrão com `scroll-behavior: smooth` em `src/styles.css` — vou confirmar; se faltar, adiciono).
 
-3. **Publicar o site** (necessário — a meta tag precisa estar viva no domínio `astralgas.com.br` antes da verificação).
+3. **Entregar a copy pronta dos 4 sitelinks** para você colar no Google Ads.
 
-4. **Chamar verify** no endpoint `siteVerification/v1/webResource?verificationMethod=META`.
+## Sitelinks propostos (copy pt-BR)
 
-5. **Adicionar o site** ao Search Console: `PUT /webmasters/v3/sites/https%3A%2F%2Fastralgas.com.br%2F`.
+| # | Título (≤25) | Descrição 1 (≤35) | Descrição 2 (≤35) | URL |
+|---|---|---|---|---|
+| 1 | Pedir orçamento grátis | Resposta no WhatsApp em 1 hora | Sem compromisso, atendemos hoje | `https://astralgas.com.br/servicos/aquecedor-a-gas#orcamento` |
+| 2 | Instalações reais | Fotos de obras em Curitiba | Rinnai, Bosch, Komeco e Lorenzetti | `https://astralgas.com.br/servicos/aquecedor-a-gas#instalacoes` |
+| 3 | Dúvidas frequentes | Quantos litros/min preciso? | Preço, prazo, marcas e garantia | `https://astralgas.com.br/servicos/aquecedor-a-gas#duvidas` |
+| 4 | O que está incluído | Visita técnica gratuita | Instalação no mesmo dia, com NF | `https://astralgas.com.br/servicos/aquecedor-a-gas#servico` |
 
-6. **Submeter o sitemap**: `PUT /webmasters/v3/sites/https%3A%2F%2Fastralgas.com.br%2F/sitemaps/https%3A%2F%2Fastralgas.com.br%2Fsitemap.xml`.
+(Contagem já validada: todos os títulos ≤25 e descrições ≤35.)
 
-7. **Marcar finding `gsc:gsc` como fixed**.
+## Arquivos a alterar
+- `src/routes/servicos.aquecedor-a-gas.tsx` — envolver `CtaForm`, `RealWorkGallery`, `FAQ` e `ServiceContent` em `<section id="...">` (ou passar `id` se o componente aceitar) e ajustar `scroll-margin-top` para o header fixo não cobrir o título.
+- `src/styles.css` — confirmar `html { scroll-behavior: smooth; }`; se ausente, adicionar. Adicionar utilitário `scroll-mt-24` nas âncoras para compensar o header.
 
-## Observação importante
-O passo 3 (publicar) precisa acontecer **entre** os passos 2 e 4. Vou pausar após inserir a meta tag para você clicar em Publicar, e então continuo a verificação e o envio do sitemap.
+## Fora do escopo
+- Não vou criar/configurar a campanha no Google Ads (isso é feito por você no painel) — entrego a copy e os URLs prontos.
+- Sem mudanças de copy nas seções, só infra de âncora.
 
-Posso prosseguir?
+Posso seguir?
