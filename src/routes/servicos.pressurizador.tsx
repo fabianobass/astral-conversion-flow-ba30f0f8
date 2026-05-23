@@ -71,6 +71,7 @@ export const Route = createFileRoute("/servicos/pressurizador")({
             { name: "Pressurizador", path: "/servicos/pressurizador" },
           ]),
         ),
+        jsonLdScript(faqJsonLd(pressurizadorFaqs)),
       ],
     };
   },
