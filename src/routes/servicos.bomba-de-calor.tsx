@@ -15,6 +15,7 @@ import piscinaAerea from "@/assets/bomba-de-calor/piscina-aerea.webp";
 
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { faqs } from "@/components/sections/FAQ";
+import { RmcCities } from "@/components/RmcCities";
 
 export const Route = createFileRoute("/servicos/bomba-de-calor")({
   head: () => {
@@ -204,6 +205,7 @@ function Page() {
         </div>
       </section>
 
+      <section className="bg-secondary py-8"><RmcCities /></section>
       <FAQ />
       <CtaForm />
     </>

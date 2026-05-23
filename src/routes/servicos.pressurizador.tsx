@@ -8,6 +8,7 @@ import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { pressurizerPhotos } from "@/lib/work-photos";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { RmcCities } from "@/components/RmcCities";
 import inversoraHpi750 from "@/assets/pressurizador/inversora-hpi-750-v2.png";
 import heroPressurizador from "@/assets/hero-pressurizador-v2.png";
 import logoDruck from "@/assets/marcas/druck.webp";
@@ -269,6 +270,7 @@ function Page() {
         </div>
       </section>
 
+      <section className="bg-secondary py-8"><RmcCities /></section>
       <FAQ />
       <CtaForm />
     </>
