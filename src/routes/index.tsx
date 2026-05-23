@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
+import { RmcCities } from "@/components/RmcCities";
 import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { faqs } from "@/components/sections/FAQ";
