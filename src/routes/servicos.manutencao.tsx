@@ -6,9 +6,19 @@ import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
-import { faqs } from "@/components/sections/FAQ";
 import { RmcCities } from "@/components/RmcCities";
 import heroManutencao from "@/assets/hero-manutencao-v4.png";
+
+const manutencaoFaqs = [
+  { q: "Qual a diferença entre conserto e revisão de aquecedor a gás?", a: "O conserto é corretivo: corrige uma falha específica (não acende, água fria, vazamento, erro no display). A revisão é preventiva: limpeza interna, checagem de queimadores, sensores, pressão de gás e troca de peças desgastadas antes de virarem problema." },
+  { q: "Com que frequência devo fazer a revisão do aquecedor a gás?", a: "A revisão preventiva é recomendada uma vez por ano. Em regiões com água dura ou uso intenso (famílias grandes, comércios), a revisão semestral evita conserto emergencial e prolonga a vida útil do equipamento." },
+  { q: "Vocês fazem conserto de aquecedor de qualquer marca?", a: "Sim. Realizamos conserto e revisão em Rinnai, Komeco, Bosch, Lorenzetti, Rheem, Orbis, Cumulus e outras marcas, mesmo que a instalação original tenha sido feita por outra empresa." },
+  { q: "Quanto tempo leva um conserto de aquecedor a gás em Curitiba?", a: "A maioria dos consertos é resolvida na mesma visita, em 1 a 2 horas. Quando há necessidade de peça específica, agendamos o retorno em até 48h. A revisão completa leva cerca de 1h30." },
+  { q: "Quanto custa o conserto ou a revisão do aquecedor?", a: "O orçamento do conserto é gratuito e feito após o diagnóstico técnico. A revisão preventiva tem valor fechado conforme o modelo. Tudo é informado antes da execução, sem surpresas." },
+  { q: "O conserto e a revisão têm garantia?", a: "Sim. Todo conserto tem garantia escrita sobre o serviço prestado e sobre as peças trocadas. A revisão também é acompanhada de relatório técnico e nota fiscal." },
+  { q: "Atendem conserto de aquecedor com urgência no mesmo dia?", a: "Sim, sempre que há disponibilidade na agenda. Atendemos Curitiba e região metropolitana com prioridade para casos de aquecedor parado, vazamento ou falha de ignição." },
+];
+
 
 export const Route = createFileRoute("/servicos/manutencao")({
   head: () => {
@@ -37,7 +47,7 @@ export const Route = createFileRoute("/servicos/manutencao")({
             { name: "Manutenção", path: "/servicos/manutencao" },
           ]),
         ),
-        jsonLdScript(faqJsonLd(faqs)),
+        jsonLdScript(faqJsonLd(manutencaoFaqs)),
       ],
     };
   },
@@ -80,7 +90,7 @@ function Page() {
         ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
       />
       <section className="bg-secondary py-8"><RmcCities /></section>
-      <FAQ />
+      <FAQ items={manutencaoFaqs} title={<>Conserto e revisão: <span className="italic text-navy">dúvidas frequentes</span></>} />
       <CtaForm />
     </>
   );
