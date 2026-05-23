@@ -1,20 +1,43 @@
-## Objetivo
-Adicionar lista de cidades da Região Metropolitana de Curitiba (RMC) na página `/servicos/aquecedor-a-gas` de forma discreta, reforçando SEO local sem poluir o design.
+## Adicionar Google Tag Manager (GTM-WKQZ4BV9)
 
-## Onde
-Arquivo único: `src/routes/servicos.aquecedor-a-gas.tsx`, dentro da seção final `bg-secondary` (último bloco antes do fechamento), logo abaixo do parágrafo institucional já existente.
+Manter o gtag.js atual (GA4 + Google Ads) funcionando e adicionar o GTM em paralelo. Assim nada quebra e você pode migrar/gerenciar novas tags pelo painel do GTM quando quiser.
 
-## Como
-- Manter o mesmo bloco visual (fundo `bg-secondary`, container centralizado).
-- Adicionar uma linha pequena com rótulo "Atendemos também:" seguida da lista de cidades separadas por bullet (`·`), em `text-sm text-foreground/60`.
-- Sem cards, sem links, sem ícones — apenas texto corrido discreto.
+### Alterações em `src/routes/__root.tsx`
 
-## Cidades (RMC principais, alinhadas ao `llms.txt`)
-São José dos Pinhais · Pinhais · Colombo · Araucária · Campo Largo · Pinhais · Piraquara · Fazenda Rio Grande · Almirante Tamandaré · Quatro Barras · Campina Grande do Sul · Bocaiúva do Sul
+1. No `head().scripts`, adicionar o snippet do GTM logo após os scripts já existentes:
+   ```js
+   {
+     children:
+       "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WKQZ4BV9');",
+   }
+   ```
 
-(ajustável — confirme se quer mais/menos cidades)
+2. No `RootShell`, adicionar o `<noscript>` iframe do GTM como primeiro filho do `<body>` (fallback para navegadores sem JS):
+   ```tsx
+   <body>
+     <noscript>
+       <iframe
+         src="https://www.googletagmanager.com/ns.html?id=GTM-WKQZ4BV9"
+         height="0" width="0"
+         style={{ display: "none", visibility: "hidden" }}
+       />
+     </noscript>
+     {children}
+     <Scripts />
+   </body>
+   ```
 
-## Não fazer
-- Não criar nova seção destacada.
-- Não alterar hero, FAQ, formulário, JSON-LD ou meta tags.
-- Não mexer em outras páginas (manutenção, bomba de calor, pressurizador).
+3. Adicionar `dns-prefetch` para `https://www.googletagmanager.com` já existe — manter.
+
+### O que NÃO muda
+
+- gtag.js (`GT-T5J9FRS6` + GA4 `G-R7WVSM499B`) continua carregando direto.
+- Conversões do Google Ads (`trackWhatsAppClick`, `trackWhatsAppMaintenance`) continuam disparando via `window.gtag` em `src/lib/analytics.ts`.
+- Nenhuma alteração em componentes, rotas ou lógica de negócio.
+
+### Próximos passos (no painel do GTM, fora do código)
+
+Depois de publicado, você pode no tagmanager.google.com:
+- Criar uma tag GA4 dentro do GTM (opcional, se quiser migrar depois).
+- Adicionar Meta Pixel, LinkedIn Insight, etc., sem mexer no código.
+- Configurar triggers de conversão extras escutando o `dataLayer`.
