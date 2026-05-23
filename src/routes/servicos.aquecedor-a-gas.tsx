@@ -92,14 +92,7 @@ function Page() {
         <CtaForm />
       </div>
       <section className="bg-secondary py-10">
-        <div className="mx-auto max-w-3xl px-4 text-center lg:px-8">
-          <p className="text-base font-medium leading-relaxed text-foreground/80">
-            Atendemos:
-          </p>
-          <p className="mt-6 text-sm leading-relaxed text-foreground/60">
-            <span className="font-medium text-foreground/70">Atendemos também:</span> São José dos Pinhais · Pinhais · Colombo · Araucária · Campo Largo · Piraquara · Fazenda Rio Grande · Almirante Tamandaré · Quatro Barras · Campina Grande do Sul · Bocaiúva do Sul
-          </p>
-        </div>
+        <RmcCities />
       </section>
     </>
   );
