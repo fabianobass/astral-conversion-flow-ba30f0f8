@@ -32,7 +32,17 @@ const partnerBrands = [
 ];
 
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
-import { faqs } from "@/components/sections/FAQ";
+
+const pressurizadorFaqs = [
+  { q: "O que é um pressurizador de água e quando devo instalar?", a: "É um equipamento que aumenta e estabiliza a pressão da água na tubulação. É indicado quando o chuveiro fica fraco, o aquecedor a gás não aciona corretamente ou quando várias torneiras abertas ao mesmo tempo derrubam a pressão." },
+  { q: "Qual a diferença entre o HPI 750 1CV e o 2CV?", a: "O modelo 1CV atende residências e apartamentos com até 3 banheiros. O 2CV é indicado para casas maiores, sobrados e imóveis com muitos pontos de uso simultâneos, mantendo pressão constante mesmo com alta demanda." },
+  { q: "O pressurizador é compatível com aquecedor a gás?", a: "Sim. O INVERSORA HPI 750 trabalha com temperatura de fluido até 60°C e pressão estável, garantindo o acionamento correto de aquecedores a gás Rinnai, Komeco, Bosch, Lorenzetti e outras marcas." },
+  { q: "O pressurizador faz muito barulho?", a: "Não. O HPI 750 tem motor com ímãs permanentes e inversor de frequência, com funcionamento silencioso e partidas suaves — sem golpes de aríete na tubulação. Pode ser instalado em áreas de serviço de apartamentos sem incomodar." },
+  { q: "Quanto tempo leva a instalação de um pressurizador em Curitiba?", a: "Após a visita técnica e definição do modelo, a instalação geralmente é feita no mesmo dia, em algumas horas. Trabalho limpo, organizado e com testes de pressão antes da entrega." },
+  { q: "O pressurizador gasta muita energia?", a: "Não. O inversor de frequência ajusta a rotação do motor conforme a demanda real de água, consumindo apenas o necessário. É bem mais econômico que sistemas tradicionais com pressostato." },
+  { q: "Vocês instalam pressurizador em apartamento?", a: "Sim. Atendemos apartamentos em Curitiba e região metropolitana, com instalação compacta e silenciosa, respeitando as normas do condomínio." },
+  { q: "Qual a garantia do pressurizador?", a: "O equipamento tem garantia de fábrica do fabricante e a instalação tem garantia adicional da Astral Gás. Emitimos nota fiscal em todos os serviços." },
+];
 
 export const Route = createFileRoute("/servicos/pressurizador")({
   head: () => {
