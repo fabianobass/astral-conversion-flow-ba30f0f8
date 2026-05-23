@@ -216,7 +216,7 @@ function Page() {
       </section>
 
       <section className="bg-secondary py-8"><RmcCities /></section>
-      <FAQ />
+      <FAQ items={bombaCalorFaqs} title={<>Bomba de calor: <span className="italic text-navy">dúvidas frequentes</span></>} />
       <CtaForm />
     </>
   );
