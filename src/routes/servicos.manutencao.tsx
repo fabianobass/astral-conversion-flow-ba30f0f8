@@ -47,7 +47,7 @@ export const Route = createFileRoute("/servicos/manutencao")({
             { name: "Manutenção", path: "/servicos/manutencao" },
           ]),
         ),
-        jsonLdScript(faqJsonLd(faqs)),
+        jsonLdScript(faqJsonLd(manutencaoFaqs)),
       ],
     };
   },
