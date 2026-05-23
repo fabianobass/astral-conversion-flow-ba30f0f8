@@ -9,7 +9,7 @@ export const faqs = [
   { q: "Vocês fazem manutenção em aquecedor de outra marca/empresa?", a: "Sim, fazemos manutenção em qualquer marca, mesmo que a instalação tenha sido feita por terceiros." },
 ];
 
-export function FAQ({ items = faqs, title }: { items?: { q: string; a: string }[]; title?: string } = {}) {
+export function FAQ({ items = faqs, title }: { items?: { q: string; a: string }[]; title?: React.ReactNode } = {}) {
   return (
     <section className="py-24">
       <div className="mx-auto max-w-3xl px-4 lg:px-8">
