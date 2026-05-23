@@ -96,6 +96,9 @@ function Page() {
           <p className="text-base leading-relaxed text-foreground/80">
             A Astral Gás é referência na venda e instalação de aquecedores a gás Rinnai e Lorenzetti em Curitiba — atendendo Batel, Água Verde, Bigorrilho, Cabral e região metropolitana. Trabalhamos também com Bosch e Komeco, sempre com assistência técnica autorizada Rinnai e Lorenzetti para garantir qualidade do início ao fim.
           </p>
+          <p className="mt-6 text-sm leading-relaxed text-foreground/60">
+            <span className="font-medium text-foreground/70">Atendemos também:</span> São José dos Pinhais · Pinhais · Colombo · Araucária · Campo Largo · Piraquara · Fazenda Rio Grande · Almirante Tamandaré · Quatro Barras · Campina Grande do Sul · Bocaiúva do Sul
+          </p>
         </div>
       </section>
     </>
