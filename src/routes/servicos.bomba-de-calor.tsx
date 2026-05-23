@@ -14,8 +14,18 @@ import piscinaVapor from "@/assets/bomba-de-calor/piscina-vapor.webp";
 import piscinaAerea from "@/assets/bomba-de-calor/piscina-aerea.webp";
 
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
-import { faqs } from "@/components/sections/FAQ";
 import { RmcCities } from "@/components/RmcCities";
+
+const bombaCalorFaqs = [
+  { q: "Bomba de calor funciona para aquecer piscina no inverno de Curitiba?", a: "Sim. As bombas Full Inverter que instalamos operam com eficiência mesmo em baixas temperaturas, mantendo a piscina aquecida o ano inteiro em Curitiba e região metropolitana." },
+  { q: "Qual a economia em relação ao aquecimento elétrico?", a: "A bomba de calor consome até 80% menos energia que um aquecimento elétrico convencional, porque transfere calor do ar em vez de gerar calor por resistência." },
+  { q: "Bomba de calor também refresca a piscina no verão?", a: "Sim. Os modelos Quente-Frio que trabalhamos podem aquecer no inverno e refrescar a água nos dias mais quentes — uma única solução para o ano inteiro." },
+  { q: "Funciona em piscina com água salgada ou cloro?", a: "Sim. O condensador em titânio e a proteção anticorrosiva garantem alta durabilidade mesmo em piscinas com água salgada ou alto teor de cloro." },
+  { q: "Quanto tempo leva para aquecer a piscina?", a: "Depende do volume, da temperatura ambiente e da potência do equipamento. Em média, de 24 a 72 horas no primeiro aquecimento. Depois, a bomba mantém a temperatura com baixo consumo." },
+  { q: "É possível controlar pelo celular?", a: "Sim. Os equipamentos têm controle Wi-Fi integrado: você ajusta a temperatura e liga/desliga pelo app, de qualquer lugar." },
+  { q: "A bomba de calor faz muito barulho?", a: "Não. A tecnologia Full Inverter ajusta a rotação do compressor conforme a demanda, com funcionamento silencioso e estável — ideal para áreas residenciais." },
+  { q: "Vocês fazem o projeto e a instalação completa?", a: "Sim. A Astral Gás cuida do dimensionamento, projeto hidráulico, instalação elétrica, partida e configuração do app Wi-Fi. Tudo com garantia de fábrica e garantia Astral Gás." },
+];
 
 export const Route = createFileRoute("/servicos/bomba-de-calor")({
   head: () => {
