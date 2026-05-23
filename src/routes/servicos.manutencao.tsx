@@ -7,6 +7,7 @@ import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { faqs } from "@/components/sections/FAQ";
+import { RmcCities } from "@/components/RmcCities";
 import heroManutencao from "@/assets/hero-manutencao-v4.png";
 
 export const Route = createFileRoute("/servicos/manutencao")({
@@ -78,6 +79,7 @@ function Page() {
         ctaLabel="Manutenção de aquecedor a gás — chamar agora"
         ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
       />
+      <section className="bg-secondary py-8"><RmcCities /></section>
       <FAQ />
       <CtaForm />
     </>

@@ -269,6 +269,7 @@ function Page() {
         </div>
       </section>
 
+      <section className="bg-secondary py-8"><RmcCities /></section>
       <FAQ />
       <CtaForm />
     </>
