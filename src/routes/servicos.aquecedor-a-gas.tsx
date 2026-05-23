@@ -9,6 +9,7 @@ import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { faqs } from "@/components/sections/FAQ";
 import heroAquecedor from "@/assets/hero-aquecedor-v5.png";
+import { RmcCities } from "@/components/RmcCities";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => {
