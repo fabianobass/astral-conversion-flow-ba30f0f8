@@ -1,39 +1,32 @@
 ## Objetivo
-Criar 4 sitelinks para a campanha do Google Ads apontando para a página `/servicos/aquecedor-a-gas`. Cada sitelink precisa de:
-- Título (até 25 caracteres)
-- 2 linhas de descrição (até 35 caracteres cada)
-- URL de destino que leve o usuário ao conteúdo certo (não só a topo da página)
 
-## Estratégia
-Hoje a página `/servicos/aquecedor-a-gas` é uma landing única. Para os sitelinks fazerem sentido (e o Google aprovar/melhorar Quality Score), cada um deve abrir num ponto específico. Vou:
+Reforçar as palavras-chave **"conserto"** e **"revisão"** na página `/servicos/manutencao` para melhorar a relevância da campanha Google Ads (Quality Score), mantendo o tom de autoridade e sem poluir a leitura.
 
-1. **Adicionar `id`s nas seções existentes** do arquivo `src/routes/servicos.aquecedor-a-gas.tsx` (e nos componentes filhos quando preciso) para virar âncoras profundas:
-   - `#orcamento` → seção `CtaForm` (formulário final)
-   - `#instalacoes` → `RealWorkGallery` (fotos reais)
-   - `#duvidas` → `FAQ` (perguntas frequentes)
-   - `#servico` → bloco `ServiceContent` ("O que está incluído" + "Como atendemos")
+## Edições — somente texto em `src/routes/servicos.manutencao.tsx`
 
-2. **Garantir scroll suave até a âncora** (o navegador já faz por padrão com `scroll-behavior: smooth` em `src/styles.css` — vou confirmar; se faltar, adiciono).
+### 1. Meta título e descrição (SEO + Ads relevance)
+- **Title:** `Manutenção, Conserto e Revisão de Aquecedor a Gás em Curitiba | Astral`
+- **Description:** `Manutenção, conserto e revisão de aquecedor a gás em Curitiba — Batel, Cabral, Juvevê, Mercês, Portão. Peças originais, garantia e atendimento no mesmo dia.`
 
-3. **Entregar a copy pronta dos 4 sitelinks** para você colar no Google Ads.
+### 2. JSON-LD do serviço
+- **name:** `Manutenção, Conserto e Revisão de Aquecedor a Gás em Curitiba`
+- **description:** `Serviços de manutenção preventiva, conserto corretivo e revisão técnica de aquecedores a gás de todas as marcas, com peças originais e garantia.`
 
-## Sitelinks propostos (copy pt-BR)
+### 3. Hero
+- **title:** `Manutenção, conserto e revisão de aquecedor a gás` (gradiente) + `com atendimento ainda hoje`
+- **description:** `Conserto corretivo, revisão preventiva e manutenção completa para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia.`
 
-| # | Título (≤25) | Descrição 1 (≤35) | Descrição 2 (≤35) | URL |
-|---|---|---|---|---|
-| 1 | Pedir orçamento grátis | Resposta no WhatsApp em 1 hora | Sem compromisso, atendemos hoje | `https://astralgas.com.br/servicos/aquecedor-a-gas#orcamento` |
-| 2 | Instalações reais | Fotos de obras em Curitiba | Rinnai, Bosch, Komeco e Lorenzetti | `https://astralgas.com.br/servicos/aquecedor-a-gas#instalacoes` |
-| 3 | Dúvidas frequentes | Quantos litros/min preciso? | Preço, prazo, marcas e garantia | `https://astralgas.com.br/servicos/aquecedor-a-gas#duvidas` |
-| 4 | O que está incluído | Visita técnica gratuita | Instalação no mesmo dia, com NF | `https://astralgas.com.br/servicos/aquecedor-a-gas#servico` |
+### 4. ServiceContent — `benefits` (substituir 2 itens, manter os outros)
+- `Diagnóstico técnico completo` → `Diagnóstico técnico completo para conserto ou revisão`
+- `Limpeza interna e troca de peças desgastadas` → `Revisão completa: limpeza interna e troca de peças desgastadas`
 
-(Contagem já validada: todos os títulos ≤25 e descrições ≤35.)
+### 5. ServiceContent — `process` (ajuste sutil)
+- `Diagnóstico e orçamento sem compromisso` → `Diagnóstico do conserto ou revisão com orçamento sem compromisso`
 
-## Arquivos a alterar
-- `src/routes/servicos.aquecedor-a-gas.tsx` — envolver `CtaForm`, `RealWorkGallery`, `FAQ` e `ServiceContent` em `<section id="...">` (ou passar `id` se o componente aceitar) e ajustar `scroll-margin-top` para o header fixo não cobrir o título.
-- `src/styles.css` — confirmar `html { scroll-behavior: smooth; }`; se ausente, adicionar. Adicionar utilitário `scroll-mt-24` nas âncoras para compensar o header.
+### 6. RealWorkGallery subtitle
+- `Atendimentos reais em Curitiba: diagnóstico, troca de peças e testes finais com peças originais.` → `Consertos e revisões reais em Curitiba: diagnóstico, troca de peças e testes finais com peças originais.`
 
-## Fora do escopo
-- Não vou criar/configurar a campanha no Google Ads (isso é feito por você no painel) — entrego a copy e os URLs prontos.
-- Sem mudanças de copy nas seções, só infra de âncora.
-
-Posso seguir?
+## Fora de escopo
+- Sem mudanças em outras páginas, componentes ou estrutura.
+- Sem alteração de imagens, layout ou tokens de design.
+- FAQ permanece como está (já é compartilhada com outras rotas).
