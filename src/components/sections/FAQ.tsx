@@ -16,11 +16,11 @@ export function FAQ({ items = faqs, title }: { items?: { q: string; a: string }[
         <div className="mb-12 text-center">
           <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">Dúvidas frequentes</div>
           <h2 className="font-display text-4xl font-bold text-navy-deep sm:text-5xl">
-            Respostas para suas <span className="italic text-navy">dúvidas</span>
+            {title ?? <>Respostas para suas <span className="italic text-navy">dúvidas</span></>}
           </h2>
         </div>
         <Accordion type="single" collapsible className="w-full">
-          {faqs.map((f, i) => (
+          {items.map((f, i) => (
             <AccordionItem key={i} value={`item-${i}`} className="border-border">
               <AccordionTrigger className="text-left font-semibold text-navy-deep hover:text-navy hover:no-underline">
                 {f.q}
