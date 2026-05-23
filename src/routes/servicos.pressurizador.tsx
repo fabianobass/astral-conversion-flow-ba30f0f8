@@ -282,7 +282,7 @@ function Page() {
       </section>
 
       <section className="bg-secondary py-8"><RmcCities /></section>
-      <FAQ />
+      <FAQ items={pressurizadorFaqs} title={<>Pressurizador de água: <span className="italic text-navy">dúvidas frequentes</span></>} />
       <CtaForm />
     </>
   );
