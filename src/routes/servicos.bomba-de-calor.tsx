@@ -54,7 +54,7 @@ export const Route = createFileRoute("/servicos/bomba-de-calor")({
             { name: "Bomba de Calor", path: "/servicos/bomba-de-calor" },
           ]),
         ),
-        jsonLdScript(faqJsonLd(faqs)),
+        jsonLdScript(faqJsonLd(bombaCalorFaqs)),
       ],
     };
   },
