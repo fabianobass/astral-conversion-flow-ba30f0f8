@@ -90,7 +90,7 @@ function Page() {
         ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
       />
       <section className="bg-secondary py-8"><RmcCities /></section>
-      <FAQ />
+      <FAQ items={manutencaoFaqs} title={<>Conserto e revisão: <span className="italic text-navy">dúvidas frequentes</span></>} />
       <CtaForm />
     </>
   );
