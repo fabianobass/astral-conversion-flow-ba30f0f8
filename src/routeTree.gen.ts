@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PoliticaPrivacidadeRouteImport } from './routes/politica-privacidade'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicosPressurizadorRouteImport } from './routes/servicos.pressurizador'
 import { Route as ServicosManutencaoRouteImport } from './routes/servicos.manutencao'
@@ -19,6 +20,11 @@ import { Route as ServicosAquecedorAGasRouteImport } from './routes/servicos.aqu
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaPrivacidadeRoute = PoliticaPrivacidadeRouteImport.update({
+  id: '/politica-privacidade',
+  path: '/politica-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,6 +55,7 @@ const ServicosAquecedorAGasRoute = ServicosAquecedorAGasRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/politica-privacidade': typeof PoliticaPrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/servicos/aquecedor-a-gas': typeof ServicosAquecedorAGasRoute
   '/servicos/bomba-de-calor': typeof ServicosBombaDeCalorRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/politica-privacidade': typeof PoliticaPrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/servicos/aquecedor-a-gas': typeof ServicosAquecedorAGasRoute
   '/servicos/bomba-de-calor': typeof ServicosBombaDeCalorRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/politica-privacidade': typeof PoliticaPrivacidadeRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/servicos/aquecedor-a-gas': typeof ServicosAquecedorAGasRoute
   '/servicos/bomba-de-calor': typeof ServicosBombaDeCalorRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/politica-privacidade'
     | '/sitemap.xml'
     | '/servicos/aquecedor-a-gas'
     | '/servicos/bomba-de-calor'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/politica-privacidade'
     | '/sitemap.xml'
     | '/servicos/aquecedor-a-gas'
     | '/servicos/bomba-de-calor'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/politica-privacidade'
     | '/sitemap.xml'
     | '/servicos/aquecedor-a-gas'
     | '/servicos/bomba-de-calor'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PoliticaPrivacidadeRoute: typeof PoliticaPrivacidadeRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ServicosAquecedorAGasRoute: typeof ServicosAquecedorAGasRoute
   ServicosBombaDeCalorRoute: typeof ServicosBombaDeCalorRoute
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-privacidade': {
+      id: '/politica-privacidade'
+      path: '/politica-privacidade'
+      fullPath: '/politica-privacidade'
+      preLoaderRoute: typeof PoliticaPrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PoliticaPrivacidadeRoute: PoliticaPrivacidadeRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ServicosAquecedorAGasRoute: ServicosAquecedorAGasRoute,
   ServicosBombaDeCalorRoute: ServicosBombaDeCalorRoute,
