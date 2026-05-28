@@ -10,8 +10,8 @@ export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no W
           <h2 className="font-display text-3xl font-bold text-navy-deep">O que está incluído</h2>
           <ul className="mt-6 space-y-3">
             {benefits.map((b) => (
-              <li key={b} className="flex items-start gap-3">
-                <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-gold/20">
+              <li key={b} className="flex items-start gap-3 group">
+                <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-gold/20 transition-colors group-hover:bg-gold/40">
                   <Check className="h-3 w-3 text-navy-deep" strokeWidth={3} />
                 </span>
                 <span className="text-foreground/80">{b}</span>
@@ -23,8 +23,8 @@ export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no W
           <h2 className="font-display text-3xl font-bold text-navy-deep">Como atendemos</h2>
           <ol className="mt-6 space-y-4">
             {process.map((p, i) => (
-              <li key={p} className="flex gap-4">
-                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-navy-deep font-bold text-gold">
+              <li key={p} className="flex gap-4 group">
+                <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-navy-deep font-bold text-gold transition-transform group-hover:scale-110">
                   {i + 1}
                 </span>
                 <span className="pt-1 text-foreground/80">{p}</span>

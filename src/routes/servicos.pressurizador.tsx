@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Gauge, Zap, Volume2, Layers, ShieldCheck, Plug } from "lucide-react";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
@@ -282,6 +283,7 @@ function Page() {
       </section>
 
       <section className="bg-secondary py-8"><RmcCities /></section>
+      <Testimonials />
       <FAQ items={pressurizadorFaqs} title={<>Pressurizador de água: <span className="italic text-navy">dúvidas frequentes</span></>} />
       <CtaForm />
     </>
