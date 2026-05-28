@@ -49,9 +49,9 @@ export const Route = createFileRoute("/servicos/pressurizador")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/pressurizador",
-      title: "Pressurizador de Água em Curitiba | Astral Gás",
+      title: "Pressurizador de Água em Curitiba | Instalação e Venda | Astral Gás",
       description:
-        "Pressurizador de água em Curitiba — instalação do inversor HPI 750 (1CV e 2CV). Pressão constante, baixo ruído e total compatibilidade com aquecedores a gás.",
+        "Instalação de pressurizador de água em Curitiba. Resolva problemas de baixa pressão no banho. Modelos HPI 750 Inversores, silenciosos e potentes. Orçamento rápido!",
       image: inversoraHpi750,
     });
     return {
