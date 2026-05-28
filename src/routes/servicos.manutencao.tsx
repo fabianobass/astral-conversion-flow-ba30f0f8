@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
@@ -65,6 +67,7 @@ function Page() {
         ctaLabel="Manutenção de aquecedor a gás — chamar agora"
         ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
       />
+      <TrustBar />
       <RealWorkGallery
         eyebrow="Conserto Urgente"
         title="Manutenções recentes da equipe Astral Gás"
@@ -90,6 +93,7 @@ function Page() {
         ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
       />
       <section className="bg-secondary py-8"><RmcCities /></section>
+      <Testimonials />
       <FAQ items={manutencaoFaqs} title={<>Conserto e revisão: <span className="italic text-navy">dúvidas frequentes</span></>} />
       <CtaForm />
     </>

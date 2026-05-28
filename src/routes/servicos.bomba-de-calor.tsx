@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Wifi, Snowflake, Flame, ShieldCheck, Gauge, Wrench } from "lucide-react";
 import { ServiceHero } from "@/components/sections/ServiceHero";
 import { ServiceContent } from "@/components/sections/ServiceContent";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaForm } from "@/components/sections/CtaForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
@@ -82,6 +84,7 @@ function Page() {
         ctaMessage="Olá! Quero instalar uma bomba de calor para piscina em Curitiba. Pode me passar um orçamento?"
         variant="background"
       />
+      <TrustBar />
 
       {/* Sobre a tecnologia */}
       <section className="bg-background py-20">
@@ -216,6 +219,7 @@ function Page() {
       </section>
 
       <section className="bg-secondary py-8"><RmcCities /></section>
+      <Testimonials />
       <FAQ items={bombaCalorFaqs} title={<>Bomba de calor: <span className="italic text-navy">dúvidas frequentes</span></>} />
       <CtaForm />
     </>
