@@ -67,9 +67,10 @@ export function ServiceHero({
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-navy-deep/75 sm:bg-navy-deep/55 md:bg-navy-deep/30" />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/50" />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/40 to-navy-deep/20" />
+            <div className="absolute inset-0 bg-navy-deep/60 sm:bg-navy-deep/45 md:bg-navy-deep/35" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-transparent to-navy-deep/30" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,175,55,0.05),transparent_40%)]" />
           </>
         )}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
