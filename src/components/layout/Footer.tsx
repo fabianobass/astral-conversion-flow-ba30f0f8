@@ -116,6 +116,14 @@ export function Footer() {
           <p className="mt-3 text-xs text-white/80">
             © {new Date().getFullYear()} Astral Gás Aquecedores. Todos os direitos reservados.
           </p>
+          <p className="mt-2 text-xs">
+            <Link
+              to="/politica-privacidade"
+              className="text-white/80 underline-offset-4 transition-colors hover:text-nav-fg-hover hover:underline focus-ring-nav rounded"
+            >
+              Política de Privacidade
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
