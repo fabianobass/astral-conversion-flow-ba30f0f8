@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
+import { GoogleReviewBadge } from "@/components/GoogleReviewBadge";
 import {
   heroTransition,
   fadeUpInitial,
@@ -64,7 +65,7 @@ export function Hero() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur"
+                className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:bg-white/10"
               >
                 <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-gold/15">
                   <item.icon className="h-4 w-4 text-gold" />
@@ -87,6 +88,10 @@ export function Hero() {
               Comprar aquecedor a gás
               <ArrowRight className="h-5 w-5 text-nav-accent transition-transform group-hover:translate-x-1" />
             </Link>
+          </div>
+
+          <div className="mt-6">
+            <GoogleReviewBadge variant="dark" size="md" />
           </div>
 
           <div className="mt-8">
