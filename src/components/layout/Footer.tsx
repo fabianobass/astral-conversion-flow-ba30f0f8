@@ -75,7 +75,7 @@ export function Footer() {
                 <Clock className="h-4 w-4 mt-0.5 text-gold" />
                 <div>
                   Seg–Sex: 08h às 18h<br />
-                  Sábado: 08h às 13h
+                  Sábado: 08h às 12h
                 </div>
               </li>
               <li className="flex items-start gap-2">

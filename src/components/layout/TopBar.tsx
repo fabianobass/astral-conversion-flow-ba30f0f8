@@ -8,7 +8,7 @@ export function TopBar() {
         <div className="flex items-center gap-2 min-w-0">
           <Clock className="h-3.5 w-3.5 text-gold shrink-0" aria-hidden="true" />
           <span className="truncate">
-            <span className="hidden sm:inline">Atendimento em até 30 min · </span>Seg–Sáb 8h–20h
+            <span className="hidden sm:inline">Atendimento em até 30 min · </span>Seg–Sex 8h–18h · Sáb 8h–12h
           </span>
         </div>
         <a
