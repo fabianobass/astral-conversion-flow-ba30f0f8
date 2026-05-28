@@ -65,6 +65,7 @@ function Page() {
         image={heroAquecedor}
         ctaLabel="Comprar aquecedor a gás no WhatsApp"
         ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
+        variant="background"
       />
       <TrustBar />
       <div id="servico" className="scroll-mt-24">
