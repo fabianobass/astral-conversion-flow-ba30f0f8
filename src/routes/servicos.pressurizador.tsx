@@ -98,7 +98,6 @@ function Page() {
         image={heroPressurizador}
         ctaLabel="Pressurizador de água — orçamento no WhatsApp"
         ctaMessage="Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?"
-        variant="background"
       />
 
       {/* A tecnologia */}
