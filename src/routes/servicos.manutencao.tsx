@@ -66,6 +66,7 @@ function Page() {
         image={heroManutencao}
         ctaLabel="Manutenção de aquecedor a gás — chamar agora"
         ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
+        variant="background"
       />
       <TrustBar />
       <RealWorkGallery
