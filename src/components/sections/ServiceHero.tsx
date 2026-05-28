@@ -45,9 +45,11 @@ export function ServiceHero({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ctaLabel}
-      className="inline-flex min-h-11 sm:min-h-12 md:min-h-[52px] items-center justify-center gap-2 rounded-full bg-whatsapp max-w-full px-3.5 py-2.5 sm:px-5 sm:py-3 md:px-6 md:py-3.5 text-center text-balance text-[13px] sm:text-sm md:text-[15px] font-semibold leading-[1.2] sm:leading-[1.15] md:leading-[1.1] tracking-[-0.005em] text-white shadow-[0_8px_24px_-8px_rgba(34,197,94,0.55)] hover:bg-emerald-500 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:active:scale-100"
+      className="relative overflow-hidden inline-flex min-h-11 sm:min-h-12 md:min-h-[52px] items-center justify-center gap-2 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] max-w-full px-3.5 py-2.5 sm:px-5 sm:py-3 md:px-8 md:py-4.5 text-center text-balance text-[13px] sm:text-sm md:text-[15px] font-bold leading-[1.2] sm:leading-[1.15] md:leading-[1.1] tracking-tight text-white shadow-[0_12px_40px_-12px_rgba(37,211,102,0.5)] hover:shadow-[0_15px_45px_-10px_rgba(37,211,102,0.6)] hover:scale-[1.03] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/80 transition duration-300 motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:active:scale-100 group"
     >
-      <WhatsAppIcon className="h-[1.15em] w-[1.15em] shrink-0 self-center" aria-hidden /> {ctaLabel}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+      <WhatsAppIcon className="relative z-10 h-[1.15em] w-[1.15em] shrink-0 self-center drop-shadow-sm" aria-hidden /> 
+      <span className="relative z-10">{ctaLabel}</span>
     </a>
   );
 
