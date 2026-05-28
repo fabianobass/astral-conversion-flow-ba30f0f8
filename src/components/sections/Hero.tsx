@@ -113,7 +113,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-3 text-center text-xs text-white/75 sm:flex sm:items-center sm:gap-6 sm:text-left">
+          <div className="mt-10 grid grid-cols-2 gap-3 text-center text-xs text-white/75 sm:flex sm:items-center sm:gap-6 sm:text-left">
             <div>
               <div className="font-display text-2xl font-bold text-gold">+15</div>
               anos no mercado
@@ -121,12 +121,7 @@ export function Hero() {
             <div className="hidden h-10 w-px bg-white/15 sm:block" />
             <div>
               <div className="font-display text-2xl font-bold text-gold">+2.000</div>
-              instalações
-            </div>
-            <div className="hidden h-10 w-px bg-white/15 sm:block" />
-            <div>
-              <div className="font-display text-2xl font-bold text-gold">4.9★</div>
-              avaliação Google
+              instalações realizadas
             </div>
           </div>
         </m.div>
