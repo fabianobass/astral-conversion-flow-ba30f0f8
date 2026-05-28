@@ -60,7 +60,7 @@ export function ServiceHero({
           <>
             <img
               src={image}
-              alt=""
+              alt={`${eyebrow} Astral Gás`}
               aria-hidden
               fetchPriority="high"
               loading="eager"
@@ -131,7 +131,7 @@ export function ServiceHero({
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />
             <img
               src={image}
-              alt=""
+              alt={`${eyebrow} Astral Gás`}
               aria-hidden
               fetchPriority="high"
               loading="eager"

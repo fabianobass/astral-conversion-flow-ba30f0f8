@@ -18,9 +18,9 @@ export const Route = createFileRoute("/")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/",
-      title: "Aquecedor a Gás em Curitiba | Astral Gás",
+      title: "Aquecedor a Gás em Curitiba | Venda, Instalação e Conserto | Astral Gás",
       description:
-        "Aquecedor a gás em Curitiba com venda e instalação no mesmo dia — Batel, Água Verde, Bigorrilho e região. Rinnai, Bosch, Komeco. Orçamento grátis no WhatsApp.",
+        "Aquecedor a gás em Curitiba com instalação no mesmo dia. Autorizada Rinnai, Bosch e Komeco. Banhos quentes com economia e segurança. Orçamento grátis pelo WhatsApp!",
       image: heroImg,
     });
     return {

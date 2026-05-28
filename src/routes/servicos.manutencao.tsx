@@ -26,9 +26,9 @@ export const Route = createFileRoute("/servicos/manutencao")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/manutencao",
-      title: "Manutenção, Conserto e Revisão de Aquecedor a Gás em Curitiba | Astral",
+      title: "Conserto e Manutenção de Aquecedor a Gás em Curitiba | Atendimento Hoje",
       description:
-        "Manutenção, conserto e revisão de aquecedor a gás em Curitiba — Batel, Cabral, Juvevê, Mercês, Portão. Peças originais, garantia e atendimento no mesmo dia.",
+        "Manutenção e conserto de aquecedor a gás em Curitiba. Atendemos todas as marcas com peças originais e garantia. Batel, Cabral, Mercês e região. Chame agora!",
       image: heroManutencao,
     });
     return {
