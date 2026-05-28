@@ -87,11 +87,11 @@ export function Hero() {
           </div>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <SpecialistDropdown variant="whatsapp" label="Aquecedor a gás em Curitiba — falar agora" />
+            <SpecialistDropdown variant="whatsapp" label="Orçamento rápido no WhatsApp" />
 
             <Link
               to="/servicos/aquecedor-a-gas"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-7 py-4 font-semibold text-nav-fg backdrop-blur outline-none transition-all duration-200 hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-ring-nav active:scale-[0.98] aria-disabled:pointer-events-none aria-disabled:text-nav-fg-disabled aria-disabled:border-nav-fg-disabled motion-reduce:transition-none motion-reduce:active:scale-100"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4.5 font-bold text-white backdrop-blur outline-none transition-all duration-300 hover:border-gold/50 hover:bg-white/10 focus-ring-nav active:scale-[0.98] motion-reduce:transition-none"
             >
               Comprar aquecedor a gás
               <ArrowRight className="h-5 w-5 text-nav-accent transition-transform group-hover:translate-x-1" />
