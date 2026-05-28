@@ -39,9 +39,11 @@ export function Process() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Iniciar atendimento pelo WhatsApp"
-            className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-semibold text-white shadow-[0_10px_40px_-10px_rgba(34,197,94,0.6)] transition-transform hover:scale-105"
+            className="relative overflow-hidden inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] px-8 py-4.5 font-bold tracking-tight text-white shadow-[0_12px_40px_-12px_rgba(37,211,102,0.5)] hover:shadow-[0_15px_45px_-10px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] group"
           >
-            <WhatsAppIcon className="h-5 w-5" /> Começar pelo WhatsApp
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+            <WhatsAppIcon className="relative z-10 h-5 w-5 drop-shadow-sm" /> 
+            <span className="relative z-10">Começar pelo WhatsApp</span>
           </a>
         </div>
       </div>
