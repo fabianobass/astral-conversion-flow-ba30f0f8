@@ -28,10 +28,14 @@ export function Hero() {
   const [imageDone, setImageDone] = useState(false);
 
   return (
-    <section data-nav-surface="dark" className="relative overflow-hidden bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section data-nav-surface="dark" className="relative overflow-hidden bg-[#0A101E] pt-32 pb-20 lg:pt-40 lg:pb-28">
+      {/* Visual background layers */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(212,175,55,0.08),transparent_40%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(15,52,96,0.3),transparent_50%)]" />
+      
       {/* Decorative glows */}
-      <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-gold/20 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-navy/40 blur-3xl" />
+      <div className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full bg-gold/15 blur-[120px] animate-pulse" />
+      <div className="absolute top-1/2 -right-32 h-96 w-96 rounded-full bg-navy/30 blur-[100px]" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2 lg:px-8">
         <m.div
@@ -42,12 +46,16 @@ export function Hero() {
           style={textDone ? willChangeReset : willChangeStyle}
           className="text-white"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-gold">
-            <Clock className="h-3.5 w-3.5" /> Atendimento em até 30 minutos
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-gold shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
+            </span>
+            Atendimento em até 30 minutos
           </div>
 
-          <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl text-balance">
-            <span className="bg-gradient-to-r from-gold to-amber-300 bg-clip-text text-transparent">
+          <h1 className="font-display text-[32px] font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl text-balance tracking-tight">
+            <span className="bg-gradient-to-r from-gold via-amber-200 to-gold bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent">
               Aquecedor a gás em Curitiba
             </span>{" "}
             com instalação no mesmo dia
@@ -132,9 +140,10 @@ export function Hero() {
           transition={heroTransition}
           onAnimationComplete={() => setImageDone(true)}
           style={imageDone ? willChangeReset : willChangeStyle}
-          className="relative mx-auto w-full max-w-md"
+          className="relative mx-auto w-full max-w-lg lg:ml-auto"
         >
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold/30 to-transparent blur-2xl" />
+          <div className="absolute -inset-4 rounded-[40px] bg-gradient-to-br from-gold/40 via-transparent to-navy/40 blur-3xl opacity-50" />
+          <div className="absolute inset-0 rounded-[32px] ring-1 ring-white/10" />
           <img
             src={heroImg}
             alt="Aquecedor a gás premium instalado pela Astral Gás"
