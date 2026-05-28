@@ -58,7 +58,7 @@ export function Hero() {
             <span className="bg-gradient-to-r from-gold via-amber-200 to-gold bg-[length:200%_auto] animate-shimmer bg-clip-text text-transparent">
               Aquecedor a gás em Curitiba
             </span>{" "}
-            com instalação no mesmo dia
+            com instalação <span className="text-gold italic">no mesmo dia</span>
           </h1>
 
           <p className="mt-6 max-w-lg text-lg text-white/75">

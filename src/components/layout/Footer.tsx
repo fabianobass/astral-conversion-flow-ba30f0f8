@@ -3,6 +3,7 @@ import { Phone, MapPin, Clock, Instagram, Facebook } from "lucide-react";
 import { PHONE_SALES_DISPLAY, PHONE_MAINTENANCE_DISPLAY, PHONE_SALES, PHONE_MAINTENANCE, waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import logoAstral from "@/assets/logo-astral.webp";
+import { CuritibaNeighborhoods } from "@/components/CuritibaNeighborhoods";
 
 export function Footer() {
   return (
@@ -108,6 +109,8 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+        <CuritibaNeighborhoods />
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center">
           <p className="font-display text-base text-gold sm:text-lg">

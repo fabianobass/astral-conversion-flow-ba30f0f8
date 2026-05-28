@@ -16,9 +16,9 @@ export const Route = createFileRoute("/servicos/aquecedor-a-gas")({
   head: () => {
     const seo = buildRouteMeta({
       path: "/servicos/aquecedor-a-gas",
-      title: "Aquecedor a Gás em Curitiba — Rinnai e Bosch | Astral",
+      title: "Comprar Aquecedor a Gás em Curitiba | Venda e Instalação Rinnai e Bosch",
       description:
-        "Comprar aquecedor a gás em Curitiba com instalação no mesmo dia — Batel, Água Verde, Bigorrilho, Cabral. Rinnai, Bosch, Komeco e Lorenzetti. Orçamento grátis.",
+        "Comprar aquecedor a gás em Curitiba com instalação imediata. Modelos Rinnai, Bosch e Komeco. Visita técnica gratuita em Batel, Cabral, Bigorrilho e região. Confira!",
       image: heroAquecedor,
     });
     return {

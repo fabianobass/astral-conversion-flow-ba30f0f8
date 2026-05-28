@@ -42,10 +42,24 @@ export const localBusinessJsonLd = {
   "@id": SITE_URL + "/#business",
   name: SITE_NAME,
   description:
-    "Venda, instalação e manutenção de aquecedores a gás, pressurizadores e bombas de calor em Curitiba e Região Metropolitana.",
+    "Venda, instalação e manutenção de aquecedores a gás, pressurizadores e bombas de calor em Curitiba e Região Metropolitana há mais de 15 anos.",
   url: SITE_URL,
   telephone: PHONE_SALES_DISPLAY,
   priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday"],
+      opens: "08:00",
+      closes: "12:00",
+    },
+  ],
   sameAs: [
     "https://www.instagram.com/gasastral/",
     "https://www.facebook.com/people/Astral-G%C3%A1s/pfbid078UjkMYXPN2HoKkA3CP1AHXJ1Ekq8RFDTUCqDLnyGezWcz75dF88742F2db1ecJ3l/",
@@ -53,9 +67,18 @@ export const localBusinessJsonLd = {
   areaServed: [
     { "@type": "City", name: "Curitiba" },
     { "@type": "AdministrativeArea", name: "Região Metropolitana de Curitiba" },
+    { "@type": "Neighborhood", name: "Batel" },
+    { "@type": "Neighborhood", name: "Água Verde" },
+    { "@type": "Neighborhood", name: "Bigorrilho" },
+    { "@type": "Neighborhood", name: "Cabral" },
+    { "@type": "Neighborhood", name: "Juvevê" },
+    { "@type": "Neighborhood", name: "Mercês" },
+    { "@type": "Neighborhood", name: "Portão" },
+    { "@type": "Neighborhood", name: "Ecoville" },
   ],
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Curitiba e Região Metropolitana",
     addressLocality: "Curitiba",
     addressRegion: "PR",
     addressCountry: "BR",
@@ -79,7 +102,7 @@ export const localBusinessJsonLd = {
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
-    reviewCount: "200",
+    reviewCount: "215",
   },
 };
 
