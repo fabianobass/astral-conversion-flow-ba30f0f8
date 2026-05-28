@@ -3,6 +3,7 @@ import { Menu, X, Home, Flame, Wrench, Droplets, Thermometer } from "lucide-reac
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, m } from "framer-motion";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
+import { TopBar } from "@/components/layout/TopBar";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
 import {
   heroTransition,
@@ -72,6 +73,7 @@ export function Header() {
           : "bg-background/80 backdrop-blur-sm border-b border-border/50"
       }`}
     >
+      <TopBar />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         <Link to="/" className="flex items-center transition-transform hover:scale-105" aria-label="Astral Gás — Início">
           <img

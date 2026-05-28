@@ -5,6 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { SpecialistDropdown } from "@/components/SpecialistDropdown";
+import { GoogleReviewBadge } from "@/components/GoogleReviewBadge";
 import {
   heroTransition,
   fadeUpInitial,
@@ -64,7 +65,7 @@ export function Hero() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur"
+                className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3 backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:bg-white/10"
               >
                 <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-gold/15">
                   <item.icon className="h-4 w-4 text-gold" />
@@ -89,6 +90,10 @@ export function Hero() {
             </Link>
           </div>
 
+          <div className="mt-6">
+            <GoogleReviewBadge variant="dark" size="md" />
+          </div>
+
           <div className="mt-8">
             <div className="mb-3 text-[11px] uppercase tracking-widest text-white/80">Marcas autorizadas</div>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
@@ -108,7 +113,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-3 text-center text-xs text-white/75 sm:flex sm:items-center sm:gap-6 sm:text-left">
+          <div className="mt-10 grid grid-cols-2 gap-3 text-center text-xs text-white/75 sm:flex sm:items-center sm:gap-6 sm:text-left">
             <div>
               <div className="font-display text-2xl font-bold text-gold">+15</div>
               anos no mercado
@@ -116,12 +121,7 @@ export function Hero() {
             <div className="hidden h-10 w-px bg-white/15 sm:block" />
             <div>
               <div className="font-display text-2xl font-bold text-gold">+2.000</div>
-              instalações
-            </div>
-            <div className="hidden h-10 w-px bg-white/15 sm:block" />
-            <div>
-              <div className="font-display text-2xl font-bold text-gold">4.9★</div>
-              avaliação Google
+              instalações realizadas
             </div>
           </div>
         </m.div>

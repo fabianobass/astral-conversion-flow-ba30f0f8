@@ -4,6 +4,7 @@ import { m } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { GoogleReviewBadge } from "@/components/GoogleReviewBadge";
 import {
   heroTransition,
   fadeUpInitial,
@@ -86,7 +87,7 @@ export function ServiceHero({
           <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">{eyebrow}</div>
           <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl max-w-3xl text-balance drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">{title}</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
-          <div className="mt-8">{ctaButton}</div>
+          <div className="mt-8 flex flex-wrap items-center gap-4">{ctaButton}<GoogleReviewBadge variant="dark" size="md" /></div>
         </m.div>
       </section>
     );
@@ -113,7 +114,7 @@ export function ServiceHero({
           <div className="mb-3 text-xs uppercase tracking-widest text-gold font-semibold">{eyebrow}</div>
           <h1 className="font-display text-[26px] font-bold leading-[1.15] sm:text-4xl lg:text-5xl text-balance">{title}</h1>
           <p className="mt-5 max-w-2xl text-lg text-white/80">{description}</p>
-          <div className="mt-8">{ctaButton}</div>
+          <div className="mt-8 flex flex-wrap items-center gap-4">{ctaButton}<GoogleReviewBadge variant="dark" size="md" /></div>
         </m.div>
 
         {image && (
