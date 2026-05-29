@@ -272,7 +272,7 @@ function Page() {
             para a sua casa, com instalação completa pela nossa equipe.
           </p>
           <a
-            href={waLink(undefined, "Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?")}
+            href={waLink(undefined, "Olá! Vim pelo site da Astral Gás")}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Pressurizador de água — pedir orçamento no WhatsApp"

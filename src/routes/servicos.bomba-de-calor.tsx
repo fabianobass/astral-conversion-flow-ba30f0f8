@@ -207,7 +207,7 @@ function Page() {
             será usada. A Astral Gás faz o dimensionamento, a instalação e o pós-venda.
           </p>
           <a
-            href={waLink(undefined, "Olá! Quero instalar uma bomba de calor para piscina em Curitiba. Pode me passar um orçamento?")}
+            href={waLink(undefined, "Olá! Vim pelo site da Astral Gás")}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Bomba de calor para piscina — pedir orçamento no WhatsApp"
