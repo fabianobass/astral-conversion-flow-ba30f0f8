@@ -1,35 +1,28 @@
-# Plano — Melhorias Visuais
+## Objetivo
+Garantir que todos os botões/links que disparam WhatsApp para o número **(41) 99662-0115** (vendas) abram a conversa com a mensagem:
 
-## 1. Topbar de contato (acima do header)
-- Novo componente `src/components/layout/TopBar.tsx`: faixa fina escura (`bg-navy-deep`) com:
-  - Esquerda: `Clock` + "Atendimento em 30 min · Seg–Sáb 8h–20h"
-  - Direita: ícone telefone `(41) 99194-5563` (click-to-call, esconde em mobile <sm) + separador + WhatsApp link
-- Montar dentro de `Header.tsx` (acima do nav atual) e ajustar o `pt-32` do Hero para `pt-36`/`pt-40` conforme nova altura.
-- Sticky junto com o header? Não — só o header principal fica sticky; a topbar rola junto (mais leve em mobile).
+> Olá! Vim pelo site da Astral Gás
 
-## 2. Hero mais impactante + selo Google
-- Em `Hero.tsx`:
-  - Substituir o bloco "4.9★ avaliação Google" das stats por um **card destacado** logo abaixo dos CTAs: pílula com logo Google (SVG inline), 5 estrelas douradas preenchidas grandes, "4.9 · +200 avaliações" e link sutil.
-  - Reforçar o badge superior: "Atendimento em até 30 min" ganha pulse dourado discreto.
-  - Adicionar segundo selo ao lado das marcas: pílula "Assistência Autorizada Rinnai e Lorenzetti" com `BadgeCheck` dourado.
-  - Refinar gradiente: trocar `from-gold/20` por gradiente radial duplo (gold + amber) mais sofisticado.
-- Aplicar mesmo padrão de selo Google no `ServiceHero` da página `/servicos/aquecedor-a-gas`.
+O número de manutenção (99194-5563) mantém suas mensagens próprias.
 
-## 3. Depoimentos com avatar + estrelas grandes
-- Em `Testimonials.tsx`:
-  - Cabeçalho ganha selo Google grande centralizado (mesmo componente do hero) com "4.9 baseado em +200 avaliações".
-  - Cards: avatar circular com inicial em gradiente dourado (sem foto real), nome em cima, cidade ao lado, estrelas maiores (h-5) e ícone aspas decorativo no canto.
-  - Adicionar 3 depoimentos novos (total 6) — variando bairros de Curitiba.
-  - Hover: leve elevação + borda dourada.
+## Alterações
 
-## 4. Microinterações
-- Cards de benefícios do Hero: hover com `border-gold/40` + `translate-y-[-2px]`.
-- Stats: contador animado simples (0 → valor) usando `useInView` + state, dispara uma vez.
+1. **`src/lib/contact.ts`** — trocar o texto padrão de `waLink` para `"Olá! Vim pelo site da Astral Gás"`. Isso já cobre automaticamente todas as chamadas sem texto custom: `Process.tsx`, `CtaForm.tsx` (footer CTA), `Footer.tsx` (link de vendas) e o item "Compra e Instalação" do `SpecialistDropdown.tsx`.
 
-## Arquivos
-- novo: `src/components/layout/TopBar.tsx`
-- novo: `src/components/GoogleReviewBadge.tsx` (reutilizável hero + depoimentos)
-- editar: `Header.tsx`, `Hero.tsx`, `ServiceHero.tsx`, `Testimonials.tsx`
+2. **`src/components/WhatsAppFloat.tsx`** — substituir o texto da opção "Compra e instalação" (PHONE_SALES) pela mensagem padronizada.
 
-## Fora de escopo
-- Conversão de imagens AVIF/WebP, bloco de preço, lightbox de galeria, política de privacidade (já feita).
+3. **`src/components/sections/ServiceHero.tsx`** e **`src/components/sections/ServiceContent.tsx`** — quando `ctaMessage` não for informado, usar a mensagem padrão (já acontece via `waLink`). Adicionalmente, sobrescrever as mensagens custom atuais para usar a nova mensagem padronizada nas páginas de serviço, já que todas apontam para vendas:
+   - `src/routes/servicos.aquecedor-a-gas.tsx`
+   - `src/routes/servicos.pressurizador.tsx`
+   - `src/routes/servicos.bomba-de-calor.tsx`
+   - `src/routes/servicos.manutencao.tsx` (verificar — se aponta para manutenção, manter)
+
+4. **`src/components/sections/CtaForm.tsx`** — o formulário monta um texto detalhado com dados do lead antes de abrir o WhatsApp. Pergunta abaixo.
+
+## Pergunta
+
+O formulário de contato (`CtaForm`) hoje envia mensagem com nome/telefone/serviço preenchidos pelo usuário. Devo:
+- (A) manter esse comportamento (mensagem detalhada do formulário) e padronizar apenas os botões diretos de WhatsApp, **ou**
+- (B) também substituir pela mensagem fixa "Olá! Vim pelo site da Astral Gás"?
+
+Recomendo (A) para não perder os dados do lead.
