@@ -1,5 +1,5 @@
 import { Clock, Phone } from "lucide-react";
-import { PHONE_MAINTENANCE_DISPLAY, PHONE_MAINTENANCE } from "@/lib/contact";
+import { PHONE_SALES, PHONE_SALES_DISPLAY, waLink } from "@/lib/contact";
 
 export function TopBar() {
   return (
@@ -12,14 +12,17 @@ export function TopBar() {
           </span>
         </div>
         <a
-          href={`tel:+${PHONE_MAINTENANCE}`}
+          href={waLink(PHONE_SALES, "Olá! Vim pelo site da Astral Gás")}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-1.5 font-semibold text-white hover:text-gold transition-colors"
-          aria-label={`Ligar para ${PHONE_MAINTENANCE_DISPLAY}`}
+          aria-label={`WhatsApp ${PHONE_SALES_DISPLAY}`}
         >
           <Phone className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-          <span>{PHONE_MAINTENANCE_DISPLAY}</span>
+          <span>{PHONE_SALES_DISPLAY}</span>
         </a>
       </div>
     </div>
   );
 }
+
