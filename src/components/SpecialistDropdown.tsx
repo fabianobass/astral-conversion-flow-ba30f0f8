@@ -72,7 +72,7 @@ export function SpecialistDropdown({
           <a
             href={waLink(
               PHONE_SALES,
-              "Olá! Vim pelo site da Astral Gás e gostaria de um orçamento."
+              "Olá! Vim pelo site da Astral Gás"
             )}
             target="_blank"
             rel="noopener noreferrer"

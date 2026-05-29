@@ -64,7 +64,7 @@ function Page() {
         description="Venda e instalação de aquecedores a gás de passagem Rinnai, Lorenzetti, Bosch e Komeco para casas e apartamentos em Curitiba e região metropolitana. Dimensionamos o equipamento ideal para sua família e instalamos no mesmo dia, com nota fiscal e garantia."
         image={heroAquecedor}
         ctaLabel="Comprar aquecedor a gás no WhatsApp"
-        ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
+        ctaMessage="Olá! Vim pelo site da Astral Gás"
         variant="background"
       />
       <TrustBar />
@@ -87,7 +87,7 @@ function Page() {
             "Testamos tudo e entregamos com nota fiscal",
           ]}
           ctaLabel="Comprar aquecedor a gás agora"
-          ctaMessage="Olá! Quero comprar um aquecedor a gás em Curitiba. Pode me passar um orçamento?"
+          ctaMessage="Olá! Vim pelo site da Astral Gás"
         />
       </div>
       <SizingGuide />

@@ -81,7 +81,7 @@ function Page() {
         description="Aquecimento e refrigeração para piscinas com tecnologia Full Inverter, máxima eficiência, economia de até 80% e controle inteligente via Wi-Fi."
         image={heroPiscina}
         ctaLabel="Bomba de calor para piscina — orçamento no WhatsApp"
-        ctaMessage="Olá! Quero instalar uma bomba de calor para piscina em Curitiba. Pode me passar um orçamento?"
+        ctaMessage="Olá! Vim pelo site da Astral Gás"
         variant="background"
       />
       <TrustBar />
@@ -207,7 +207,7 @@ function Page() {
             será usada. A Astral Gás faz o dimensionamento, a instalação e o pós-venda.
           </p>
           <a
-            href={waLink(undefined, "Olá! Quero instalar uma bomba de calor para piscina em Curitiba. Pode me passar um orçamento?")}
+            href={waLink(undefined, "Olá! Vim pelo site da Astral Gás")}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Bomba de calor para piscina — pedir orçamento no WhatsApp"

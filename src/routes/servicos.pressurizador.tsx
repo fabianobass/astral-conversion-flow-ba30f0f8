@@ -97,7 +97,7 @@ function Page() {
         description="Instalação do pressurizador inversor HPI 750 nas versões 1CV e 2CV. Banhos potentes, funcionamento perfeito do aquecedor a gás e pressão constante em todos os pontos."
         image={heroPressurizador}
         ctaLabel="Pressurizador de água — orçamento no WhatsApp"
-        ctaMessage="Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?"
+        ctaMessage="Olá! Vim pelo site da Astral Gás"
         variant="background"
       />
 
@@ -272,7 +272,7 @@ function Page() {
             para a sua casa, com instalação completa pela nossa equipe.
           </p>
           <a
-            href={waLink(undefined, "Olá! Quero instalar um pressurizador de água em Curitiba. Pode me passar um orçamento?")}
+            href={waLink(undefined, "Olá! Vim pelo site da Astral Gás")}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Pressurizador de água — pedir orçamento no WhatsApp"

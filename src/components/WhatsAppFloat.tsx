@@ -42,7 +42,7 @@ export function WhatsAppFloat() {
       icon: Flame,
       title: "Compra e instalação",
       desc: "Aquecedor a gás novo",
-      href: waLink(PHONE_SALES, "Olá! Gostaria de orçamento para compra e instalação de aquecedor a gás."),
+      href: waLink(PHONE_SALES, "Olá! Vim pelo site da Astral Gás"),
     },
     {
       icon: Wrench,
