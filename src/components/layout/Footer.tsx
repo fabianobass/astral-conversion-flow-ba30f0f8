@@ -24,7 +24,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-display text-lg text-white">Serviços</h4>
+            <h3 className="mb-4 font-display text-lg text-white">Serviços</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/servicos/aquecedor-a-gas" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-ring-nav rounded">Aquecedor a Gás</Link></li>
               <li><Link to="/servicos/manutencao" className="text-nav-fg transition-colors hover:text-nav-fg-hover focus-ring-nav rounded">Manutenção</Link></li>
@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-display text-lg text-white">Contato</h4>
+            <h3 className="mb-4 font-display text-lg text-white">Contato</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <div className="text-xs uppercase tracking-wider text-gold">Vendas</div>
@@ -70,7 +70,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-display text-lg text-white">Atendimento</h4>
+            <h3 className="mb-4 font-display text-lg text-white">Atendimento</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Clock className="h-4 w-4 mt-0.5 text-gold" />
@@ -91,7 +91,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Astral Gás no Instagram"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-nav-fg-hover"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/90 transition-colors hover:border-gold hover:text-nav-fg-hover"
                   >
                     <Instagram className="h-5 w-5" />
                   </a>
@@ -100,7 +100,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Astral Gás no Facebook"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/80 transition-colors hover:border-gold hover:text-nav-fg-hover"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/90 transition-colors hover:border-gold hover:text-nav-fg-hover"
                   >
                     <Facebook className="h-5 w-5" />
                   </a>
