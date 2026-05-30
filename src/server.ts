@@ -66,12 +66,48 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   return brandedErrorResponse();
 }
 
+// Cache the rendered HTML on Cloudflare's edge so most visitors hit a PoP
+// instead of paying for a full SSR. The site has no per-user content, so
+// HTML is safe to share across visitors. JSON / assets / API routes keep
+// whatever cache headers the handler already set.
+function applyEdgeCache(request: Request, response: Response): Response {
+  if (request.method !== "GET" && request.method !== "HEAD") return response;
+  if (response.status !== 200) return response;
+
+  const url = new URL(request.url);
+  const path = url.pathname;
+
+  // Skip API routes and anything that looks like a static asset (has extension).
+  if (path.startsWith("/api/")) return response;
+  if (/\.[a-zA-Z0-9]+$/.test(path)) return response;
+
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("text/html")) return response;
+
+  // Never cache pages that set cookies (auth, sessions, etc.).
+  if (response.headers.has("set-cookie")) return response;
+
+  const headers = new Headers(response.headers);
+  // Browser: revalidate every visit (cheap, conditional). Edge: serve for
+  // 5 min, then serve stale for up to a day while revalidating in background.
+  headers.set(
+    "cache-control",
+    "public, max-age=0, s-maxage=300, stale-while-revalidate=86400",
+  );
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+      return applyEdgeCache(request, normalized);
     } catch (error) {
       console.error(error);
       return brandedErrorResponse();
