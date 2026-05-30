@@ -115,7 +115,7 @@ export function Hero() {
                   key={b.alt}
                   className="flex items-center justify-center rounded-md border border-white/10 bg-white/40 backdrop-blur px-1.5 py-1 sm:py-0"
                 >
-                  <img src={b.src} alt={`Logo ${b.alt}`} width="120" height="48" className={`${b.h} w-auto object-contain sm:-my-3`} loading="lazy" decoding="async" />
+                  <img src={b.src} alt={`Logo ${b.alt}`} width="120" height="48" className={`${b.h} w-auto object-contain sm:-my-3`} loading="eager" fetchPriority="low" decoding="async" />
                 </div>
               ))}
             </div>
