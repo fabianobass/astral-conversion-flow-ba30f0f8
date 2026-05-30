@@ -9,7 +9,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
-import heroAquecedor from "@/assets/hero-aquecedor-v5.png";
+import heroAquecedor from "@/assets/hero-aquecedor-v5.webp";
 import { RmcCities } from "@/components/RmcCities";
 
 export const Route = createFileRoute("/servicos/aquecedor-a-gas")({

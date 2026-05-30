@@ -9,7 +9,7 @@ import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { RmcCities } from "@/components/RmcCities";
-import heroManutencao from "@/assets/hero-manutencao-v4.png";
+import heroManutencao from "@/assets/hero-manutencao-v4.webp";
 
 const manutencaoFaqs = [
   { q: "Qual a diferença entre conserto e revisão de aquecedor a gás?", a: "O conserto é corretivo: corrige uma falha específica (não acende, água fria, vazamento, erro no display). A revisão é preventiva: limpeza interna, checagem de queimadores, sensores, pressão de gás e troca de peças desgastadas antes de virarem problema." },
