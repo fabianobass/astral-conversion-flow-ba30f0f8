@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/Hero";
 import { TrustBar } from "@/components/sections/TrustBar";
@@ -7,8 +8,11 @@ import { Process } from "@/components/sections/Process";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { CtaForm } from "@/components/sections/CtaForm";
-import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { RmcCities } from "@/components/RmcCities";
+import { installPhotos } from "@/lib/work-photos";
+const RealWorkGallery = lazy(() =>
+  import("@/components/sections/RealWorkGallery").then((m) => ({ default: m.RealWorkGallery })),
+);
 import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { faqs } from "@/components/sections/FAQ";
@@ -51,7 +55,9 @@ function Index() {
     <>
       <Hero />
       <TrustBar />
-      <RealWorkGallery photos={installPhotos} aspectRatio="portrait" />
+      <Suspense fallback={<div className="h-[520px]" aria-hidden="true" />}>
+        <RealWorkGallery photos={installPhotos} aspectRatio="portrait" />
+      </Suspense>
       <Services />
       <WhyUs />
       <Process />
