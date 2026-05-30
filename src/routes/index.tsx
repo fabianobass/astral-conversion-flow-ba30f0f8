@@ -13,7 +13,6 @@ import { installPhotos } from "@/lib/work-photos";
 const RealWorkGallery = lazy(() =>
   import("@/components/sections/RealWorkGallery").then((m) => ({ default: m.RealWorkGallery })),
 );
-import { installPhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, faqJsonLd } from "@/lib/seo";
 import { faqs } from "@/components/sections/FAQ";
 import heroImg from "@/assets/hero-aquecedor-home.webp";
