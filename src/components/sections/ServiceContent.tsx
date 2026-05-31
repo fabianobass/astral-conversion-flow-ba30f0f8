@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import { waLink } from "@/lib/contact";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 
-export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no WhatsApp", ctaMessage }: { benefits: string[]; process: string[]; ctaLabel?: string; ctaMessage?: string }) {
+export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no WhatsApp", ctaMessage, ctaPhone }: { benefits: string[]; process: string[]; ctaLabel?: string; ctaMessage?: string; ctaPhone?: string }) {
   return (
     <section className="py-20">
       <div className="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2 lg:px-8">
@@ -32,7 +32,7 @@ export function ServiceContent({ benefits, process, ctaLabel = "Falar agora no W
             ))}
           </ol>
           <a
-            href={waLink(undefined, ctaMessage)}
+            href={waLink(ctaPhone, ctaMessage)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={ctaLabel}

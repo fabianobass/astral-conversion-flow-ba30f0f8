@@ -24,6 +24,7 @@ export function ServiceHero({
   image,
   ctaLabel = "Pedir orçamento no WhatsApp",
   ctaMessage,
+  ctaPhone,
   variant = "card",
 }: {
   eyebrow: string;
@@ -32,6 +33,7 @@ export function ServiceHero({
   image?: string;
   ctaLabel?: string;
   ctaMessage?: string;
+  ctaPhone?: string;
   variant?: Variant;
 }) {
   // Drop the GPU-layer hint after the entrance ends so mobile doesn't keep
@@ -41,7 +43,7 @@ export function ServiceHero({
 
   const ctaButton = (
     <a
-      href={waLink(undefined, ctaMessage)}
+      href={waLink(ctaPhone, ctaMessage)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ctaLabel}
