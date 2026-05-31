@@ -96,7 +96,7 @@ export function SpecialistDropdown({
           <a
             href={waLink(
               PHONE_MAINTENANCE,
-              "Olá! Vim pelo site da Astral Gás e preciso de manutenção no meu aquecedor."
+              "Olá! Preciso de manutenção do meu aquecedor a gás."
             )}
             target="_blank"
             rel="noopener noreferrer"

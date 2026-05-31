@@ -8,6 +8,7 @@ import { FAQ } from "@/components/sections/FAQ";
 import { RealWorkGallery } from "@/components/sections/RealWorkGallery";
 import { maintenancePhotos } from "@/lib/work-photos";
 import { buildRouteMeta, jsonLdScript, serviceJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
+import { PHONE_MAINTENANCE } from "@/lib/contact";
 import { RmcCities } from "@/components/RmcCities";
 import heroManutencao from "@/assets/hero-manutencao-v4.webp";
 
@@ -65,7 +66,8 @@ function Page() {
         description="Conserto corretivo, revisão preventiva e manutenção completa para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia."
         image={heroManutencao}
         ctaLabel="Manutenção de aquecedor a gás — chamar agora"
-        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
+        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás."
+        ctaPhone={PHONE_MAINTENANCE}
         variant="background"
       />
       <TrustBar />
@@ -91,7 +93,8 @@ function Page() {
           "Conserto realizado com nota fiscal",
         ]}
         ctaLabel="Manutenção de aquecedor a gás — chamar agora"
-        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás em Curitiba. Podem me atender hoje?"
+        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás."
+        ctaPhone={PHONE_MAINTENANCE}
       />
       <section className="bg-secondary py-8"><RmcCities /></section>
       <Testimonials />
