@@ -38,7 +38,13 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <div className="text-xs uppercase tracking-wider text-gold">Vendas</div>
-                <a href={`tel:+${PHONE_SALES}`} className="flex items-center gap-2 hover:text-nav-fg-hover">
+                <a
+                  href={waLink(PHONE_SALES)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Falar com Vendas pelo WhatsApp ${PHONE_SALES_DISPLAY}`}
+                  className="flex items-center gap-2 hover:text-nav-fg-hover"
+                >
                   <Phone className="h-4 w-4" /> {PHONE_SALES_DISPLAY}
                 </a>
                 <a
