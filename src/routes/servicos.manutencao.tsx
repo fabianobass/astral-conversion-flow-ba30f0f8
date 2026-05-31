@@ -66,7 +66,7 @@ function Page() {
         description="Conserto corretivo, revisão preventiva e manutenção completa para todas as marcas de aquecedor a gás. Atendimento rápido em Curitiba com peças genuínas e garantia."
         image={heroManutencao}
         ctaLabel="Manutenção de aquecedor a gás — chamar agora"
-        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás."
+        ctaMessage="Vim do site da ASTRAL GAS e Preciso de manutenção do meu aquecedor"
         ctaPhone={PHONE_MAINTENANCE}
         variant="background"
       />
@@ -93,7 +93,7 @@ function Page() {
           "Conserto realizado com nota fiscal",
         ]}
         ctaLabel="Manutenção de aquecedor a gás — chamar agora"
-        ctaMessage="Olá! Preciso de manutenção do meu aquecedor a gás."
+        ctaMessage="Vim do site da ASTRAL GAS e Preciso de manutenção do meu aquecedor"
         ctaPhone={PHONE_MAINTENANCE}
       />
       <section className="bg-secondary py-8"><RmcCities /></section>

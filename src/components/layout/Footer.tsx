@@ -63,7 +63,7 @@ export function Footer() {
                   <Phone className="h-4 w-4" /> {PHONE_MAINTENANCE_DISPLAY}
                 </a>
                 <a
-                  href={waLink(PHONE_MAINTENANCE, "Olá! Preciso de manutenção do meu aquecedor a gás.")}
+                  href={waLink(PHONE_MAINTENANCE, "Vim do site da ASTRAL GAS e Preciso de manutenção do meu aquecedor")}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Falar com Manutenção pelo WhatsApp"
