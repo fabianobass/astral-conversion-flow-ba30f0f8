@@ -101,7 +101,10 @@ export function CtaForm() {
               <WhatsAppIcon className="h-5 w-5" /> WhatsApp
             </a>
             <a
-              href={`tel:+${PHONE_SALES}`}
+              href={waLink(PHONE_SALES)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Falar com Vendas pelo WhatsApp ${PHONE_SALES_DISPLAY}`}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-nav-fg/20 bg-nav-fg/5 px-6 py-3.5 font-semibold text-nav-fg outline-none transition-all hover:border-nav-accent hover:bg-nav-bg-hover hover:text-nav-fg-hover focus-ring-nav active:scale-[0.98] motion-reduce:active:scale-100"
             >
               <Phone className="h-5 w-5 text-nav-accent" /> {PHONE_SALES_DISPLAY}
