@@ -48,7 +48,7 @@ export function WhatsAppFloat() {
       icon: Wrench,
       title: "Manutenção",
       desc: "Conserto e revisão",
-      href: waLink(PHONE_MAINTENANCE, "Olá! Preciso de manutenção do meu aquecedor a gás."),
+      href: waLink(PHONE_MAINTENANCE, "Vim do site da ASTRAL GAS e Preciso de manutenção do meu aquecedor"),
     },
   ];
 
